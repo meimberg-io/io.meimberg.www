@@ -6,7 +6,7 @@ import FallbackComponent from '@/components/storyblok/FallbackComponent'
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
 
 export const getStoryblokApi = storyblokInit({
-	accessToken: 'UhOV2Togo8xxAI4m07ZkWwtt',
+	accessToken: 'cDI6mUwrC5dKWFsPWD6s8Att',
 	use: [apiPlugin],
 	components: {
 		teaser: Teaser,
