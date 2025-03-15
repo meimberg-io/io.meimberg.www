@@ -4,6 +4,7 @@ import Grid from '@/components/storyblok/Grid'
 import Feature from '@/components/storyblok/Feature'
 import FallbackComponent from '@/components/storyblok/FallbackComponent'
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
+import Article from '@/components/storyblok/Article.tsx'
 
 export const getStoryblokApi = storyblokInit({
 	accessToken: 'cDI6mUwrC5dKWFsPWD6s8Att',
@@ -13,6 +14,7 @@ export const getStoryblokApi = storyblokInit({
 		page: Page,
 		grid: Grid,
 		feature: Feature,
+		article: Article,
 	},
 	apiOptions: {
 		region: 'eu',
