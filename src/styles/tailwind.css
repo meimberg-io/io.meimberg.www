@@ -2,6 +2,7 @@
 
 
 @import './prism.css' layer(components);
+@import './om.css' layer(components);
 
 /*@plugin '@tailwindcss/typography';
 @config '../typography.ts';*/
