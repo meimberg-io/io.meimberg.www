@@ -40,10 +40,12 @@ export interface ArticleStoryblok {
     | GlobalStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
-    | LinkStoryblok
+    | IconStoryblok
+    | LinklistStoryblok
     | PageStoryblok
     | PictureStoryblok
     | RichtextStoryblok
+    | SociallinkStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
   )[];
@@ -82,10 +84,12 @@ export interface Grid2ColumnStoryblok {
     | GlobalStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
-    | LinkStoryblok
+    | IconStoryblok
+    | LinklistStoryblok
     | PageStoryblok
     | PictureStoryblok
     | RichtextStoryblok
+    | SociallinkStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
   )[];
@@ -96,10 +100,12 @@ export interface Grid2ColumnStoryblok {
     | GlobalStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
-    | LinkStoryblok
+    | IconStoryblok
+    | LinklistStoryblok
     | PageStoryblok
     | PictureStoryblok
     | RichtextStoryblok
+    | SociallinkStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
   )[];
@@ -117,14 +123,83 @@ export interface GroupingStoryblok {
     | GlobalStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
-    | LinkStoryblok
+    | IconStoryblok
+    | LinklistStoryblok
     | PageStoryblok
     | PictureStoryblok
     | RichtextStoryblok
+    | SociallinkStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
   )[];
   component: "grouping";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface IconStoryblok {
+  svg?: string;
+  component: "icon";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface LinklistStoryblok {
+  style?: "" | "icon" | "icontext";
+  links?: (ISbStoryData<SociallinkStoryblok> | string)[];
+  component: "linklist";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface PageStoryblok {
+  body?: (
+    | ArticleStoryblok
+    | ArticleteaserlistStoryblok
+    | DividerStoryblok
+    | GlobalStoryblok
+    | Grid2ColumnStoryblok
+    | GroupingStoryblok
+    | IconStoryblok
+    | LinklistStoryblok
+    | PageStoryblok
+    | PictureStoryblok
+    | RichtextStoryblok
+    | SociallinkStoryblok
+    | StuffStoryblok
+    | StuffteaserlistStoryblok
+  )[];
+  slug: string;
+  title: string;
+  description?: string;
+  layout: "" | "wide" | "narrow" | "home";
+  pageheadline: string;
+  pageintro: string;
+  component: "page";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface PictureStoryblok {
+  image?: AssetStoryblok;
+  style?: "" | "normal" | "keyvisual";
+  component: "picture";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
+export interface RichtextStoryblok {
+  content?: RichtextStoryblok;
+  component: "richtext";
   _uid: string;
   [k: string]: any;
 }
@@ -203,62 +278,11 @@ export type MultilinkStoryblok =
       [k: string]: any;
     };
 
-export interface LinkStoryblok {
-  url?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
-  text?: string;
-  title?: string;
-  icon?: AssetStoryblok;
-  component: "link";
-  _uid: string;
-  [k: string]: any;
-}
-
-export interface PageStoryblok {
-  body?: (
-    | ArticleStoryblok
-    | ArticleteaserlistStoryblok
-    | DividerStoryblok
-    | GlobalStoryblok
-    | Grid2ColumnStoryblok
-    | GroupingStoryblok
-    | LinkStoryblok
-    | PageStoryblok
-    | PictureStoryblok
-    | RichtextStoryblok
-    | StuffStoryblok
-    | StuffteaserlistStoryblok
-  )[];
-  slug: string;
-  title: string;
-  description?: string;
-  layout: "" | "wide" | "narrow";
-  pageheadline: string;
-  pageintro: string;
-  component: "page";
-  _uid: string;
-  [k: string]: any;
-}
-
-export interface PictureStoryblok {
-  image?: AssetStoryblok;
-  style?: "" | "normal" | "keyvisual";
-  component: "picture";
-  _uid: string;
-  [k: string]: any;
-}
-
-export interface RichtextStoryblok {
-  type: string;
-  content?: RichtextStoryblok[];
-  marks?: RichtextStoryblok[];
-  attrs?: any;
-  text?: string;
-  [k: string]: any;
-}
-
-export interface RichtextStoryblok {
-  content?: RichtextStoryblok;
-  component: "richtext";
+export interface SociallinkStoryblok {
+  url: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  text: string;
+  icon: ISbStoryData<IconStoryblok> | string;
+  component: "sociallink";
   _uid: string;
   [k: string]: any;
 }
@@ -277,10 +301,12 @@ export interface StuffStoryblok {
     | GlobalStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
-    | LinkStoryblok
+    | IconStoryblok
+    | LinklistStoryblok
     | PageStoryblok
     | PictureStoryblok
     | RichtextStoryblok
+    | SociallinkStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
   )[];

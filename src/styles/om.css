@@ -1,0 +1,10 @@
+
+
+
+h1 {
+	@apply text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100 mb-0;
+}
+
+hr {
+	@apply border-t border-zinc-200 dark:border-zinc-800 -my-4;
+}

@@ -1,4 +1,4 @@
-import { getStoryblokApi } from '@/lib/storyblok'
+import { fetchData, getStoryblokApi } from '@/lib/storyblok'
 import { StoryblokStory } from '@storyblok/react/rsc'
 import { Container } from '@/components/spotlight/Container.tsx'
 import { Button } from '../components/spotlight/Button'
@@ -6,7 +6,7 @@ import {
 	GitHubIcon,
 	InstagramIcon,
 	LinkedInIcon,
-	XIcon,
+	XIcon
 } from '../components/spotlight/SocialIcons'
 import Link from 'next/link'
 import { Card } from '@/components/spotlight/Card.tsx'
@@ -24,26 +24,9 @@ import image4 from '../images/photos/image-4.jpg'
 import image5 from '../images/photos/image-5.jpg'
 
 
-
 import { type ArticleWithSlug, getAllArticles } from '../lib/articles'
 
 
-
-
-
-
-
-async function fetchData(slug: string) {
-	const storyblokApi = getStoryblokApi()
-	await storyblokApi.flushCache()
-	return storyblokApi.get(
-		'cdn/stories/' + slug,
-		{
-			version: process.env.SB_VERSION as 'published' | 'draft' | undefined
-		},
-		{ cache: 'no-store' }
-	)
-}
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 	return (
@@ -119,10 +102,7 @@ function Article({ article }: { article: ArticleWithSlug }) {
 	)
 }
 
-function SocialLink({
-											icon: Icon,
-											...props
-										}: React.ComponentPropsWithoutRef<typeof Link> & {
+function SocialLink({ icon: Icon, ...props }: React.ComponentPropsWithoutRef<typeof Link> & {
 	icon: React.ComponentType<{ className?: string }>
 }) {
 	return (
@@ -162,7 +142,6 @@ function Newsletter() {
 }
 
 
-
 function Resume() {
 	const resume: Array<Role> = [
 		{
@@ -172,30 +151,30 @@ function Resume() {
 			start: '2019',
 			end: {
 				label: 'Present',
-				dateTime: new Date().getFullYear().toString(),
-			},
+				dateTime: new Date().getFullYear().toString()
+			}
 		},
 		{
 			company: 'Airbnb',
 			title: 'Product Designer',
 			logo: logoAirbnb,
 			start: '2014',
-			end: '2019',
+			end: '2019'
 		},
 		{
 			company: 'Facebook',
 			title: 'iOS Software Engineer',
 			logo: logoFacebook,
 			start: '2011',
-			end: '2014',
+			end: '2014'
 		},
 		{
 			company: 'Starbucks',
 			title: 'Shift Supervisor',
 			logo: logoStarbucks,
 			start: '2008',
-			end: '2011',
-		},
+			end: '2011'
+		}
 	]
 
 	return (
@@ -228,7 +207,7 @@ function Photos() {
 						key={image.src}
 						className={clsx(
 							'relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
-							rotations[imageIndex % rotations.length],
+							rotations[imageIndex % rotations.length]
 						)}
 					>
 						<Image
@@ -243,7 +222,6 @@ function Photos() {
 		</div>
 	)
 }
-
 
 
 interface Role {
@@ -265,7 +243,8 @@ function Role({ role }: { role: Role }) {
 
 	return (
 		<li className="flex gap-4">
-			<div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+			<div
+				className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
 				<Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
 			</div>
 			<dl className="flex flex-auto flex-wrap gap-x-2">
@@ -282,7 +261,8 @@ function Role({ role }: { role: Role }) {
 					className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
 					aria-label={`${startLabel} until ${endLabel}`}
 				>
-					<time dateTime={startDate}>{startLabel}</time>{' '}
+					<time dateTime={startDate}>{startLabel}</time>
+					{' '}
 					<span aria-hidden="true">—</span>{' '}
 					<time dateTime={endDate}>{endLabel}</time>
 				</dd>
@@ -290,12 +270,6 @@ function Role({ role }: { role: Role }) {
 		</li>
 	)
 }
-
-
-
-
-
-
 
 
 export default async function Home() {
@@ -306,9 +280,12 @@ export default async function Home() {
 	return (
 
 
-
-
 		<>
+
+			<StoryblokStory story={dataStory} />
+
+
+
 			<Container className="mt-9">
 				<div className="max-w-2xl">
 					<h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
@@ -355,16 +332,7 @@ export default async function Home() {
 				</div>
 			</Container>
 
-			<div className={``}>
-				<main className={``}>
-
-					<StoryblokStory story={dataStory} />
-				</main>
-			</div>
 		</>
-
-
-
 
 
 	)
