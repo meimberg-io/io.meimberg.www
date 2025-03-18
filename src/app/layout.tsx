@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Layout } from '@/components/spotlight/Layout.tsx'
-import { Providers } from '@/components/providers.tsx'
+import { Providers } from '@/lib/providers.tsx'
 import { StoryblokProvider } from '@/provider'
 import '@/styles/tailwind.css'
 

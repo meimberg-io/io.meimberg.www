@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { ContainerInner, ContainerOuter } from '@/components/spotlight/Container.tsx'
+import { ContainerInner, ContainerOuter } from '@/components/layout/Container.tsx'
 
 function NavLink({
   href,
