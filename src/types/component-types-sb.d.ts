@@ -35,6 +35,7 @@ export interface ArticleStoryblok {
   readmoretext?: string;
   content?: (
     | ArticleStoryblok
+    | ArticlelistStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
     | GlobalStoryblok
@@ -43,6 +44,7 @@ export interface ArticleStoryblok {
     | IconStoryblok
     | LinklistStoryblok
     | PageStoryblok
+    | PhotosStoryblok
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
@@ -54,7 +56,16 @@ export interface ArticleStoryblok {
   [k: string]: any;
 }
 
+export interface ArticlelistStoryblok {
+  component: "articlelist";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface ArticleteaserlistStoryblok {
+  type?: "" | "automatic" | "manual";
+  limit?: string;
+  articles?: (ISbStoryData<ArticleStoryblok> | string)[];
   component: "articleteaserlist";
   _uid: string;
   [k: string]: any;
@@ -79,6 +90,7 @@ export interface GlobalStoryblok {
 export interface Grid2ColumnStoryblok {
   col1?: (
     | ArticleStoryblok
+    | ArticlelistStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
     | GlobalStoryblok
@@ -87,6 +99,7 @@ export interface Grid2ColumnStoryblok {
     | IconStoryblok
     | LinklistStoryblok
     | PageStoryblok
+    | PhotosStoryblok
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
@@ -95,6 +108,7 @@ export interface Grid2ColumnStoryblok {
   )[];
   col2?: (
     | ArticleStoryblok
+    | ArticlelistStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
     | GlobalStoryblok
@@ -103,6 +117,7 @@ export interface Grid2ColumnStoryblok {
     | IconStoryblok
     | LinklistStoryblok
     | PageStoryblok
+    | PhotosStoryblok
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
@@ -118,6 +133,7 @@ export interface GroupingStoryblok {
   grouptitle?: string;
   groupcontent?: (
     | ArticleStoryblok
+    | ArticlelistStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
     | GlobalStoryblok
@@ -126,6 +142,7 @@ export interface GroupingStoryblok {
     | IconStoryblok
     | LinklistStoryblok
     | PageStoryblok
+    | PhotosStoryblok
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
@@ -155,6 +172,7 @@ export interface LinklistStoryblok {
 export interface PageStoryblok {
   body?: (
     | ArticleStoryblok
+    | ArticlelistStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
     | GlobalStoryblok
@@ -163,6 +181,7 @@ export interface PageStoryblok {
     | IconStoryblok
     | LinklistStoryblok
     | PageStoryblok
+    | PhotosStoryblok
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
@@ -176,6 +195,38 @@ export interface PageStoryblok {
   pageheadline: string;
   pageintro: string;
   component: "page";
+  _uid: string;
+  [k: string]: any;
+}
+
+export type MultiassetStoryblok = {
+  alt: string | null;
+  copyright?: string | null;
+  fieldtype: "asset";
+  id: number;
+  filename: string | null;
+  name: string;
+  title: string | null;
+  focus: string | null;
+  meta_data?: {
+    [k: string]: any;
+  };
+  source?: string | null;
+  is_external_url?: boolean;
+  is_private?: boolean;
+  src?: string;
+  updated_at?: string;
+  width?: number | null;
+  height?: number | null;
+  aspect_ratio?: number | null;
+  public_id?: string | null;
+  content_type?: string;
+  [k: string]: any;
+}[];
+
+export interface PhotosStoryblok {
+  images?: MultiassetStoryblok;
+  component: "photos";
   _uid: string;
   [k: string]: any;
 }
@@ -296,6 +347,7 @@ export interface StuffStoryblok {
   readmoretext?: string;
   content?: (
     | ArticleStoryblok
+    | ArticlelistStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
     | GlobalStoryblok
@@ -304,6 +356,7 @@ export interface StuffStoryblok {
     | IconStoryblok
     | LinklistStoryblok
     | PageStoryblok
+    | PhotosStoryblok
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok

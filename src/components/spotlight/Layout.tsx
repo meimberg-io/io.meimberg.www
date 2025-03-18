@@ -1,5 +1,5 @@
-import { Footer } from '@/components/spotlight/Footer.tsx'
-import { Header } from '@/components/spotlight/Header.tsx'
+import { Footer } from '@/components/page/Footer.tsx'
+import { Header } from '@/components/page/Header.tsx'
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

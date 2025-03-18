@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { ISbStoryData } from '@storyblok/react'
 
 export default function Linklist({ blok }: LinklistStoryblok) {
-	console.log("D1")
 
 	// Falls style "icontext" ist, eine Liste rendern
 	if (blok.style === "icontext") {

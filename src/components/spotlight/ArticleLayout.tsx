@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { AppContext } from '../../../../../Downloads/spotlight/tailwind-plus-spotlight/spotlight-ts/src/app/providers.tsx'
-import { Container } from '@/components/spotlight/Container.tsx'
+import { Container } from '@/components/layout/Container.tsx'
 import { Prose } from '@/components/spotlight/Prose.tsx'
 import { type ArticleWithSlug } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
