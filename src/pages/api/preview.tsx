@@ -1,12 +1,10 @@
-export default async function preview(req, res) {
+import { NextApiRequest, NextApiResponse } from 'next';
+
+export default async function preview(req: NextApiRequest, res: NextApiResponse) {
 	const { slug = "" } = req.query;
 
-	console.log("ddddddddddddd",slug);
-	// get the storyblok params for the bridge to work
-	const params = req.url.split("?");
+	const params = req.url?.split("?");
 
-	// Check the secret and next parameters
-	// This secret should only be known to this API route and the CMS
 	if (req.query.secret !== "WUTZ") {
 		return res.status(401).json({ message: "Invalid token" });
 	}
@@ -15,7 +13,7 @@ export default async function preview(req, res) {
 	res.setPreviewData({});
 
 	// Set cookie to None, so it can be read in the Storyblok iframe
-	const cookies = res.getHeader("Set-Cookie");
+	const cookies = res.getHeader("Set-Cookie") as string[];
 	res.setHeader(
 		"Set-Cookie",
 		cookies.map((cookie) =>
@@ -24,5 +22,5 @@ export default async function preview(req, res) {
 	);
 
 	// Redirect to the path from entry
-	res.redirect(`/${slug}?${params[1]}`);
+	res.redirect(`/${slug}?${params ? params[1] : ''}`);
 }
