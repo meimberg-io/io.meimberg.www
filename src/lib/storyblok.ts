@@ -9,12 +9,12 @@ import Richtext from '@/components/storyblok/Richtext.tsx'
 import Divider from '@/components/storyblok/Divider.tsx'
 import Photos from '@/components/storyblok/Photos.tsx'
 import Articleteaserlist from '@/components/storyblok/Articleteaserlist.tsx'
-import { ISbResult, ISbStoryData } from '@storyblok/react'
+import { ISbResult, ISbStoriesParams, ISbStoryData, StoryblokClient } from '@storyblok/react'
 
 
 export interface PageProps {
-	params: Promise<{ [key: string]: string | string[] | undefined }>;
-	searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+	params: { [key: string]: string | string[] | undefined };
+	searchParams: { [key: string]: string | string[] | undefined };
 }
 
 
@@ -53,41 +53,48 @@ export const getStoryblokApi = storyblokInit({
 
 
 
-// Zentrale Fetch-Funktion
-export async function fetchStory(slug: string, isPage: boolean = false): Promise<ISbStoryData<any> | null> {
-	const storyblokApi = getStoryblokApi();
-	await storyblokApi.flushCache(); // 🧹 Sicherstellen, dass immer frischer Content geladen wird
-
-	const prefix = isPage ? "cdn/stories/pages/" : "cdn/stories/";
-
-	// 🔍 Prüfen, ob wir im Storyblok Editor sind
-	let isEditor = false;
-	if (typeof window !== "undefined") {
-		isEditor = window.self !== window.top || !!window.StoryblokBridge;
-	}
-
-
-
-	// /**/console.log('isEditor', isEditor)
-	//console.log('window', window)
-	try {
-
-		const { data } = await storyblokApi.get(prefix + slug, {
-			version: isEditor ? "draft" : "published", // ✅ Nur im Editor den Draft-Content holen
-			resolve_relations: "linklist.links,sociallink.icon",
-		});
-
-		if (!data || !data.story) {
-			console.warn(`⚠️ Storyblok API returned no data for slug: ${slug}`);
-			return null;
-		}
-
-		return data.story;
-	} catch (error) {
-		console.error("❌ Error fetching story from Storyblok:", error);
-		return null;
-	}
+export async function fetchData(slug: string, isPreview: boolean) {
+	const version = isPreview ? 'draft' : 'published'
+	const sbParams: ISbStoriesParams = { version: version, resolve_relations: RESOLVE_RELATIONS }
+	const storyblokApi: StoryblokClient = getStoryblokApi()
+	return storyblokApi.get(`cdn/stories/${slug}`, sbParams)
 }
+//
+// // Zentrale Fetch-Funktion
+// export async function fetchStory(slug: string, isPage: boolean = false): Promise<ISbStoryData<any> | null> {
+// 	const storyblokApi = getStoryblokApi();
+// 	await storyblokApi.flushCache(); // 🧹 Sicherstellen, dass immer frischer Content geladen wird
+//
+// 	const prefix = isPage ? "cdn/stories/pages/" : "cdn/stories/";
+//
+// 	// 🔍 Prüfen, ob wir im Storyblok Editor sind
+// 	let isEditor = false;
+// 	if (typeof window !== "undefined") {
+// 		isEditor = window.self !== window.top || !!window.StoryblokBridge;
+// 	}
+//
+
+//
+// 	// /**/console.log('isEditor', isEditor)
+// 	//console.log('window', window)
+// 	try {
+//
+// 		const { data } = await storyblokApi.get(prefix + slug, {
+// 			version: isEditor ? "draft" : "published", // ✅ Nur im Editor den Draft-Content holen
+// 			resolve_relations: "linklist.links,sociallink.icon",
+// 		});
+//
+// 		if (!data || !data.story) {
+// 			console.warn(`⚠️ Storyblok API returned no data for slug: ${slug}`);
+// 			return null;
+// 		}
+//
+// 		return data.story;
+// 	} catch (error) {
+// 		console.error("❌ Error fetching story from Storyblok:", error);
+// 		return null;
+// 	}
+// }
 
 // export async function fetchData(slug: string) {
 // 	const storyblokApi = getStoryblokApi()
