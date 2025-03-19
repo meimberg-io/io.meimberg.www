@@ -12,8 +12,17 @@ import Articleteaserlist from '@/components/storyblok/Articleteaserlist.tsx'
 import { ISbResult, ISbStoryData } from '@storyblok/react'
 
 
+export interface PageProps {
+	params: Promise<{ [key: string]: string | string[] | undefined }>;
+	searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
 
-export const resolve_relations = 'linklist.links,sociallink.icon'
+
+
+
+export const EDITOR_SECRET = 'WUTZ'
+
+export const RESOLVE_RELATIONS = 'linklist.links,sociallink.icon'
 
 export const getStoryblokApi = storyblokInit({
 	accessToken: 'cDI6mUwrC5dKWFsPWD6s8Att',
@@ -27,6 +36,7 @@ export const getStoryblokApi = storyblokInit({
 			type: 'none'
 		},
 	},
+
 	components: {
 		page: Page,
 		article: Article,
@@ -39,6 +49,7 @@ export const getStoryblokApi = storyblokInit({
 		grid_2column: Grid2Column
 	},
 })
+
 
 
 
