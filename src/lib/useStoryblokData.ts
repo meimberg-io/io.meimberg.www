@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchStory, resolve_relations } from "@/lib/storyblok";
+import { fetchStory, RESOLVE_RELATIONS } from "@/lib/storyblok";
 import { useStoryblokBridge, ISbStoryData } from "@storyblok/react/rsc";
 
 export function useStoryblokData(params: { slug: string } | null, isPage: boolean = false) {
@@ -21,7 +21,7 @@ export function useStoryblokData(params: { slug: string } | null, isPage: boolea
 	}, [params?.slug]); // ✅ Sicherstellen, dass `params` existiert, bevor `.slug` genutzt wird
 
 	useStoryblokBridge(story?.id ?? 0, (newStory: ISbStoryData<any>) => setStory(newStory), {
-		resolveRelations: resolve_relations,
+		resolveRelations: RESOLVE_RELATIONS,
 	});
 
 	return story;
