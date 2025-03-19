@@ -11,9 +11,22 @@ import Photos from '@/components/storyblok/Photos.tsx'
 import Articleteaserlist from '@/components/storyblok/Articleteaserlist.tsx'
 import { ISbResult, ISbStoryData } from '@storyblok/react'
 
+
+
+export const resolve_relations = 'linklist.links,sociallink.icon'
+
 export const getStoryblokApi = storyblokInit({
 	accessToken: 'cDI6mUwrC5dKWFsPWD6s8Att',
 	use: [apiPlugin],
+	bridge: true,
+	enableFallbackComponent: true,
+	customFallbackComponent: FallbackComponent,
+	apiOptions: {
+		region: 'eu',
+		cache: {
+			type: 'none'
+		},
+	},
 	components: {
 		page: Page,
 		article: Article,
@@ -25,22 +38,8 @@ export const getStoryblokApi = storyblokInit({
 		articleteaserlist: Articleteaserlist,
 		grid_2column: Grid2Column
 	},
-	bridge: true,
-
-
-	apiOptions: {
-		region: 'eu',
-		cache: {
-			type: 'none'
-		}
-	},
-
-
-	enableFallbackComponent: true,
-	customFallbackComponent: FallbackComponent
 })
 
-export const resolve_relations = 'linklist.links,sociallink.icon'
 
 
 // Zentrale Fetch-Funktion
@@ -58,10 +57,9 @@ export async function fetchStory(slug: string, isPage: boolean = false): Promise
 
 
 
-	console.log('isEditor', isEditor)
+	// /**/console.log('isEditor', isEditor)
 	//console.log('window', window)
 	try {
-		console.log(`🔄 Fetching Story: ${prefix}${slug} (version: ${isEditor ? "draft" : "published"})`);
 
 		const { data } = await storyblokApi.get(prefix + slug, {
 			version: isEditor ? "draft" : "published", // ✅ Nur im Editor den Draft-Content holen
@@ -73,7 +71,6 @@ export async function fetchStory(slug: string, isPage: boolean = false): Promise
 			return null;
 		}
 
-		console.log("✅ Story loaded successfully:", data.story);
 		return data.story;
 	} catch (error) {
 		console.error("❌ Error fetching story from Storyblok:", error);
