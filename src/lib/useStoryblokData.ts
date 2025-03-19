@@ -12,7 +12,7 @@ export function useStoryblokData(params: { slug: string } | null, isPage: boolea
 		}
 
 		console.log(`🔍 Loading Story: ${params.slug}, isPage: ${isPage}`);
-		fetchStory(params.slug, isPage).then((story) => {
+		fetchStory(params.slug, isPage).then((story:ISbStoryData) => {
 			if (!story) {
 				console.error(`⚠️ No story found for slug: ${params.slug}`);
 			}

@@ -1,8 +1,6 @@
-import { fetchArticles } from '@/lib/storyblok.ts'
 import { Card } from '@/components/spotlight/Card.tsx'
-import { ArticleStoryblok, ArticleteaserlistStoryblok, DividerStoryblok } from '@/types/component-types-sb'
+import { ArticleStoryblok, DividerStoryblok } from '@/types/component-types-sb'
 import { formatDate } from '@/lib/formatDate.ts'
-import { ISbStoryData } from '@storyblok/react'
 
 
 function renderArticle(article: ArticleStoryblok) {
