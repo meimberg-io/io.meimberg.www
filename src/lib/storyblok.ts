@@ -12,14 +12,6 @@ import Articleteaserlist from '@/components/storyblok/Articleteaserlist.tsx'
 import { ISbResult, ISbStoriesParams, StoryblokClient } from '@storyblok/react'
 
 
-export interface PageProps {
-	params: { [key: string]: string | string[] | undefined };
-	searchParams: { [key: string]: string | string[] | undefined };
-}
-
-
-
-
 export const EDITOR_SECRET = 'WUTZ'
 
 export const RESOLVE_RELATIONS = 'linklist.links,sociallink.icon'
