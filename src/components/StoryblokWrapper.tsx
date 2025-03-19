@@ -11,7 +11,7 @@ export default function StoryblokWrapper({ story }: { story: ISbStoryData<any> }
 	if (typeof window !== "undefined") {
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 		useStoryblokBridge(story.id, (newStory) => {
-			console.log("🔄 Story updated in Editor:", newStory);
+			// console.log("🔄 Story updated in Editor:", newStory);
 			setLiveStory(newStory);
 		}, { resolveRelations: "linklist.links,sociallink.icon" });
 	}

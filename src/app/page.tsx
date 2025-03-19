@@ -1,25 +1,45 @@
-import { fetchStory } from "@/lib/storyblok";
-import { ISbStoryData } from "@storyblok/react";
-import StoryblokWrapper from "@/components/StoryblokWrapper";
-import { use } from "react";
 
-export default function StoryPage({ params }: { params: Promise<{ slug?: string }> }) {
-	// ✅ `params` wird hier synchron entpackt
-	const resolvedParams = use(params);
-	const slug = resolvedParams?.slug ?? "home";
+import { ISbStoriesParams, StoryblokClient, StoryblokComponent, useStoryblok } from '@storyblok/react'
+import { apiPlugin, storyblokInit, StoryblokStory } from '@storyblok/react/rsc'
+import FallbackComponent from '@/components/storyblok/FallbackComponent.tsx'
+import Page from '@/components/storyblok/Page.tsx'
+import Article from '@/components/storyblok/Article.tsx'
+import Linklist from '@/components/storyblok/Linklist.tsx'
+import Picture from '@/components/storyblok/Picture.tsx'
+import Richtext from '@/components/storyblok/Richtext.tsx'
+import Divider from '@/components/storyblok/Divider.tsx'
+import Photos from '@/components/storyblok/Photos.tsx'
+import Articleteaserlist from '@/components/storyblok/Articleteaserlist.tsx'
+import Grid2Column from '@/components/storyblok/Grid2Column.tsx'
+import { fetchStory, getStoryblokApi } from '@/lib/storyblok.ts'
 
-	console.log(`🔄 SSR: Fetching story for slug: ${slug}`);
-	return <StoryPageContent slug={slug} />;
+export default async function StoryPage({ params, searchParams }) {
+	const isPreview = searchParams._storyblok === "true";
+
+	console.log('DEBUG 1 params', params)
+	console.log('DEBUG 2 searchParams', searchParams)
+	const {data} = await fetchData("about",isPreview)
+	// const story = useStoryblok(
+	// 	'about',
+	// 	{ version: 'published', resolve_relations: ['linklist.links,sociallink.icon'] },
+	// 	{
+	// 		resolveRelations: ['linklist.links,sociallink.icon'],
+	// 		resolveLinks: 'url',
+	// 		preventClicks: true
+	// 	}
+	// )
+
+
+	return <StoryblokStory  story={data.story} />
+
+
 }
 
-// ✅ Story-Loading bleibt async, aber nur in einer separaten Funktion
-async function StoryPageContent({ slug }: { slug: string }) {
-	const story: ISbStoryData<any> | null = await fetchStory(slug, slug !== "home");
+export async function fetchData(slug:string, isPreview:boolean) {
+	const version = isPreview ? "draft" : "published";
 
-	if (!story) {
-		console.error("❌ Story not found on server:", slug);
-		return <p>❌ Fehler: Story nicht gefunden.</p>;
-	}
+	const sbParams: ISbStoriesParams = { version: version, resolve_relations: ['linklist.links,sociallink.icon'] };
 
-	return <StoryblokWrapper story={story} />;
+	const storyblokApi: StoryblokClient = getStoryblokApi();
+	return storyblokApi.get(`cdn/stories/${slug}`, sbParams);
 }
