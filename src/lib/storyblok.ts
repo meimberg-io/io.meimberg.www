@@ -9,7 +9,7 @@ import Richtext from '@/components/storyblok/Richtext.tsx'
 import Divider from '@/components/storyblok/Divider.tsx'
 import Photos from '@/components/storyblok/Photos.tsx'
 import Articleteaserlist from '@/components/storyblok/Articleteaserlist.tsx'
-import { ISbResult, ISbStoriesParams, ISbStoryData, StoryblokClient } from '@storyblok/react'
+import { ISbResult, ISbStoriesParams, StoryblokClient } from '@storyblok/react'
 
 
 export interface PageProps {

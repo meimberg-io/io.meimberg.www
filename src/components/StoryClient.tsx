@@ -1,24 +1,37 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { useStoryblokBridge } from '@storyblok/react'
-import { StoryblokStory } from '@storyblok/react/rsc'
-import { RESOLVE_RELATIONS } from '@/lib/storyblok.ts'
+import { useState, useEffect } from 'react';
+import { ISbStoryData, useStoryblokBridge } from '@storyblok/react'
+import { StoryblokStory } from '@storyblok/react/rsc';
 
-const StoryClient = ({ initialStory }) => {
-	// State für die Live-Story
-	const [story, setStory] = useState(initialStory)
+const StoryClient = ({ initialStory }:{ initialStory: ISbStoryData }) => {
+	const [story, setStory] = useState(initialStory);
+	const [isMounted, setIsMounted] = useState(false);
 
-	// Storyblok Bridge für Live-Editing aktivieren
-	useStoryblokBridge(story.id, (updatedStory) => {
-			setStory(updatedStory)
-		},
-		{
-			resolveRelations: 'linklist.links,sociallink.icon'
+	// Markiere den Client-Mount, um SSR-Probleme zu vermeiden
+	useEffect(() => {
+		setIsMounted(true);
+	}, []);
+
+	useEffect(() => {
+		setStory(initialStory);
+	}, [initialStory]);
+
+	// Storyblok Live-Editing Bridge aktivieren
+	useEffect(() => {
+		if ( story?.id) {
+			// eslint-disable-next-line react-hooks/rules-of-hooks
+			return useStoryblokBridge(story.id, (updatedStory) => {
+				setStory(updatedStory);
+			}	,{
+				resolveRelations: 'linklist.links,sociallink.icon'
+			});
 		}
-	)
+	}, [isMounted, story?.id]);
 
-	return <StoryblokStory story={story} />
-}
+	if (!isMounted) return null; // Verhindert Hydration-Probleme
 
-export default StoryClient
+	return story ? <StoryblokStory story={story} /> : <p>Loading...</p>;
+};
+
+export default StoryClient;
