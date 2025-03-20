@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { ISbStoryData, useStoryblokBridge } from '@storyblok/react'
 import { StoryblokStory } from '@storyblok/react/rsc';
+import { RESOLVE_RELATIONS } from '@/lib/storyblok.ts'
 
 const StoryClient = ({ initialStory }:{ initialStory: ISbStoryData }) => {
 	const [story, setStory] = useState(initialStory);
@@ -24,7 +25,7 @@ const StoryClient = ({ initialStory }:{ initialStory: ISbStoryData }) => {
 			return useStoryblokBridge(story.id, (updatedStory) => {
 				setStory(updatedStory);
 			}	,{
-				resolveRelations: 'linklist.links,sociallink.icon'
+				resolveRelations: RESOLVE_RELATIONS
 			});
 		}
 	}, [isMounted, story?.id]);
