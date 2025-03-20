@@ -1,65 +1,26 @@
+'use client'
+
 import { Card } from '@/components/spotlight/Card.tsx'
-import { ArticleStoryblok, DividerStoryblok } from '@/types/component-types-sb'
+import { ArticleStoryblok } from '@/types/component-types-sb'
 import { formatDate } from '@/lib/formatDate.ts'
+import { ISbStoryData } from '@storyblok/react'
+import ArticleteaserlistClient from '@/components/storyblok/ArticleteaserlistClient.tsx'
+import ArticleteaserlistServer from '@/components/storyblok/ArticleteaserlistServer.tsx'
 
-
-function renderArticle(article: ArticleStoryblok) {
-
-	return (
-
-		<Card as="article" key={article._uid}>
-			<Card.Title href={`/articles/${article.slug}`}>
-				{article.title}
-			</Card.Title>
-			<Card.Eyebrow as="time" dateTime={article.date} decorate>
-				{article.date && formatDate(article.date)}
+export function ArticleCard(props: { article: ISbStoryData<ArticleStoryblok> }) {
+	return <div className="mt-16 sm:mt-20">
+		<Card as="article">
+			<Card.Title href={`/articles/${props.article.slug}`}>{props.article.content.title}</Card.Title>
+			<Card.Eyebrow as="time" dateTime={props.article.content.date} decorate>
+				{props.article.content.date && formatDate(props.article.content.date)}
 			</Card.Eyebrow>
-			<Card.Description>{article.abstract}</Card.Description>
+			<Card.Description>{props.article.content.abstract}</Card.Description> {/* ✅ Hier gefixt */}
 			<Card.Cta>Read article</Card.Cta>
 		</Card>
-
-	)
-
+	</div>
 }
-//
-//
-// return articles.data.stories.map((article) => {
-// 		return (
-// 			<div className="mt-16 sm:mt-20">
-//
-// 				{renderArticle(article.content)}
-// 			</div>
-//
-// 		)
-//
-//
-// export default  function Articleteaserlist({ blok }: ArticleteaserlistStoryblok) {
-//
-//
-// 	// const articles: ISbStoryData<ArticleStoryblok[]> = blok.type === 'automatic' ?  fetchArticles(blok.limit) : blok.articles
-// 	const articles  =  fetchArticles(blok.limit) {
-// 		return		(
-//
-// 	//
-// 	//
-// 	// return articles.data.stories.map((article) => {
-// 	// 		return (
-// 	// 			<div className="mt-16 sm:mt-20">
-// 	//
-// 	// 				{renderArticle(article.content)}
-// 	// 			</div>
-// 	//
-// 	// 		)
-// 	//
-//
-// 	 <div>xx</div>
-//
-//
-// 		)}
-// 	)
-//
-// }
 
-export default function Divider({ blok }: DividerStoryblok) {
-	return <hr key={blok._uid}/>
+export default function Articleteaserlist({ blok }: { blok: { type: string; limit: number; articles?: any } }) {
+	const isEditor = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('_storyblok')
+	return isEditor ? ArticleteaserlistClient({ blok }) : ArticleteaserlistServer({ blok })
 }

@@ -10,8 +10,8 @@ export interface PageProps {
 
 
 export async function renderPage({ params, searchParams }: PageProps) {
-	const slug = params.slug?.toString() ?? 'home'
-	const isPreview = searchParams.secret === EDITOR_SECRET
+	const slug = (await params).slug?.toString() ?? 'home'
+	const isPreview = (await searchParams).secret === EDITOR_SECRET
 	const { data } = await fetchData(slug, isPreview)
 	return isPreview ? <StoryClient initialStory={data.story} /> : <StoryblokStory story={data.story} />
 }
