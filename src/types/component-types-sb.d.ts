@@ -30,12 +30,11 @@ export interface ArticleStoryblok {
   slug?: string;
   title?: string;
   abstract?: string;
-  date?: string;
+  date: string;
   teaserimage?: AssetStoryblok;
   readmoretext?: string;
   content?: (
     | ArticleStoryblok
-    | ArticlelistStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
     | GlobalStoryblok
@@ -52,12 +51,6 @@ export interface ArticleStoryblok {
     | StuffteaserlistStoryblok
   )[];
   component: "article";
-  _uid: string;
-  [k: string]: any;
-}
-
-export interface ArticlelistStoryblok {
-  component: "articlelist";
   _uid: string;
   [k: string]: any;
 }
@@ -90,7 +83,6 @@ export interface GlobalStoryblok {
 export interface Grid2ColumnStoryblok {
   col1?: (
     | ArticleStoryblok
-    | ArticlelistStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
     | GlobalStoryblok
@@ -108,7 +100,6 @@ export interface Grid2ColumnStoryblok {
   )[];
   col2?: (
     | ArticleStoryblok
-    | ArticlelistStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
     | GlobalStoryblok
@@ -133,7 +124,6 @@ export interface GroupingStoryblok {
   grouptitle?: string;
   groupcontent?: (
     | ArticleStoryblok
-    | ArticlelistStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
     | GlobalStoryblok
@@ -172,7 +162,6 @@ export interface LinklistStoryblok {
 export interface PageStoryblok {
   body?: (
     | ArticleStoryblok
-    | ArticlelistStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
     | GlobalStoryblok
@@ -347,7 +336,6 @@ export interface StuffStoryblok {
   readmoretext?: string;
   content?: (
     | ArticleStoryblok
-    | ArticlelistStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
     | GlobalStoryblok
