@@ -7,11 +7,11 @@ import Image from 'next/image'
 
 export default function Divider({ blok }: PhotosStoryblok) {
 	const rotations = ['rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2']
-	const images: MultiassetStoryblok[] = blok.images
+	const images: MultiassetStoryblok = blok.images
 	return (
 		<div className="mt-16 sm:mt-20">
 			<div className="-my-4 flex justify-center gap-5 overflow-visible py-4 sm:gap-8">
-				{images.map((asset: MultiassetStoryblok, index: number) => (
+				{images.map((asset, index: number) => (
 					<div
 						key={asset.id}
 						className={clsx(
