@@ -8,13 +8,13 @@ import Picture from '@/components/storyblok/Picture.tsx'
 import Richtext from '@/components/storyblok/Richtext.tsx'
 import Divider from '@/components/storyblok/Divider.tsx'
 import Photos from '@/components/storyblok/Photos.tsx'
-import Articleteaserlist from '@/components/storyblok/Articleteaserlist.tsx'
+import Articleteaserlist from '@/components/storyblok/articleteaserlist/Articleteaserlist.tsx'
 import { ISbStoriesParams, StoryblokClient } from '@storyblok/react'
 
 
 export const EDITOR_SECRET = "WUTZ"
 
-export const RESOLVE_RELATIONS = "linklist.links,sociallink.icon"
+export const RESOLVE_RELATIONS = "linklist.links,sociallink.icon,articleteaserlist.articles"
 
 export const getStoryblokApi = storyblokInit({
 	accessToken: 'cDI6mUwrC5dKWFsPWD6s8Att',

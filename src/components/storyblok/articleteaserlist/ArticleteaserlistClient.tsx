@@ -4,13 +4,11 @@ import { useEffect, useState } from 'react'
 import { ArticleStoryblok } from '@/types/component-types-sb'
 import { ISbStoryData } from '@storyblok/react'
 import { fetchArticles } from '@/lib/fetchArticles.ts'
-import { ArticleCard } from '@/components/storyblok/Articleteaserlist.tsx'
+import { ArticleCard } from '@/components/storyblok/articleteaserlist/ArticleCard.tsx'
 
 
 export default function ArticleteaserlistClient({ blok }: { blok: { type: string; limit: number; articles?: any } }) {
 	const [articles, setArticles] = useState<ISbStoryData<ArticleStoryblok>[] | null>(null);
-
-	console.log('I am ArticleteaserlistClient');
 
 	useEffect(() => {
 		if (blok.type === 'automatic') {
