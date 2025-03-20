@@ -2,9 +2,11 @@ import {
 	StoryblokServerComponent
 } from '@storyblok/react/rsc'
 import { Grid2ColumnStoryblok } from '@/types/component-types-sb'
+import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
 
 export default function Grid2Column({ blok }: Grid2ColumnStoryblok) {
 	return (
+		<ElementWrapper>
 		<div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
 			<div>
 				{blok.col1.map((nestedBlok: any) => (
@@ -19,5 +21,6 @@ export default function Grid2Column({ blok }: Grid2ColumnStoryblok) {
 				))}
 			</div>
 		</div>
+		</ElementWrapper>
 	)
 }

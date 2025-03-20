@@ -1,16 +1,17 @@
-import {
-	storyblokEditable,
-	StoryblokServerComponent,
-} from '@storyblok/react/rsc'
+import { storyblokEditable, StoryblokServerComponent } from '@storyblok/react/rsc'
 import { ArticleStoryblok } from '@/types/component-types-sb'
+import { ArticleLayout } from '@/components/layout/ArticleLayout.tsx'
 
-export default function Article({ blok }: { blok: ArticleStoryblok }) {
+
+export default function Article({ blok }: Readonly<{ blok: ArticleStoryblok }>) {
+	console.log("Article",blok)
 	return (
-		<main {...storyblokEditable(blok)}>
-			<p {...storyblokEditable(blok)}>TITLE: {blok.title}</p>
+		<ArticleLayout article={blok} {...storyblokEditable(blok)}>
 			{blok.body?.map((nestedBlok: any) => (
 				<StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
 			))}
-		</main>
+
+
+		</ArticleLayout>
 	)
 }

@@ -35,7 +35,8 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"!src/components/storyblok/index.ts"
+		"!src/components/storyblok/index.ts",
+		"global.d.ts"
 	],
 	"exclude": ["node_modules", "src/**/*.cy.ts", "src/**/*.test.ts"]
 }
