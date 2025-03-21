@@ -1,6 +1,6 @@
 import { ISbStoryData } from '@storyblok/react'
 import { ArticleStoryblok } from '@/types/component-types-sb'
-import { Card } from '@/components/storyblok/articleteaserlist/Card.tsx'
+import { Card } from '@/components/elements/articleteaserlist/Card.tsx'
 import { formatDate } from '@/lib/formatDate.ts'
 import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
 

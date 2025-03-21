@@ -11,13 +11,13 @@ const nextConfig: NextConfig = {
 			},
 			{
 				protocol: 'https',
-				hostname: 'a.storyblok.com',
+				hostname: 'a.pagetypes.com',
 				port: '',
 				pathname: '/**',
 			},
 			{
 				protocol: 'https',
-				hostname: 'storyblok.imgix.net',
+				hostname: 'pagetypes.imgix.net',
 				port: '',
 				pathname: '/**',
 			},

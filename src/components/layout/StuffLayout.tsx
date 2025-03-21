@@ -11,7 +11,8 @@ import { ArticleStoryblok } from '@/types/component-types-sb'
 import { ArrowLeftIcon } from 'lucide-react'
 
 
-export function ArticleLayout({ article, children }: {
+
+export function StuffLayout({ article, children }: {
 	article: ArticleStoryblok
 	children: React.ReactNode
 }) {

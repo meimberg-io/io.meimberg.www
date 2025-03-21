@@ -1,7 +1,7 @@
 import { ArticleteaserlistStoryblok } from '@/types/component-types-sb'
-import ArticleteaserlistClient from '@/components/storyblok/articleteaserlist/ArticleteaserlistClient.tsx'
-import ArticleteaserlistServer from '@/components/storyblok/articleteaserlist/ArticleteaserlistServer.tsx'
-import { ArticleCardList } from '@/components/storyblok/articleteaserlist/ArticleCardList.tsx'
+import ArticleteaserlistClient from '@/components/elements/articleteaserlist/ArticleteaserlistClient.tsx'
+import ArticleteaserlistServer from '@/components/elements/articleteaserlist/ArticleteaserlistServer.tsx'
+import { ArticleCardList } from '@/components/elements/articleteaserlist/ArticleCardList.tsx'
 
 
 export interface ArticleteaserlistProps {
