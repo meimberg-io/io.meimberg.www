@@ -33,11 +33,11 @@ export interface ArticleStoryblok {
   date: string;
   teaserimage?: AssetStoryblok;
   readmoretext?: string;
-  content?: (
+  body?: (
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
-    | GlobalStoryblok
+    | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
     | IconStoryblok
@@ -56,9 +56,10 @@ export interface ArticleStoryblok {
 }
 
 export interface ArticleteaserlistStoryblok {
-  type?: "" | "automatic" | "manual";
-  limit?: string;
+  type: "" | "automatic" | "manual";
+  limit: string;
   articles?: (ISbStoryData<ArticleStoryblok> | string)[];
+  layout: "" | "small" | "wide";
   component: "articleteaserlist";
   _uid: string;
   [k: string]: any;
@@ -70,12 +71,12 @@ export interface DividerStoryblok {
   [k: string]: any;
 }
 
-export interface GlobalStoryblok {
+export interface GlobalsettingsStoryblok {
   copyright?: string;
   avatar?: AssetStoryblok;
-  topnav?: any[];
-  footernav?: any[];
-  component: "global";
+  topnav: (ISbStoryData<PageStoryblok> | string)[];
+  footernav?: (ISbStoryData<PageStoryblok> | string)[];
+  component: "globalsettings";
   _uid: string;
   [k: string]: any;
 }
@@ -85,7 +86,7 @@ export interface Grid2ColumnStoryblok {
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
-    | GlobalStoryblok
+    | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
     | IconStoryblok
@@ -102,7 +103,7 @@ export interface Grid2ColumnStoryblok {
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
-    | GlobalStoryblok
+    | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
     | IconStoryblok
@@ -126,7 +127,7 @@ export interface GroupingStoryblok {
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
-    | GlobalStoryblok
+    | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
     | IconStoryblok
@@ -164,7 +165,7 @@ export interface PageStoryblok {
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
-    | GlobalStoryblok
+    | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
     | IconStoryblok
@@ -338,7 +339,7 @@ export interface StuffStoryblok {
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
-    | GlobalStoryblok
+    | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
     | IconStoryblok
