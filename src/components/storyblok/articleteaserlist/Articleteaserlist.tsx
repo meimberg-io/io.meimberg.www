@@ -1,9 +1,8 @@
-
-import { ArticleStoryblok, ArticleteaserlistStoryblok } from '@/types/component-types-sb'
-import { ISbStoryData } from '@storyblok/react'
+import { ArticleteaserlistStoryblok } from '@/types/component-types-sb'
 import ArticleteaserlistClient from '@/components/storyblok/articleteaserlist/ArticleteaserlistClient.tsx'
 import ArticleteaserlistServer from '@/components/storyblok/articleteaserlist/ArticleteaserlistServer.tsx'
-import { ArticleCard } from '@/components/storyblok/articleteaserlist/ArticleCard.tsx'
+import { ArticleCardList } from '@/components/storyblok/articleteaserlist/ArticleCardList.tsx'
+
 
 export interface ArticleteaserlistProps {
 	type: string;
@@ -27,8 +26,7 @@ export default function Articleteaserlist({ blok }: { blok: ArticleteaserlistSto
 		return isEditor ? <ArticleteaserlistClient props={props} /> : <ArticleteaserlistServer props={props} />;
 
 	} else {
-		return props.articles.map((article: ISbStoryData<ArticleStoryblok>) => (
-			<ArticleCard key={article.id} article={article} layout={props.layout}/>
-		))
+		return	<ArticleCardList articles={props.articles} layout={props.layout} />;
+
 	}
 }
