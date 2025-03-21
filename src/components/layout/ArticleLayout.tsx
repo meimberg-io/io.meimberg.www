@@ -8,7 +8,7 @@ import { Container } from '@/components/layout/Container.tsx'
 import { formatDate } from '@/lib/formatDate.ts'
 import { AppContext } from '@/lib/providers.tsx'
 import { ArticleStoryblok } from '@/types/component-types-sb'
-import { ArrowLeftIcon } from 'lucide-react'
+import { ArrowLeftIcon } from '@/components/Svg.tsx'
 
 
 export function ArticleLayout({ article, children }: {

@@ -12,20 +12,23 @@ import Articleteaserlist from '@/components/elements/articleteaserlist/Articlete
 import { ISbStoriesParams, ISbStoryData, StoryblokClient } from '@storyblok/react'
 import { ArticleStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
 import Stuff from '@/components/pagetypes/Stuff.tsx'
+import Stuffteaserlist from '@/components/elements/Stuffteaserlist.tsx'
+import Hyperlink from '@/components/elements/Hyperlink.tsx'
 
 
 export const EDITOR_SECRET = 'WUTZ'
 export const RESOLVE_RELATIONS_NAV = [
 	'globalsettings.topnav',
 	'globalsettings.footernav'
-]
+];
 export const RESOLVE_RELATIONS = [
 	'linklist.links',
 	'sociallink.icon',
 	'articleteaserlist.articles',
+	'stuffteaserlist.stuffs',
 	'globalsettings.topnav',
 	'globalsettings.footernav'
-]
+];
 
 
 export const RESOLVE_RELATIONS_CONFIG = 'globalsettings.topnav,globalsettings.footernav'
@@ -50,8 +53,10 @@ export const getStoryblokApi = storyblokInit({
 		picture: Picture,
 		richtext: Richtext,
 		divider: Divider,
+		hyperlink: Hyperlink,
 		photos: Photos,
 		articleteaserlist: Articleteaserlist,
+		stuffteaserlist: Stuffteaserlist,
 		grid_2column: Grid2Column
 	}
 })
