@@ -15,6 +15,6 @@ export default async function exit(req: NextApiRequest, res: NextApiResponse) {
     )
   );
 
-  // Redirect the user back to the index page.
+  // Redirect the user back to the index global.
   res.redirect(`/${slug}`);
 }

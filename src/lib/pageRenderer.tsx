@@ -1,5 +1,5 @@
 import { EDITOR_SECRET, fetchStory } from '@/lib/storyblok.ts'
-import StoryClient from '@/components/page/StoryClient.tsx'
+import StoryClient from '@/components/global/StoryClient.tsx'
 import { StoryblokStory } from '@storyblok/react/rsc'
 
 

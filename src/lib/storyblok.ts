@@ -1,16 +1,17 @@
-import Page from '@/components/storyblok/Page'
-import FallbackComponent from '@/components/storyblok/FallbackComponent'
+import Page from '@/components/pagetypes/Page'
+import FallbackComponent from '@/components/FallbackComponent.tsx'
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
-import Article from '@/components/storyblok/Article.tsx'
-import Linklist from '@/components/storyblok/elements/Linklist.tsx'
+import Article from '@/components/pagetypes/Article.tsx'
+import Linklist from '@/components/elements/Linklist.tsx'
 import Grid2Column from '@/components/layout/Grid2Column.tsx'
-import Picture from '@/components/storyblok/elements/Picture.tsx'
-import Richtext from '@/components/storyblok/elements/Richtext.tsx'
-import Divider from '@/components/storyblok/elements/Divider.tsx'
-import Photos from '@/components/storyblok/elements/Photos.tsx'
-import Articleteaserlist from '@/components/storyblok/articleteaserlist/Articleteaserlist.tsx'
+import Picture from '@/components/elements/Picture.tsx'
+import Richtext from '@/components/elements/Richtext.tsx'
+import Divider from '@/components/elements/Divider.tsx'
+import Photos from '@/components/elements/Photos.tsx'
+import Articleteaserlist from '@/components/elements/articleteaserlist/Articleteaserlist.tsx'
 import { ISbStoriesParams, ISbStoryData, StoryblokClient } from '@storyblok/react'
 import { ArticleStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
+import Stuff from '@/components/pagetypes/Stuff.tsx'
 
 
 export const EDITOR_SECRET = 'WUTZ'
@@ -44,6 +45,7 @@ export const getStoryblokApi = storyblokInit({
 	components: {
 		page: Page,
 		article: Article,
+		stuff: Stuff,
 		linklist: Linklist,
 		picture: Picture,
 		richtext: Richtext,
