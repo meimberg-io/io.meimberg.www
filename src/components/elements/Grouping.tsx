@@ -16,7 +16,6 @@ function ToolsSection({ children, ...props }: React.ComponentPropsWithoutRef<typ
 }
 
 export default function Grouping({ blok }: { blok: GroupingStoryblok }) {
-	console.log(blok)
 	return (
 
 		<ElementWrapper spacing="large">

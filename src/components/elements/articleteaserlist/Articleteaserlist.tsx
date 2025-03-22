@@ -2,6 +2,7 @@ import { ArticleteaserlistStoryblok } from '@/types/component-types-sb'
 import ArticleteaserlistClient from '@/components/elements/articleteaserlist/ArticleteaserlistClient.tsx'
 import ArticleteaserlistServer from '@/components/elements/articleteaserlist/ArticleteaserlistServer.tsx'
 import { ArticleCardList } from '@/components/elements/articleteaserlist/ArticleCardList.tsx'
+import { storyblokEditable } from '@storyblok/react/rsc'
 
 
 export interface ArticleteaserlistProps {
@@ -12,7 +13,6 @@ export interface ArticleteaserlistProps {
 	folder?: string
 }
 
-
 export default function Articleteaserlist({ blok }: { blok: ArticleteaserlistStoryblok }) {
 	const props: ArticleteaserlistProps = {
 		type: blok.type,
@@ -22,13 +22,18 @@ export default function Articleteaserlist({ blok }: { blok: ArticleteaserlistSto
 		articles: blok.articles || []
 	}
 
-
 	if (blok.type === 'automatic') {
 		const isEditor = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('_storyblok')
-		return isEditor ? <ArticleteaserlistClient props={props} /> : <ArticleteaserlistServer props={props} />;
-
+		return (
+			<div {...storyblokEditable(blok)}>
+				{isEditor ? <ArticleteaserlistClient props={props} /> : <ArticleteaserlistServer props={props} />}
+			</div>
+		)
 	} else {
-		return	<ArticleCardList articles={props.articles} layout={props.layout} />;
-
+		return (
+			<div {...storyblokEditable(blok)}>
+				<ArticleCardList articles={props.articles} layout={props.layout} />;
+			</div>
+		)
 	}
 }

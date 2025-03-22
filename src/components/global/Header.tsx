@@ -9,8 +9,8 @@ import { Popover, PopoverBackdrop, PopoverButton, PopoverPanel } from '@headless
 import clsx from 'clsx'
 
 import { Container } from '@/components/layout/Container.tsx'
-import avatarImage from '@/images/avatar.jpg'
-import { ChevronDownIcon, CloseIcon, MobileNavItem, MoonIcon, SunIcon } from '@/components/Svg.tsx'
+import avatarImage from '@/images/avatar.png'
+import { ChevronDownIcon, CloseIcon, MobileNavItem, MoonIcon, SunIcon } from '@/components/util/Svg.tsx'
 import { fetchGlobalsettings } from '@/lib/storyblok.ts'
 import { GlobalsettingsStoryblok } from '@/types/component-types-sb'
 

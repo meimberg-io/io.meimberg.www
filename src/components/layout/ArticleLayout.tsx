@@ -7,7 +7,7 @@ import { Container } from '@/components/layout/Container.tsx'
 import { formatDate } from '@/lib/formatDate.ts'
 import { AppContext } from '@/lib/providers.tsx'
 import { ArticleStoryblok } from '@/types/component-types-sb'
-import { ArrowLeftIcon } from '@/components/Svg.tsx'
+import { ArrowLeftIcon } from '@/components/util/Svg.tsx'
 import HeaderPicture from '@/components/global/HeaderPicture.tsx'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Pagetitle from '@/components/elements/Pagetitle.tsx'
@@ -19,7 +19,6 @@ export function ArticleLayout({ article, children }: {
 }) {
 	const router = useRouter()
 	const { previousPathname } = useContext(AppContext)
-	console.log("ArticleLayout",article)
 	return (
 		<>
 			<HeaderPicture headerpicture={article.headerpicture} />
