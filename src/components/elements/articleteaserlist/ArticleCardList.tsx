@@ -16,7 +16,7 @@ export function ArticleCardList(props: { articles: ISbStoryData<ArticleStoryblok
 
 						<article key={article.id} className="mt-16 sm:mt-20">
 							<Card as="article">
-								<Card.Title href={`/${article.full_slug}`}>{article.content.title}</Card.Title>
+								<Card.Title href={`/${article.full_slug}`}>{article.content.teasertitle}</Card.Title>
 								<Card.Eyebrow as="time" dateTime={article.content.date} decorate>
 									{article.content.date && formatDate(article.content.date)}
 								</Card.Eyebrow>
@@ -39,13 +39,13 @@ export function ArticleCardList(props: { articles: ISbStoryData<ArticleStoryblok
 							<article key={article.id} className="md:grid md:grid-cols-4 md:items-baseline ">
 								<Card className="md:col-span-3">
 									<Card.Title href={`/${article.full_slug}`}>
-										{article.content.title}
+										{article.content.teasertitle}
 									</Card.Title>
 									<Card.Eyebrow as="time" dateTime={article.content.date} className="md:hidden" decorate>
 										{'xx' + formatDate(article.content.date)}
 									</Card.Eyebrow>
 									<Card.Description>{article.content.abstract}</Card.Description>
-									<Card.Cta>Read article</Card.Cta>
+									<Card.Cta>{article.content.readmoretext ?? 'Weiterlesen'}</Card.Cta>
 								</Card>
 								<Card.Eyebrow as="time" dateTime={article.content.date} className="mt-1 max-md:hidden">
 									{formatDate(article.content.date)}

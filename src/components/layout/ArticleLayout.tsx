@@ -1,6 +1,6 @@
 'use client'
 
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { Container } from '@/components/layout/Container.tsx'
@@ -9,6 +9,8 @@ import { AppContext } from '@/lib/providers.tsx'
 import { ArticleStoryblok } from '@/types/component-types-sb'
 import { ArrowLeftIcon } from '@/components/Svg.tsx'
 import HeaderPicture from '@/components/global/HeaderPicture.tsx'
+import { storyblokEditable } from '@storyblok/react/rsc'
+import Pagetitle from '@/components/elements/Pagetitle.tsx'
 
 
 export function ArticleLayout({ article, children }: {
@@ -17,7 +19,7 @@ export function ArticleLayout({ article, children }: {
 }) {
 	const router = useRouter()
 	const { previousPathname } = useContext(AppContext)
-	console.log('article.headerpicture', article.headerpicture)
+	console.log("ArticleLayout",article)
 	return (
 		<>
 			<HeaderPicture headerpicture={article.headerpicture} />
@@ -38,10 +40,11 @@ export function ArticleLayout({ article, children }: {
 
 						<article>
 							<header className="flex flex-col">
-								<h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-									{article.title}
-								</h1>
-								<time dateTime={article.date} className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500">
+								{article.pagetitle && (<div {...storyblokEditable(article)}>
+										<Pagetitle blok={{ pagetitle: article.pagetitle, pageintro: article.pageintro, whitetitle: true }} />
+									</div>
+								)}
+								<time dateTime={article.date} className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500 mb-8">
 									<span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
 									<span className="ml-3">{formatDate(article.date)}</span>
 								</time>

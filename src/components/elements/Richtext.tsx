@@ -43,9 +43,9 @@ export default function Richtext({ blok }: RichtextStoryblok) {
 
 	return (
 		<ElementWrapper>
-			<div className="" {...storyblokEditable(blok)}>
+			<div className="max-w-2xl" {...storyblokEditable(blok)}>
 				<Prose>
-					<div className="space-y-7 text-base text-zinc-600 dark:text-zinc-400" dangerouslySetInnerHTML={{ __html: highlightedHtml }}></div>
+					<div className="space-y-7 text-base " dangerouslySetInnerHTML={{ __html: highlightedHtml }}></div>
 				</Prose>
 			</div>
 		</ElementWrapper>

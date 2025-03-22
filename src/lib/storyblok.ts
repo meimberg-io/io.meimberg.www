@@ -12,15 +12,20 @@ import Articleteaserlist from '@/components/elements/articleteaserlist/Articlete
 import { ISbStoriesParams, ISbStoryData, StoryblokClient } from '@storyblok/react'
 import { ArticleStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
 import Stuff from '@/components/pagetypes/Stuff.tsx'
-import Stuffteaserlist from '@/components/elements/Stuffteaserlist.tsx'
+import Stuffteaserlist from '@/components/elements/stuffteaser/Stuffteaserlist.tsx'
 import Hyperlink from '@/components/elements/Hyperlink.tsx'
+import Pagetitle from '@/components/elements/Pagetitle.tsx'
+import Grouping from '@/components/elements/Grouping.tsx'
+import Tool from '@/components/elements/Tool.tsx'
 
 
 export const EDITOR_SECRET = 'WUTZ'
+export const COMPONENTTYPE_ARTICLE = 'article'
+
 export const RESOLVE_RELATIONS_NAV = [
 	'globalsettings.topnav',
 	'globalsettings.footernav'
-];
+]
 export const RESOLVE_RELATIONS = [
 	'linklist.links',
 	'sociallink.icon',
@@ -28,8 +33,7 @@ export const RESOLVE_RELATIONS = [
 	'stuffteaserlist.stuffs',
 	'globalsettings.topnav',
 	'globalsettings.footernav'
-];
-
+]
 
 export const RESOLVE_RELATIONS_CONFIG = 'globalsettings.topnav,globalsettings.footernav'
 
@@ -54,6 +58,9 @@ export const getStoryblokApi = storyblokInit({
 		richtext: Richtext,
 		divider: Divider,
 		hyperlink: Hyperlink,
+		grouping: Grouping,
+		pagetitle: Pagetitle,
+		tool: Tool,
 		photos: Photos,
 		articleteaserlist: Articleteaserlist,
 		stuffteaserlist: Stuffteaserlist,
@@ -65,7 +72,6 @@ export async function fetchGlobalsettings(isPreview: boolean): Promise<Globalset
 	const version = isPreview ? 'draft' : 'published'
 	const sbParams: ISbStoriesParams = { version: version, resolve_relations: RESOLVE_RELATIONS_NAV }
 	const storyblokApi: StoryblokClient = getStoryblokApi()
-	// return storyblokApi.getStory('globalsettings', sbParams, { cache: 'no-cache' }) as GlobalsettingsStoryblok
 	const { data } = await storyblokApi.getStory('globalsettings', sbParams, { cache: 'no-cache' })
 	return data.story.content as GlobalsettingsStoryblok
 }
@@ -74,19 +80,23 @@ export async function fetchStory(slug: string, isPreview: boolean) {
 	const version = isPreview ? 'draft' : 'published'
 	const sbParams: ISbStoriesParams = { version: version, resolve_relations: RESOLVE_RELATIONS }
 	const storyblokApi: StoryblokClient = getStoryblokApi()
-	const result =  storyblokApi.getStory(slug, sbParams, { cache: 'no-cache' })
-	return result;
+	const result = storyblokApi.getStory(slug, sbParams, { cache: 'no-cache' })
+	return result
 }
 
-
-export async function fetchArticles(limit: number): Promise<{ data: { stories: ISbStoryData<ArticleStoryblok>[] } }> {
+export async function fetchStories(limit: number, componenttype: string, folder?: string): Promise<{ data: { stories: ISbStoryData<ArticleStoryblok>[] } }> {
 	const storyblokApi = getStoryblokApi()
 	await storyblokApi.flushCache()
-	const result =  storyblokApi.get('cdn/stories', {
+	const result = storyblokApi.get('cdn/stories', {
 		version: process.env.SB_VERSION as 'published' | 'draft' | undefined,
-		starts_with: 'a/',
+		filter_query: {
+			component: {
+				in: componenttype
+			}
+		},
+		starts_with: folder,
 		sort_by: 'content.date:desc',
 		per_page: (limit ?? 100) as number
-	});
-	return result;
+	})
+	return result
 }

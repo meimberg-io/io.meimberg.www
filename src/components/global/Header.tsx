@@ -58,7 +58,7 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
 
 				{navItems?.topnav?.filter((i) => {
 					return (i.id !== undefined)
-				}).map((item: { id:string, full_slug:string, name:string }, index: number) => (
+				}).map((item: { id: string, full_slug: string, name: string }, index: number) => (
 					<NavItem key={index} href={`/${item.full_slug}`}>{item.name}</NavItem>
 				))}
 
@@ -70,6 +70,13 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
 function MobileNavigation(
 	props: React.ComponentPropsWithoutRef<typeof Popover>
 ) {
+	const [navItems, setNavItems] = useState<GlobalsettingsStoryblok>()
+
+	useEffect(() => {
+		fetchGlobalsettings(false).then((x) => {
+			setNavItems(x)
+		})
+	}, [])
 	return (
 		<Popover {...props}>
 			<PopoverButton
@@ -96,11 +103,15 @@ function MobileNavigation(
 				</div>
 				<nav className="mt-6">
 					<ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-						<MobileNavItem href="/about">About</MobileNavItem>
-						<MobileNavItem href="/articles">Articles</MobileNavItem>
-						<MobileNavItem href="/projects">Projects</MobileNavItem>
-						<MobileNavItem href="/speaking">Speaking</MobileNavItem>
-						<MobileNavItem href="/uses">Uses</MobileNavItem>
+
+
+						{navItems?.topnav?.filter((i) => {
+							return (i.id !== undefined)
+						}).map((item: { id: string, full_slug: string, name: string }, index: number) => (
+							<MobileNavItem key={index} href={`/${item.full_slug}`}>{item.name}</MobileNavItem>
+						))}
+
+
 					</ul>
 				</nav>
 			</PopoverPanel>
