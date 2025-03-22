@@ -3,13 +3,9 @@ import StoryClient from '@/components/global/StoryClient.tsx'
 import { StoryblokStory } from '@storyblok/react/rsc'
 
 
-export interface PageProps {
-	params: {
-		slug: string[] | undefined,
-	};
-	searchParams: {
-		secret: string | undefined;
-	}
+export type PageProps = {
+	params: { slug: string[] }
+	searchParams: { [key: string]: string | string[] | undefined }
 }
 
 export async function renderPage( slug?:string[],  secret?: string | undefined ) {
