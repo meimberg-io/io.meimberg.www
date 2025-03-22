@@ -6,7 +6,7 @@ type WrapperProps = {
 	spacing?: 'default' | 'large';
 };
 export default function ElementWrapper({ children, spacing }: WrapperProps) {
-	const cls = spacing === 'large' ? 'my-12 sm:my-16' : 'my-8 sm:my-10'
+	const cls = spacing === 'large' ? 'my-12 sm:my-24' : 'my-8 sm:my-10'
 	return (
 		<div className={cls}>
 

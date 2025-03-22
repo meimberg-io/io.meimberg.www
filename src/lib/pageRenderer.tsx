@@ -5,19 +5,16 @@ import { StoryblokStory } from '@storyblok/react/rsc'
 
 export interface PageProps {
 	params: {
-		slug: string | undefined,
-		folder: string | undefined,
+		slug: string[] | undefined,
 	};
 	searchParams: {
 		secret: string | undefined;
-	};
+	}
 }
 
-
-export async function renderPage({ params, searchParams }: PageProps) {
-	const slug = (await params).slug?.toString() ?? 'home'
-	const folder = `${(await params).folder?.toString() ?? ''}/`.replace(/\/+$/, '/');
-	const isPreview = (await searchParams).secret === EDITOR_SECRET
-	const { data } = await fetchStory(folder + slug, isPreview)
+export async function renderPage( slug?:string[],  secret?: string | undefined ) {
+	const full_slug = slug?.join('/') ?? 'home'
+	const isPreview = secret === EDITOR_SECRET
+	const { data } = await fetchStory(full_slug, isPreview)
 	return isPreview ? <StoryClient initialStory={data.story} /> : <StoryblokStory story={data.story} />
 }

@@ -9,6 +9,7 @@ export interface ArticleteaserlistProps {
 	limit: number;
 	articles?: any;
 	layout: string
+	folder?: string
 }
 
 
@@ -17,6 +18,7 @@ export default function Articleteaserlist({ blok }: { blok: ArticleteaserlistSto
 		type: blok.type,
 		limit: parseInt(blok.limit),
 		layout: blok.layout,
+		folder: blok.folder,
 		articles: blok.articles || []
 	}
 

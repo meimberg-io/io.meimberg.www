@@ -14,7 +14,6 @@ export interface StuffteaserlistProps {
 
 export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistProps }) {
 	const props: StuffteaserlistProps = {
-
 		stuffs: blok.stuffs ?? []
 	}
 
@@ -34,7 +33,7 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistProps }
 
 						</div>
 						<div className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-							<Card.Link href={`/${stuff.full_slug}`}>{stuff.content.title}</Card.Link>
+							<Card.Link href={`/${stuff.full_slug}`}>{stuff.content.teasertitle}</Card.Link>
 						</div>
 						<Card.Description>{stuff.content.abstract} </Card.Description>
 						<p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">

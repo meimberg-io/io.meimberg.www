@@ -27,11 +27,15 @@ export interface AssetStoryblok {
 }
 
 export interface ArticleStoryblok {
-  title?: string;
-  abstract?: string;
+  pagetitle?: string;
+  pageintro?: string;
   date: string;
+  headerpicture?: AssetStoryblok;
+  teaser?: any;
+  teasertitle?: string;
   teaserimage?: AssetStoryblok;
   readmoretext?: string;
+  abstract?: string;
   body?: (
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
@@ -43,14 +47,15 @@ export interface ArticleStoryblok {
     | IconStoryblok
     | LinklistStoryblok
     | PageStoryblok
+    | PagetitleStoryblok
     | PhotosStoryblok
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
+    | ToolStoryblok
   )[];
-  headerpicture?: AssetStoryblok;
   component: "article";
   _uid: string;
   [k: string]: any;
@@ -58,6 +63,7 @@ export interface ArticleStoryblok {
 
 export interface ArticleteaserlistStoryblok {
   type: "" | "automatic" | "manual";
+  folder?: string;
   limit: string;
   articles?: (ISbStoryData<ArticleStoryblok> | string)[];
   layout: "" | "small" | "wide";
@@ -94,12 +100,14 @@ export interface Grid2ColumnStoryblok {
     | IconStoryblok
     | LinklistStoryblok
     | PageStoryblok
+    | PagetitleStoryblok
     | PhotosStoryblok
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
+    | ToolStoryblok
   )[];
   col2?: (
     | ArticleStoryblok
@@ -112,12 +120,14 @@ export interface Grid2ColumnStoryblok {
     | IconStoryblok
     | LinklistStoryblok
     | PageStoryblok
+    | PagetitleStoryblok
     | PhotosStoryblok
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
+    | ToolStoryblok
   )[];
   component: "grid_2column";
   _uid: string;
@@ -125,7 +135,7 @@ export interface Grid2ColumnStoryblok {
 }
 
 export interface GroupingStoryblok {
-  grouptitle?: string;
+  grouptitle: string;
   groupcontent?: (
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
@@ -137,12 +147,14 @@ export interface GroupingStoryblok {
     | IconStoryblok
     | LinklistStoryblok
     | PageStoryblok
+    | PagetitleStoryblok
     | PhotosStoryblok
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
+    | ToolStoryblok
   )[];
   component: "grouping";
   _uid: string;
@@ -247,6 +259,9 @@ export interface LinklistStoryblok {
 }
 
 export interface PageStoryblok {
+  pagetitle?: string;
+  pageintro?: string;
+  layout: "" | "wide" | "narrow" | "home";
   body?: (
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
@@ -258,20 +273,25 @@ export interface PageStoryblok {
     | IconStoryblok
     | LinklistStoryblok
     | PageStoryblok
+    | PagetitleStoryblok
     | PhotosStoryblok
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
+    | ToolStoryblok
   )[];
-  slug: string;
-  title: string;
-  description?: string;
-  layout: "" | "wide" | "narrow" | "home";
-  pageheadline: string;
-  pageintro: string;
+  hidepagetitle?: boolean;
   component: "page";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface PagetitleStoryblok {
+  pagetitle?: string;
+  pageintro?: string;
+  component: "pagetitle";
   _uid: string;
   [k: string]: any;
 }
@@ -342,10 +362,9 @@ export interface SociallinkStoryblok {
 }
 
 export interface StuffStoryblok {
-  title?: string;
-  abstract?: string;
-  teaserimage?: AssetStoryblok;
-  readmoretext?: string;
+  pagetitle?: string;
+  pageintro?: string;
+  headerpicture?: AssetStoryblok;
   body?: (
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
@@ -357,13 +376,20 @@ export interface StuffStoryblok {
     | IconStoryblok
     | LinklistStoryblok
     | PageStoryblok
+    | PagetitleStoryblok
     | PhotosStoryblok
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
+    | ToolStoryblok
   )[];
+  Teaser?: any;
+  teasertitle?: string;
+  abstract?: string;
+  readmoretext?: string;
+  teaserimage?: AssetStoryblok;
   component: "stuff";
   _uid: string;
   [k: string]: any;
@@ -372,6 +398,15 @@ export interface StuffStoryblok {
 export interface StuffteaserlistStoryblok {
   stuffs?: (ISbStoryData<StuffStoryblok> | string)[];
   component: "stuffteaserlist";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface ToolStoryblok {
+  title: string;
+  description?: string;
+  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  component: "tool";
   _uid: string;
   [k: string]: any;
 }

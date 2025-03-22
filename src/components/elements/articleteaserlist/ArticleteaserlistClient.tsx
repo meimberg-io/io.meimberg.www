@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { ArticleStoryblok } from '@/types/component-types-sb'
 import { ISbStoryData } from '@storyblok/react'
 import { ArticleteaserlistProps } from '@/components/elements/articleteaserlist/Articleteaserlist.tsx'
-import { fetchArticles } from '@/lib/storyblok.ts'
+import { COMPONENTTYPE_ARTICLE, fetchStories } from '@/lib/storyblok.ts'
 import { ArticleCardList } from '@/components/elements/articleteaserlist/ArticleCardList.tsx'
 
 
@@ -13,7 +13,7 @@ export default function ArticleteaserlistClient({ props }: { props: Articletease
 
 	useEffect(() => {
 		if (props.type === 'automatic') {
-			fetchArticles(props.limit).then((response) => {
+			fetchStories(props.limit, COMPONENTTYPE_ARTICLE, props.folder).then((response) => {
 				setArticles(response.data.stories); // ✅ Jetzt ist `stories` definiert
 			});
 		} else {
