@@ -4,7 +4,6 @@ import React, { useContext } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { Container } from '@/components/layout/Container.tsx'
-import { formatDate } from '@/lib/formatDate.ts'
 import { AppContext } from '@/lib/providers.tsx'
 import { ArticleStoryblok } from '@/types/component-types-sb'
 import { ArrowLeftIcon } from '@/components/util/Svg.tsx'
