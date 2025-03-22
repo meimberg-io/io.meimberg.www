@@ -39,8 +39,8 @@ export interface ArticleStoryblok {
     | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
+    | HyperlinkStoryblok
     | IconStoryblok
-    | LinkStoryblok
     | LinklistStoryblok
     | PageStoryblok
     | PhotosStoryblok
@@ -50,6 +50,7 @@ export interface ArticleStoryblok {
     | StuffStoryblok
     | StuffteaserlistStoryblok
   )[];
+  headerpicture?: AssetStoryblok;
   component: "article";
   _uid: string;
   [k: string]: any;
@@ -89,8 +90,8 @@ export interface Grid2ColumnStoryblok {
     | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
+    | HyperlinkStoryblok
     | IconStoryblok
-    | LinkStoryblok
     | LinklistStoryblok
     | PageStoryblok
     | PhotosStoryblok
@@ -107,8 +108,8 @@ export interface Grid2ColumnStoryblok {
     | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
+    | HyperlinkStoryblok
     | IconStoryblok
-    | LinkStoryblok
     | LinklistStoryblok
     | PageStoryblok
     | PhotosStoryblok
@@ -132,8 +133,8 @@ export interface GroupingStoryblok {
     | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
+    | HyperlinkStoryblok
     | IconStoryblok
-    | LinkStoryblok
     | LinklistStoryblok
     | PageStoryblok
     | PhotosStoryblok
@@ -144,13 +145,6 @@ export interface GroupingStoryblok {
     | StuffteaserlistStoryblok
   )[];
   component: "grouping";
-  _uid: string;
-  [k: string]: any;
-}
-
-export interface IconStoryblok {
-  svg?: string;
-  component: "icon";
   _uid: string;
   [k: string]: any;
 }
@@ -229,10 +223,17 @@ export type MultilinkStoryblok =
       [k: string]: any;
     };
 
-export interface LinkStoryblok {
-  url?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
-  label?: string;
-  component: "link";
+export interface HyperlinkStoryblok {
+  url: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  label: string;
+  component: "hyperlink";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface IconStoryblok {
+  svg?: string;
+  component: "icon";
   _uid: string;
   [k: string]: any;
 }
@@ -253,8 +254,8 @@ export interface PageStoryblok {
     | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
+    | HyperlinkStoryblok
     | IconStoryblok
-    | LinkStoryblok
     | LinklistStoryblok
     | PageStoryblok
     | PhotosStoryblok
@@ -352,8 +353,8 @@ export interface StuffStoryblok {
     | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
+    | HyperlinkStoryblok
     | IconStoryblok
-    | LinkStoryblok
     | LinklistStoryblok
     | PageStoryblok
     | PhotosStoryblok

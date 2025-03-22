@@ -19,14 +19,14 @@ export default function Divider({ blok }: PhotosStoryblok) {
 							rotations[index % rotations.length]
 						)}
 					>
-						<Image
+						{asset.filename && (<Image
 							src={asset.filename}
 							width={200}
 							height={200}
 							alt=""
 							sizes="(min-width: 640px) 18rem, 11rem"
 							className="absolute inset-0 h-full w-full object-cover"
-						/>
+						/>)}
 
 					</div>
 				))}

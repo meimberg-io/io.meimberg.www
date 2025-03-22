@@ -47,7 +47,6 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
 	useEffect(() => {
 		fetchGlobalsettings(false).then((x) => {
 			setNavItems(x)
-			console.log(x)
 		})
 	}, [])
 
