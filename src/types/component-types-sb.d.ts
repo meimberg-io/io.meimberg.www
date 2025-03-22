@@ -364,6 +364,7 @@ export interface SociallinkStoryblok {
 export interface StuffStoryblok {
   pagetitle?: string;
   pageintro?: string;
+  shortabstact: string;
   headerpicture?: AssetStoryblok;
   body?: (
     | ArticleStoryblok
@@ -397,6 +398,7 @@ export interface StuffStoryblok {
 
 export interface StuffteaserlistStoryblok {
   stuffs?: (ISbStoryData<StuffStoryblok> | string)[];
+  layout: "" | "big" | "small";
   component: "stuffteaserlist";
   _uid: string;
   [k: string]: any;

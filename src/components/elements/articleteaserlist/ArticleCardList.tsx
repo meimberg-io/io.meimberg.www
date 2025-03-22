@@ -3,6 +3,7 @@ import { ArticleStoryblok } from '@/types/component-types-sb'
 import { Card } from '@/components/elements/articleteaserlist/Card.tsx'
 import { formatDate } from '@/lib/formatDate.ts'
 import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
+import { storyblokEditable } from '@storyblok/react/rsc'
 
 
 export function ArticleCardList(props: { articles: ISbStoryData<ArticleStoryblok>[], layout: string }) {
@@ -10,7 +11,7 @@ export function ArticleCardList(props: { articles: ISbStoryData<ArticleStoryblok
 	if (props.layout === 'small') {
 
 		return (
-			<ElementWrapper>
+			<ElementWrapper  >
 				{
 					props.articles.map((article) => (
 

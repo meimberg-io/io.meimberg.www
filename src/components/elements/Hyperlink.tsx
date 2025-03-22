@@ -1,5 +1,5 @@
 import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
-import { LinkIcon } from '@/components/Svg.tsx'
+import { LinkIcon } from '@/components/util/Svg.tsx'
 import Link from 'next/link'
 import { HyperlinkStoryblok } from '@/types/component-types-sb'
 

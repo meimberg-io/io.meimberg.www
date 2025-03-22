@@ -1,6 +1,6 @@
 import { storyblokEditable } from '@storyblok/react/rsc'
 import { LinklistStoryblok, SociallinkStoryblok } from '@/types/component-types-sb'
-import { Icon } from '@/components/Icon.tsx'
+import { Icon } from '@/components/util/Icon.tsx'
 import Link from 'next/link'
 import { ISbStoryData } from '@storyblok/react'
 
