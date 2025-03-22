@@ -35,7 +35,6 @@ export const RESOLVE_RELATIONS = [
 	'globalsettings.footernav'
 ]
 
-export const RESOLVE_RELATIONS_CONFIG = 'globalsettings.topnav,globalsettings.footernav'
 
 export const getStoryblokApi = storyblokInit({
 	accessToken: 'cDI6mUwrC5dKWFsPWD6s8Att',
