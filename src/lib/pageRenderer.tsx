@@ -3,11 +3,6 @@ import StoryClient from '@/components/global/StoryClient.tsx'
 import { StoryblokStory } from '@storyblok/react/rsc'
 
 
-export type PageProps = {
-	params: { slug: string[] }
-	searchParams: { [key: string]: string | string[] | undefined }
-}
-
 export async function renderPage( slug?:string[],  secret?: string | undefined ) {
 	const full_slug = slug?.join('/') ?? 'home'
 	const isPreview = secret === EDITOR_SECRET
