@@ -28,8 +28,8 @@ export default function Picture({ blok }: PictureStoryblok) {
 				<div {...storyblokEditable(blok)} className="">
 					<Image
 						src={blok.image.filename}
-						width={672}
-						height={672}
+						width={800}
+						height={800}
 						alt=""
 						sizes="(min-width: 1024px) 32rem, 20rem"
 						className="rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"

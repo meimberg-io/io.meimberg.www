@@ -20,7 +20,7 @@ export function ArticleCardList(props: { articles: ISbStoryData<ArticleStoryblok
 								<Card.Eyebrow as="time" dateTime={article.content.date} decorate>
 									{article.content.date && formatDate(article.content.date)}
 								</Card.Eyebrow>
-								<Card.Description>{'yyyy ' + article.content.abstract}</Card.Description> {/* ✅ Hier gefixt */}
+								<Card.Description>{article.content.abstract}</Card.Description> {/* ✅ Hier gefixt */}
 								<Card.Cta>{article.content.readmoretext ?? 'Weiterlesen'}</Card.Cta>
 							</Card>
 						</article>
