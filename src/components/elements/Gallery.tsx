@@ -2,6 +2,8 @@
 
 import { MultiassetStoryblok, PhotosStoryblok } from '@/types/component-types-sb'
 import 'yet-another-react-lightbox/styles.css'
+import 'yet-another-react-lightbox/plugins/thumbnails.css'
+
 import { useState } from 'react'
 import Lightbox from 'yet-another-react-lightbox'
 import { Thumbnails } from 'yet-another-react-lightbox/plugins'
@@ -28,7 +30,7 @@ export default function Gallery({ blok }: PhotosStoryblok) {
 				{images.map((asset, i) => (
 					asset.filename && (
 						<div key={asset.id}
-								 className="relative w-full aspect-auto overflow-hidden rounded-lg"
+								 className="relative w-full aspect-auto overflow-hidden rounded-lg cursor-pointer"
 								 onClick={() => {
 									 setIndex(i)
 									 setOpen(true)
@@ -49,6 +51,7 @@ export default function Gallery({ blok }: PhotosStoryblok) {
 				close={() => setOpen(false)}
 				slides={slides}
 				index={index}
+				plugins={[Thumbnails]}
 			/>
 		</div>
 	)
