@@ -40,6 +40,7 @@ export interface ArticleStoryblok {
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
+    | GalleryStoryblok
     | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
@@ -78,6 +79,41 @@ export interface DividerStoryblok {
   [k: string]: any;
 }
 
+export type MultiassetStoryblok = {
+  alt: string | null;
+  copyright?: string | null;
+  fieldtype: "asset";
+  id: number;
+  filename: string | null;
+  name: string;
+  title: string | null;
+  focus: string | null;
+  meta_data?: {
+    [k: string]: any;
+  };
+  source?: string | null;
+  is_external_url?: boolean;
+  is_private?: boolean;
+  src?: string;
+  updated_at?: string;
+  width?: number | null;
+  height?: number | null;
+  aspect_ratio?: number | null;
+  public_id?: string | null;
+  content_type?: string;
+  [k: string]: any;
+}[];
+
+export interface GalleryStoryblok {
+  layout: "" | "default";
+  images?: MultiassetStoryblok;
+  title?: string;
+  columns: string;
+  component: "gallery";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface GlobalsettingsStoryblok {
   copyright?: string;
   avatar?: AssetStoryblok;
@@ -93,6 +129,7 @@ export interface Grid2ColumnStoryblok {
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
+    | GalleryStoryblok
     | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
@@ -113,6 +150,7 @@ export interface Grid2ColumnStoryblok {
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
+    | GalleryStoryblok
     | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
@@ -140,6 +178,7 @@ export interface GroupingStoryblok {
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
+    | GalleryStoryblok
     | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
@@ -266,6 +305,7 @@ export interface PageStoryblok {
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
+    | GalleryStoryblok
     | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok
@@ -295,31 +335,6 @@ export interface PagetitleStoryblok {
   _uid: string;
   [k: string]: any;
 }
-
-export type MultiassetStoryblok = {
-  alt: string | null;
-  copyright?: string | null;
-  fieldtype: "asset";
-  id: number;
-  filename: string | null;
-  name: string;
-  title: string | null;
-  focus: string | null;
-  meta_data?: {
-    [k: string]: any;
-  };
-  source?: string | null;
-  is_external_url?: boolean;
-  is_private?: boolean;
-  src?: string;
-  updated_at?: string;
-  width?: number | null;
-  height?: number | null;
-  aspect_ratio?: number | null;
-  public_id?: string | null;
-  content_type?: string;
-  [k: string]: any;
-}[];
 
 export interface PhotosStoryblok {
   images?: MultiassetStoryblok;
@@ -370,6 +385,7 @@ export interface StuffStoryblok {
     | ArticleStoryblok
     | ArticleteaserlistStoryblok
     | DividerStoryblok
+    | GalleryStoryblok
     | GlobalsettingsStoryblok
     | Grid2ColumnStoryblok
     | GroupingStoryblok

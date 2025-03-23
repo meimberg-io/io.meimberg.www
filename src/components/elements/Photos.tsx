@@ -5,7 +5,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 
 
-export default function Divider({ blok }: PhotosStoryblok) {
+export default function Photos({ blok }: PhotosStoryblok) {
 	const rotations = ['rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2']
 	const images: MultiassetStoryblok = blok.images
 	return (
