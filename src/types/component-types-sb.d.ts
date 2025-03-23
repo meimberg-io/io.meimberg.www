@@ -53,6 +53,7 @@ export interface ArticleStoryblok {
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
+    | SoundcloudStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
     | ToolStoryblok
@@ -144,6 +145,7 @@ export interface Grid2ColumnStoryblok {
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
+    | SoundcloudStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
     | ToolStoryblok
@@ -167,6 +169,7 @@ export interface Grid2ColumnStoryblok {
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
+    | SoundcloudStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
     | ToolStoryblok
@@ -197,6 +200,7 @@ export interface GroupingStoryblok {
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
+    | SoundcloudStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
     | ToolStoryblok
@@ -326,6 +330,7 @@ export interface PageStoryblok {
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
+    | SoundcloudStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
     | ToolStoryblok
@@ -386,6 +391,15 @@ export interface SociallinkStoryblok {
   [k: string]: any;
 }
 
+export interface SoundcloudStoryblok {
+  title?: string;
+  soundcloudid?: string;
+  url?: string;
+  component: "soundcloud";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface StuffStoryblok {
   pagetitle?: string;
   pageintro?: string;
@@ -408,6 +422,7 @@ export interface StuffStoryblok {
     | PictureStoryblok
     | RichtextStoryblok
     | SociallinkStoryblok
+    | SoundcloudStoryblok
     | StuffStoryblok
     | StuffteaserlistStoryblok
     | ToolStoryblok

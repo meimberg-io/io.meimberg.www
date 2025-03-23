@@ -20,6 +20,7 @@ import Tool from '@/components/elements/Tool.tsx'
 import Gallery from '@/components/elements/Gallery.tsx'
 import Youtube from '@/components/elements/Youtube.tsx'
 import Video from '@/components/elements/Video.tsx'
+import Soundcloud from '@/components/elements/Soundcloud.tsx'
 
 
 export const EDITOR_SECRET = 'WUTZ'
@@ -66,6 +67,7 @@ export const getStoryblokApi = storyblokInit({
 		tool: Tool,
 		photos: Photos,
 		video: Video,
+		soundcloud: Soundcloud,
 		youtube: Youtube,
 		articleteaserlist: Articleteaserlist,
 		stuffteaserlist: Stuffteaserlist,
