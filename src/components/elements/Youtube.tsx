@@ -13,7 +13,7 @@ console.log("bdvf",blok);
 
 
 				<ReactPlayer
-					url={'https://www.youtube.com/watch?' + blok.youtubeid}
+					url={'https://www.youtube.com/watch?v=' + blok.youtubeid}
 					width="100%"
 
 				/>
