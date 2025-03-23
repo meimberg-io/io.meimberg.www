@@ -56,6 +56,8 @@ export interface ArticleStoryblok {
     | StuffStoryblok
     | StuffteaserlistStoryblok
     | ToolStoryblok
+    | VideoStoryblok
+    | YoutubeStoryblok
   )[];
   component: "article";
   _uid: string;
@@ -145,6 +147,8 @@ export interface Grid2ColumnStoryblok {
     | StuffStoryblok
     | StuffteaserlistStoryblok
     | ToolStoryblok
+    | VideoStoryblok
+    | YoutubeStoryblok
   )[];
   col2?: (
     | ArticleStoryblok
@@ -166,6 +170,8 @@ export interface Grid2ColumnStoryblok {
     | StuffStoryblok
     | StuffteaserlistStoryblok
     | ToolStoryblok
+    | VideoStoryblok
+    | YoutubeStoryblok
   )[];
   component: "grid_2column";
   _uid: string;
@@ -194,6 +200,8 @@ export interface GroupingStoryblok {
     | StuffStoryblok
     | StuffteaserlistStoryblok
     | ToolStoryblok
+    | VideoStoryblok
+    | YoutubeStoryblok
   )[];
   component: "grouping";
   _uid: string;
@@ -321,6 +329,8 @@ export interface PageStoryblok {
     | StuffStoryblok
     | StuffteaserlistStoryblok
     | ToolStoryblok
+    | VideoStoryblok
+    | YoutubeStoryblok
   )[];
   hidepagetitle?: boolean;
   component: "page";
@@ -401,6 +411,8 @@ export interface StuffStoryblok {
     | StuffStoryblok
     | StuffteaserlistStoryblok
     | ToolStoryblok
+    | VideoStoryblok
+    | YoutubeStoryblok
   )[];
   Teaser?: any;
   teasertitle?: string;
@@ -425,6 +437,20 @@ export interface ToolStoryblok {
   description?: string;
   link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   component: "tool";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface VideoStoryblok {
+  file?: AssetStoryblok;
+  component: "video";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface YoutubeStoryblok {
+  youtubeid?: string;
+  component: "youtube";
   _uid: string;
   [k: string]: any;
 }
