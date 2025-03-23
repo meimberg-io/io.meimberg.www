@@ -1,6 +1,6 @@
 "use client"
 
-import { SoundcloudStoryblok, VideoStoryblok } from '@/types/component-types-sb'
+import { SoundcloudStoryblok } from '@/types/component-types-sb'
 import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
 import SoundCloudPlayer from 'react-player/soundcloud'
 
@@ -9,7 +9,7 @@ export default function Soundcloud({ blok }: SoundcloudStoryblok) {
 
 	return (
 		<ElementWrapper>
-		<div>
+		<div className="rounded-lg overflow-hidden">
 
 			<SoundCloudPlayer
 				width="100%"
@@ -25,7 +25,7 @@ export default function Soundcloud({ blok }: SoundcloudStoryblok) {
 
 						}
 					}
-				}}
+				}as any}
 
 			/>
 
