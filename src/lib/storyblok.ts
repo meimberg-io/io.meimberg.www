@@ -17,6 +17,7 @@ import Hyperlink from '@/components/elements/Hyperlink.tsx'
 import Pagetitle from '@/components/elements/Pagetitle.tsx'
 import Grouping from '@/components/elements/Grouping.tsx'
 import Tool from '@/components/elements/Tool.tsx'
+import Gallery from '@/components/elements/Gallery.tsx'
 
 
 export const EDITOR_SECRET = 'WUTZ'
@@ -59,6 +60,7 @@ export const getStoryblokApi = storyblokInit({
 		hyperlink: Hyperlink,
 		grouping: Grouping,
 		pagetitle: Pagetitle,
+		gallery: Gallery,
 		tool: Tool,
 		photos: Photos,
 		articleteaserlist: Articleteaserlist,
