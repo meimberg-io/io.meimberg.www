@@ -18,6 +18,8 @@ import Pagetitle from '@/components/elements/Pagetitle.tsx'
 import Grouping from '@/components/elements/Grouping.tsx'
 import Tool from '@/components/elements/Tool.tsx'
 import Gallery from '@/components/elements/Gallery.tsx'
+import Youtube from '@/components/elements/Youtube.tsx'
+import Video from '@/components/elements/Video.tsx'
 
 
 export const EDITOR_SECRET = 'WUTZ'
@@ -63,6 +65,8 @@ export const getStoryblokApi = storyblokInit({
 		gallery: Gallery,
 		tool: Tool,
 		photos: Photos,
+		video: Video,
+		youtube: Youtube,
 		articleteaserlist: Articleteaserlist,
 		stuffteaserlist: Stuffteaserlist,
 		grid_2column: Grid2Column

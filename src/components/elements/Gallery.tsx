@@ -6,6 +6,8 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css'
 import { useState } from 'react'
 import Lightbox from 'yet-another-react-lightbox'
 import { Thumbnails } from 'yet-another-react-lightbox/plugins'
+import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
+import { storyblokEditable } from '@storyblok/react/rsc'
 
 
 export default function Gallery({ blok }: PhotosStoryblok) {
@@ -21,51 +23,53 @@ export default function Gallery({ blok }: PhotosStoryblok) {
 		.map((img) => ({ src: img.filename! }))
 
 	return (
-		<div className="mt-16 sm:mt-20">
-			<div className={'grid grid-cols-1 gap-6 sm:grid-cols-2 ' + cols}>
-				{images.map((asset, i) => (
-					asset.filename && (
-						<div key={asset.id}
-								 className="relative w-full aspect-auto overflow-hidden rounded-lg cursor-pointer"
-								 onClick={() => {
-									 setIndex(i)
-									 setOpen(true)
-								 }}>
-							<img
-								className="object-cover object-center w-full h-full max-w-full rounded-lg"
-								src={asset.filename}
-								alt="gallery-photo"
-							/>
-						</div>
-					)
-				))}
-			</div>
-
-
-			<Lightbox
-				open={open}
-				close={() => setOpen(false)}
-				slides={slides}
-				index={index}
-				plugins={[Thumbnails]}
-				render={{
-					slide: ({ slide }) => {
-						const typedSlide = slide as { src: string }
-						return (
-							<img
-								src={typedSlide.src}
-								alt=""
-								style={{
-									maxWidth: '100%',
-									maxHeight: '100%',
-									borderRadius: '0.75rem',
-									objectFit: 'contain',
-								}}
-							/>
+		<ElementWrapper>
+			<div  {...storyblokEditable(blok)}>
+				<div className={'grid grid-cols-1 gap-6 sm:grid-cols-2 ' + cols}>
+					{images.map((asset, i) => (
+						asset.filename && (
+							<div key={asset.id}
+									 className="relative w-full aspect-auto overflow-hidden rounded-lg cursor-pointer"
+									 onClick={() => {
+										 setIndex(i)
+										 setOpen(true)
+									 }}>
+								<img
+									className="object-cover object-center w-full h-full max-w-full rounded-lg"
+									src={asset.filename}
+									alt="gallery-photo"
+								/>
+							</div>
 						)
-					},
-				}}
-			/>
-		</div>
+					))}
+				</div>
+
+
+				<Lightbox
+					open={open}
+					close={() => setOpen(false)}
+					slides={slides}
+					index={index}
+					plugins={[Thumbnails]}
+					render={{
+						slide: ({ slide }) => {
+							const typedSlide = slide as { src: string }
+							return (
+								<img
+									src={typedSlide.src}
+									alt=""
+									style={{
+										maxWidth: '100%',
+										maxHeight: '100%',
+										borderRadius: '0.75rem',
+										objectFit: 'contain'
+									}}
+								/>
+							)
+						}
+					}}
+				/>
+			</div>
+		</ElementWrapper>
 	)
 }
