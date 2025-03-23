@@ -14,7 +14,7 @@ npx local-ssl-proxy --source 3010 --target 3000
 * Tailwind https://tailwindcss.com/plus/templates/spotlight
 * Sputlight: https://spotlight.tailwindui.com/about
 * Basic Tutorial Storyblok / React / Next: https://github.com/storyblok/storyblok-react
-
+* Material Tailwind: https://www.material-tailwind.com/docs/v3/react/gallery
 
 
 # Storyblok
