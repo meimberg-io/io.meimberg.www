@@ -1,13 +1,11 @@
-"use client";
+'use client'
 
 import { MultiassetStoryblok, PhotosStoryblok } from '@/types/component-types-sb'
 import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
-
 import { useState } from 'react'
 import Lightbox from 'yet-another-react-lightbox'
 import { Thumbnails } from 'yet-another-react-lightbox/plugins'
-
 
 
 export default function Gallery({ blok }: PhotosStoryblok) {
@@ -50,6 +48,23 @@ export default function Gallery({ blok }: PhotosStoryblok) {
 				slides={slides}
 				index={index}
 				plugins={[Thumbnails]}
+				render={{
+					slide: ({ slide }) => {
+						const typedSlide = slide as { src: string }
+						return (
+							<img
+								src={typedSlide.src}
+								alt=""
+								style={{
+									maxWidth: '100%',
+									maxHeight: '100%',
+									borderRadius: '0.75rem',
+									objectFit: 'contain',
+								}}
+							/>
+						)
+					},
+				}}
 			/>
 		</div>
 	)
