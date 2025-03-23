@@ -465,6 +465,7 @@ export interface VideoStoryblok {
 
 export interface YoutubeStoryblok {
   youtubeid?: string;
+  format: "" | "cinema" | "square";
   component: "youtube";
   _uid: string;
   [k: string]: any;
