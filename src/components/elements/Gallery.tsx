@@ -11,7 +11,7 @@ import { Thumbnails } from 'yet-another-react-lightbox/plugins'
 export default function Gallery({ blok }: PhotosStoryblok) {
 
 	const images: MultiassetStoryblok = blok.images
-	const cols = 'md:grid-cols-' + blok.columns
+	const cols = 'md:grid-cols-' + blok.columns + ' lg:grid-cols-' + blok.columns
 
 	const [open, setOpen] = useState(false)
 	const [index, setIndex] = useState(0)
