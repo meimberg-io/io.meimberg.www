@@ -9,8 +9,6 @@ import Lightbox from 'yet-another-react-lightbox'
 import { Thumbnails } from 'yet-another-react-lightbox/plugins'
 
 
-// im class: absolute inset-0 w-full h-full object-cover object-center
-// im class: object-cover object-center w-full h-full max-w-full rounded-lg
 
 export default function Gallery({ blok }: PhotosStoryblok) {
 
