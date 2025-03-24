@@ -39,7 +39,7 @@ export const RESOLVE_RELATIONS = [
 ]
 
 export const getStoryblokApi = storyblokInit({
-	accessToken: process.env.STORYBLOK_TOKEN,
+	accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN,
 	use: [apiPlugin],
 	bridge: true,
 	enableFallbackComponent: true,
@@ -77,7 +77,7 @@ export async function fetchGlobalsettings(isPreview: boolean): Promise<Globalset
 	const version = isPreview ? 'draft' : 'published'
 	const sbParams: ISbStoriesParams = { version: version, resolve_relations: RESOLVE_RELATIONS_NAV }
 	const storyblokApi: StoryblokClient = getStoryblokApi()
-	const { data } = await storyblokApi.getStory('globalsettings', sbParams, { cache: process.env.STORYBOOK_DISABLECACHING ? 'no-cache' : 'default'  })
+	const { data } = await storyblokApi.getStory('globalsettings', sbParams, { cache: process.env.NEXT_PUBLIC_STORYBOOK_DISABLECACHING ? 'no-cache' : 'default'  })
 	return data.story.content as GlobalsettingsStoryblok
 }
 
@@ -85,8 +85,7 @@ export async function fetchStory(slug: string, isPreview: boolean) {
 	const version = isPreview ? 'draft' : 'published'
 	const sbParams: ISbStoriesParams = { version: version, resolve_relations: RESOLVE_RELATIONS }
 	const storyblokApi: StoryblokClient = getStoryblokApi()
-	const result = storyblokApi.getStory(slug, sbParams, { cache: process.env.STORYBOOK_DISABLECACHING ? 'no-cache' : 'default' })
-	console.log('env', process.env.STORYBLOK_SPACE_ID)
+	const result = storyblokApi.getStory(slug, sbParams, { cache: process.env.NEXT_PUBLIC_STORYBOOK_DISABLECACHING ? 'no-cache' : 'default' })
 	return result
 }
 
