@@ -23,7 +23,6 @@ import Video from '@/components/elements/Video.tsx'
 import Soundcloud from '@/components/elements/Soundcloud.tsx'
 
 
-export const EDITOR_SECRET = 'WUTZ'
 export const COMPONENTTYPE_ARTICLE = 'article'
 
 export const RESOLVE_RELATIONS_NAV = [
@@ -39,9 +38,8 @@ export const RESOLVE_RELATIONS = [
 	'globalsettings.footernav'
 ]
 
-
 export const getStoryblokApi = storyblokInit({
-	accessToken: 'cDI6mUwrC5dKWFsPWD6s8Att',
+	accessToken: process.env.STORYBLOK_TOKEN,
 	use: [apiPlugin],
 	bridge: true,
 	enableFallbackComponent: true,
@@ -79,7 +77,7 @@ export async function fetchGlobalsettings(isPreview: boolean): Promise<Globalset
 	const version = isPreview ? 'draft' : 'published'
 	const sbParams: ISbStoriesParams = { version: version, resolve_relations: RESOLVE_RELATIONS_NAV }
 	const storyblokApi: StoryblokClient = getStoryblokApi()
-	const { data } = await storyblokApi.getStory('globalsettings', sbParams, { cache: 'no-cache' })
+	const { data } = await storyblokApi.getStory('globalsettings', sbParams, { cache: process.env.STORYBOOK_DISABLECACHING ? 'no-cache' : 'default'  })
 	return data.story.content as GlobalsettingsStoryblok
 }
 
@@ -87,7 +85,8 @@ export async function fetchStory(slug: string, isPreview: boolean) {
 	const version = isPreview ? 'draft' : 'published'
 	const sbParams: ISbStoriesParams = { version: version, resolve_relations: RESOLVE_RELATIONS }
 	const storyblokApi: StoryblokClient = getStoryblokApi()
-	const result = storyblokApi.getStory(slug, sbParams, { cache: 'no-cache' })
+	const result = storyblokApi.getStory(slug, sbParams, { cache: process.env.STORYBOOK_DISABLECACHING ? 'no-cache' : 'default' })
+	console.log('env', process.env.STORYBLOK_SPACE_ID)
 	return result
 }
 

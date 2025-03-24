@@ -11,6 +11,12 @@ const nextConfig: NextConfig = {
 			},
 			{
 				protocol: 'https',
+				hostname: 'meimberg.io',
+				port: '',
+				pathname: '/**',
+			},
+			{
+				protocol: 'https',
 				hostname: 'a.pagetypes.com',
 				port: '',
 				pathname: '/**',
