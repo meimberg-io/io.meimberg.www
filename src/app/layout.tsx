@@ -7,8 +7,8 @@ import { Analytics } from "@vercel/analytics/react"
 import { MatomoTracker } from '@/components/util/MatomoTracker.tsx'
 
 
-export const revalidate = 0
-export const fetchCache = 'force-no-store'
+// export const revalidate = 0
+// export const fetchCache = 'force-no-store'
 
 export const metadata: Metadata = {
 	title: 'meimberg.io',
