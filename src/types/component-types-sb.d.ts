@@ -360,7 +360,8 @@ export interface PhotosStoryblok {
 
 export interface PictureStoryblok {
   image?: AssetStoryblok;
-  style?: "" | "normal" | "keyvisual";
+  style?: "" | "normal" | "keyvisual" | "small";
+  spacing: "" | "default" | "large";
   component: "picture";
   _uid: string;
   [k: string]: any;
