@@ -6,7 +6,6 @@ import { storyblokEditable } from '@storyblok/react/rsc'
 
 
 export default function Youtube({ blok }: YoutubeStoryblok) {
-	console.log('bdvf', blok)
 	return (
 		<ElementWrapper>
 			{blok.format === 'square' ? (

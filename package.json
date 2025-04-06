@@ -20,6 +20,7 @@
 		"@storyblok/richtext": "^3.1.0",
 		"@tailwindcss/postcss": "^4.0.14",
 		"@tailwindcss/typography": "^0.5.16",
+		"@vercel/analytics": "^1.5.0",
 		"cheerio": "^1.0.0",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
@@ -47,9 +48,7 @@
 		"remark-gfm": "^4.0.1",
 		"sharp": "^0.33.5",
 		"storyblok-rich-text-react-renderer": "^2.9.2",
-		"tailwind-merge": "^3.0.2",
-		"tailwindcss": "^4.0.14",
-		"tailwindcss-animate": "^1.0.7",
+
 		"unified": "^11.0.5",
 		"yet-another-react-lightbox": "^3.21.8"
 	},
@@ -60,6 +59,9 @@
 		"@types/react": "^19.0.12",
 		"@types/react-dom": "^19.0.4",
 		"autoprefixer": "^10.4.21",
+		"tailwind-merge": "^3.0.2",
+		"tailwindcss": "^4.0.14",
+		"tailwindcss-animate": "^1.0.7",
 		"eslint": "9.22.0",
 		"eslint-config-next": "15.2.3",
 		"postcss": "^8.5.3",
