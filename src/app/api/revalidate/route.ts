@@ -1,15 +1,17 @@
 import {revalidatePath} from 'next/cache';
 
-export async function POST(req: Request) {
-    const token = req.headers.get('x-serviceatlas-token');
-    const expectedToken = process.env.REVALIDATE_SECRET;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export async function POST() {
+	// export async function POST(req: Request) {
+    // const token = req.headers.get('x-serviceatlas-token');
+    // const expectedToken = process.env.REVALIDATE_SECRET;
 
-    if (!token || token !== expectedToken) {
-        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
-            status: 401,
-            headers: { 'Content-Type': 'application/json' },
-        });
-    }
+    // if (!token || token !== expectedToken) {
+    //     return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+    //         status: 401,
+    //         headers: { 'Content-Type': 'application/json' },
+    //     });
+    // }
 
     const tag = '/'; // fest definierter Tag
 
