@@ -8,6 +8,8 @@ import { useEffect } from 'react'
     javascript:localStorage.removeItem("matomo-disable");alert("Tracking wieder aktiv!");
 */
 
+
+
 export function MatomoTracker() {
 	const enabled = process.env.NEXT_PUBLIC_MATOMO_TRACKER === 'true'
 
