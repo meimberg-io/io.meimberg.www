@@ -8,8 +8,10 @@ export default function Picture({ blok }: PictureStoryblok) {
 
 	if (blok.style === 'keyvisual') {
 		return (
+			<ElementWrapper spacing={blok.spacing}>
+
 			<div {...storyblokEditable(blok)} className="">
-				<div className="max-w-xs px-2.5 lg:max-w-none">
+				<div className="max-w-xs px-2.5 lg:max-w-none flex justify-center">
 					<Image
 						src={blok.image.filename}
 						width={420}
@@ -21,10 +23,31 @@ export default function Picture({ blok }: PictureStoryblok) {
 
 				</div>
 			</div>
+			</ElementWrapper>
+		)
+	} else if (blok.style === 'small') {
+		return (
+			<ElementWrapper spacing={blok.spacing}>
+			<div {...storyblokEditable(blok)} className="">
+				<div className="max-w-xs px-2.5 lg:max-w-none content-center flex justify-center">
+					<Image
+						src={blok.image.filename}
+						width={240}
+						height={240}
+						alt=""
+						sizes="(min-width: 512px) 20rem, 12rem"
+						className="rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+					/>
+
+				</div>
+
+			</div>
+			</ElementWrapper>
+
 		)
 	} else {
 		return (
-			<ElementWrapper>
+			<ElementWrapper spacing={blok.spacing}>
 				<div {...storyblokEditable(blok)} className="">
 					<Image
 						src={blok.image.filename}
