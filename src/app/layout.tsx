@@ -3,6 +3,8 @@ import { Layout } from '@/components/layout/Layout.tsx'
 import { Providers } from '@/lib/providers.tsx'
 import { StoryblokProvider } from '@/provider'
 import '@/styles/tailwind.css'
+import { Analytics } from "@vercel/analytics/react"
+import { MatomoTracker } from '@/components/util/MatomoTracker.tsx'
 
 
 export const revalidate = 0
@@ -25,6 +27,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 					</Layout>
 				</div>
 			</Providers>
+			<Analytics />
+			<MatomoTracker />
 			</body>
 			</html>
 

@@ -19,7 +19,6 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStorybl
 		stuffs: blok.stuffs ?? []
 	}
 	if (blok.layout === 'small') {
-		console.log('Stuffteaserlist render', blok)
 		return (
 			<ElementWrapper spacing="large">
 
