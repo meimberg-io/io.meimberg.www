@@ -24,6 +24,8 @@ import Soundcloud from '@/components/elements/Soundcloud.tsx'
 
 
 export const COMPONENTTYPE_ARTICLE = 'article'
+export const COMPONENTTYPE_PAGE = 'page'
+export const COMPONENTTYPE_STUFF = 'stuff'
 
 export const RESOLVE_RELATIONS_NAV = [
 	'globalsettings.topnav',
@@ -102,6 +104,22 @@ export async function fetchStories(limit: number, componenttype: string, folder?
 		starts_with: folder,
 		sort_by: 'content.date:desc',
 		per_page: (limit ?? 100) as number
+	})
+	return result
+}
+
+export async function fetchAllStories(): Promise<{ data: { stories: ISbStoryData[] } }> {
+	const storyblokApi = getStoryblokApi()
+	await storyblokApi.flushCache()
+	const types = COMPONENTTYPE_ARTICLE + "," + COMPONENTTYPE_STUFF + "," + COMPONENTTYPE_PAGE;
+	const result = storyblokApi.get('cdn/stories', {
+		version: process.env.SB_VERSION as 'published' | 'draft' | undefined,
+		filter_query: {
+			component: {
+				in: types
+			}
+		},
+		per_page: 100
 	})
 	return result
 }
