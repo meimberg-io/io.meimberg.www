@@ -28,12 +28,12 @@ jobs:
 
         - name: Create .env file
           run: |
-              echo "PORT=${{ vars.PORT }}" >> .env.production
-              echo "NEXT_PUBLIC_STORYBOOK_DISABLECACHING=${{ vars.NEXT_PUBLIC_STORYBOOK_DISABLECACHING }}" >> .env.production
-              echo "NEXT_PUBLIC_MATOMO_TRACKER=${{ vars.NEXT_PUBLIC_MATOMO_TRACKER }}" >> .env.production
-              echo "NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET=${{ secrets.NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET }}" >> .env.production
-              echo "NEXT_PUBLIC_STORYBLOK_TOKEN=${{ secrets.NEXT_PUBLIC_STORYBLOK_TOKEN }}" >> .env.production
-              echo "REVALIDATE_SECRET=${{ secrets.REVALIDATE_SECRET }}" >> .env.production
+              echo "PORT=${{ vars.PORT }}" >> .env
+              echo "NEXT_PUBLIC_STORYBOOK_DISABLECACHING=${{ vars.NEXT_PUBLIC_STORYBOOK_DISABLECACHING }}" >> .env
+              echo "NEXT_PUBLIC_MATOMO_TRACKER=${{ vars.NEXT_PUBLIC_MATOMO_TRACKER }}" >> .env
+              echo "NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET=${{ secrets.NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET }}" >> .env
+              echo "NEXT_PUBLIC_STORYBLOK_TOKEN=${{ secrets.NEXT_PUBLIC_STORYBLOK_TOKEN }}" >> .env
+              echo "REVALIDATE_SECRET=${{ secrets.REVALIDATE_SECRET }}" >> .env
 
 
         - name: Build meimberg.io
