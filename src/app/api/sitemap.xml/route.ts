@@ -4,7 +4,7 @@ import { ISbStoryData } from '@storyblok/react'
 
 
 const generateSitemap = (pages: { data: { stories: ISbStoryData[] } }) => {
-    const baseUrl = "https://meimberg.io/"; // Deine Domain
+    const baseUrl = "https://www.meimberg.io/"; // Deine Domain
 
     const entry = (url: string, date: string) => {
         return `<url>
