@@ -21,10 +21,11 @@ export default function LuxarisePictureSlideshow({ blok }: LuxarisePictureSlides
   const [currentIndex, setCurrentIndex] = useState(0)
   const [resolvedPictures, setResolvedPictures] = useState<ISbStoryData<LuxarisePictureStoryblok>[]>([])
   const [isLoading, setIsLoading] = useState(true)
-  const pictures = blok.pictures || []
 
   // Manually resolve picture relations
   useEffect(() => {
+    const pictures = blok.pictures || []
+    
     const resolvePictures = async () => {
       if (!pictures.length) {
         setIsLoading(false)
@@ -72,8 +73,8 @@ export default function LuxarisePictureSlideshow({ blok }: LuxarisePictureSlides
           
           setResolvedPictures(resolved)
         } else {
-          // Pictures are already resolved
-          setResolvedPictures(pictures as ISbStoryData<LuxarisePictureStoryblok>[])
+          // Pictures are already resolved - cast to the expected type
+          setResolvedPictures(pictures as unknown as ISbStoryData<LuxarisePictureStoryblok>[])
         }
       } catch (error) {
         console.error('Error resolving pictures:', error)
@@ -84,7 +85,7 @@ export default function LuxarisePictureSlideshow({ blok }: LuxarisePictureSlides
     }
 
     resolvePictures()
-  }, [pictures])
+  }, [blok.pictures])
 
   // Auto-advance slideshow every 15 seconds
   useEffect(() => {
