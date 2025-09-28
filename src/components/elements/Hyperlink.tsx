@@ -9,10 +9,12 @@ export default function Hyperlink({ blok }: HyperlinkStoryblok) {
 	// Handle different link types (internal story links vs external URLs)
 	const getHref = () => {
 		if (blok.url.linktype === 'story') {
-			// Internal story link - use cached_url
+			// Internal story link - use cached_url but remove /p/ prefix if present
 			const url = blok.url.cached_url || blok.url.url || '#'
+			// Remove /p/ prefix from cached_url for internal links
+			const cleanUrl = url.startsWith('/p/') ? url.substring(2) : url
 			// Ensure internal links start with / to avoid relative path issues
-			return url.startsWith('/') ? url : `/${url}`
+			return cleanUrl.startsWith('/') ? cleanUrl : `/${cleanUrl}`
 		} else {
 			// External URL
 			return blok.url.url || '#'
