@@ -21,6 +21,7 @@ import Gallery from '@/components/elements/Gallery.tsx'
 import Youtube from '@/components/elements/Youtube.tsx'
 import Video from '@/components/elements/Video.tsx'
 import Soundcloud from '@/components/elements/Soundcloud.tsx'
+import LuxarisePictureSlideshow from '@/components/elements/LuxarisePictureSlideshow.tsx'
 
 
 export const COMPONENTTYPE_ARTICLE = 'article'
@@ -34,8 +35,11 @@ export const RESOLVE_RELATIONS_NAV = [
 export const RESOLVE_RELATIONS = [
 	'linklist.links',
 	'sociallink.icon',
+	'sociallink.url',
 	'articleteaserlist.articles',
 	'stuffteaserlist.stuffs',
+	'luxarise_picture.pic_big',
+	'luxarise_picture.pic_thumb',
 	'globalsettings.topnav',
 	'globalsettings.footernav'
 ]
@@ -71,7 +75,8 @@ export const getStoryblokApi = storyblokInit({
 		youtube: Youtube,
 		articleteaserlist: Articleteaserlist,
 		stuffteaserlist: Stuffteaserlist,
-		grid_2column: Grid2Column
+		grid_2column: Grid2Column,
+		luxarise_picture_slideshow: LuxarisePictureSlideshow
 	}
 })
 

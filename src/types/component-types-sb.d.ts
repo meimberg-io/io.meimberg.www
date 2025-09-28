@@ -47,6 +47,8 @@ export interface ArticleStoryblok {
     | HyperlinkStoryblok
     | IconStoryblok
     | LinklistStoryblok
+    | LuxarisePictureStoryblok
+    | LuxarisePictureSlideshowStoryblok
     | PageStoryblok
     | PagetitleStoryblok
     | PhotosStoryblok
@@ -139,6 +141,8 @@ export interface Grid2ColumnStoryblok {
     | HyperlinkStoryblok
     | IconStoryblok
     | LinklistStoryblok
+    | LuxarisePictureStoryblok
+    | LuxarisePictureSlideshowStoryblok
     | PageStoryblok
     | PagetitleStoryblok
     | PhotosStoryblok
@@ -163,6 +167,8 @@ export interface Grid2ColumnStoryblok {
     | HyperlinkStoryblok
     | IconStoryblok
     | LinklistStoryblok
+    | LuxarisePictureStoryblok
+    | LuxarisePictureSlideshowStoryblok
     | PageStoryblok
     | PagetitleStoryblok
     | PhotosStoryblok
@@ -194,6 +200,8 @@ export interface GroupingStoryblok {
     | HyperlinkStoryblok
     | IconStoryblok
     | LinklistStoryblok
+    | LuxarisePictureStoryblok
+    | LuxarisePictureSlideshowStoryblok
     | PageStoryblok
     | PagetitleStoryblok
     | PhotosStoryblok
@@ -309,6 +317,32 @@ export interface LinklistStoryblok {
   [k: string]: any;
 }
 
+export interface LuxarisePictureStoryblok {
+  pic_thumb?: AssetStoryblok;
+  abstract: string;
+  name: string;
+  title: string;
+  pic_big?: AssetStoryblok;
+  etsy_url?: string;
+  tags?: string;
+  socialmedia?: boolean;
+  etsy?: boolean;
+  gelato?: boolean;
+  WhiteWall?: boolean;
+  gelato_id?: string;
+  component: "luxarise_picture";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface LuxarisePictureSlideshowStoryblok {
+  pictures: (ISbStoryData<LuxarisePictureStoryblok> | string)[];
+  spacing?: "" | "default" | "large";
+  component: "luxarise_picture_slideshow";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface PageStoryblok {
   pagetitle?: string;
   pageintro?: string;
@@ -324,6 +358,8 @@ export interface PageStoryblok {
     | HyperlinkStoryblok
     | IconStoryblok
     | LinklistStoryblok
+    | LuxarisePictureStoryblok
+    | LuxarisePictureSlideshowStoryblok
     | PageStoryblok
     | PagetitleStoryblok
     | PhotosStoryblok
@@ -417,6 +453,8 @@ export interface StuffStoryblok {
     | HyperlinkStoryblok
     | IconStoryblok
     | LinklistStoryblok
+    | LuxarisePictureStoryblok
+    | LuxarisePictureSlideshowStoryblok
     | PageStoryblok
     | PagetitleStoryblok
     | PhotosStoryblok

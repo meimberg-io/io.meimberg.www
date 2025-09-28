@@ -35,7 +35,7 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStorybl
 								<div className="flex gap-4 w-full">
 									<div
 										className=" overflow-hidden mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-										{stuff.content.teaserimage?.filename && <Image src={stuff.content.teaserimage?.filename} alt="" className="overflow-hidden h-10 w-10" width={32} height={32} />}
+										<Image src={stuff.content.teaserimage.filename} alt="" className="overflow-hidden h-10 w-10" width={32} height={32} />
 									</div>
 									<dl className="flex flex-auto flex-wrap gap-x-2">
 										<dt className="sr-only">Company</dt>
@@ -47,14 +47,14 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStorybl
 											{stuff.content.shortabstact}
 										</dd>
 									</dl>
-									<div className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-										<Card.Link href={`/${stuff.full_slug}`}></Card.Link>
-									</div>
+								<div className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+									<Card.Link href={`/${stuff.full_slug}`}></Card.Link>
 								</div>
-							</Card>
 							</div>
+						</Card>
+						</div>
 
-						))}
+					))}
 					</ol>
 
 				</div>
@@ -75,8 +75,7 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStorybl
 
 							<div
 								className="relative z-10 flex h-16 w-16 overflow-hidden items-center justify-center rounded-full bg-white ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-								{stuff.content.teaserimage?.filename &&
-									<Image src={stuff.content.teaserimage?.filename} alt="" width="128" height="128" className="h-16 w-16" />}
+								<Image src={stuff.content.teaserimage.filename} alt="" width="128" height="128" className="h-16 w-16" />
 
 							</div>
 							<div className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
