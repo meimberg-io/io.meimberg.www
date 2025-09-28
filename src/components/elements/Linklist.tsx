@@ -18,7 +18,7 @@ export default function Linklist({ blok }: LinklistStoryblok) {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<Icon svgText={link.content?.icon?.content?.svg} className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+							<Icon svgText={link.content.icon.content.svg} className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
 							<span className="ml-4">{link.content.text}</span>
 						</Link>
 					</li>
@@ -39,7 +39,7 @@ export default function Linklist({ blok }: LinklistStoryblok) {
 					rel="noopener noreferrer"
 					aria-label={link.content.title}
 				>
-					<Icon svgText={link.content?.icon?.content?.svg} className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500"/>
+					<Icon svgText={link.content.icon.content.svg} className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500"/>
 				</Link>
 			))}
 		</div>
