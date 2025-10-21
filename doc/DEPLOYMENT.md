@@ -33,7 +33,7 @@ This covers:
 git push origin main
 ```
 
-Watch: https://github.com/olivermeimberg/io.meimberg.www/actions
+Watch: https://github.com/meimberg-io/io.meimberg.www/actions
 
 ---
 
@@ -129,7 +129,7 @@ ssh deploy@hc-02.meimberg.io "docker ps"
 ssh deploy@hc-02.meimberg.io "docker images | grep www"
 
 # Manually pull image
-ssh deploy@hc-02.meimberg.io "docker pull ghcr.io/olivermeimberg/io.meimberg.www:latest"
+ssh deploy@hc-02.meimberg.io "docker pull ghcr.io/meimberg-io/io.meimberg.www:latest"
 
 # If authentication fails, check GITHUB_TOKEN in workflow
 ```
@@ -160,11 +160,11 @@ ssh deploy@hc-02.meimberg.io
 cd /srv/projects/www
 
 # Pull specific version (replace SHA with commit hash)
-docker pull ghcr.io/olivermeimberg/io.meimberg.www:main-abc123
+docker pull ghcr.io/meimberg-io/io.meimberg.www:main-abc123
 
 # Update docker-compose.yml to use specific tag
 nano docker-compose.yml
-# Change image: line to: ghcr.io/olivermeimberg/io.meimberg.www:main-abc123
+# Change image: line to: ghcr.io/meimberg-io/io.meimberg.www:main-abc123
 
 # Restart
 docker compose up -d
