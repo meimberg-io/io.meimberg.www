@@ -95,7 +95,7 @@ git commit -m "Setup deployment"
 git push origin main
 ```
 
-**Monitor:** https://github.com/olivermeimberg/io.meimberg.www/actions
+**Monitor:** https://github.com/meimberg-io/io.meimberg.www/actions
 
 **Deployment takes ~3-4 minutes:**
 1. ✅ Tests run (lint, build)

@@ -8,7 +8,7 @@ Quick reference checklist for io.meimberg.www setup and deployment.
 
 ```bash
 cd ~/workspace
-git clone git@github.com:olivermeimberg/io.meimberg.www.git
+git clone git@github.com:meimberg-io/io.meimberg.www.git
 cd io.meimberg.www
 ```
 
@@ -87,7 +87,7 @@ git commit -m "Setup deployment"
 git push origin main
 ```
 
-- [ ] Watch GitHub Actions: https://github.com/olivermeimberg/io.meimberg.www/actions
+- [ ] Watch GitHub Actions: https://github.com/meimberg-io/io.meimberg.www/actions
 - [ ] Verify deployment successful
 - [ ] Test app at https://www.meimberg.io
 

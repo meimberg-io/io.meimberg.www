@@ -6,7 +6,7 @@ version: "3.9"
 
 services:
   www:
-    image: ghcr.io/olivermeimberg/io.meimberg.www:latest
+    image: ghcr.io/meimberg-io/io.meimberg.www:latest
     container_name: www
     restart: unless-stopped
     environment:
