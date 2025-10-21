@@ -1,0 +1,144 @@
+name: Build and Deploy www
+
+on:
+  push:
+    branches: [ main, master ]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_STORYBLOK_TOKEN: ${{ secrets.NEXT_PUBLIC_STORYBLOK_TOKEN }}
+      NEXT_PUBLIC_STORYBOOK_DISABLECACHING: ${{ vars.NEXT_PUBLIC_STORYBOOK_DISABLECACHING }}
+      NEXT_PUBLIC_MATOMO_TRACKER: ${{ vars.NEXT_PUBLIC_MATOMO_TRACKER }}
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run tests
+      run: |
+        npm run lint
+        npm run build
+
+  build-and-push:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Log in to Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Extract metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+        tags: |
+          type=ref,event=branch
+          type=sha,prefix={{branch}}-
+          type=semver,pattern={{version}}
+          type=raw,value=latest
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        build-args: |
+          NEXT_PUBLIC_STORYBLOK_TOKEN=${{ secrets.NEXT_PUBLIC_STORYBLOK_TOKEN }}
+          NEXT_PUBLIC_STORYBOOK_DISABLECACHING=${{ vars.NEXT_PUBLIC_STORYBOOK_DISABLECACHING }}
+          NEXT_PUBLIC_MATOMO_TRACKER=${{ vars.NEXT_PUBLIC_MATOMO_TRACKER }}
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    env:
+      APP_DOMAIN: ${{ vars.APP_DOMAIN }}
+      DOCKER_IMAGE: ghcr.io/${{ github.repository }}:latest
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET: ${{ secrets.NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET }}
+      REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+    
+    steps:
+    - name: Deploy to server
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ vars.SERVER_HOST }}
+        username: ${{ vars.SERVER_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        envs: GITHUB_TOKEN,DOCKER_IMAGE,APP_DOMAIN,NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET,REVALIDATE_SECRET
+        script: |
+          set -e
+          
+          # Login to GitHub Container Registry
+          echo "$GITHUB_TOKEN" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+          
+          # Create project directory
+          mkdir -p /srv/projects/www
+          cd /srv/projects/www
+          
+          # Create docker-compose.yml with Traefik labels
+          cat > docker-compose.yml << EOF
+          services:
+            www:
+              image: $DOCKER_IMAGE
+              container_name: www
+              restart: unless-stopped
+              environment:
+                - NODE_ENV=production
+                - PORT=3000
+                - HOSTNAME=0.0.0.0
+                - NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET=$NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET
+                - REVALIDATE_SECRET=$REVALIDATE_SECRET
+              labels:
+                - "traefik.enable=true"
+                - "traefik.http.routers.www.rule=Host(\`$APP_DOMAIN\`)"
+                - "traefik.http.routers.www.entrypoints=websecure"
+                - "traefik.http.routers.www.tls.certresolver=le"
+                - "traefik.http.services.www.loadbalancer.server.port=3000"
+              networks:
+                - traefik
+          
+          networks:
+            traefik:
+              external: true
+          EOF
+          
+          # Pull latest image and deploy
+          docker compose pull
+          docker compose up -d
+          
+          # Verify deployment
+          if docker ps | grep -q www; then
+            echo "✅ www deployed successfully!"
+            echo "🌐 Accessible at: https://$APP_DOMAIN"
+          else
+            echo "❌ Deployment failed - container not running"
+            exit 1
+          fi
