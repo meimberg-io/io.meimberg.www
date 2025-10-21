@@ -1,0 +1,50 @@
+# Unified docker-compose.yml for both local development and production deployment
+services:
+  # Base service definition
+  www-base:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_STORYBLOK_TOKEN=${NEXT_PUBLIC_STORYBLOK_TOKEN}
+        - NEXT_PUBLIC_STORYBOOK_DISABLECACHING=${NEXT_PUBLIC_STORYBOOK_DISABLECACHING:-false}
+        - NEXT_PUBLIC_MATOMO_TRACKER=${NEXT_PUBLIC_MATOMO_TRACKER:-false}
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
+      - PORT=3000
+      - NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET=${NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET}
+      - REVALIDATE_SECRET=${REVALIDATE_SECRET}
+    restart: unless-stopped
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/', (res) => process.exit(res.statusCode === 200 ? 0 : 1)).on('error', () => process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Development service with volume mounts
+  www-dev:
+    profiles: ["dev"]
+    extends: www-base
+    volumes:
+      - ./src:/app/src:ro
+      - ./public:/app/public:ro
+      - ./next.config.ts:/app/next.config.ts:ro
+      - ./tailwind.config.js:/app/tailwind.config.js:ro
+      - ./postcss.config.js:/app/postcss.config.js:ro
+      - ./tsconfig.json:/app/tsconfig.json:ro
+      - /app/node_modules
+
+  # Production service without volume mounts
+  www-prod:
+    profiles: ["prod"]
+    extends: www-base
+
+networks:
+  app-network:
+    driver: bridge
+
