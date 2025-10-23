@@ -1,27 +1,22 @@
 # Production docker-compose.yml
-# This file is automatically created by GitHub Actions on the server
-# It's included here as reference/documentation
+# Used by GitHub Actions deployment workflow
+# Variables are substituted using envsubst during deployment
 
 version: "3.9"
 
 services:
-  www:
-    image: ghcr.io/meimberg-io/io.meimberg.www:latest
-    container_name: www
+  ${PROJECT_NAME}:
+    image: ${DOCKER_IMAGE}
+    container_name: ${PROJECT_NAME}
     restart: unless-stopped
-    environment:
-      - NODE_ENV=production
-      - PORT=3000
-      - HOSTNAME=0.0.0.0
-      - NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET=${NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET}
-      - REVALIDATE_SECRET=${REVALIDATE_SECRET}
+    env_file: .env
     labels:
-      # Traefik automatic routing
       - "traefik.enable=true"
-      - "traefik.http.routers.www.rule=Host(`www.meimberg.io`)"
-      - "traefik.http.routers.www.entrypoints=websecure"
-      - "traefik.http.routers.www.tls.certresolver=le"
-      - "traefik.http.services.www.loadbalancer.server.port=3000"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.${PROJECT_NAME}.rule=Host(`${APP_DOMAIN}`)"
+      - "traefik.http.routers.${PROJECT_NAME}.entrypoints=websecure"
+      - "traefik.http.routers.${PROJECT_NAME}.tls.certresolver=le"
+      - "traefik.http.services.${PROJECT_NAME}.loadbalancer.server.port=3000"
     networks:
       - traefik
 
