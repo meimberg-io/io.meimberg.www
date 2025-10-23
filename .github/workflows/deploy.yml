@@ -79,6 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     env:
+      PROJECT_NAME: www
       APP_DOMAIN: ${{ vars.APP_DOMAIN }}
       DOCKER_IMAGE: ghcr.io/${{ github.repository }}:latest
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -86,13 +87,25 @@ jobs:
       REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
     
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Copy docker-compose template to server
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ vars.SERVER_HOST }}
+        username: ${{ vars.SERVER_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source: "docker-compose.prod.yml"
+        target: "/srv/projects/${{ env.PROJECT_NAME }}/"
+    
     - name: Deploy to server
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ vars.SERVER_HOST }}
         username: ${{ vars.SERVER_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        envs: GITHUB_TOKEN,DOCKER_IMAGE,APP_DOMAIN,NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET,REVALIDATE_SECRET
+        envs: PROJECT_NAME,GITHUB_TOKEN,DOCKER_IMAGE,APP_DOMAIN,NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET,REVALIDATE_SECRET
         script: |
           set -e
           
@@ -100,45 +113,41 @@ jobs:
           echo "$GITHUB_TOKEN" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
           
           # Create project directory
-          mkdir -p /srv/projects/www
-          cd /srv/projects/www
+          mkdir -p /srv/projects/${PROJECT_NAME}
+          cd /srv/projects/${PROJECT_NAME}
           
-          # Create docker-compose.yml with Traefik labels
-          cat > docker-compose.yml << EOF
-          services:
-            www:
-              image: $DOCKER_IMAGE
-              container_name: www
-              restart: unless-stopped
-              environment:
-                - NODE_ENV=production
-                - PORT=3000
-                - HOSTNAME=0.0.0.0
-                - NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET=$NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET
-                - REVALIDATE_SECRET=$REVALIDATE_SECRET
-              labels:
-                - "traefik.enable=true"
-                - "traefik.http.routers.www.rule=Host(\`$APP_DOMAIN\`)"
-                - "traefik.http.routers.www.entrypoints=websecure"
-                - "traefik.http.routers.www.tls.certresolver=le"
-                - "traefik.http.services.www.loadbalancer.server.port=3000"
-              networks:
-                - traefik
-          
-          networks:
-            traefik:
-              external: true
+          # Create .env file with secrets
+          cat > .env << EOF
+          NODE_ENV=production
+          PORT=3000
+          HOSTNAME=0.0.0.0
+          NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET=$NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET
+          REVALIDATE_SECRET=$REVALIDATE_SECRET
           EOF
+          
+          # Substitute variables in docker-compose template
+          export PROJECT_NAME="${PROJECT_NAME}"
+          export DOCKER_IMAGE="${DOCKER_IMAGE}"
+          export APP_DOMAIN="${APP_DOMAIN}"
+          
+          envsubst < docker-compose.prod.yml > docker-compose.yml
+          
+          echo "Generated docker-compose.yml:"
+          cat docker-compose.yml
           
           # Pull latest image and deploy
           docker compose pull
           docker compose up -d
           
+          # Wait for containers to be ready
+          sleep 5
+          
           # Verify deployment
-          if docker ps | grep -q www; then
-            echo "✅ www deployed successfully!"
-            echo "🌐 Accessible at: https://$APP_DOMAIN"
+          if docker ps | grep -q ${PROJECT_NAME}; then
+            echo "✅ ${PROJECT_NAME} deployed successfully!"
+            echo "🌐 Accessible at: https://${{ env.APP_DOMAIN }}"
           else
             echo "❌ Deployment failed - container not running"
+            docker logs ${PROJECT_NAME}
             exit 1
           fi
