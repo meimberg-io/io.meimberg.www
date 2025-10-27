@@ -42,7 +42,7 @@ export function BlogCardList(props: { blogs: ISbStoryData<BlogStoryblok>[], layo
                     {blog.content.teasertitle}
                   </Card.Title>
                   <Card.Eyebrow as="time" dateTime={blog.content.date} className="md:hidden" decorate>
-                    {'xx' + formatDate(blog.content.date)}
+                    {'' + formatDate(blog.content.date)}
                   </Card.Eyebrow>
                   <Card.Description>{blog.content.abstract}</Card.Description>
                   <Card.Cta>{blog.content.readmoretext ?? 'Weiterlesen'}</Card.Cta>

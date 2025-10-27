@@ -16,7 +16,7 @@ export function Card<T extends React.ElementType = 'div'>({ as, className, child
 }) {
 	const Component = as ?? 'div'
 	return (
-		<Component className={clsx(className, 'group relative flex flex-col items-start')}>
+		<Component className={clsx(className, 'group relative flex flex-col items-start ')}>
 			{children}
 		</Component>
 	)
@@ -67,15 +67,15 @@ Card.Cta = function CardCta({ children }: { children: React.ReactNode }) {
 }
 
 Card.Eyebrow = function CardEyebrow<T extends React.ElementType = 'p'>({ as, decorate = false, className, children, ...props }:
-																																				 Omit<React.ComponentPropsWithoutRef<T>, 'as' | 'decorate'> & {
-																																				 as?: T
-																																				 decorate?: boolean
-																																			 }) {
+		 Omit<React.ComponentPropsWithoutRef<T>, 'as' | 'decorate'> & {
+	 as?: T
+		 decorate?: boolean
+	 }) {
 	const Component = as ?? 'p'
 
 	return (
 		<Component
-			className={clsx(className, 'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500', decorate && 'pl-3.5')}      {...props}    >
+			className={clsx(className, 'relative z-10 ml-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500', decorate && 'pl-3.5')}      {...props}    >
 			{decorate && (
 				<span className="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
           <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
@@ -83,6 +83,14 @@ Card.Eyebrow = function CardEyebrow<T extends React.ElementType = 'p'>({ as, dec
 			)}
 			{children}
 		</Component>
+	)
+}
+
+Card.Icon = function CardIcon({ children }: { children: React.ReactNode }) {
+	return (
+		<div className="z-20 text-teal-500 ">
+			{children}
+		</div>
 	)
 }
 
