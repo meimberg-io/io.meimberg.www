@@ -8,8 +8,8 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"pull-sb-components": "storyblok pull-components --space 328928",
-		"generate-sb-types": "storyblok generate-typescript-typedefs --sourceFilePaths ./components.328928.json --destinationFilePath ./src/types/component-types-sb.d.ts"
+		"pull-sb-components": "npx storyblok components pull --space 330326",
+		"generate-sb-types": "npx storyblok types --space 330326 generate && cp .storyblok/types/330326/storyblok-components.d.ts src/types/component-types-sb.d.ts"
 	},
 	"dependencies": {
 		"@headlessui/react": "^2.2.0",
@@ -17,8 +17,8 @@
 		"@mapbox/rehype-prism": "^0.9.0",
 		"@material-tailwind/react": "^2.1.10",
 		"@next/mdx": "^15.2.3",
-		"@storyblok/react": "^4.5.0",
-		"@storyblok/richtext": "^3.1.0",
+		"@storyblok/react": "^5.4.17",
+		"@storyblok/richtext": "^3.8.2",
 		"@tailwindcss/postcss": "^4.0.14",
 		"@tailwindcss/typography": "^0.5.16",
 		"@vercel/analytics": "^1.5.0",
@@ -48,7 +48,7 @@
 		"rehype-stringify": "^10.0.1",
 		"remark-gfm": "^4.0.1",
 		"sharp": "^0.33.5",
-		"storyblok-rich-text-react-renderer": "^2.9.2",
+		"storyblok-rich-text-react-renderer": "^3.0.1",
 		"unified": "^11.0.5",
 		"yet-another-react-lightbox": "^3.21.8"
 	},
@@ -63,6 +63,7 @@
 		"eslint-config-next": "15.2.3",
 		"postcss": "^8.5.3",
 		"sass": "^1.86.0",
+		"storyblok": "^4.6.12",
 		"tailwind-merge": "^3.0.2",
 		"tailwindcss": "^4.0.14",
 		"tailwindcss-animate": "^1.0.7",

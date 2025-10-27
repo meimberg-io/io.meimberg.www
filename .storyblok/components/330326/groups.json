@@ -1,0 +1,51 @@
+[
+  {
+    "name": "container",
+    "id": 525893,
+    "uuid": "4b5e7bcc-b1d9-43f9-8766-594d8a10d548",
+    "parent_id": null,
+    "parent_uuid": null
+  },
+  {
+    "name": "data",
+    "id": 525895,
+    "uuid": "5d33208a-61fd-4063-b4e6-3745797f7073",
+    "parent_id": null,
+    "parent_uuid": null
+  },
+  {
+    "name": "elements",
+    "id": 525894,
+    "uuid": "df028ccb-3b55-49ec-89c3-34c085584881",
+    "parent_id": null,
+    "parent_uuid": null
+  },
+  {
+    "name": "lists",
+    "id": 525891,
+    "uuid": "e01c6455-1f3c-433a-8329-ea5682a473af",
+    "parent_id": null,
+    "parent_uuid": null
+  },
+  {
+    "name": "luxarise",
+    "id": 554025,
+    "uuid": "44c570a4-8ef5-4d6e-9b30-f96c33bdc2a3",
+    "parent_id": null,
+    "parent_uuid": null
+  },
+  {
+    "name": "pages",
+    "id": 525890,
+    "uuid": "700ea8ae-4f6c-49a5-809c-1cd92dccd9f4",
+    "parent_id": null,
+    "parent_uuid": null
+  },
+  {
+    "name": "system",
+    "id": 525892,
+    "uuid": "870051ec-9028-40ce-85ec-9e0d197c12bf",
+    "parent_id": null,
+    "parent_uuid": null
+  }
+]
