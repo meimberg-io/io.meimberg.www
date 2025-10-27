@@ -1,6 +1,6 @@
 'use client'
 
-import { MultiassetStoryblok, PhotosStoryblok } from '@/types/component-types-sb'
+import { MultiassetStoryblok, PhotosStoryblok, StoryblokAsset } from '@/types/component-types-sb'
 import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
 import { useState } from 'react'
@@ -10,7 +10,7 @@ import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
 import { storyblokEditable } from '@storyblok/react/rsc'
 
 
-export default function Gallery({ blok }: PhotosStoryblok) {
+export default function Gallery({ blok }: { blok: PhotosStoryblok }) {
 
 	const images: MultiassetStoryblok = blok.images
 	const cols = 'md:grid-cols-' + blok.columns + ' lg:grid-cols-' + blok.columns
@@ -19,14 +19,14 @@ export default function Gallery({ blok }: PhotosStoryblok) {
 	const [index, setIndex] = useState(0)
 
 	const slides = images
-		.filter((img) => !!img.filename)
-		.map((img) => ({ src: img.filename! }))
+		.filter((img: StoryblokAsset) => !!img.filename)
+		.map((img: StoryblokAsset) => ({ src: img.filename! }))
 
 	return (
 		<ElementWrapper>
 			<div  {...storyblokEditable(blok)}>
-				<div className={'grid grid-cols-1 gap-6 sm:grid-cols-2 ' + cols}>
-					{images.map((asset, i) => (
+			<div className={'grid grid-cols-1 gap-6 sm:grid-cols-2 ' + cols}>
+				{images.map((asset: StoryblokAsset, i: number) => (
 						asset.filename && (
 							<div key={asset.id}
 									 className="relative w-full aspect-auto overflow-hidden rounded-lg cursor-pointer"

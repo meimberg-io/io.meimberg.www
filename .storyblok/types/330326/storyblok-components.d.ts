@@ -103,7 +103,7 @@ export interface Blogteaserlist {
   type: "" | "automatic" | "manual";
   folder?: string;
   limit: string;
-  articles?: (ISbStoryData<Article> | string)[];
+  articles?: (ISbStoryData<Blog> | string)[];
   layout: "" | "small" | "wide";
   component: "blogteaserlist";
   _uid: string;

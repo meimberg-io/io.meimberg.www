@@ -5,7 +5,7 @@ import { HyperlinkStoryblok } from '@/types/component-types-sb'
 import { storyblokEditable } from '@storyblok/react/rsc'
 
 
-export default function Hyperlink({ blok }: HyperlinkStoryblok) {
+export default function Hyperlink({ blok }: { blok: HyperlinkStoryblok }) {
 	// Handle different link types (internal story links vs external URLs)
 	const getHref = () => {
 		if (blok.url.linktype === 'story') {

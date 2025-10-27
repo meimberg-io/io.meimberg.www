@@ -13,6 +13,7 @@ import avatarImage from '@/images/avatar.png'
 import { ChevronDownIcon, CloseIcon, MobileNavItem, MoonIcon, SunIcon } from '@/components/util/Svg.tsx'
 import { fetchGlobalsettings } from '@/lib/storyblok.ts'
 import { GlobalsettingsStoryblok } from '@/types/component-types-sb'
+import { ISbStoryData } from '@storyblok/react'
 
 
 function NavItem({ href, children }: {
@@ -56,11 +57,11 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
 				className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 ring-1 shadow-lg shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
 
 
-				{navItems?.topnav?.filter((i) => {
-					return (i.id !== undefined)
-				}).map((item: { id: string, full_slug: string, name: string }, index: number) => (
-					<NavItem key={index} href={`/${item.full_slug}`}>{item.name}</NavItem>
-				))}
+			{navItems?.topnav?.filter((i): i is ISbStoryData<any> => {
+				return typeof i === 'object' && i !== null && 'id' in i
+			}).map((item, index: number) => (
+				<NavItem key={index} href={`/${item.full_slug}`}>{item.name}</NavItem>
+			))}
 
 			</ul>
 		</nav>
@@ -105,11 +106,11 @@ function MobileNavigation(
 					<ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
 
 
-						{navItems?.topnav?.filter((i) => {
-							return (i.id !== undefined)
-						}).map((item: { id: string, full_slug: string, name: string }, index: number) => (
-							<MobileNavItem key={index} href={`/${item.full_slug}`}>{item.name}</MobileNavItem>
-						))}
+					{navItems?.topnav?.filter((i): i is ISbStoryData<any> => {
+						return typeof i === 'object' && i !== null && 'id' in i
+					}).map((item, index: number) => (
+						<MobileNavItem key={index} href={`/${item.full_slug}`}>{item.name}</MobileNavItem>
+					))}
 
 
 					</ul>

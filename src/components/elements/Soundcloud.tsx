@@ -5,7 +5,7 @@ import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
 import SoundCloudPlayer from 'react-player/soundcloud'
 
 
-export default function Soundcloud({ blok }: SoundcloudStoryblok) {
+export default function Soundcloud({ blok }: { blok: SoundcloudStoryblok }) {
 
 	return (
 		<ElementWrapper>

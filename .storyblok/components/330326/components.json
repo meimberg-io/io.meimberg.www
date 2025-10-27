@@ -272,7 +272,7 @@
     "display_name": "Blogliste",
     "description": "",
     "created_at": "2025-10-27T20:12:13.975Z",
-    "updated_at": "2025-10-27T20:14:16.391Z",
+    "updated_at": "2025-10-27T20:18:40.330Z",
     "id": 106112343969683,
     "schema": {
       "type": {
@@ -313,9 +313,9 @@
         "source": "internal_stories",
         "entry_appearance": "card",
         "allow_advanced_search": true,
-        "folder_slug": "a/",
+        "folder_slug": "b/",
         "filter_content_type": [
-          "article"
+          "blog"
         ],
         "id": "bRM--yxaRQ2I_q5Zw4-yog"
       },

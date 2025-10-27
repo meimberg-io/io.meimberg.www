@@ -14,7 +14,7 @@ export default function BlogteaserlistClient({ props }: { props: BlogteaserlistP
   useEffect(() => {
     if (props.type === 'automatic') {
       fetchStories(props.limit, COMPONENTTYPE_BLOG, props.folder).then((response) => {
-        setBlogs(response.data.stories);
+        setBlogs(response.data.stories as unknown as ISbStoryData<BlogStoryblok>[]);
       });
     } else {
       setBlogs(props.blogs);

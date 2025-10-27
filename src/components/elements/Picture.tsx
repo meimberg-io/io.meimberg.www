@@ -4,11 +4,11 @@ import Image from 'next/image'
 import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
 
 
-export default function Picture({ blok }: PictureStoryblok) {
+export default function Picture({ blok }: { blok: PictureStoryblok }) {
 
 	if (blok.style === 'keyvisual') {
 		return (
-			<ElementWrapper spacing={blok.spacing}>
+			<ElementWrapper spacing={blok.spacing || undefined}>
 
 			<div {...storyblokEditable(blok)} className="">
 				<div className="max-w-xs px-2.5 lg:max-w-none flex justify-center">
@@ -27,7 +27,7 @@ export default function Picture({ blok }: PictureStoryblok) {
 		)
 	} else if (blok.style === 'small') {
 		return (
-			<ElementWrapper spacing={blok.spacing}>
+			<ElementWrapper spacing={blok.spacing || undefined}>
 			<div {...storyblokEditable(blok)} className="">
 				<div className="max-w-xs px-2.5 lg:max-w-none content-center flex justify-center">
 					<Image
@@ -47,7 +47,7 @@ export default function Picture({ blok }: PictureStoryblok) {
 		)
 	} else {
 		return (
-			<ElementWrapper spacing={blok.spacing}>
+			<ElementWrapper spacing={blok.spacing || undefined}>
 				<div {...storyblokEditable(blok)} className="">
 					<Image
 						src={blok.image.filename}

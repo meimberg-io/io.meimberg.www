@@ -10,7 +10,7 @@ import rehypePrism from '@mapbox/rehype-prism'
 
 
 
-export default function Richtext({ blok }: RichtextStoryblok) {
+export default function Richtext({ blok }: { blok: RichtextStoryblok }) {
 
 	const escapeHtml = (str: string) => {
 		return str
