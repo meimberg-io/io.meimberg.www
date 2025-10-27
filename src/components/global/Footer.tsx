@@ -5,6 +5,7 @@ import { ContainerInner, ContainerOuter } from '@/components/layout/Container.ts
 import React, { useEffect, useState } from 'react'
 import { GlobalsettingsStoryblok } from '@/types/component-types-sb'
 import { fetchGlobalsettings } from '@/lib/storyblok.ts'
+import { ISbStoryData } from '@storyblok/react'
 
 
 function NavLink({ href, children }: {
@@ -37,11 +38,11 @@ export function Footer() {
 							<div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
 
 
-								{siteSettings?.footernav?.filter((i) => {
-									return (i.id !== undefined)
-								}).map((item: { id: string, full_slug: string, name: string }, index: number) => (
-									<NavLink key={index} href={`/${item.full_slug}`}>{item.name}</NavLink>
-								))}
+							{siteSettings?.footernav?.filter((i): i is ISbStoryData<any> => {
+								return typeof i === 'object' && i !== null && 'id' in i
+							}).map((item, index: number) => (
+								<NavLink key={index} href={`/${item.full_slug}`}>{item.name}</NavLink>
+							))}
 
 							</div>
 							<p className="text-sm text-zinc-400 dark:text-zinc-500">

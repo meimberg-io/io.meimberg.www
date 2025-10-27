@@ -5,7 +5,7 @@ import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
 import { storyblokEditable } from '@storyblok/react/rsc'
 
 
-export default function Youtube({ blok }: YoutubeStoryblok) {
+export default function Youtube({ blok }: { blok: YoutubeStoryblok }) {
 	return (
 		<ElementWrapper>
 			{blok.format === 'square' ? (

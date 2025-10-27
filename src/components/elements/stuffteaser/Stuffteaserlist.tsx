@@ -15,8 +15,15 @@ export interface StuffteaserlistProps {
 }
 
 export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStoryblok }) {
+	// Type guard to filter out string entries
+	const isStoryData = (item: any): item is ISbStoryData<StuffStoryblok> => {
+		return typeof item === 'object' && item !== null && 'content' in item
+	}
+	
+	const resolvedStuffs = blok.stuffs?.filter(isStoryData) || []
+	
 	const props: StuffteaserlistProps = {
-		stuffs: blok.stuffs ?? []
+		stuffs: resolvedStuffs
 	}
 	if (blok.layout === 'small') {
 		return (
@@ -29,7 +36,7 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStorybl
 					</h2>
 
 					<ol className="mt-6 space-y-4">
-						{blok.stuffs?.map((stuff: ISbStoryData<StuffStoryblok>) => (
+						{resolvedStuffs.map((stuff) => (
 							<div key={stuff.id} className="my-8">
 							<Card as="li"  >
 								<div className="flex gap-4 w-full">
@@ -74,7 +81,7 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStorybl
 					role="list"
 					className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
 				>
-					{props.stuffs?.map((stuff: ISbStoryData<StuffStoryblok>) => (
+					{props.stuffs?.map((stuff) => (
 						<Card as="li" key={stuff.id}>
 
 							<div

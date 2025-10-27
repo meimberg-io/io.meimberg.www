@@ -20,6 +20,6 @@ scripts/pull-components.sh
 
 Outputs:
 - Components JSON: `components.328928.json`
-- Types: `src/types/component-types-sb.d.ts`
+- Types: `src/types/component-types-sb`
 
 

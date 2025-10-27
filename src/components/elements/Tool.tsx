@@ -2,7 +2,7 @@ import { ToolStoryblok } from '@/types/component-types-sb'
 import { Card } from '@/components/elements/articleteaserlist/Card.tsx'
 
 
-export default function Tool({ blok }: {blok:ToolStoryblok}) {
+export default function Tool({ blok }: { blok: ToolStoryblok }) {
 	return (
 
 		<Card as="li">
