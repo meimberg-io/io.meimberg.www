@@ -16,6 +16,7 @@ export interface Article {
     | Article
     | Articleteaserlist
     | Blog
+    | Blogteaserlist
     | Divider
     | Gallery
     | Globalsettings
@@ -69,6 +70,7 @@ export interface Blog {
     | Article
     | Articleteaserlist
     | Blog
+    | Blogteaserlist
     | Divider
     | Gallery
     | Globalsettings
@@ -93,6 +95,17 @@ export interface Blog {
     | Youtube
   )[];
   component: "blog";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface Blogteaserlist {
+  type: "" | "automatic" | "manual";
+  folder?: string;
+  limit: string;
+  articles?: (ISbStoryData<Article> | string)[];
+  layout: "" | "small" | "wide";
+  component: "blogteaserlist";
   _uid: string;
   [k: string]: unknown;
 }
@@ -128,6 +141,7 @@ export interface Grid2Column {
     | Article
     | Articleteaserlist
     | Blog
+    | Blogteaserlist
     | Divider
     | Gallery
     | Globalsettings
@@ -155,6 +169,7 @@ export interface Grid2Column {
     | Article
     | Articleteaserlist
     | Blog
+    | Blogteaserlist
     | Divider
     | Gallery
     | Globalsettings
@@ -189,6 +204,7 @@ export interface Grouping {
     | Article
     | Articleteaserlist
     | Blog
+    | Blogteaserlist
     | Divider
     | Gallery
     | Globalsettings
@@ -274,6 +290,7 @@ export interface Page {
     | Article
     | Articleteaserlist
     | Blog
+    | Blogteaserlist
     | Divider
     | Gallery
     | Globalsettings
@@ -361,6 +378,7 @@ export interface Stuff {
     | Article
     | Articleteaserlist
     | Blog
+    | Blogteaserlist
     | Divider
     | Gallery
     | Globalsettings
