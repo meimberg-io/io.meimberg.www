@@ -2,6 +2,7 @@ import Page from '@/components/pagetypes/Page'
 import FallbackComponent from '@/components/FallbackComponent.tsx'
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
 import Article from '@/components/pagetypes/Article.tsx'
+import Blog from '@/components/pagetypes/Blog.tsx'
 import Linklist from '@/components/elements/Linklist.tsx'
 import Grid2Column from '@/components/layout/Grid2Column.tsx'
 import Picture from '@/components/elements/Picture.tsx'
@@ -9,8 +10,9 @@ import Richtext from '@/components/elements/Richtext.tsx'
 import Divider from '@/components/elements/Divider.tsx'
 import Photos from '@/components/elements/Photos.tsx'
 import Articleteaserlist from '@/components/elements/articleteaserlist/Articleteaserlist.tsx'
+import Blogteaserlist from '@/components/elements/blogteaserlist/Blogteaserlist.tsx'
 import { ISbStoriesParams, ISbStoryData, StoryblokClient } from '@storyblok/react'
-import { ArticleStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
+import { ArticleStoryblok, BlogStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
 import Stuff from '@/components/pagetypes/Stuff.tsx'
 import Stuffteaserlist from '@/components/elements/stuffteaser/Stuffteaserlist.tsx'
 import Hyperlink from '@/components/elements/Hyperlink.tsx'
@@ -25,6 +27,7 @@ import LuxarisePictureSlideshow from '@/components/elements/LuxarisePictureSlide
 
 
 export const COMPONENTTYPE_ARTICLE = 'article'
+export const COMPONENTTYPE_BLOG = 'blog'
 export const COMPONENTTYPE_PAGE = 'page'
 export const COMPONENTTYPE_STUFF = 'stuff'
 
@@ -37,6 +40,7 @@ export const RESOLVE_RELATIONS = [
 	'sociallink.icon',
 	'sociallink.url',
 	'articleteaserlist.articles',
+	'blogteaserlist.articles',
 	'stuffteaserlist.stuffs',
 	'luxarise_picture.pic_big',
 	'luxarise_picture.pic_thumb',
@@ -59,6 +63,7 @@ export const getStoryblokApi = storyblokInit({
 	components: {
 		page: Page,
 		article: Article,
+		blog: Blog,
 		stuff: Stuff,
 		linklist: Linklist,
 		picture: Picture,
@@ -74,6 +79,7 @@ export const getStoryblokApi = storyblokInit({
 		soundcloud: Soundcloud,
 		youtube: Youtube,
 		articleteaserlist: Articleteaserlist,
+		blogteaserlist: Blogteaserlist,
 		stuffteaserlist: Stuffteaserlist,
 		grid_2column: Grid2Column,
 		luxarise_picture_slideshow: LuxarisePictureSlideshow
@@ -116,7 +122,7 @@ export async function fetchStories(limit: number, componenttype: string, folder?
 export async function fetchAllStories(): Promise<{ data: { stories: ISbStoryData[] } }> {
 	const storyblokApi = getStoryblokApi()
 	await storyblokApi.flushCache()
-	const types = COMPONENTTYPE_ARTICLE + "," + COMPONENTTYPE_STUFF + "," + COMPONENTTYPE_PAGE;
+	const types = COMPONENTTYPE_ARTICLE + "," + COMPONENTTYPE_BLOG + "," + COMPONENTTYPE_STUFF + "," + COMPONENTTYPE_PAGE;
 	const result = storyblokApi.get('cdn/stories', {
 		version: process.env.SB_VERSION as 'published' | 'draft' | undefined,
 		filter_query: {

@@ -6,7 +6,7 @@ export default async function preview(req: NextApiRequest, res: NextApiResponse)
 	const params = req.url?.split("?");
 
 	if (req.query.secret !== process.env.NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET) {
-		return res.status(401).json({ message: "Invalid token" });
+		return res.status(401).json({ message: 'Invalid token' });
 	}
 
 	// Enable Preview Mode by setting the cookies
