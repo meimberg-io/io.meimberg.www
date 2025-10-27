@@ -19,8 +19,10 @@ interface LuxarisePictureSlideshowProps {
 
 export default function LuxarisePictureSlideshow({ blok }: LuxarisePictureSlideshowProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [displayIndex, setDisplayIndex] = useState(0)
   const [resolvedPictures, setResolvedPictures] = useState<ISbStoryData<LuxarisePictureStoryblok>[]>([])
   const [isLoading, setIsLoading] = useState(true)
+  const [isImageLoading, setIsImageLoading] = useState(false)
 
   // Manually resolve picture relations
   useEffect(() => {
@@ -87,6 +89,13 @@ export default function LuxarisePictureSlideshow({ blok }: LuxarisePictureSlides
     resolvePictures()
   }, [blok.pictures])
 
+  // Sync displayIndex with currentIndex after image loads
+  useEffect(() => {
+    if (currentIndex !== displayIndex) {
+      setIsImageLoading(true)
+    }
+  }, [currentIndex, displayIndex])
+
   // Auto-advance slideshow every 15 seconds
   useEffect(() => {
     if (resolvedPictures.length <= 1) return
@@ -106,6 +115,11 @@ export default function LuxarisePictureSlideshow({ blok }: LuxarisePictureSlides
 
   const goToNext = () => {
     setCurrentIndex(currentIndex === resolvedPictures.length - 1 ? 0 : currentIndex + 1)
+  }
+
+  const handleImageLoad = () => {
+    setIsImageLoading(false)
+    setDisplayIndex(currentIndex)
   }
 
   if (isLoading) {
@@ -128,17 +142,10 @@ export default function LuxarisePictureSlideshow({ blok }: LuxarisePictureSlides
     )
   }
 
-  const currentPicture = resolvedPictures[currentIndex]
-  const pictureContent = currentPicture?.content
-
-  // Debug logging
-  console.log('Slideshow Debug:', {
-    resolvedPicturesLength: resolvedPictures.length,
-    currentIndex,
-    currentPicture,
-    pictureContent,
-    isLoading
-  })
+  const displayPicture = resolvedPictures[displayIndex]
+  const nextPicture = resolvedPictures[currentIndex]
+  const pictureContent = displayPicture?.content
+  const nextPictureContent = nextPicture?.content
 
   return (
     <ElementWrapper spacing={blok.spacing}>
@@ -150,14 +157,14 @@ export default function LuxarisePictureSlideshow({ blok }: LuxarisePictureSlides
               <>
                 <button
                   onClick={goToPrevious}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110 cursor-pointer"
                   aria-label="Previous picture"
                 >
                   <ChevronLeftIcon className="w-6 h-6 text-gray-700" />
                 </button>
                 <button
                   onClick={goToNext}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110 cursor-pointer"
                   aria-label="Next picture"
                 >
                   <ChevronRightIcon className="w-6 h-6 text-gray-700" />
@@ -167,24 +174,52 @@ export default function LuxarisePictureSlideshow({ blok }: LuxarisePictureSlides
 
               {/* Picture Display */}
               <div className="aspect-square relative overflow-hidden bg-gray-200">
-                {pictureContent?.pic_big?.filename ? (
+                {/* Currently displayed image */}
+                {pictureContent?.pic_big?.filename && (
                   <Image
+                    key={`display-${displayIndex}`}
                     src={pictureContent.pic_big.filename}
                     alt={pictureContent.title || pictureContent.name}
                     fill
-                    className="object-cover"
+                    className={`object-cover transition-opacity duration-300 ${
+                      isImageLoading ? 'opacity-100' : 'opacity-100'
+                    }`}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                    priority={currentIndex < 3}
+                    priority={displayIndex < 3}
                     unoptimized={false}
                   />
-                ) : (
+                )}
+                
+                {/* Next image (hidden, preloading) */}
+                {currentIndex !== displayIndex && nextPictureContent?.pic_big?.filename && (
+                  <Image
+                    key={`next-${currentIndex}`}
+                    src={nextPictureContent.pic_big.filename}
+                    alt={nextPictureContent.title || nextPictureContent.name}
+                    fill
+                    className="object-cover opacity-0 pointer-events-none"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                    priority={true}
+                    unoptimized={false}
+                    onLoadingComplete={handleImageLoad}
+                  />
+                )}
+                
+                {!pictureContent?.pic_big?.filename && (
                   <div className="w-full h-full bg-gray-200 flex items-center justify-center">
                     <p className="text-gray-500">
-                      {typeof currentPicture === 'string'
+                      {typeof displayPicture === 'string'
                         ? 'Loading picture data...'
                         : 'No image available'
                       }
                     </p>
+                  </div>
+                )}
+                
+                {/* Loading overlay */}
+                {isImageLoading && (
+                  <div className="absolute inset-0 bg-white/50 flex items-center justify-center z-10">
+                    <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
                   </div>
                 )}
               </div>
@@ -193,14 +228,14 @@ export default function LuxarisePictureSlideshow({ blok }: LuxarisePictureSlides
           <div className="bg-white p-6">
             <h3 className="text-2xl font-bold mb-3 text-gray-900">
               {pictureContent?.title || pictureContent?.name || 
-               (typeof currentPicture === 'string' ? 'Loading...' : 'Untitled')
+               (typeof displayPicture === 'string' ? 'Loading...' : 'Untitled')
               }
             </h3>
             {pictureContent?.abstract ? (
               <p className="text-gray-700 leading-relaxed">
                 {pictureContent.abstract}
               </p>
-            ) : typeof currentPicture === 'string' ? (
+            ) : typeof displayPicture === 'string' ? (
               <p className="text-gray-500">Loading content...</p>
             ) : null}
           </div>
@@ -213,8 +248,8 @@ export default function LuxarisePictureSlideshow({ blok }: LuxarisePictureSlides
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                  index === currentIndex
+                className={`w-3 h-3 rounded-full transition-all duration-200 cursor-pointer ${
+                  index === displayIndex
                     ? 'bg-blue-600 scale-110'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
@@ -227,10 +262,11 @@ export default function LuxarisePictureSlideshow({ blok }: LuxarisePictureSlides
         {/* Slide Counter */}
         {resolvedPictures.length > 1 && (
           <div className="text-center mt-2 text-sm text-gray-500">
-            {currentIndex + 1} / {resolvedPictures.length}
+            {displayIndex + 1} / {resolvedPictures.length}
           </div>
         )}
       </div>
     </ElementWrapper>
   )
 }
+
