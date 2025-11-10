@@ -11,8 +11,17 @@ import { MatomoTracker } from '@/components/util/MatomoTracker.tsx'
 // export const fetchCache = 'force-no-store'
 
 export const metadata: Metadata = {
-	title: 'meimberg.io',
-	description: 'Olis Blick auf eine digitalisierte Welt'
+	metadataBase: new URL('https://www.meimberg.io'),
+	title: {
+		default: 'meimberg.io',
+		template: '%s | meimberg.io'
+	},
+	description: 'Olis Blick auf eine digitalisierte Welt',
+	alternates: {
+		types: {
+			'application/rss+xml': '/api/rss.xml',
+		}
+	}
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
