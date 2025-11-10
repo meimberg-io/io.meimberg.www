@@ -1,7 +1,7 @@
 import { renderPage } from '@/lib/pageRenderer.tsx'
 import type { Metadata } from 'next'
 import { fetchStory } from '@/lib/storyblok.ts'
-import { buildCanonical, buildOgTwitter, deriveDescription, deriveTitle, selectOgImage } from '@/lib/metadata.ts'
+import { buildCanonical, buildOgTwitter, deriveDescription, selectOgImage } from '@/lib/metadata.ts'
 
 
 export default async function StoryPage({ params, searchParams }: any) {
