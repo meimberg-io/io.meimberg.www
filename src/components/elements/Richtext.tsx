@@ -6,7 +6,7 @@ import { Prose } from '@/components/util/Prose.tsx'
 import { unified } from 'unified'
 import rehypeParse from 'rehype-parse'
 import rehypeStringify from 'rehype-stringify'
-import rehypePrism from '@mapbox/rehype-prism'
+import rehypePrism from 'rehype-prism-plus'
 
 
 
