@@ -73,8 +73,6 @@ function SourceBadge({ item }: { item: NewsItem }) {
 }
 
 function NewsCard({ item }: { item: NewsItem }) {
-  const theme = getSourceTheme(item.sourceName)
-
   return (
     <article
       className="group relative rounded-2xl transition-colors"
