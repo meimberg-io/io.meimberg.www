@@ -1,5 +1,5 @@
 import { ToolStoryblok } from '@/types/component-types-sb'
-import { Card } from '@/components/elements/articleteaserlist/Card.tsx'
+import { Card } from '@/components/elements/Card.tsx'
 
 
 export default function Tool({ blok }: { blok: ToolStoryblok }) {

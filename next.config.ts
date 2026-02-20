@@ -28,13 +28,25 @@ const nextConfig: NextConfig = {
 				port: '',
 				pathname: '/**',
 			},
-			{
-				protocol: 'https',
-				hostname: 'pagetypes.imgix.net',
-				port: '',
-				pathname: '/**',
-			},
-		],
+		{
+			protocol: 'https',
+			hostname: 'pagetypes.imgix.net',
+			port: '',
+			pathname: '/**',
+		},
+		{
+			protocol: 'https',
+			hostname: '*.meimberg.io',
+			port: '',
+			pathname: '/**',
+		},
+		{
+			protocol: 'https',
+			hostname: 'cdn.brandfetch.io',
+			port: '',
+			pathname: '/**',
+		},
+	],
 
 	},
 }

@@ -1,5 +1,5 @@
 import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
-import { Card } from '@/components/elements/articleteaserlist/Card.tsx'
+import { Card } from '@/components/elements/Card.tsx'
 import { LinkIcon } from '@/components/util/Svg.tsx'
 import { StuffStoryblok, StuffteaserlistStoryblok } from '@/types/component-types-sb'
 import { ISbStoryData } from '@storyblok/react'

@@ -436,6 +436,24 @@ export interface Video {
   _uid: string;
 }
 
+export interface Rssfeed {
+  name: string;
+  url: string;
+  icon?: StoryblokAsset;
+  component: "rssfeed";
+  [k: string]: SbBlokKeyDataTypes;
+  _uid: string;
+}
+
+export interface News {
+  pagetitle?: string;
+  pageintro?: string;
+  feeds?: Rssfeed[];
+  component: "news";
+  [k: string]: SbBlokKeyDataTypes;
+  _uid: string;
+}
+
 export interface Youtube {
   youtubeid?: string;
   format: "" | "cinema" | "square";
@@ -470,6 +488,8 @@ export type StuffStoryblok = Stuff
 export type StuffteaserlistStoryblok = Stuffteaserlist
 export type ToolStoryblok = Tool
 export type VideoStoryblok = Video
+export type RssfeedStoryblok = Rssfeed
+export type NewsStoryblok = News
 export type YoutubeStoryblok = Youtube
 
 // Storyblok base types

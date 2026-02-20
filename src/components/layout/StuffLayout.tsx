@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 
 import { Container } from '@/components/layout/Container.tsx'
 import { AppContext } from '@/lib/providers.tsx'
-import { ArticleStoryblok } from '@/types/component-types-sb'
+import { StuffStoryblok } from '@/types/component-types-sb'
 import { ArrowLeftIcon } from '@/components/util/Svg.tsx'
 import HeaderPicture from '@/components/global/HeaderPicture.tsx'
 import { storyblokEditable } from '@storyblok/react/rsc'
@@ -13,7 +13,7 @@ import Pagetitle from '@/components/elements/Pagetitle.tsx'
 
 
 export function StuffLayout({ article, children }: {
-	article: ArticleStoryblok
+	article: StuffStoryblok
 	children: React.ReactNode
 }) {
 	const router = useRouter()
