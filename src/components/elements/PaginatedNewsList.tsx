@@ -1,55 +1,48 @@
-import { fetchAggregatedNews, type RssFeedSource, type NewsItem } from '@/lib/rss'
-import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
+'use client'
+
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { PaginatedList } from './PaginatedNewsList.tsx'
+import type { NewsItem } from '@/lib/rss'
 
-function formatNewsDate(date: Date): string {
-  return date.toLocaleDateString('de-DE', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
+interface SerializedNewsItem {
+  title: string
+  link: string
+  pubDate: string
+  description: string
+  sourceName: string
+  sourceIconUrl?: string
+  imageUrl?: string
 }
 
 type SourceTheme = {
   color: string
   bgLight: string
-  bgDark: string
   borderLight: string
-  borderDark: string
 }
 
 const SOURCE_THEMES: Record<string, SourceTheme> = {
   'awesome apps': {
     color: '#2563eb',
     bgLight: 'rgba(37,99,235,0.08)',
-    bgDark: 'rgba(96,165,250,0.12)',
     borderLight: '#60a5fa',
-    borderDark: 'rgba(96,165,250,0.4)',
   },
   morpheuxx: {
     color: '#dc2626',
     bgLight: 'rgba(220,38,38,0.08)',
-    bgDark: 'rgba(248,113,113,0.12)',
     borderLight: '#f87171',
-    borderDark: 'rgba(248,113,113,0.4)',
   },
   blog: {
     color: '#0d9488',
     bgLight: 'rgba(13,148,136,0.08)',
-    bgDark: 'rgba(45,212,191,0.12)',
     borderLight: '#2dd4bf',
-    borderDark: 'rgba(45,212,191,0.4)',
   },
 }
 
 const DEFAULT_THEME: SourceTheme = {
   color: '#71717a',
   bgLight: 'rgba(113,113,122,0.08)',
-  bgDark: 'rgba(161,161,170,0.12)',
   borderLight: '#d4d4d8',
-  borderDark: 'rgba(113,113,122,0.4)',
 }
 
 function getSourceTheme(sourceName: string): SourceTheme {
@@ -60,19 +53,15 @@ function getSourceTheme(sourceName: string): SourceTheme {
   return DEFAULT_THEME
 }
 
-function SourceBadge({ item }: { item: NewsItem }) {
-  const theme = getSourceTheme(item.sourceName)
-  return (
-    <span
-      className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium"
-      style={{ color: theme.color, backgroundColor: theme.bgLight }}
-    >
-      {item.sourceName}
-    </span>
-  )
+function formatNewsDate(dateStr: string): string {
+  return new Date(dateStr).toLocaleDateString('de-DE', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
 }
 
-function NewsCard({ item }: { item: NewsItem }) {
+function PaginatedNewsCard({ item }: { item: SerializedNewsItem }) {
   const theme = getSourceTheme(item.sourceName)
 
   return (
@@ -81,34 +70,25 @@ function NewsCard({ item }: { item: NewsItem }) {
       style={{ borderLeftColor: theme.borderLight }}
     >
       <div className="absolute -inset-x-2 -inset-y-2 z-0 scale-[0.98] rounded-2xl bg-zinc-50 opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50" />
-
       <Link href={item.link} target="_blank" rel="noopener noreferrer" className="absolute -inset-x-2 -inset-y-2 z-20 rounded-2xl" />
-
       <div className="relative z-10 py-3 pl-4 pr-2">
         <div className="mb-3 flex items-center justify-between">
-          <time
-            dateTime={item.pubDate.toISOString()}
-            className="text-xs text-zinc-400 dark:text-zinc-500"
-          >
+          <time dateTime={item.pubDate} className="text-xs text-zinc-400 dark:text-zinc-500">
             {formatNewsDate(item.pubDate)}
           </time>
-          <SourceBadge item={item} />
+          <span
+            className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium"
+            style={{ color: theme.color, backgroundColor: theme.bgLight }}
+          >
+            {item.sourceName}
+          </span>
         </div>
-
         <div className="flex gap-4">
           {item.imageUrl && (
             <div className="relative shrink-0 overflow-hidden rounded-xl h-28 w-28">
-              <Image
-                src={item.imageUrl}
-                alt=""
-                fill
-                className="object-cover"
-                sizes="112px"
-                unoptimized
-              />
+              <Image src={item.imageUrl} alt="" fill className="object-cover" sizes="112px" unoptimized />
             </div>
           )}
-
           <div className="min-w-0 flex-1">
             <h3 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
               {item.title}
@@ -131,40 +111,30 @@ function NewsCard({ item }: { item: NewsItem }) {
   )
 }
 
-interface NewsFeedListProps {
-  sources: RssFeedSource[]
-  limit?: number
-  pageSize?: number
-}
+export function PaginatedList({ items, pageSize }: { items: NewsItem[]; pageSize: number }) {
+  const serialized: SerializedNewsItem[] = items.map((item) => ({
+    ...item,
+    pubDate: item.pubDate.toISOString(),
+  }))
 
-export default async function NewsFeedList({ sources, limit, pageSize }: NewsFeedListProps) {
-  const allItems = await fetchAggregatedNews(sources)
-
-  if (allItems.length === 0) {
-    return (
-      <ElementWrapper>
-        <p className="text-zinc-500 dark:text-zinc-400">Keine News verfügbar.</p>
-      </ElementWrapper>
-    )
-  }
-
-  const items = limit ? allItems.slice(0, limit) : allItems
-
-  if (pageSize) {
-    return (
-      <ElementWrapper spacing="large">
-        <PaginatedList items={items} pageSize={pageSize} />
-      </ElementWrapper>
-    )
-  }
+  const [visibleCount, setVisibleCount] = useState(pageSize)
+  const visible = serialized.slice(0, visibleCount)
+  const hasMore = visibleCount < serialized.length
 
   return (
-    <ElementWrapper spacing="large">
-      <div className="flex max-w-3xl flex-col gap-4">
-        {items.map((item) => (
-          <NewsCard key={item.link} item={item} />
-        ))}
-      </div>
-    </ElementWrapper>
+    <div className="flex max-w-3xl flex-col gap-4">
+      {visible.map((item) => (
+        <PaginatedNewsCard key={item.link} item={item} />
+      ))}
+      {hasMore && (
+        <button
+          onClick={() => setVisibleCount((c) => c + pageSize)}
+          className="mt-4 cursor-pointer self-center rounded-full border border-zinc-200 text-sm font-medium text-zinc-600 transition-all hover:border-zinc-300 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:bg-zinc-800"
+          style={{ padding: '10px 32px' }}
+        >
+          Mehr anzeigen
+        </button>
+      )}
+    </div>
   )
 }

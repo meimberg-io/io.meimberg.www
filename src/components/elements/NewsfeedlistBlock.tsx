@@ -20,7 +20,7 @@ export default function Newsfeedlist({ blok }: Readonly<{ blok: NewsfeedlistBlok
 
   return (
     <div {...storyblokEditable(blok)}>
-      <NewsFeedList sources={sources} />
+      <NewsFeedList sources={sources} limit={8} />
     </div>
   )
 }
