@@ -100,7 +100,7 @@ async function fetchFeed(source: RssFeedSource): Promise<NewsItem[]> {
 
   try {
     const res = await fetch(source.url, {
-      next: { revalidate: 600 }
+      cache: 'no-store'
     })
 
     if (!res.ok) {

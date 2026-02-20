@@ -11,103 +11,98 @@ function formatNewsDate(date: Date): string {
   })
 }
 
-type SourceColorScheme = {
-  dot: string
-  badge: string
-  text: string
-  border: string
+type SourceTheme = {
+  color: string
+  bgLight: string
+  bgDark: string
+  borderLight: string
+  borderDark: string
 }
 
-const SOURCE_COLORS: Record<string, SourceColorScheme> = {
+const SOURCE_THEMES: Record<string, SourceTheme> = {
   'awesome apps': {
-    dot: 'bg-amber-500',
-    badge: 'bg-amber-50 dark:bg-amber-500/10',
-    text: 'text-amber-700 dark:text-amber-400',
-    border: 'border-l-amber-400 dark:border-l-amber-500/40',
+    color: '#2563eb',
+    bgLight: 'rgba(37,99,235,0.08)',
+    bgDark: 'rgba(96,165,250,0.12)',
+    borderLight: '#60a5fa',
+    borderDark: 'rgba(96,165,250,0.4)',
   },
-  morpheus: {
-    dot: 'bg-violet-500',
-    badge: 'bg-violet-50 dark:bg-violet-500/10',
-    text: 'text-violet-700 dark:text-violet-400',
-    border: 'border-l-violet-400 dark:border-l-violet-500/40',
+  morpheuxx: {
+    color: '#dc2626',
+    bgLight: 'rgba(220,38,38,0.08)',
+    bgDark: 'rgba(248,113,113,0.12)',
+    borderLight: '#f87171',
+    borderDark: 'rgba(248,113,113,0.4)',
   },
   blog: {
-    dot: 'bg-teal-500',
-    badge: 'bg-teal-50 dark:bg-teal-500/10',
-    text: 'text-teal-700 dark:text-teal-400',
-    border: 'border-l-teal-400 dark:border-l-teal-500/40',
+    color: '#0d9488',
+    bgLight: 'rgba(13,148,136,0.08)',
+    bgDark: 'rgba(45,212,191,0.12)',
+    borderLight: '#2dd4bf',
+    borderDark: 'rgba(45,212,191,0.4)',
   },
 }
 
-const DEFAULT_COLORS: SourceColorScheme = {
-  dot: 'bg-zinc-400',
-  badge: 'bg-zinc-100 dark:bg-zinc-800',
-  text: 'text-zinc-600 dark:text-zinc-400',
-  border: 'border-l-zinc-300 dark:border-l-zinc-600',
+const DEFAULT_THEME: SourceTheme = {
+  color: '#71717a',
+  bgLight: 'rgba(113,113,122,0.08)',
+  bgDark: 'rgba(161,161,170,0.12)',
+  borderLight: '#d4d4d8',
+  borderDark: 'rgba(113,113,122,0.4)',
 }
 
-function getSourceColors(sourceName: string): SourceColorScheme {
+function getSourceTheme(sourceName: string): SourceTheme {
   const key = sourceName.toLowerCase()
-  for (const [k, v] of Object.entries(SOURCE_COLORS)) {
+  for (const [k, v] of Object.entries(SOURCE_THEMES)) {
     if (key.includes(k)) return v
   }
-  return DEFAULT_COLORS
+  return DEFAULT_THEME
 }
 
-function SourceBadge({ item }: { item: NewsItem }) {
-  const colors = getSourceColors(item.sourceName)
+function SourceBadge({ item, isDark }: { item: NewsItem; isDark?: boolean }) {
+  const theme = getSourceTheme(item.sourceName)
   return (
-    <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium ${colors.badge} ${colors.text}`}>
-      {item.sourceIconUrl ? (
-        <Image
-          src={item.sourceIconUrl}
-          alt=""
-          width={14}
-          height={14}
-          className="rounded-sm"
-          unoptimized
-        />
-      ) : (
-        <span className={`h-2 w-2 rounded-full ${colors.dot}`} />
-      )}
+    <span
+      className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium"
+      style={{ color: theme.color, backgroundColor: theme.bgLight }}
+    >
       {item.sourceName}
     </span>
   )
 }
 
 function NewsCard({ item }: { item: NewsItem }) {
-  const colors = getSourceColors(item.sourceName)
+  const theme = getSourceTheme(item.sourceName)
 
   return (
-    <article className={`group relative rounded-2xl border-l-2 ${colors.border} transition-colors`}>
-      {/* Hover background */}
+    <article
+      className="group relative rounded-2xl border-l-2 transition-colors"
+      style={{ borderLeftColor: theme.borderLight }}
+    >
       <div className="absolute -inset-x-2 -inset-y-2 z-0 scale-[0.98] rounded-2xl bg-zinc-50 opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50" />
 
-      {/* Click target */}
       <Link href={item.link} target="_blank" rel="noopener noreferrer" className="absolute -inset-x-2 -inset-y-2 z-20 rounded-2xl" />
 
       <div className="relative z-10 py-3 pl-4 pr-2">
-        {/* Top: Source badge + date */}
-        <div className="mb-3 flex items-center gap-3">
-          <SourceBadge item={item} />
+        <div className="mb-3 flex items-center justify-between">
           <time
             dateTime={item.pubDate.toISOString()}
             className="text-xs text-zinc-400 dark:text-zinc-500"
           >
             {formatNewsDate(item.pubDate)}
           </time>
+          <SourceBadge item={item} />
         </div>
 
-        {/* Content: image + text */}
         <div className="flex gap-4">
           {item.imageUrl && (
-            <div className="relative hidden shrink-0 overflow-hidden rounded-lg sm:block sm:h-16 sm:w-16 md:h-20 md:w-20">
+            <div className="relative shrink-0 overflow-hidden rounded-xl h-28 w-28">
               <Image
                 src={item.imageUrl}
                 alt=""
                 fill
                 className="object-cover"
-                sizes="80px"
+                sizes="112px"
                 unoptimized
               />
             </div>
