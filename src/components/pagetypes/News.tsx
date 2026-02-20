@@ -19,7 +19,7 @@ export default function News({ blok }: Readonly<{ blok: NewsStoryblok }>) {
       intro={blok.pageintro}
       {...storyblokEditable(blok)}
     >
-      <NewsFeedList sources={sources} />
+      <NewsFeedList sources={sources} pageSize={20} />
     </SimplePageLayout>
   )
 }
