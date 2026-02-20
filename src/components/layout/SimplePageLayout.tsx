@@ -1,12 +1,12 @@
 import { Container } from '@/components/layout/Container.tsx'
 import React from 'react'
 import { storyblokEditable } from '@storyblok/react/rsc'
-import { ArticleStoryblok, PageStoryblok, StuffStoryblok } from '@/types/component-types-sb'
+import { BlogStoryblok, NewsStoryblok, PageStoryblok, StuffStoryblok } from '@/types/component-types-sb'
 import Pagetitle from '@/components/elements/Pagetitle.tsx'
 
 
 export function SimplePageLayout({ blok, layout, title, intro, children }: {
-	blok: PageStoryblok | ArticleStoryblok | StuffStoryblok
+	blok: PageStoryblok | BlogStoryblok | StuffStoryblok | NewsStoryblok
 	layout: '' | 'home' | 'wide' | 'narrow'
 	title: string | false | undefined,
 	intro: string | false | undefined,

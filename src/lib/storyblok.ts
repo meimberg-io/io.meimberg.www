@@ -1,7 +1,6 @@
 import Page from '@/components/pagetypes/Page'
 import FallbackComponent from '@/components/FallbackComponent.tsx'
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
-import Article from '@/components/pagetypes/Article.tsx'
 import Blog from '@/components/pagetypes/Blog.tsx'
 import Linklist from '@/components/elements/Linklist.tsx'
 import Grid2Column from '@/components/layout/Grid2Column.tsx'
@@ -9,10 +8,9 @@ import Picture from '@/components/elements/Picture.tsx'
 import Richtext from '@/components/elements/Richtext.tsx'
 import Divider from '@/components/elements/Divider.tsx'
 import Photos from '@/components/elements/Photos.tsx'
-import Articleteaserlist from '@/components/elements/articleteaserlist/Articleteaserlist.tsx'
 import Blogteaserlist from '@/components/elements/blogteaserlist/Blogteaserlist.tsx'
 import { ISbStoriesParams, ISbStoryData, StoryblokClient } from '@storyblok/react'
-import { ArticleStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
+import { BlogStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
 import Stuff from '@/components/pagetypes/Stuff.tsx'
 import Stuffteaserlist from '@/components/elements/stuffteaser/Stuffteaserlist.tsx'
 import Hyperlink from '@/components/elements/Hyperlink.tsx'
@@ -24,9 +22,10 @@ import Youtube from '@/components/elements/Youtube.tsx'
 import Video from '@/components/elements/Video.tsx'
 import Soundcloud from '@/components/elements/Soundcloud.tsx'
 import LuxarisePictureSlideshow from '@/components/elements/LuxarisePictureSlideshow.tsx'
+import News from '@/components/pagetypes/News.tsx'
+import Newsfeedlist from '@/components/elements/NewsfeedlistBlock.tsx'
 
 
-export const COMPONENTTYPE_ARTICLE = 'article'
 export const COMPONENTTYPE_BLOG = 'blog'
 export const COMPONENTTYPE_PAGE = 'page'
 export const COMPONENTTYPE_STUFF = 'stuff'
@@ -39,7 +38,6 @@ export const RESOLVE_RELATIONS = [
 	'linklist.links',
 	'sociallink.icon',
 	'sociallink.url',
-	'articleteaserlist.articles',
 	'blogteaserlist.articles',
 	'stuffteaserlist.stuffs',
 	'luxarise_picture.pic_big',
@@ -62,8 +60,8 @@ export const getStoryblokApi = storyblokInit({
 	},
 	components: {
 		page: Page,
-		article: Article,
 		blog: Blog,
+		news: News,
 		stuff: Stuff,
 		linklist: Linklist,
 		picture: Picture,
@@ -78,8 +76,8 @@ export const getStoryblokApi = storyblokInit({
 		video: Video,
 		soundcloud: Soundcloud,
 		youtube: Youtube,
-		articleteaserlist: Articleteaserlist,
 		blogteaserlist: Blogteaserlist,
+		newsfeedlist: Newsfeedlist,
 		stuffteaserlist: Stuffteaserlist,
 		grid_2column: Grid2Column,
 		luxarise_picture_slideshow: LuxarisePictureSlideshow
@@ -102,7 +100,7 @@ export async function fetchStory(slug: string, isPreview: boolean) {
 	return result
 }
 
-export async function fetchStories(limit: number, componenttype: string, folder?: string): Promise<{ data: { stories: ISbStoryData<ArticleStoryblok>[] } }> {
+export async function fetchStories(limit: number, componenttype: string, folder?: string): Promise<{ data: { stories: ISbStoryData<BlogStoryblok>[] } }> {
 	const storyblokApi = getStoryblokApi()
 	await storyblokApi.flushCache()
 	const result = storyblokApi.get('cdn/stories', {
@@ -122,7 +120,7 @@ export async function fetchStories(limit: number, componenttype: string, folder?
 export async function fetchAllStories(): Promise<{ data: { stories: ISbStoryData[] } }> {
 	const storyblokApi = getStoryblokApi()
 	await storyblokApi.flushCache()
-	const types = COMPONENTTYPE_ARTICLE + "," + COMPONENTTYPE_BLOG + "," + COMPONENTTYPE_STUFF + "," + COMPONENTTYPE_PAGE;
+	const types = COMPONENTTYPE_BLOG + "," + COMPONENTTYPE_STUFF + "," + COMPONENTTYPE_PAGE;
 	const result = storyblokApi.get('cdn/stories', {
 		version: process.env.SB_VERSION as 'published' | 'draft' | undefined,
 		filter_query: {
