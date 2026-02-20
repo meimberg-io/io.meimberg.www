@@ -77,14 +77,13 @@ function NewsCard({ item }: { item: NewsItem }) {
 
   return (
     <article
-      className="group relative rounded-2xl border-l-2 transition-colors"
-      style={{ borderLeftColor: theme.borderLight }}
+      className="group relative rounded-2xl transition-colors"
     >
       <div className="absolute -inset-x-2 -inset-y-2 z-0 scale-[0.98] rounded-2xl bg-zinc-50 opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50" />
 
       <Link href={item.link} target="_blank" rel="noopener noreferrer" className="absolute -inset-x-2 -inset-y-2 z-20 rounded-2xl" />
 
-      <div className="relative z-10 py-3 pl-4 pr-2">
+      <div className="relative z-10 py-3 pr-2">
         <div className="mb-3 flex items-center justify-between">
           <time
             dateTime={item.pubDate.toISOString()}
