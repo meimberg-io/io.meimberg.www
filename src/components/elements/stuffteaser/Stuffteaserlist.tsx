@@ -29,7 +29,7 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStorybl
 		return (
 			<ElementWrapper spacing="large">
 
-			<div className="rounded-2xl border p-6 shadow-sm" style={{ borderColor: 'rgba(13,148,136,0.2)', backgroundColor: 'rgba(13,148,136,0.07)', boxShadow: '0 1px 3px 0 rgba(13,148,136,0.1)' }}>
+			<div className="rounded-2xl border border-zinc-100 p-6 shadow-sm dark:border-zinc-700/40">
 				<h2 className="flex items-center justify-end text-sm font-semibold text-zinc-900 dark:text-zinc-100">
 					<HeartIcon className="h-5 w-5 flex-none" color="oklch(0.704 0.14 182.503)"/>
 					<span className="ml-2">Cool Stuff</span>
