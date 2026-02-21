@@ -121,19 +121,21 @@ export function PaginatedList({ items, pageSize }: { items: NewsItem[]; pageSize
   const hasMore = visibleCount < serialized.length
 
   return (
-    <div className="flex max-w-3xl flex-col gap-4">
-      {visible.map((item) => (
-        <PaginatedNewsCard key={item.link} item={item} />
-      ))}
-      {hasMore && (
+    <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+      <div className="flex max-w-3xl flex-col gap-4">
+        {visible.map((item) => (
+          <PaginatedNewsCard key={item.link} item={item} />
+        ))}
+        {hasMore && (
         <button
           onClick={() => setVisibleCount((c) => c + pageSize)}
           className="mt-4 cursor-pointer self-center rounded-full border border-zinc-200 text-sm font-medium text-zinc-600 transition-all hover:border-zinc-300 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:bg-zinc-800"
-          style={{ padding: '10px 32px' }}
+          style={{ padding: '10 px 32px' }}
         >
           Mehr anzeigen
         </button>
       )}
+      </div>
     </div>
   )
 }
