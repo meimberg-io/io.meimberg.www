@@ -63,8 +63,8 @@ export function BlogCardList(props: { blogs: ISbStoryData<BlogStoryblok>[], layo
             {props.blogs.map((blog) => {
               const imageUrl = getTeaserImageUrl(blog.content)
               return (
-                <article key={blog.id} className="md:grid md:grid-cols-4 md:items-baseline">
-                  <Card className="md:col-span-3">
+                <article key={blog.id}>
+                  <Card>
                     <div className="flex gap-6">
                       {imageUrl && (
                         <div className="hidden sm:block shrink-0 w-[140px] h-[105px] relative rounded-lg overflow-hidden">
@@ -78,20 +78,19 @@ export function BlogCardList(props: { blogs: ISbStoryData<BlogStoryblok>[], layo
                         </div>
                       )}
                       <div className="flex-1">
-                        <Card.Title href={`/${blog.full_slug}`}>
-                          {blog.content.teasertitle}
-                        </Card.Title>
-                        <Card.Eyebrow as="time" dateTime={blog.content.date} className="md:hidden" decorate>
-                          {'' + formatDate(blog.content.date)}
-                        </Card.Eyebrow>
+                        <div className="flex items-baseline justify-between gap-x-4">
+                          <Card.Title href={`/${blog.full_slug}`}>
+                            {blog.content.teasertitle}
+                          </Card.Title>
+                          <Card.Eyebrow as="time" dateTime={blog.content.date} className="shrink-0">
+                            {formatDate(blog.content.date)}
+                          </Card.Eyebrow>
+                        </div>
                         <Card.Description>{blog.content.abstract}</Card.Description>
                         <Card.Cta>{blog.content.readmoretext ?? 'Weiterlesen'}</Card.Cta>
                       </div>
                     </div>
                   </Card>
-                  <Card.Eyebrow as="time" dateTime={blog.content.date} className="mt-1 max-md:hidden">
-                    {formatDate(blog.content.date)}
-                  </Card.Eyebrow>
                 </article>
               )
             })}

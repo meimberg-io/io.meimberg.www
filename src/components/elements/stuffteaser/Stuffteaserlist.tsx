@@ -29,46 +29,46 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStorybl
 		return (
 			<ElementWrapper spacing="large">
 
-				<div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-					<h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100 ">
-						<HeartIcon className="h-6 w-6 flex-none " color="oklch(0.704 0.14 182.503)"/>
-						<span className="ml-3 mb-2 ">Cool Stuff</span>
-					</h2>
+			<div className="rounded-2xl border p-6 shadow-sm" style={{ borderColor: 'rgba(13,148,136,0.2)', backgroundColor: 'rgba(13,148,136,0.07)', boxShadow: '0 1px 3px 0 rgba(13,148,136,0.1)' }}>
+				<h2 className="flex items-center justify-end text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+					<HeartIcon className="h-5 w-5 flex-none" color="oklch(0.704 0.14 182.503)"/>
+					<span className="ml-2">Cool Stuff</span>
+				</h2>
 
-					<ol className="mt-6 space-y-4">
-						{resolvedStuffs.map((stuff) => (
-							<div key={stuff.id} className="my-8">
-							<Card as="li"  >
-								<div className="flex gap-4 w-full">
-									<div
-										className=" overflow-hidden mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-										{stuff.content.teaserimage?.filename ? (
-											<Image src={stuff.content.teaserimage.filename} alt="" className="overflow-hidden h-10 w-10" width={32} height={32} />
-										) : (
-											<div className="w-10 h-10 bg-gray-200 rounded-full" />
-										)}
-									</div>
-									<dl className="flex flex-auto flex-wrap gap-x-2">
-										<dt className="sr-only">Company</dt>
-										<dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-											{stuff.content.pagetitle}
-										</dd>
-										<dt className="sr-only">Role</dt>
-										<dd className="text-xs text-zinc-500 dark:text-zinc-400">
-											{stuff.content.shortabstact}
-										</dd>
-									</dl>
-								<div className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-									<Card.Link href={`/${stuff.full_slug}`}></Card.Link>
+				<ol className="mt-6 space-y-4">
+					{resolvedStuffs.map((stuff) => (
+						<div key={stuff.id} className="my-8">
+						<Card as="li">
+							<div className="flex gap-4 w-full">
+								<div
+									className="overflow-hidden mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+									{stuff.content.teaserimage?.filename ? (
+										<Image src={stuff.content.teaserimage.filename} alt="" className="overflow-hidden h-10 w-10" width={32} height={32} />
+									) : (
+										<div className="w-10 h-10 bg-gray-200 rounded-full" />
+									)}
 								</div>
+								<dl className="flex flex-auto flex-wrap gap-x-2">
+									<dt className="sr-only">Company</dt>
+									<dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100 mb-1">
+										{stuff.content.pagetitle}
+									</dd>
+									<dt className="sr-only">Role</dt>
+									<dd className="text-xs text-zinc-500 dark:text-zinc-400">
+										{stuff.content.shortabstact}
+									</dd>
+								</dl>
+							<div className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+								<Card.Link href={`/${stuff.full_slug}`}></Card.Link>
 							</div>
-						</Card>
 						</div>
+					</Card>
+					</div>
 
-					))}
-					</ol>
+				))}
+				</ol>
 
-				</div>
+			</div>
 
 			</ElementWrapper>
 		)
