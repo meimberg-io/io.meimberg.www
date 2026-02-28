@@ -15,7 +15,7 @@ function escapeXml(value: string): string {
 }
 
 function channelDisplayName(sourceName: string): string {
-  return sourceName === 'Blog' ? 'Olis' : sourceName
+  return sourceName === 'Blog' ? 'Oli' : sourceName
 }
 
 function itemXml(item: NewsItem): string {
