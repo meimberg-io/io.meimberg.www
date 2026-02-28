@@ -25,13 +25,18 @@ export interface Article {
     | Hyperlink
     | Icon
     | Linklist
+    | LuxariseManagerConfig
     | LuxarisePicture
     | LuxarisePictureSlideshow
+    | News
+    | Newsfeedlist
+    | Newsletter
     | Page
     | Pagetitle
     | Photos
     | Picture
     | Richtext
+    | Rssfeed
     | Sociallink
     | Soundcloud
     | Stuff
@@ -79,13 +84,18 @@ export interface Blog {
     | Hyperlink
     | Icon
     | Linklist
+    | LuxariseManagerConfig
     | LuxarisePicture
     | LuxarisePictureSlideshow
+    | News
+    | Newsfeedlist
+    | Newsletter
     | Page
     | Pagetitle
     | Photos
     | Picture
     | Richtext
+    | Rssfeed
     | Sociallink
     | Soundcloud
     | Stuff
@@ -94,6 +104,15 @@ export interface Blog {
     | Video
     | Youtube
   )[];
+  cm_content_complete?: boolean;
+  cm_content_confirmed_at?: string;
+  cm_source_raw?: string;
+  cm_source_summarized?: string;
+  cm_socialmedia?: boolean;
+  cm_publer_published_at?: string;
+  cm_publer_post_ids?: string;
+  cm_ai_hint?: string;
+  cm_image_prompt?: string;
   component: "blog";
   _uid: string;
   [k: string]: unknown;
@@ -150,13 +169,18 @@ export interface Grid2Column {
     | Hyperlink
     | Icon
     | Linklist
+    | LuxariseManagerConfig
     | LuxarisePicture
     | LuxarisePictureSlideshow
+    | News
+    | Newsfeedlist
+    | Newsletter
     | Page
     | Pagetitle
     | Photos
     | Picture
     | Richtext
+    | Rssfeed
     | Sociallink
     | Soundcloud
     | Stuff
@@ -178,13 +202,18 @@ export interface Grid2Column {
     | Hyperlink
     | Icon
     | Linklist
+    | LuxariseManagerConfig
     | LuxarisePicture
     | LuxarisePictureSlideshow
+    | News
+    | Newsfeedlist
+    | Newsletter
     | Page
     | Pagetitle
     | Photos
     | Picture
     | Richtext
+    | Rssfeed
     | Sociallink
     | Soundcloud
     | Stuff
@@ -213,13 +242,18 @@ export interface Grouping {
     | Hyperlink
     | Icon
     | Linklist
+    | LuxariseManagerConfig
     | LuxarisePicture
     | LuxarisePictureSlideshow
+    | News
+    | Newsfeedlist
+    | Newsletter
     | Page
     | Pagetitle
     | Photos
     | Picture
     | Richtext
+    | Rssfeed
     | Sociallink
     | Soundcloud
     | Stuff
@@ -234,7 +268,7 @@ export interface Grouping {
 }
 
 export interface Hyperlink {
-  url: Exclude<StoryblokMultilink, {linktype?: "email"} | {linktype?: "asset"}>;
+  url: Exclude<StoryblokMultilink, {linktype?: "email"}>;
   label: string;
   component: "hyperlink";
   _uid: string;
@@ -256,9 +290,17 @@ export interface Linklist {
   [k: string]: unknown;
 }
 
+export interface LuxariseManagerConfig {
+  config?: string;
+  config_contentmanager?: string;
+  component: "luxarise_manager_config";
+  _uid: string;
+  [k: string]: unknown;
+}
+
 export interface LuxarisePicture {
   pic_thumb?: StoryblokAsset;
-  abstract: string;
+  abstract?: string;
   name: string;
   title: string;
   pic_big?: StoryblokAsset;
@@ -269,6 +311,18 @@ export interface LuxarisePicture {
   gelato?: boolean;
   WhiteWall?: boolean;
   gelato_id?: string;
+  content_complete?: boolean;
+  content_confirmed_at?: string;
+  gelato_published_at?: string;
+  shopify_product_id?: string;
+  shopify_product_url?: string;
+  shopify_finalized?: boolean;
+  shopify_finalized_at?: string;
+  publer_post_ids?: string;
+  publer_published_at?: string;
+  import_date?: string;
+  last_modified?: string;
+  long_description?: StoryblokRichtext;
   component: "luxarise_picture";
   _uid: string;
   [k: string]: unknown;
@@ -278,6 +332,31 @@ export interface LuxarisePictureSlideshow {
   pictures: (ISbStoryData<LuxarisePicture> | string)[];
   spacing?: "" | "default" | "large";
   component: "luxarise_picture_slideshow";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface News {
+  pagetitle?: string;
+  pageintro?: string;
+  feeds?: Rssfeed[];
+  component: "news";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface Newsfeedlist {
+  feeds?: Rssfeed[];
+  component: "newsfeedlist";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface Newsletter {
+  title?: string;
+  description?: string;
+  variant?: "" | "default" | "highlight";
+  component: "newsletter";
   _uid: string;
   [k: string]: unknown;
 }
@@ -299,13 +378,18 @@ export interface Page {
     | Hyperlink
     | Icon
     | Linklist
+    | LuxariseManagerConfig
     | LuxarisePicture
     | LuxarisePictureSlideshow
+    | News
+    | Newsfeedlist
+    | Newsletter
     | Page
     | Pagetitle
     | Photos
     | Picture
     | Richtext
+    | Rssfeed
     | Sociallink
     | Soundcloud
     | Stuff
@@ -351,8 +435,17 @@ export interface Richtext {
   [k: string]: unknown;
 }
 
+export interface Rssfeed {
+  name: string;
+  url: string;
+  icon?: StoryblokAsset;
+  component: "rssfeed";
+  _uid: string;
+  [k: string]: unknown;
+}
+
 export interface Sociallink {
-  url: Exclude<StoryblokMultilink, {linktype?: "email"} | {linktype?: "asset"}>;
+  url: Exclude<StoryblokMultilink, {linktype?: "email"}>;
   text: string;
   icon: ISbStoryData<Icon> | string;
   component: "sociallink";
@@ -387,13 +480,18 @@ export interface Stuff {
     | Hyperlink
     | Icon
     | Linklist
+    | LuxariseManagerConfig
     | LuxarisePicture
     | LuxarisePictureSlideshow
+    | News
+    | Newsfeedlist
+    | Newsletter
     | Page
     | Pagetitle
     | Photos
     | Picture
     | Richtext
+    | Rssfeed
     | Sociallink
     | Soundcloud
     | Stuff

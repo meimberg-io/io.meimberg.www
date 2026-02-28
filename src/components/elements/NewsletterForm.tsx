@@ -3,7 +3,18 @@
 import { useState } from 'react'
 import { Mail } from 'lucide-react'
 
-export default function NewsletterForm({ variant }: { variant?: 'default' | 'highlight' } = {}) {
+interface NewsletterFormProps {
+  variant?: 'default' | 'highlight'
+  title?: string
+  description?: string
+}
+
+const DEFAULTS = {
+  title: 'Abonniere meinen Newsletter!',
+  description: 'Wöchentliche Updates zu Tools, KI und digitalem Alltag. Ohne Buzzword-Bingo. E-Mail eintragen und los.',
+}
+
+export default function NewsletterForm({ variant, title, description }: NewsletterFormProps = {}) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [message, setMessage] = useState('')
@@ -57,11 +68,11 @@ export default function NewsletterForm({ variant }: { variant?: 'default' | 'hig
           <form onSubmit={handleSubmit}>
             <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
               <Mail className="h-6 w-6 flex-none text-teal-500" />
-              <span className="ml-3">Abonniere meinen Newsletter!</span>
+              <span className="ml-3">{title || DEFAULTS.title}</span>
             </h2>
             <hr className="mt-4 border-t border-zinc-100 dark:border-zinc-700/40 mb-8" />
             <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
-              Wöchentliche Updates zu Tools, KI und digitalem Alltag. Ohne Buzzword-Bingo. E-Mail eintragen und los.
+              {description || DEFAULTS.description}
             </p>
             <div className="mt-6 flex items-center">
               <span className="flex min-w-0 flex-auto p-px">

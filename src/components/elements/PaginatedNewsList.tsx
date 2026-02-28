@@ -129,8 +129,7 @@ export function PaginatedList({ items, pageSize }: { items: NewsItem[]; pageSize
         {hasMore && (
         <button
           onClick={() => setVisibleCount((c) => c + pageSize)}
-          className="mt-4 cursor-pointer self-center rounded-full border border-zinc-200 text-sm font-medium text-zinc-600 transition-all hover:border-zinc-300 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:bg-zinc-800"
-          style={{ padding: '10 px 32px' }}
+          className="mt-4 cursor-pointer self-center inline-flex items-center justify-center rounded-md py-2 px-4 text-sm font-semibold outline-offset-2 transition bg-zinc-800 text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70"
         >
           Mehr anzeigen
         </button>
