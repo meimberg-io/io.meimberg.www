@@ -41,11 +41,15 @@ sb-sync: sb-pull sb-types ## Pull components + generate types
 
 # --- Docker ---
 
-docker-build: ## Build production Docker image
-	docker build -t meimberg-www .
+docker-build: ## Build production Docker image (reads build args from .env)
+	docker build -t meimberg-www \
+		--build-arg NEXT_PUBLIC_STORYBLOK_TOKEN=$$(grep NEXT_PUBLIC_STORYBLOK_TOKEN .env | cut -d= -f2) \
+		--build-arg NEXT_PUBLIC_STORYBOOK_DISABLECACHING=$$(grep NEXT_PUBLIC_STORYBOOK_DISABLECACHING .env | cut -d= -f2) \
+		--build-arg NEXT_PUBLIC_MATOMO_TRACKER=$$(grep NEXT_PUBLIC_MATOMO_TRACKER .env | cut -d= -f2) \
+		.
 
-docker-up: ## Start production container locally
-	docker run --rm -p 3000:3000 --env-file .env meimberg-www
+docker-up: ## Start production container locally (port 3010)
+	docker run --rm -p 3010:3000 --env-file .env --name meimberg-www meimberg-www
 
 docker-down: ## Stop local production container
-	@docker stop $$(docker ps -q --filter ancestor=meimberg-www) 2>/dev/null && echo "Stopped." || echo "Not running."
+	@docker stop meimberg-www 2>/dev/null && echo "Stopped." || echo "Not running."
