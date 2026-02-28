@@ -85,6 +85,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET: ${{ secrets.NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET }}
       REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+      BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
     
     steps:
     - name: Checkout code
@@ -105,7 +106,7 @@ jobs:
         host: ${{ vars.SERVER_HOST }}
         username: ${{ vars.SERVER_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        envs: PROJECT_NAME,GITHUB_TOKEN,DOCKER_IMAGE,APP_DOMAIN,NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET,REVALIDATE_SECRET
+        envs: PROJECT_NAME,GITHUB_TOKEN,DOCKER_IMAGE,APP_DOMAIN,NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET,REVALIDATE_SECRET,BUTTONDOWN_API_KEY
         script: |
           set -e
           
@@ -123,6 +124,7 @@ jobs:
           HOSTNAME=0.0.0.0
           NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET=$NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET
           REVALIDATE_SECRET=$REVALIDATE_SECRET
+          BUTTONDOWN_API_KEY=$BUTTONDOWN_API_KEY
           EOF
           
           # Substitute variables in docker-compose template

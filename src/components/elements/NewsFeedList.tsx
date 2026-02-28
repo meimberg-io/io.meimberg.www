@@ -132,36 +132,30 @@ interface NewsFeedListProps {
   sources: RssFeedSource[]
   limit?: number
   pageSize?: number
+  bare?: boolean
 }
 
-export default async function NewsFeedList({ sources, limit, pageSize }: NewsFeedListProps) {
+export default async function NewsFeedList({ sources, limit, pageSize, bare }: NewsFeedListProps) {
   const allItems = await fetchAggregatedNews(sources)
 
   if (allItems.length === 0) {
-    return (
-      <ElementWrapper>
-        <p className="text-zinc-500 dark:text-zinc-400">Keine News verfügbar.</p>
-      </ElementWrapper>
-    )
+    const empty = <p className="text-zinc-500 dark:text-zinc-400">Keine News verfügbar.</p>
+    return bare ? empty : <ElementWrapper>{empty}</ElementWrapper>
   }
 
   const items = limit ? allItems.slice(0, limit) : allItems
 
   if (pageSize) {
-    return (
-      <ElementWrapper spacing="large">
-        <PaginatedList items={items} pageSize={pageSize} />
-      </ElementWrapper>
-    )
+    const content = <PaginatedList items={items} pageSize={pageSize} />
+    return bare ? content : <ElementWrapper spacing="large">{content}</ElementWrapper>
   }
 
-  return (
-    <ElementWrapper spacing="large">
-      <div className="flex max-w-3xl flex-col gap-4">
-        {items.map((item) => (
-          <NewsCard key={item.link} item={item} />
-        ))}
-      </div>
-    </ElementWrapper>
+  const content = (
+    <div className="flex max-w-3xl flex-col gap-4">
+      {items.map((item) => (
+        <NewsCard key={item.link} item={item} />
+      ))}
+    </div>
   )
+  return bare ? content : <ElementWrapper spacing="large">{content}</ElementWrapper>
 }
