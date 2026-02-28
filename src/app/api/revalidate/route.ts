@@ -1,24 +1,36 @@
-import {revalidatePath} from 'next/cache';
+import { revalidatePath } from 'next/cache'
+import { NextRequest } from 'next/server'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function POST() {
-	// export async function POST(req: Request) {
-    // const token = req.headers.get('x-serviceatlas-token');
-    // const expectedToken = process.env.REVALIDATE_SECRET;
+const REVALIDATE_SECRET = process.env.REVALIDATE_SECRET
 
-    // if (!token || token !== expectedToken) {
-    //     return new Response(JSON.stringify({ error: 'Unauthorized' }), {
-    //         status: 401,
-    //         headers: { 'Content-Type': 'application/json' },
-    //     });
-    // }
+function checkSecret(secret: string | null) {
+  if (!REVALIDATE_SECRET) return true
+  return secret === REVALIDATE_SECRET
+}
 
-    const tag = '/'; // fest definierter Tag
+async function handleRevalidate(secret: string | null) {
+  if (!checkSecret(secret)) {
+    return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+      status: 401,
+      headers: { 'Content-Type': 'application/json' },
+    })
+  }
 
-    await revalidatePath(tag);
+  await revalidatePath('/')
 
-    return new Response(JSON.stringify({ status: 'ok', tag }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-    });
+  return new Response(JSON.stringify({ status: 'ok', revalidated: '/' }), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json' },
+  })
+}
+
+export async function GET(req: NextRequest) {
+  const secret = req.nextUrl.searchParams.get('secret')
+  return handleRevalidate(secret)
+}
+
+export async function POST(req: NextRequest) {
+  const secret = req.nextUrl.searchParams.get('secret')
+    || req.headers.get('x-revalidate-secret')
+  return handleRevalidate(secret)
 }
