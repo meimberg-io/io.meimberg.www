@@ -1,0 +1,111 @@
+'use client'
+
+import { useState } from 'react'
+
+function EnvelopeIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden className="h-6 w-6 flex-none" {...props}>
+      <path d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z" className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500" />
+      <path d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6" className="stroke-zinc-400 dark:stroke-zinc-500" />
+    </svg>
+  )
+}
+
+const BUTTONDOWN_REFER = 'https://buttondown.com/refer/meimberg'
+
+export default function NewsletterForm() {
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [message, setMessage] = useState('')
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    if (status === 'loading') return
+    setStatus('loading')
+    setMessage('')
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      })
+      const data = await res.json().catch(() => ({}))
+      if (res.ok) {
+        setStatus('success')
+        setEmail('')
+      } else {
+        setStatus('error')
+        setMessage(data?.error || 'Etwas ist schiefgelaufen.')
+      }
+    } catch {
+      setStatus('error')
+      setMessage('Netzwerkfehler. Bitte später erneut versuchen.')
+    }
+  }
+
+  return (
+      <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+        {status === 'success' ? (
+          <>
+            <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+              <EnvelopeIcon />
+              <span className="ml-3">Newsletter abonnieren – Bestätigung nötig</span>
+            </h2>
+            <hr className="mt-4 border-t border-zinc-100 dark:border-zinc-700/40 mb-8" />
+            <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
+              Danke! <b>Prüfe dein Postfach!</b> – Du hast eine Bestätigungsmail erhalten.
+            </p>
+         
+            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+              Ich freue mich riesig, dass du dabei bist!
+            </p>
+            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 font-bold">
+              Oli
+            </p>
+          </>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+              <EnvelopeIcon />
+              <span className="ml-3">Abonniere meinen Newsletter!</span>
+            </h2>
+            <hr className="mt-4 border-t border-zinc-100 dark:border-zinc-700/40 mb-8" />
+            <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
+              Wöchentliche Updates zu Tools, KI und digitalem Alltag. Ohne Buzzword-Bingo. E-Mail eintragen und los.
+            </p>
+            <div className="mt-6 flex items-center">
+              <span className="flex min-w-0 flex-auto p-px">
+                <input
+                  type="email"
+                  id="bd-email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  placeholder="deine@email.de"
+                  aria-label="E-Mail-Adresse"
+                  disabled={status === 'loading'}
+                  className="w-full appearance-none rounded-lg bg-white px-3 py-2 text-sm text-zinc-900 shadow-md shadow-zinc-800/5 outline outline-zinc-900/10 placeholder:text-zinc-400 focus:ring-4 focus:ring-teal-500/10 focus:outline-teal-500 disabled:opacity-60 sm:text-sm dark:outline-zinc-700 dark:placeholder:text-zinc-500 dark:focus:ring-teal-400/10 dark:focus:outline-teal-400"
+                />
+              </span>
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="ml-4 flex-none cursor-pointer inline-flex items-center justify-center gap-2 rounded-md py-2                 px-3 text-sm font-semibold outline-offset-2 transition                 bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-800  disabled:opacity-60                  dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:black "               >
+                {status === 'loading' ? 'Wird gesendet…' : 'Abonnieren'}
+              </button>
+            </div>
+            {status === 'error' && message && (
+              <p className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert">
+                {message}
+              </p>
+            )}
+            <p className="mt-4 text-xs text-zinc-500 dark:text-zinc-400">
+              <a href={BUTTONDOWN_REFER} target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-700 dark:hover:text-zinc-300">
+                Powered by Buttondown
+              </a>
+            </p>
+          </form>
+        )}
+      </div>
+  )
+}
