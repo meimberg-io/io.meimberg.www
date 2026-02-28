@@ -52,7 +52,7 @@ export function BlogLayout({ blog, children }: {
 
               {children}
 
-              <div className="mt-16">
+              <div className="mt-16 mb-16">
                 <NewsletterForm variant="highlight" />
               </div>
             </article>

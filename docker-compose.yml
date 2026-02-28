@@ -10,7 +10,7 @@ services:
         - NEXT_PUBLIC_STORYBOOK_DISABLECACHING=${NEXT_PUBLIC_STORYBOOK_DISABLECACHING:-false}
         - NEXT_PUBLIC_MATOMO_TRACKER=${NEXT_PUBLIC_MATOMO_TRACKER:-false}
     ports:
-      - "${APP_PORT:-3010}:3000"
+      - "${APP_PORT:-3000}:3010"
     environment:
       - NODE_ENV=${NODE_ENV:-development}
       - PORT=3000
