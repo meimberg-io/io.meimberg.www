@@ -31,6 +31,7 @@ function itemXml(item: NewsItem): string {
       <guid>${escapeXml(item.link)}</guid>
       <pubDate>${pubDate}</pubDate>
       <description><![CDATA[${item.description ?? ''}]]></description>
+      <author>${source}</author>
       <category>${source}</category>
       <dc:creator>${source}</dc:creator>${imageXml}
     </item>`
@@ -45,6 +46,7 @@ function feedXml(items: NewsItem[]): string {
     <link>${BASE_URL}</link>
     <description>Aggregierter News-Feed: Blog und weitere Quellen von meimberg.io</description>
     <language>de</language>
+    <copyright>© ${new Date().getFullYear()} meimberg.io</copyright>
     ${channelItems}
   </channel>
 </rss>`
