@@ -11,8 +11,6 @@ function EnvelopeIcon(props: React.SVGProps<SVGSVGElement>) {
   )
 }
 
-const BUTTONDOWN_REFER = 'https://buttondown.com/refer/meimberg'
-
 export default function NewsletterForm() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -99,11 +97,6 @@ export default function NewsletterForm() {
                 {message}
               </p>
             )}
-            <p className="mt-4 text-xs text-zinc-500 dark:text-zinc-400">
-              <a href={BUTTONDOWN_REFER} target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-700 dark:hover:text-zinc-300">
-                Powered by Buttondown
-              </a>
-            </p>
           </form>
         )}
       </div>
