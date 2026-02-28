@@ -1,17 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import { Mail } from 'lucide-react'
 
-function EnvelopeIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden className="h-6 w-6 flex-none" {...props}>
-      <path d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z" className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500" />
-      <path d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6" className="stroke-zinc-400 dark:stroke-zinc-500" />
-    </svg>
-  )
-}
-
-export default function NewsletterForm() {
+export default function NewsletterForm({ variant }: { variant?: 'default' | 'highlight' } = {}) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [message, setMessage] = useState('')
@@ -42,11 +34,11 @@ export default function NewsletterForm() {
   }
 
   return (
-      <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <div className={`rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 ${variant === 'highlight' ? 'bg-zinc-50 dark:bg-zinc-800/50' : ''}`}>
         {status === 'success' ? (
           <>
             <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-              <EnvelopeIcon />
+              <Mail className="h-6 w-6 flex-none text-teal-500" />
               <span className="ml-3">Newsletter abonnieren – Bestätigung nötig</span>
             </h2>
             <hr className="mt-4 border-t border-zinc-100 dark:border-zinc-700/40 mb-8" />
@@ -64,7 +56,7 @@ export default function NewsletterForm() {
         ) : (
           <form onSubmit={handleSubmit}>
             <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-              <EnvelopeIcon />
+              <Mail className="h-6 w-6 flex-none text-teal-500" />
               <span className="ml-3">Abonniere meinen Newsletter!</span>
             </h2>
             <hr className="mt-4 border-t border-zinc-100 dark:border-zinc-700/40 mb-8" />
