@@ -9,7 +9,7 @@
 		"start": "next start",
 		"lint": "next lint",
 		"pull-sb-components": "npx storyblok components pull --space 330326",
-		"generate-sb-types": "npx storyblok types --space 330326 generate && cp .storyblok/types/330326/storyblok-components.d.ts src/types/component-types-sb.d.ts"
+		"generate-sb-types": "bash scripts/generate-sb-types.sh"
 	},
 	"dependencies": {
 		"@headlessui/react": "^2.2.0",
