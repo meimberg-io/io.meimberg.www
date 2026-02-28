@@ -24,6 +24,7 @@ import Soundcloud from '@/components/elements/Soundcloud.tsx'
 import LuxarisePictureSlideshow from '@/components/elements/LuxarisePictureSlideshow.tsx'
 import News from '@/components/pagetypes/News.tsx'
 import Newsfeedlist from '@/components/elements/NewsfeedlistBlock.tsx'
+import NewsletterBlock from '@/components/elements/NewsletterBlock.tsx'
 
 
 export const COMPONENTTYPE_BLOG = 'blog'
@@ -78,6 +79,7 @@ export const getStoryblokApi = storyblokInit({
 		youtube: Youtube,
 		blogteaserlist: Blogteaserlist,
 		newsfeedlist: Newsfeedlist,
+		newsletter: NewsletterBlock,
 		stuffteaserlist: Stuffteaserlist,
 		grid_2column: Grid2Column,
 		luxarise_picture_slideshow: LuxarisePictureSlideshow

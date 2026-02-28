@@ -27,8 +27,6 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStorybl
 	}
 	if (blok.layout === 'small') {
 		return (
-			<ElementWrapper spacing="large">
-
 			<div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
 				<h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
 					<HeartIcon className="h-6 w-6 flex-none" color="oklch(0.704 0.14 182.503)"/>
@@ -70,8 +68,6 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStorybl
 				</ol>
 
 			</div>
-
-			</ElementWrapper>
 		)
 
 	} else {
