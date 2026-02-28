@@ -6,5 +6,5 @@ h1 {
 }
 
 hr {
-	@apply border-t border-zinc-200 dark:border-zinc-800 -my-4;
+	@apply border-t border-zinc-200 dark:border-zinc-800;
 }
