@@ -10,7 +10,7 @@ import Divider from '@/components/elements/Divider.tsx'
 import Photos from '@/components/elements/Photos.tsx'
 import Blogteaserlist from '@/components/elements/blogteaserlist/Blogteaserlist.tsx'
 import { ISbStoriesParams, ISbStoryData, StoryblokClient } from '@storyblok/react'
-import { BlogStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
+import { BlogStoryblok, GlobalsettingsStoryblok, NewsStoryblok } from '@/types/component-types-sb'
 import Stuff from '@/components/pagetypes/Stuff.tsx'
 import Stuffteaserlist from '@/components/elements/stuffteaser/Stuffteaserlist.tsx'
 import Hyperlink from '@/components/elements/Hyperlink.tsx'
@@ -131,4 +131,15 @@ export async function fetchAllStories(): Promise<{ data: { stories: ISbStoryData
 		per_page: 100
 	})
 	return result
+}
+
+export async function fetchNewsStoryContent(): Promise<NewsStoryblok | null> {
+	const storyblokApi = getStoryblokApi()
+	const result = await storyblokApi.get('cdn/stories', {
+		version: process.env.SB_VERSION as 'published' | 'draft' | undefined,
+		filter_query: { component: { in: 'news' } },
+		per_page: 1
+	})
+	const story = result.data?.stories?.[0]
+	return (story?.content as NewsStoryblok) ?? null
 }
