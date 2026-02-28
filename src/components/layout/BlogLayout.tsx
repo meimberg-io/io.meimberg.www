@@ -11,6 +11,7 @@ import { ArrowLeftIcon } from '@/components/util/Svg.tsx'
 import HeaderPicture from '@/components/global/HeaderPicture.tsx'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Pagetitle from '@/components/elements/Pagetitle.tsx'
+import NewsletterForm from '@/components/elements/NewsletterForm.tsx'
 
 
 export function BlogLayout({ blog, children }: {
@@ -51,6 +52,9 @@ export function BlogLayout({ blog, children }: {
 
               {children}
 
+              <div className="mt-16">
+                <NewsletterForm variant="highlight" />
+              </div>
             </article>
           </div>
 
