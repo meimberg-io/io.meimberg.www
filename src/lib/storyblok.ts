@@ -10,7 +10,8 @@ import Divider from '@/components/elements/Divider.tsx'
 import Photos from '@/components/elements/Photos.tsx'
 import Blogteaserlist from '@/components/elements/blogteaserlist/Blogteaserlist.tsx'
 import { ISbStoriesParams, ISbStoryData, StoryblokClient } from '@storyblok/react'
-import { BlogStoryblok, GlobalsettingsStoryblok, NewsStoryblok } from '@/types/component-types-sb'
+import { BlogStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
+import { deriveSourceIconUrl, type RssFeedSource } from '@/lib/rss'
 import Stuff from '@/components/pagetypes/Stuff.tsx'
 import Stuffteaserlist from '@/components/elements/stuffteaser/Stuffteaserlist.tsx'
 import Hyperlink from '@/components/elements/Hyperlink.tsx'
@@ -22,7 +23,6 @@ import Youtube from '@/components/elements/Youtube.tsx'
 import Video from '@/components/elements/Video.tsx'
 import Soundcloud from '@/components/elements/Soundcloud.tsx'
 import LuxarisePictureSlideshow from '@/components/elements/LuxarisePictureSlideshow.tsx'
-import News from '@/components/pagetypes/News.tsx'
 import Newsfeedlist from '@/components/elements/NewsfeedlistBlock.tsx'
 import NewsletterBlock from '@/components/elements/NewsletterBlock.tsx'
 
@@ -62,7 +62,6 @@ export const getStoryblokApi = storyblokInit({
 	components: {
 		page: Page,
 		blog: Blog,
-		news: News,
 		stuff: Stuff,
 		linklist: Linklist,
 		picture: Picture,
@@ -135,13 +134,14 @@ export async function fetchAllStories(): Promise<{ data: { stories: ISbStoryData
 	return result
 }
 
-export async function fetchNewsStoryContent(): Promise<NewsStoryblok | null> {
-	const storyblokApi = getStoryblokApi()
-	const result = await storyblokApi.get('cdn/stories', {
-		version: process.env.SB_VERSION as 'published' | 'draft' | undefined,
-		filter_query: { component: { in: 'news' } },
-		per_page: 1
-	})
-	const story = result.data?.stories?.[0]
-	return (story?.content as NewsStoryblok) ?? null
+export async function fetchNewsFeedSources(): Promise<RssFeedSource[]> {
+	const { data } = await fetchStory('p/news', false)
+	const body = data?.story?.content?.body ?? []
+	const feedBlock = Array.isArray(body) ? body.find((b: { component?: string }) => b.component === 'newsfeedlist') : null
+	const feeds = feedBlock?.feeds ?? []
+	return feeds.map((feed: { name: string; url: string; icon?: { filename?: string } }) => ({
+		name: feed.name,
+		url: feed.url,
+		iconUrl: feed.icon?.filename || deriveSourceIconUrl(feed.url)
+	}))
 }
