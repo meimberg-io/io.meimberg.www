@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
-import { fetchNewsStoryContent } from '@/lib/storyblok'
-import { fetchAggregatedNews, deriveSourceIconUrl, type RssFeedSource } from '@/lib/rss'
+import { fetchNewsFeedSources } from '@/lib/storyblok'
+import { fetchAggregatedNews } from '@/lib/rss'
 import type { NewsItem } from '@/lib/rss'
 
 const BASE_URL = 'https://www.meimberg.io/'
@@ -53,14 +53,7 @@ function feedXml(items: NewsItem[]): string {
 }
 
 export async function GET() {
-  const newsContent = await fetchNewsStoryContent()
-  const feeds = newsContent?.feeds ?? []
-  const sources: RssFeedSource[] = feeds.map((feed) => ({
-    name: feed.name,
-    url: feed.url,
-    iconUrl: feed.icon?.filename || deriveSourceIconUrl(feed.url)
-  }))
-
+  const sources = await fetchNewsFeedSources()
   const items = sources.length > 0 ? await fetchAggregatedNews(sources) : []
   const xml = feedXml(items)
 
