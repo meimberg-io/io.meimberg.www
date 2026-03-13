@@ -7,6 +7,7 @@ import { unified } from 'unified'
 import rehypeParse from 'rehype-parse'
 import rehypeStringify from 'rehype-stringify'
 import rehypePrism from 'rehype-prism-plus'
+import styles from './Richtext.module.css'
 
 
 
@@ -21,6 +22,20 @@ export default function Richtext({ blok }: { blok: RichtextStoryblok }) {
 			.replace(/'/g, "&#39;");
 	};
 
+	const tableCellResolver = (tag: string) => (node: any, context: any) => {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		const { colspan, rowspan, colwidth, backgroundColor, textAlign, ...rest } = node.attrs || {}
+		const styles: string[] = []
+		if (backgroundColor) styles.push(`background-color: ${backgroundColor}`)
+		if (textAlign) styles.push(`text-align: ${textAlign}`)
+		return context.render(tag, {
+			...rest,
+			...(colspan > 1 ? { colspan } : {}),
+			...(rowspan > 1 ? { rowspan } : {}),
+			...(styles.length > 0 ? { style: styles.join('; ') } : {}),
+		}, node.children)
+	}
+
 	const rawHtml = richTextResolver({
 		resolvers: {
 			[BlockTypes.CODE_BLOCK]: (node) => {
@@ -31,6 +46,9 @@ export default function Richtext({ blok }: { blok: RichtextStoryblok }) {
 					codeContent
 				)}</code></pre>`;
 			},
+			['table_row' as any]: (node: any, context: any) => context.render('tr', {}, node.children),
+			['table_cell' as any]: tableCellResolver('td'),
+			['table_header' as any]: tableCellResolver('th'),
 		},
 	}).render(blok.content) as string;
 
@@ -45,7 +63,7 @@ export default function Richtext({ blok }: { blok: RichtextStoryblok }) {
 		<ElementWrapper>
 			<div className="max-w-2xl" {...storyblokEditable(blok)}>
 				<Prose>
-					<div className="space-y-7 text-base " dangerouslySetInnerHTML={{ __html: highlightedHtml }}></div>
+					<div className={`space-y-7 text-base ${styles.content}`} dangerouslySetInnerHTML={{ __html: highlightedHtml }}></div>
 				</Prose>
 			</div>
 		</ElementWrapper>
