@@ -16,7 +16,6 @@ export type BlogListPageProps = {
   basePath: '/blog' | '/artikel'
   tag?: string | null
   contentType?: 'blog' | 'article'
-  showImage?: boolean
 }
 
 export async function BlogListPage({
@@ -24,7 +23,6 @@ export async function BlogListPage({
   basePath,
   tag,
   contentType = 'blog',
-  showImage = false
 }: BlogListPageProps) {
   const componentType =
     contentType === 'article' ? COMPONENTTYPE_ARTICLE : COMPONENTTYPE_BLOG
@@ -55,7 +53,7 @@ export async function BlogListPage({
         )}
       </header>
       <div className="mt-16">
-        <BlogCardList blogs={stories} layout="wide" showImage={showImage} />
+        <BlogCardList blogs={stories} layout="one-column" />
       </div>
     </Container>
   )

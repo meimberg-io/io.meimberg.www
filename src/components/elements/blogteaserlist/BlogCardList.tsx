@@ -7,42 +7,34 @@ import {
 import { Card } from '@/components/elements/Card.tsx'
 import { formatDate } from '@/lib/formatDate.ts'
 import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
-import { storyblokImageForCard } from '@/lib/storyblokImageUrl.ts'
+import {
+  storyblokImageForCard,
+  type ProcessedStoryblokImage
+} from '@/lib/storyblokImageUrl.ts'
 import Image from 'next/image'
 import Link from 'next/link'
 
-function getTeaserImageUrl(
-  blog: BlogStoryblok | ArticleStoryblok
-): string | null {
-  const asset: StoryblokAsset | undefined = blog.teaserimage?.filename
-    ? blog.teaserimage
-    : blog.headerpicture?.filename
-      ? blog.headerpicture
-      : undefined
-
-  if (!asset?.filename) return null
-
-  return `${asset.filename}/m/300x225/smart/filters:quality(80)`
+function resolveAsset(
+  content: BlogStoryblok | ArticleStoryblok
+): StoryblokAsset | undefined {
+  if (content.teaserimage?.filename) return content.teaserimage
+  if (content.headerpicture?.filename) return content.headerpicture
+  return undefined
 }
 
-function getCardHeaderImage(
-  blog: BlogStoryblok | ArticleStoryblok
-): ReturnType<typeof storyblokImageForCard> {
-  const asset: StoryblokAsset | undefined = blog.headerpicture?.filename
-    ? blog.headerpicture
-    : blog.teaserimage?.filename
-      ? blog.teaserimage
-      : undefined
-
-  return storyblokImageForCard(asset, 1200, 400, 85)
+function getImage(
+  content: BlogStoryblok | ArticleStoryblok,
+  width: number,
+  height: number,
+  quality = 80
+): ProcessedStoryblokImage | null {
+  return storyblokImageForCard(resolveAsset(content), width, height, quality)
 }
 
 export function BlogCardList(props: {
   blogs: ISbStoryData<BlogStoryblok | ArticleStoryblok>[]
   layout: string
-  showImage?: boolean
 }) {
-  const showImage = props.showImage !== false
 
   if (props.layout === 'cards') {
     return (
@@ -51,7 +43,7 @@ export function BlogCardList(props: {
           className="not-prose grid grid-cols-1 gap-x-12 gap-y-12 lg:grid-cols-2"
         >
           {props.blogs.map((blog) => {
-            const headerImage = getCardHeaderImage(blog.content)
+            const headerImage = getImage(blog.content, 1200, 400, 85)
             const href = `/${blog.full_slug}`
             const title = blog.content.teasertitle ?? 'Beitrag'
             return (
@@ -124,83 +116,59 @@ export function BlogCardList(props: {
     )
   }
 
-  if (props.layout === 'small') {
+  const isTwoColumn = props.layout === 'two-column'
+
+  const listItem = (blog: ISbStoryData<BlogStoryblok | ArticleStoryblok>) => {
+    const imageData = getImage(blog.content, 300, 225)
     return (
-      <ElementWrapper  >
-        {
-          props.blogs.map((blog) => {
-            const imageUrl = showImage ? getTeaserImageUrl(blog.content) : null
-            return (
-              <article key={blog.id} className="mt-16 sm:mt-20">
-                <div className="flex gap-6">
-                  {imageUrl && (
-                    <div className="hidden sm:block shrink-0 w-[140px] h-[105px] relative rounded-lg overflow-hidden">
-                      <Image
-                        src={imageUrl}
-                        alt={blog.content.teasertitle ?? ''}
-                        fill
-                        className="object-cover"
-                        sizes="140px"
-                      />
-                    </div>
-                  )}
-                  <Card as="article" className="flex-1">
-                    <Card.Title href={`/${blog.full_slug}`}>{blog.content.teasertitle}</Card.Title>
-                    <Card.Eyebrow as="time" dateTime={blog.content.date} decorate>
-                      {blog.content.date && formatDate(blog.content.date)}
-                    </Card.Eyebrow>
-                    <Card.Description>{blog.content.abstract}</Card.Description>
-                    <Card.Cta>{blog.content.readmoretext ?? 'Weiterlesen'}</Card.Cta>
-                  </Card>
-                </div>
-              </article>
-            )
-          })
-        }
-      </ElementWrapper>
+      <article key={blog.id}>
+        <Card>
+          <div className="flex gap-6">
+            {imageData && (
+              <div className="relative h-[80px] w-[106px] shrink-0 overflow-hidden rounded-lg sm:h-[105px] sm:w-[140px]">
+                <Image
+                  src={imageData.src}
+                  alt={blog.content.teasertitle ?? ''}
+                  fill
+                  unoptimized={imageData.unoptimized}
+                  className="object-cover"
+                  sizes="(min-width: 640px) 140px, 106px"
+                />
+              </div>
+            )}
+            <div className="flex-1">
+              <div className="flex items-baseline justify-between gap-x-4">
+                <Card.Title href={`/${blog.full_slug}`}>
+                  {blog.content.teasertitle}
+                </Card.Title>
+                <Card.Eyebrow as="time" dateTime={blog.content.date} className="shrink-0">
+                  {formatDate(blog.content.date)}
+                </Card.Eyebrow>
+              </div>
+              <Card.Description>{blog.content.abstract}</Card.Description>
+              <Card.Cta>{blog.content.readmoretext ?? 'Weiterlesen'}</Card.Cta>
+            </div>
+          </div>
+        </Card>
+      </article>
     )
-  } else {
+  }
+
+  if (isTwoColumn) {
     return (
       <ElementWrapper spacing="large">
-        <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-          <div className="flex max-w-3xl flex-col space-y-16">
-            {props.blogs.map((blog) => {
-              const imageUrl = showImage ? getTeaserImageUrl(blog.content) : null
-              return (
-                <article key={blog.id}>
-                  <Card>
-                    <div className="flex gap-6">
-                      {imageUrl && (
-                        <div className="hidden sm:block shrink-0 w-[140px] h-[105px] relative rounded-lg overflow-hidden">
-                          <Image
-                            src={imageUrl}
-                            alt={blog.content.teasertitle ?? ''}
-                            fill
-                            className="object-cover"
-                            sizes="140px"
-                          />
-                        </div>
-                      )}
-                      <div className="flex-1">
-                        <div className="flex items-baseline justify-between gap-x-4">
-                          <Card.Title href={`/${blog.full_slug}`}>
-                            {blog.content.teasertitle}
-                          </Card.Title>
-                          <Card.Eyebrow as="time" dateTime={blog.content.date} className="shrink-0">
-                            {formatDate(blog.content.date)}
-                          </Card.Eyebrow>
-                        </div>
-                        <Card.Description>{blog.content.abstract}</Card.Description>
-                        <Card.Cta>{blog.content.readmoretext ?? 'Weiterlesen'}</Card.Cta>
-                      </div>
-                    </div>
-                  </Card>
-                </article>
-              )
-            })}
-          </div>
+        <div className="grid grid-cols-1 gap-x-12 gap-y-16 lg:grid-cols-2">
+          {props.blogs.map(listItem)}
         </div>
       </ElementWrapper>
     )
   }
+
+  return (
+    <ElementWrapper>
+      <div className="flex max-w-3xl flex-col space-y-16">
+        {props.blogs.map(listItem)}
+      </div>
+    </ElementWrapper>
+  )
 }

@@ -9,6 +9,7 @@ import Richtext from '@/components/elements/Richtext.tsx'
 import Divider from '@/components/elements/Divider.tsx'
 import Photos from '@/components/elements/Photos.tsx'
 import Blogteaserlist from '@/components/elements/blogteaserlist/Blogteaserlist.tsx'
+import Articleteaserlist from '@/components/elements/blogteaserlist/Articleteaserlist.tsx'
 import { ISbStoriesParams, ISbStoryData, StoryblokClient } from '@storyblok/react'
 import { ArticleStoryblok, BlogStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
 import { deriveSourceIconUrl, type RssFeedSource } from '@/lib/rss'
@@ -44,6 +45,7 @@ export const RESOLVE_RELATIONS = [
 	'sociallink.icon',
 	'sociallink.url',
 	'blogteaserlist.articles',
+	'articleteaserlist.articles',
 	'stuffteaserlist.stuffs',
 	'luxarise_picture.pic_big',
 	'luxarise_picture.pic_thumb',
@@ -82,6 +84,7 @@ export const getStoryblokApi = storyblokInit({
 		soundcloud: Soundcloud,
 		youtube: Youtube,
 		blogteaserlist: Blogteaserlist,
+		articleteaserlist: Articleteaserlist,
 		newsfeedlist: Newsfeedlist,
 		newsletter: NewsletterBlock,
 		stuffteaserlist: Stuffteaserlist,

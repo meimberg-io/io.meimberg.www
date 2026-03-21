@@ -1,15 +1,14 @@
-import { BlogteaserlistStoryblok } from '@/types/component-types-sb'
+import { STORYBLOK_FOLDER_ARTICLES } from '@/lib/storyblok'
+import { ArticleteaserlistStoryblok } from '@/types/component-types-sb'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import { renderTeaserlist, type TeaserlistProps } from './renderTeaserlist'
 
-export { type TeaserlistProps }
-
-export default function Blogteaserlist({ blok }: { blok: BlogteaserlistStoryblok }) {
+export default function Articleteaserlist({ blok }: { blok: ArticleteaserlistStoryblok }) {
   const props: TeaserlistProps = {
     type: blok.type,
     limit: parseInt(blok.limit),
-    layout: blok.layout,
-    folder: blok.folder,
+    layout: blok.layout || 'cards',
+    folder: blok.folder || STORYBLOK_FOLDER_ARTICLES,
     blogs: blok.articles || [],
   }
 
@@ -19,4 +18,3 @@ export default function Blogteaserlist({ blok }: { blok: BlogteaserlistStoryblok
     </div>
   )
 }
-

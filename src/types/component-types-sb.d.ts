@@ -55,7 +55,7 @@ export interface Articleteaserlist {
   folder?: string;
   limit: string;
   articles?: (ISbStoryData<Article> | string)[];
-  layout: "" | "small" | "wide";
+  layout: "" | "one-column" | "two-column" | "cards";
   component: "articleteaserlist";
   _uid: string;
   [k: string]: SbBlokKeyDataTypes;
@@ -123,7 +123,7 @@ export interface Blogteaserlist {
   folder?: string;
   limit: string;
   articles?: (ISbStoryData<Blog> | string)[];
-  layout: "" | "small" | "wide" | "cards";
+  layout: "" | "one-column" | "two-column" | "cards";
   component: "blogteaserlist";
   _uid: string;
   [k: string]: SbBlokKeyDataTypes;

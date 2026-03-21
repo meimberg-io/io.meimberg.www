@@ -3,24 +3,12 @@
 import { useEffect, useState } from 'react'
 import { BlogStoryblok } from '@/types/component-types-sb'
 import { ISbStoryData } from '@storyblok/react'
-import { BlogteaserlistProps } from '@/components/elements/blogteaserlist/Blogteaserlist.tsx'
-import {
-  COMPONENTTYPE_ARTICLE,
-  COMPONENTTYPE_BLOG,
-  fetchStories,
-  STORYBLOK_FOLDER_ARTICLES
-} from '@/lib/storyblok.ts'
-
-function componentTypeForFolder(folder?: string): string {
-  if (folder === STORYBLOK_FOLDER_ARTICLES || folder === 'a') {
-    return COMPONENTTYPE_ARTICLE
-  }
-  return COMPONENTTYPE_BLOG
-}
-import { BlogCardList } from '@/components/elements/blogteaserlist/BlogCardList.tsx'
+import { TeaserlistProps, componentTypeForFolder } from './renderTeaserlist'
+import { fetchStories } from '@/lib/storyblok.ts'
+import { BlogCardList } from './BlogCardList'
 
 
-export default function BlogteaserlistClient({ props }: { props: BlogteaserlistProps }) {
+export default function BlogteaserlistClient({ props }: { props: TeaserlistProps }) {
   const [blogs, setBlogs] = useState<ISbStoryData<BlogStoryblok>[] | null>(null);
 
   useEffect(() => {
@@ -40,7 +28,6 @@ export default function BlogteaserlistClient({ props }: { props: BlogteaserlistP
     <BlogCardList
       blogs={blogs}
       layout={props.layout}
-      showImage={props.showImage}
     />
   )
 }
