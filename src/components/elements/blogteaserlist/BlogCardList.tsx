@@ -1,11 +1,17 @@
 import { ISbStoryData } from '@storyblok/react'
-import { BlogStoryblok, StoryblokAsset } from '@/types/component-types-sb'
+import {
+  ArticleStoryblok,
+  BlogStoryblok,
+  StoryblokAsset
+} from '@/types/component-types-sb'
 import { Card } from '@/components/elements/Card.tsx'
 import { formatDate } from '@/lib/formatDate.ts'
 import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
 import Image from 'next/image'
 
-function getTeaserImageUrl(blog: BlogStoryblok): string | null {
+function getTeaserImageUrl(
+  blog: BlogStoryblok | ArticleStoryblok
+): string | null {
   const asset: StoryblokAsset | undefined = blog.teaserimage?.filename
     ? blog.teaserimage
     : blog.headerpicture?.filename
@@ -17,15 +23,19 @@ function getTeaserImageUrl(blog: BlogStoryblok): string | null {
   return `${asset.filename}/m/300x225/smart/filters:quality(80)`
 }
 
-export function BlogCardList(props: { blogs: ISbStoryData<BlogStoryblok>[], layout: string }) {
+export function BlogCardList(props: {
+  blogs: ISbStoryData<BlogStoryblok | ArticleStoryblok>[]
+  layout: string
+  showImage?: boolean
+}) {
+  const showImage = props.showImage !== false
 
   if (props.layout === 'small') {
-
     return (
       <ElementWrapper  >
         {
           props.blogs.map((blog) => {
-            const imageUrl = getTeaserImageUrl(blog.content)
+            const imageUrl = showImage ? getTeaserImageUrl(blog.content) : null
             return (
               <article key={blog.id} className="mt-16 sm:mt-20">
                 <div className="flex gap-6">
@@ -61,7 +71,7 @@ export function BlogCardList(props: { blogs: ISbStoryData<BlogStoryblok>[], layo
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
             {props.blogs.map((blog) => {
-              const imageUrl = getTeaserImageUrl(blog.content)
+              const imageUrl = showImage ? getTeaserImageUrl(blog.content) : null
               return (
                 <article key={blog.id}>
                   <Card>

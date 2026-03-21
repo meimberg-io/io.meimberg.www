@@ -10,7 +10,7 @@ import Divider from '@/components/elements/Divider.tsx'
 import Photos from '@/components/elements/Photos.tsx'
 import Blogteaserlist from '@/components/elements/blogteaserlist/Blogteaserlist.tsx'
 import { ISbStoriesParams, ISbStoryData, StoryblokClient } from '@storyblok/react'
-import { BlogStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
+import { ArticleStoryblok, BlogStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
 import { deriveSourceIconUrl, type RssFeedSource } from '@/lib/rss'
 import Stuff from '@/components/pagetypes/Stuff.tsx'
 import Stuffteaserlist from '@/components/elements/stuffteaser/Stuffteaserlist.tsx'
@@ -28,8 +28,12 @@ import NewsletterBlock from '@/components/elements/NewsletterBlock.tsx'
 
 
 export const COMPONENTTYPE_BLOG = 'blog'
+export const COMPONENTTYPE_ARTICLE = 'article'
 export const COMPONENTTYPE_PAGE = 'page'
 export const COMPONENTTYPE_STUFF = 'stuff'
+
+export const STORYBLOK_FOLDER_ARTICLES = 'a/'
+export const STORYBLOK_FOLDER_BLOG = 'b/'
 
 export const RESOLVE_RELATIONS_NAV = [
 	'globalsettings.topnav',
@@ -61,6 +65,7 @@ export const getStoryblokApi = storyblokInit({
 	},
 	components: {
 		page: Page,
+		article: Blog,
 		blog: Blog,
 		stuff: Stuff,
 		linklist: Linklist,
@@ -101,17 +106,23 @@ export async function fetchStory(slug: string, isPreview: boolean) {
 	return result
 }
 
-export async function fetchStories(limit: number, componenttype: string, folder?: string): Promise<{ data: { stories: ISbStoryData<BlogStoryblok>[] } }> {
+export async function fetchStories(
+	limit: number,
+	componenttype: string,
+	opts?: { folder?: string; tag?: string }
+): Promise<{ data: { stories: ISbStoryData<BlogStoryblok | ArticleStoryblok>[] } }> {
 	const storyblokApi = getStoryblokApi()
 	await storyblokApi.flushCache()
+	const filterQuery: Record<string, unknown> = {
+		component: { in: componenttype }
+	}
+	if (opts?.tag) {
+		filterQuery.tag_list = { any_in_array: opts.tag }
+	}
 	const result = storyblokApi.get('cdn/stories', {
 		version: process.env.SB_VERSION as 'published' | 'draft' | undefined,
-		filter_query: {
-			component: {
-				in: componenttype
-			}
-		},
-		starts_with: folder,
+		filter_query: filterQuery,
+		starts_with: opts?.folder,
 		sort_by: 'content.date:desc',
 		per_page: (limit ?? 100) as number
 	})

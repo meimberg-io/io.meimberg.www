@@ -15,12 +15,47 @@ import { fetchGlobalsettings } from '@/lib/storyblok.ts'
 import { GlobalsettingsStoryblok } from '@/types/component-types-sb'
 import { ISbStoryData } from '@storyblok/react'
 
+type TopNavEntry =
+	| { kind: 'cms'; item: ISbStoryData<any> }
+	| { kind: 'artikel' }
 
-function NavItem({ href, children }: {
+function buildTopNavEntries(
+	topnav: GlobalsettingsStoryblok['topnav'] | undefined
+): TopNavEntry[] {
+	const cms =
+		topnav?.filter((i): i is ISbStoryData<any> => {
+			return typeof i === 'object' && i !== null && 'id' in i
+		}) ?? []
+	const out: TopNavEntry[] = cms.map((item) => ({ kind: 'cms', item }))
+	const blogIdx = out.findIndex(
+		(e) => e.kind === 'cms' && e.item.name === 'Blog'
+	)
+	const newsIdx = out.findIndex(
+		(e) => e.kind === 'cms' && e.item.name === 'News'
+	)
+	let insertAt = out.length
+	if (blogIdx !== -1 && newsIdx !== -1 && blogIdx < newsIdx) {
+		insertAt = newsIdx
+	} else if (blogIdx !== -1) {
+		insertAt = blogIdx + 1
+	} else if (newsIdx !== -1) {
+		insertAt = newsIdx
+	}
+	out.splice(insertAt, 0, { kind: 'artikel' })
+	return out
+}
+
+function NavItem({ href, children, matchSubpaths }: {
 	href: string
 	children: React.ReactNode
+	matchSubpaths?: boolean
 }) {
-	const isActive = usePathname() === href
+	const pathname = usePathname()
+	const isActive = pathname
+		? matchSubpaths
+			? pathname === href || pathname.startsWith(`${href}/`)
+			: pathname === href
+		: false
 
 	return (
 		<li>
@@ -57,11 +92,17 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
 				className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 ring-1 shadow-lg shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
 
 
-			{navItems?.topnav?.filter((i): i is ISbStoryData<any> => {
-				return typeof i === 'object' && i !== null && 'id' in i
-			}).map((item, index: number) => (
-				<NavItem key={index} href={`/${item.full_slug}`}>{item.name}</NavItem>
-			))}
+			{buildTopNavEntries(navItems?.topnav).map((entry) =>
+				entry.kind === 'cms' ? (
+					<NavItem key={entry.item.id} href={`/${entry.item.full_slug}`}>
+						{entry.item.name}
+					</NavItem>
+				) : (
+					<NavItem key="artikel" href="/artikel" matchSubpaths>
+						Artikel
+					</NavItem>
+				)
+			)}
 
 			</ul>
 		</nav>
@@ -106,12 +147,17 @@ function MobileNavigation(
 					<ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
 
 
-					{navItems?.topnav?.filter((i): i is ISbStoryData<any> => {
-						return typeof i === 'object' && i !== null && 'id' in i
-					}).map((item, index: number) => (
-						<MobileNavItem key={index} href={`/${item.full_slug}`}>{item.name}</MobileNavItem>
-					))}
-
+					{buildTopNavEntries(navItems?.topnav).map((entry) =>
+						entry.kind === 'cms' ? (
+							<MobileNavItem key={entry.item.id} href={`/${entry.item.full_slug}`}>
+								{entry.item.name}
+							</MobileNavItem>
+						) : (
+							<MobileNavItem key="artikel" href="/artikel">
+								Artikel
+							</MobileNavItem>
+						)
+					)}
 
 					</ul>
 				</nav>

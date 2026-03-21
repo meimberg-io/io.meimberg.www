@@ -1,13 +1,15 @@
 import { NextResponse } from 'next/server'
 import {
-  COMPONENTTYPE_BLOG,
+  COMPONENTTYPE_ARTICLE,
   fetchStories,
-  STORYBLOK_FOLDER_BLOG
+  STORYBLOK_FOLDER_ARTICLES
 } from '@/lib/storyblok'
 import type { ISbStoryData } from '@storyblok/react'
-import type { BlogStoryblok } from '@/types/component-types-sb'
+import type { ArticleStoryblok, BlogStoryblok } from '@/types/component-types-sb'
 
 const BASE_URL = 'https://www.meimberg.io/'
+
+type TeaserStory = ArticleStoryblok | BlogStoryblok
 
 function escapeXml(value: string): string {
   return value
@@ -18,7 +20,7 @@ function escapeXml(value: string): string {
     .replace(/'/g, '&apos;')
 }
 
-function getImageUrl(story: ISbStoryData<BlogStoryblok>): string | null {
+function getImageUrl(story: ISbStoryData<TeaserStory>): string | null {
   const teaserimage = story.content?.teaserimage
   if (teaserimage?.filename) return teaserimage.filename
 
@@ -28,20 +30,20 @@ function getImageUrl(story: ISbStoryData<BlogStoryblok>): string | null {
   return null
 }
 
-function itemXml(story: ISbStoryData<BlogStoryblok>): string {
+function itemXml(story: ISbStoryData<TeaserStory>): string {
   const url = `${BASE_URL}${story.full_slug}`
   const title =
     story.content?.pagetitle ||
-    (story.content as any)?.teasertitle ||
+    (story.content as { teasertitle?: string })?.teasertitle ||
     story.name ||
     'Untitled'
   const description =
-    (story.content as any)?.abstract ||
-    (story.content as any)?.pageintro ||
+    (story.content as { abstract?: string; pageintro?: string })?.abstract ||
+    (story.content as { pageintro?: string })?.pageintro ||
     ''
   const pubDate =
-    (story.content as any)?.date
-      ? new Date((story.content as any).date).toUTCString()
+    (story.content as { date?: string })?.date
+      ? new Date((story.content as { date: string }).date).toUTCString()
       : story.published_at
         ? new Date(story.published_at).toUTCString()
         : new Date().toUTCString()
@@ -58,18 +60,18 @@ function itemXml(story: ISbStoryData<BlogStoryblok>): string {
       <guid>${escapeXml(url)}</guid>
       <pubDate>${pubDate}</pubDate>
       <description><![CDATA[${description ?? ''}]]></description>
-      <category>Blog</category>${imageXml}
+      <category>Artikel</category>${imageXml}
     </item>`
 }
 
-function feedXml(items: ISbStoryData<BlogStoryblok>[]) {
+function feedXml(items: ISbStoryData<TeaserStory>[]) {
   const channelItems = items.map(itemXml).join('\n')
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>Blog | meimberg.io</title>
-    <link>${BASE_URL}blog</link>
-    <description>Blog von meimberg.io</description>
+    <title>Artikel | meimberg.io</title>
+    <link>${BASE_URL}artikel</link>
+    <description>Artikel von meimberg.io</description>
     <language>de</language>
     ${channelItems}
   </channel>
@@ -77,12 +79,10 @@ function feedXml(items: ISbStoryData<BlogStoryblok>[]) {
 }
 
 export async function GET() {
-  const storiesResponse = await fetchStories(100, COMPONENTTYPE_BLOG, {
-    folder: STORYBLOK_FOLDER_BLOG
+  const storiesResponse = await fetchStories(100, COMPONENTTYPE_ARTICLE, {
+    folder: STORYBLOK_FOLDER_ARTICLES
   })
-  const xml = feedXml(
-    storiesResponse.data.stories as ISbStoryData<BlogStoryblok>[]
-  )
+  const xml = feedXml(storiesResponse.data.stories as ISbStoryData<TeaserStory>[])
 
   return new NextResponse(xml, {
     status: 200,
@@ -92,5 +92,3 @@ export async function GET() {
     }
   })
 }
-
-

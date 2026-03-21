@@ -19,7 +19,10 @@ export const metadata: Metadata = {
 	description: 'Olis Blick auf eine digitalisierte Welt',
 	alternates: {
 		types: {
-			'application/rss+xml': '/api/rss.xml',
+			'application/rss+xml': [
+				{ url: '/api/rss.xml', title: 'Blog' },
+				{ url: '/api/artikel/rss.xml', title: 'Artikel' }
+			]
 		}
 	}
 }

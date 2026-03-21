@@ -4,7 +4,19 @@ import { useEffect, useState } from 'react'
 import { BlogStoryblok } from '@/types/component-types-sb'
 import { ISbStoryData } from '@storyblok/react'
 import { BlogteaserlistProps } from '@/components/elements/blogteaserlist/Blogteaserlist.tsx'
-import { COMPONENTTYPE_BLOG, fetchStories } from '@/lib/storyblok.ts'
+import {
+  COMPONENTTYPE_ARTICLE,
+  COMPONENTTYPE_BLOG,
+  fetchStories,
+  STORYBLOK_FOLDER_ARTICLES
+} from '@/lib/storyblok.ts'
+
+function componentTypeForFolder(folder?: string): string {
+  if (folder === STORYBLOK_FOLDER_ARTICLES || folder === 'a') {
+    return COMPONENTTYPE_ARTICLE
+  }
+  return COMPONENTTYPE_BLOG
+}
 import { BlogCardList } from '@/components/elements/blogteaserlist/BlogCardList.tsx'
 
 
@@ -13,7 +25,8 @@ export default function BlogteaserlistClient({ props }: { props: BlogteaserlistP
 
   useEffect(() => {
     if (props.type === 'automatic') {
-      fetchStories(props.limit, COMPONENTTYPE_BLOG, props.folder).then((response) => {
+      const componentType = componentTypeForFolder(props.folder)
+      fetchStories(props.limit, componentType, { folder: props.folder }).then((response) => {
         setBlogs(response.data.stories as unknown as ISbStoryData<BlogStoryblok>[]);
       });
     } else {
@@ -23,6 +36,12 @@ export default function BlogteaserlistClient({ props }: { props: BlogteaserlistP
 
   if (!blogs) return <p>Loading...</p>;
 
-  return <BlogCardList blogs={blogs} layout={props.layout} />;
+  return (
+    <BlogCardList
+      blogs={blogs}
+      layout={props.layout}
+      showImage={props.showImage}
+    />
+  )
 }
 
