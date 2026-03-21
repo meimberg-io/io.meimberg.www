@@ -21,6 +21,12 @@ type SourceTheme = {
   borderLight: string
 }
 
+const BLOG_ARTICLE_THEME: SourceTheme = {
+  color: '#0d9488',
+  bgLight: 'rgba(13,148,136,0.08)',
+  borderLight: '#2dd4bf',
+}
+
 const SOURCE_THEMES: Record<string, SourceTheme> = {
   'awesome apps': {
     color: '#2563eb',
@@ -32,11 +38,8 @@ const SOURCE_THEMES: Record<string, SourceTheme> = {
     bgLight: 'rgba(220,38,38,0.08)',
     borderLight: '#f87171',
   },
-  blog: {
-    color: '#0d9488',
-    bgLight: 'rgba(13,148,136,0.08)',
-    borderLight: '#2dd4bf',
-  },
+  blog: BLOG_ARTICLE_THEME,
+  artikel: BLOG_ARTICLE_THEME,
 }
 
 const DEFAULT_THEME: SourceTheme = {
