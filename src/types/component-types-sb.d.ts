@@ -123,7 +123,7 @@ export interface Blogteaserlist {
   folder?: string;
   limit: string;
   articles?: (ISbStoryData<Blog> | string)[];
-  layout: "" | "small" | "wide";
+  layout: "" | "small" | "wide" | "cards";
   component: "blogteaserlist";
   _uid: string;
   [k: string]: SbBlokKeyDataTypes;

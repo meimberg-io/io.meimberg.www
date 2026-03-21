@@ -379,6 +379,11 @@
             "_uid": "127f476f-5fc0-4fa5-85b6-74b93ebe2ebf",
             "value": "wide",
             "name": "wide"
+          },
+          {
+            "_uid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+            "value": "cards",
+            "name": "cards"
           }
         ],
         "id": "bN26aeqHS4-ZuShy9r9WbQ"
