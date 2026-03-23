@@ -61,7 +61,7 @@ export default function Richtext({ blok }: { blok: RichtextStoryblok }) {
 
 	return (
 		<ElementWrapper>
-			<div className="max-w-2xl" {...storyblokEditable(blok)}>
+			<div className="max-w-3xl" {...storyblokEditable(blok)}>
 				<Prose>
 					<div className={`space-y-7 text-base ${styles.content}`} dangerouslySetInnerHTML={{ __html: highlightedHtml }}></div>
 				</Prose>

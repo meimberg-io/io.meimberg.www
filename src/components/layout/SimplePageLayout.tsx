@@ -14,13 +14,13 @@ export function SimplePageLayout({ blok, layout, title, intro, children }: {
 }) {
 	const containerClass = layout === 'home' ? 'mt-9 sm:mt-9' : 'mt-16 sm:mt-32'
 	
-	// For narrow layout, use a custom container with max-w-2xl like the project pages
+	// For narrow layout, use a custom container with max-w-3xl like the project pages
 	if (layout === 'narrow') {
 		return (
 			<div className={`sm:px-8 ${containerClass}`}>
 				<div className="mx-auto w-full max-w-7xl lg:px-8">
 					<div className="relative px-4 sm:px-8 lg:px-12">
-						<div className="mx-auto max-w-2xl">
+						<div className="mx-auto max-w-3xl">
 							{title && (<div {...storyblokEditable(blok)}>
 									<Pagetitle blok={{ pagetitle: title, pageintro: intro, layout: layout }} />
 								</div>
