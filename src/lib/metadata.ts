@@ -38,6 +38,32 @@ export function selectOgImage(story: AnyStory): string | undefined {
 	return header || teaser
 }
 
+const OG_SHARE_W = 1200
+const OG_SHARE_H = 630
+
+/**
+ * Link-preview crawlers (Meta in particular) are picky about og:image size.
+ * Raw Storyblok asset URLs can be mis-validated; the Image Service yields a
+ * known 1200×630 raster that matches common og:image expectations.
+ */
+export function resolveSocialShareImage(imageUrl: string): {
+	url: string
+	width?: number
+	height?: number
+} {
+	try {
+		const u = new URL(imageUrl)
+		const isStoryblok = u.hostname.endsWith('storyblok.com')
+		if (!isStoryblok || /\/m\/\d+x\d+/.test(u.pathname)) {
+			return { url: imageUrl }
+		}
+		const url = `${imageUrl.replace(/\/$/, '')}/m/${OG_SHARE_W}x${OG_SHARE_H}/smart/filters:quality(90)`
+		return { url, width: OG_SHARE_W, height: OG_SHARE_H }
+	} catch {
+		return { url: imageUrl }
+	}
+}
+
 export function buildCanonical(fullSlug?: string): string {
 	if (!fullSlug || fullSlug === 'home') return '/'
 	return `/${fullSlug}`
@@ -55,16 +81,25 @@ export function buildOgTwitter(params: {
 		description,
 		url: canonical
 	}
-	if (image) {
-		openGraph.images = [{ url: image, alt: title }]
+	const resolvedImage = image ? resolveSocialShareImage(image) : undefined
+	if (resolvedImage) {
+		openGraph.images = [
+			{
+				url: resolvedImage.url,
+				alt: title,
+				...(resolvedImage.width != null && resolvedImage.height != null
+					? { width: resolvedImage.width, height: resolvedImage.height }
+					: {})
+			}
+		]
 	}
 	const twitter: any = {
 		card: image ? 'summary_large_image' : 'summary',
 		title,
 		description
 	}
-	if (image) {
-		twitter.images = [image]
+	if (resolvedImage) {
+		twitter.images = [resolvedImage.url]
 	}
 	return { openGraph, twitter }
 }
