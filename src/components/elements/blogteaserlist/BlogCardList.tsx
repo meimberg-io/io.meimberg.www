@@ -45,7 +45,10 @@ export function BlogCardList(props: {
           {props.blogs.map((blog) => {
             const headerImage = getImage(blog.content, 1260, 420, 90)
             const href = `/${blog.full_slug}`
-            const title = blog.content.teasertitle ?? 'Beitrag'
+            const teaserTitle = blog.content.teasertitle?.trim()
+            const fallbackTitle = blog.name?.trim() || `Beitrag ${blog.id}`
+            const title = teaserTitle && teaserTitle.length > 0 ? teaserTitle : fallbackTitle
+            const overlayLinkLabel = `Zum Beitrag: ${title}`
             return (
               <article
                 key={blog.id}
@@ -57,7 +60,7 @@ export function BlogCardList(props: {
                   <Link
                     href={href}
                     className="absolute inset-0 z-10"
-                    aria-label={title}
+                    aria-label={overlayLinkLabel}
                   />
                   {headerImage ? (
                     <Image
