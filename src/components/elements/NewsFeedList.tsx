@@ -1,4 +1,4 @@
-import { fetchAggregatedNews, type RssFeedSource, type NewsItem } from '@/lib/rss'
+import { fetchAggregatedNews, getNewsImageRenderConfig, type RssFeedSource, type NewsItem } from '@/lib/rss'
 import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -76,6 +76,8 @@ function SourceBadge({ item }: { item: NewsItem }) {
 }
 
 function NewsCard({ item }: { item: NewsItem }) {
+  const imageConfig = getNewsImageRenderConfig(item.imageUrl)
+
   return (
     <article
       className="group relative rounded-2xl transition-colors"
@@ -96,15 +98,16 @@ function NewsCard({ item }: { item: NewsItem }) {
         </div>
 
         <div className="flex gap-4">
-          {item.imageUrl && (
+          {imageConfig && (
             <div className="relative shrink-0 overflow-hidden rounded-xl h-28 w-28">
               <Image
-                src={item.imageUrl}
+                src={imageConfig.src}
                 alt=""
                 fill
                 className="object-cover"
-                sizes="112px"
-                unoptimized
+                sizes={imageConfig.sizes}
+                quality={imageConfig.quality}
+                unoptimized={imageConfig.unoptimized}
               />
             </div>
           )}

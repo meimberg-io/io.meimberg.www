@@ -8,6 +8,8 @@ import Lightbox from 'yet-another-react-lightbox'
 import { Thumbnails } from 'yet-another-react-lightbox/plugins'
 import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
 import { storyblokEditable } from '@storyblok/react/rsc'
+import Image from 'next/image'
+import { storyblokImageForCard } from '@/lib/storyblokImageUrl.ts'
 
 
 export default function Gallery({ blok }: { blok: PhotosStoryblok }) {
@@ -20,7 +22,13 @@ export default function Gallery({ blok }: { blok: PhotosStoryblok }) {
 
 	const slides = images
 		.filter((img: StoryblokAsset) => !!img.filename)
-		.map((img: StoryblokAsset) => ({ src: img.filename! }))
+		.map((img: StoryblokAsset) => {
+			const optimized = storyblokImageForCard(img, 2200, 1600, 85)
+			return {
+				src: optimized?.src ?? img.filename!,
+				unoptimized: optimized?.unoptimized ?? false
+			}
+		})
 
 	return (
 		<ElementWrapper>
@@ -29,16 +37,25 @@ export default function Gallery({ blok }: { blok: PhotosStoryblok }) {
 				{images.map((asset: StoryblokAsset, i: number) => (
 						asset.filename && (
 							<div key={asset.id}
-									 className="relative w-full aspect-auto overflow-hidden rounded-lg cursor-pointer"
+									 className="relative w-full aspect-[4/3] overflow-hidden rounded-lg cursor-pointer"
 									 onClick={() => {
 										 setIndex(i)
 										 setOpen(true)
 									 }}>
-								<img
-									className="object-cover object-center w-full h-full max-w-full rounded-lg"
-									src={asset.filename}
-									alt="gallery-photo"
-								/>
+								{(() => {
+									const optimized = storyblokImageForCard(asset, 1200, 900, 78)
+									if (!optimized) return null
+									return (
+										<Image
+											className="object-cover object-center w-full h-full max-w-full rounded-lg"
+											src={optimized.src}
+											alt="gallery-photo"
+											fill
+											sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+											unoptimized={optimized.unoptimized}
+										/>
+									)
+								})()}
 							</div>
 						)
 					))}
@@ -53,18 +70,28 @@ export default function Gallery({ blok }: { blok: PhotosStoryblok }) {
 					plugins={[Thumbnails]}
 					render={{
 						slide: ({ slide }) => {
-							const typedSlide = slide as { src: string }
+							const typedSlide = slide as { src: string; unoptimized?: boolean }
 							return (
-								<img
-									src={typedSlide.src}
-									alt=""
+								<div
 									style={{
-										maxWidth: '100%',
-										maxHeight: '100%',
-										borderRadius: '0.75rem',
-										objectFit: 'contain'
+										position: 'relative',
+										width: 'min(92vw, 1800px)',
+										aspectRatio: '16 / 10',
+										maxHeight: '90vh'
 									}}
-								/>
+								>
+									<Image
+										src={typedSlide.src}
+										alt=""
+										fill
+										unoptimized={typedSlide.unoptimized}
+										sizes="90vw"
+										style={{
+											borderRadius: '0.75rem',
+											objectFit: 'contain'
+										}}
+									/>
+								</div>
 							)
 						}
 					}}

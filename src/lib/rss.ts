@@ -14,6 +14,26 @@ export interface NewsItem {
   imageUrl?: string
 }
 
+export interface NewsImageRenderConfig {
+  src: string
+  unoptimized: boolean
+  quality?: number
+  sizes: string
+}
+
+const NEWS_IMAGE_OPTIMIZED_HOSTS = new Set([
+  'meimberg.io'
+])
+
+const NEWS_IMAGE_OPTIMIZED_SUFFIXES = [
+  '.meimberg.io'
+]
+
+const STORYBLOK_HOSTS = new Set([
+  'a.storyblok.com',
+  'pagetypes.imgix.net'
+])
+
 const CACHE_TTL_MS = 10 * 60 * 1000
 
 interface CacheEntry {
@@ -35,7 +55,7 @@ function parseRssItems(xml: string, source: RssFeedSource): NewsItem[] {
     const link = extractTag(block, 'link')
     const pubDateStr = extractTag(block, 'pubDate')
     const description = extractTag(block, 'description')
-    const imageUrl = extractImageUrl(block)
+    const imageUrl = resolveNewsImageUrl(extractImageUrl(block), link)
 
     if (!title || !link) continue
 
@@ -51,6 +71,24 @@ function parseRssItems(xml: string, source: RssFeedSource): NewsItem[] {
   }
 
   return items
+}
+
+function normalizeUrl(url: string, baseUrl?: string): string | undefined {
+  const raw = url.trim()
+  if (!raw) return undefined
+
+  try {
+    if (raw.startsWith('//')) {
+      return `https:${raw}`
+    }
+    if (raw.startsWith('/')) {
+      if (!baseUrl) return undefined
+      return new URL(raw, baseUrl).toString()
+    }
+    return new URL(raw).toString()
+  } catch {
+    return undefined
+  }
 }
 
 function extractTag(xml: string, tag: string): string | null {
@@ -69,6 +107,65 @@ function extractImageUrl(block: string): string | undefined {
   if (mediaThumbnail) return mediaThumbnail[1]
 
   return undefined
+}
+
+export function resolveNewsImageUrl(imageUrl?: string, linkUrl?: string): string | undefined {
+  if (!imageUrl) return undefined
+  return normalizeUrl(imageUrl, linkUrl)
+}
+
+function isOptimizableNewsHost(hostname: string): boolean {
+  if (NEWS_IMAGE_OPTIMIZED_HOSTS.has(hostname)) return true
+  return NEWS_IMAGE_OPTIMIZED_SUFFIXES.some((suffix) => hostname.endsWith(suffix))
+}
+
+function isStoryblokHost(hostname: string): boolean {
+  return STORYBLOK_HOSTS.has(hostname)
+}
+
+function buildStoryblokSquare(url: URL, size: number, quality: number): string {
+  const base = `${url.origin}${url.pathname}`
+  const focal = url.searchParams.get('focus')
+  if (focal && focal.trim().length > 0) {
+    return `${base}/m/${size}x${size}/filters:focal(${focal}):quality(${quality}):format(webp)`
+  }
+  return `${base}/m/${size}x${size}/smart/filters:quality(${quality}):format(webp)`
+}
+
+export function getNewsImageRenderConfig(imageUrl?: string): NewsImageRenderConfig | null {
+  if (!imageUrl) return null
+  try {
+    const parsed = new URL(imageUrl)
+    if (isStoryblokHost(parsed.hostname)) {
+      const src = buildStoryblokSquare(parsed, 224, 95)
+      return {
+        src,
+        unoptimized: true,
+        sizes: '112px'
+      }
+    }
+
+    if (isOptimizableNewsHost(parsed.hostname)) {
+      return {
+        src: imageUrl,
+        unoptimized: false,
+        quality: 95,
+        sizes: '224px'
+      }
+    }
+
+    return {
+      src: imageUrl,
+      unoptimized: true,
+      sizes: '112px'
+    }
+  } catch {
+    return {
+      src: imageUrl,
+      unoptimized: true,
+      sizes: '112px'
+    }
+  }
 }
 
 function stripCdata(text: string): string {

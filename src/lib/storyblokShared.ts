@@ -19,9 +19,7 @@ export const RESOLVE_RELATIONS = [
   'articleteaserlist.articles',
   'stuffteaserlist.stuffs',
   'luxarise_picture.pic_big',
-  'luxarise_picture.pic_thumb',
-  'globalsettings.topnav',
-  'globalsettings.footernav'
+  'luxarise_picture.pic_thumb'
 ]
 
 export const STORY_TYPES = [

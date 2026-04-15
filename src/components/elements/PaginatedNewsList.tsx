@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { NewsItem } from '@/lib/rss'
+import { getNewsImageRenderConfig } from '@/lib/rss'
 
 interface SerializedNewsItem {
   title: string
@@ -66,6 +67,7 @@ function formatNewsDate(dateStr: string): string {
 
 function PaginatedNewsCard({ item }: { item: SerializedNewsItem }) {
   const theme = getSourceTheme(item.sourceName)
+  const imageConfig = getNewsImageRenderConfig(item.imageUrl)
 
   return (
     <article
@@ -86,9 +88,17 @@ function PaginatedNewsCard({ item }: { item: SerializedNewsItem }) {
           </span>
         </div>
         <div className="flex gap-4">
-          {item.imageUrl && (
+          {imageConfig && (
             <div className="relative shrink-0 overflow-hidden rounded-xl h-28 w-28">
-              <Image src={item.imageUrl} alt="" fill className="object-cover" sizes="112px" unoptimized />
+              <Image
+                src={imageConfig.src}
+                alt=""
+                fill
+                className="object-cover"
+                sizes={imageConfig.sizes}
+                quality={imageConfig.quality}
+                unoptimized={imageConfig.unoptimized}
+              />
             </div>
           )}
           <div className="min-w-0 flex-1">

@@ -43,7 +43,7 @@ export function BlogCardList(props: {
           className="not-prose grid grid-cols-1 gap-x-12 gap-y-12 lg:grid-cols-2"
         >
           {props.blogs.map((blog) => {
-            const headerImage = getImage(blog.content, 1200, 400, 85)
+            const headerImage = getImage(blog.content, 1260, 420, 90)
             const href = `/${blog.full_slug}`
             const title = blog.content.teasertitle ?? 'Beitrag'
             return (
@@ -65,6 +65,7 @@ export function BlogCardList(props: {
                       alt={title}
                       fill
                       unoptimized={headerImage.unoptimized}
+                      quality={90}
                       className="absolute inset-0 z-0 object-cover transition duration-500 ease-out group-hover:scale-[1.03]"
                       sizes="(min-width: 1024px) 50vw, 100vw"
                     />
@@ -119,7 +120,7 @@ export function BlogCardList(props: {
   const isTwoColumn = props.layout === 'two-column'
 
   const listItem = (blog: ISbStoryData<BlogStoryblok | ArticleStoryblok>) => {
-    const imageData = getImage(blog.content, 300, 225)
+    const imageData = getImage(blog.content, 256, 192)
     return (
       <article key={blog.id}>
         <Card>
@@ -131,6 +132,7 @@ export function BlogCardList(props: {
                   alt={blog.content.teasertitle ?? ''}
                   fill
                   unoptimized={imageData.unoptimized}
+                  quality={88}
                   className="object-cover"
                   sizes="(min-width: 640px) 140px, 106px"
                 />
