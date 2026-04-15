@@ -1,6 +1,9 @@
 import type { ISbStoryData } from '@storyblok/react'
 
 type AnyStory = ISbStoryData<any>
+const DEFAULT_META_DESCRIPTION = 'Olis Blick auf eine digitalisierte Welt'
+const HOME_META_DESCRIPTION =
+	'Oliver Meimberg schreibt ueber digitale Kommunikation, Technologie und Medien - persoenlich, kritisch und praxisnah.'
 
 export function stripHtml(input?: string): string {
 	if (!input) return ''
@@ -23,13 +26,17 @@ export function deriveTitle(story: AnyStory): string {
 	return clamp(stripHtml(raw), 70)
 }
 
-export function deriveDescription(story: AnyStory): string {
+export function deriveDescription(story: AnyStory, fallback: string = DEFAULT_META_DESCRIPTION): string {
 	const raw =
 		(story?.content?.abstract as string | undefined) ||
 		(story?.content?.pageintro as string | undefined) ||
 		''
 	const cleaned = clamp(stripHtml(raw), 160)
-	return cleaned.length > 0 ? cleaned : 'Olis Blick auf eine digitalisierte Welt'
+	return cleaned.length > 0 ? cleaned : fallback
+}
+
+export function deriveHomeDescription(story: AnyStory): string {
+	return deriveDescription(story, HOME_META_DESCRIPTION)
 }
 
 export function selectOgImage(story: AnyStory): string | undefined {

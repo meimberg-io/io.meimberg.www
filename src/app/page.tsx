@@ -1,7 +1,7 @@
 import { renderPage } from '@/lib/pageRenderer.tsx'
 import type { Metadata } from 'next'
 import { fetchStory } from '@/lib/storyblokApi'
-import { buildCanonical, buildOgTwitter, deriveDescription, selectOgImage } from '@/lib/metadata.ts'
+import { buildCanonical, buildOgTwitter, deriveHomeDescription, selectOgImage } from '@/lib/metadata.ts'
 
 
 export default async function StoryPage({ params, searchParams }: any) {
@@ -19,7 +19,7 @@ export async function generateMetadata({ searchParams }: any): Promise<Metadata>
 	const story = data.story
 
 	const title = 'Oliver Meimberg'
-	const description = deriveDescription(story)
+	const description = deriveHomeDescription(story)
 	const canonical = buildCanonical(story.full_slug)
 	const image = selectOgImage(story)
 	const { openGraph, twitter } = buildOgTwitter({ title, description, canonical, image })
