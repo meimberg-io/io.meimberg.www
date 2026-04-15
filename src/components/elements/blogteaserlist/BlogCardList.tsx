@@ -60,13 +60,13 @@ export function BlogCardList(props: {
                     aria-label={title}
                   />
                   {headerImage ? (
-                    // eslint-disable-next-line @next/next/no-img-element -- Next/Image fill had parent height 0 (only abs. children)
-                    <img
+                    <Image
                       src={headerImage.src}
                       alt={title}
-                      className="absolute inset-0 z-0 h-full w-full object-cover transition duration-500 ease-out group-hover:scale-[1.03]"
-                      loading="lazy"
-                      decoding="async"
+                      fill
+                      unoptimized={headerImage.unoptimized}
+                      className="absolute inset-0 z-0 object-cover transition duration-500 ease-out group-hover:scale-[1.03]"
+                      sizes="(min-width: 1024px) 50vw, 100vw"
                     />
                   ) : null}
                 </div>
