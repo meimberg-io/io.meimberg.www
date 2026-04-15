@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { fetchAllStories } from '@/lib/storyblok.ts'
 import { ISbStoryData } from '@storyblok/react'
 
+export const dynamic = 'force-dynamic'
 
 const generateSitemap = (pages: { data: { stories: ISbStoryData[] } }) => {
     const baseUrl = "https://www.meimberg.io/"; // Deine Domain

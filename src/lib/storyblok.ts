@@ -135,7 +135,7 @@ export async function fetchStories(
 export async function fetchAllStories(): Promise<{ data: { stories: ISbStoryData[] } }> {
 	const storyblokApi = getStoryblokApi()
 	await storyblokApi.flushCache()
-	const types = COMPONENTTYPE_BLOG + "," + COMPONENTTYPE_STUFF + "," + COMPONENTTYPE_PAGE;
+	const types = COMPONENTTYPE_BLOG + "," + COMPONENTTYPE_ARTICLE + "," + COMPONENTTYPE_STUFF + "," + COMPONENTTYPE_PAGE;
 	const result = storyblokApi.get('cdn/stories', {
 		version: process.env.SB_VERSION as 'published' | 'draft' | undefined,
 		filter_query: {
