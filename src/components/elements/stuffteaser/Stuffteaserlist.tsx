@@ -36,8 +36,7 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStorybl
 
 				<ol className="mt-6 space-y-4">
 					{resolvedStuffs.map((stuff) => (
-						<div key={stuff.id} className="my-8">
-						<Card as="li">
+						<Card as="li" key={stuff.id} className="my-8">
 							<div className="flex gap-4 w-full">
 								<div
 									className="overflow-hidden mt-1 flex h-8 w-8 flex-none items-center justify-center rounded-full ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
@@ -62,8 +61,6 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStorybl
 							</div>
 						</div>
 					</Card>
-					</div>
-
 				))}
 				</ol>
 
