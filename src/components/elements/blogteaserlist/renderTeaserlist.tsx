@@ -2,7 +2,7 @@ import {
   COMPONENTTYPE_ARTICLE,
   COMPONENTTYPE_BLOG,
   STORYBLOK_FOLDER_ARTICLES
-} from '@/lib/storyblok'
+} from '@/lib/storyblokShared'
 import BlogteaserlistClient from './BlogteaserlistClient'
 import BlogteaserlistServer from './BlogteaserlistServer'
 import { BlogCardList } from './BlogCardList'

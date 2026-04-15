@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { BlogStoryblok } from '@/types/component-types-sb'
 import { ISbStoryData } from '@storyblok/react'
 import { TeaserlistProps, componentTypeForFolder } from './renderTeaserlist'
-import { fetchStories } from '@/lib/storyblok.ts'
+import { fetchStories } from '@/lib/storyblokApi'
 import { BlogCardList } from './BlogCardList'
 
 

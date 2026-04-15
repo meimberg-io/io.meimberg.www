@@ -1,4 +1,4 @@
-import { STORYBLOK_FOLDER_ARTICLES } from '@/lib/storyblok'
+import { STORYBLOK_FOLDER_ARTICLES } from '@/lib/storyblokShared'
 import { ArticleteaserlistStoryblok } from '@/types/component-types-sb'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import { renderTeaserlist, type TeaserlistProps } from './renderTeaserlist'

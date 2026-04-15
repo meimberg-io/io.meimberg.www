@@ -1,11 +1,9 @@
-'use client'
 import Link from 'next/link'
 
 import { ContainerInner, ContainerOuter } from '@/components/layout/Container.tsx'
-import React, { useEffect, useState } from 'react'
 import { GlobalsettingsStoryblok } from '@/types/component-types-sb'
-import { fetchGlobalsettings } from '@/lib/storyblok.ts'
 import { ISbStoryData } from '@storyblok/react'
+import React from 'react'
 
 
 function NavLink({ href, children }: {
@@ -19,16 +17,13 @@ function NavLink({ href, children }: {
 	)
 }
 
-export function Footer() {
-
-	const [siteSettings, setSiteSettings] = useState<GlobalsettingsStoryblok>()
-
-	useEffect(() => {
-		fetchGlobalsettings(false).then((x) => {
-			setSiteSettings(x)
-
-		})
-	}, [])
+export function Footer({
+  footernav,
+  copyright
+}: {
+  footernav: GlobalsettingsStoryblok['footernav'] | undefined
+  copyright: GlobalsettingsStoryblok['copyright']
+}) {
 	return (
 		<footer className="mt-32 flex-none">
 			<ContainerOuter>
@@ -38,7 +33,7 @@ export function Footer() {
 							<div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
 
 
-							{siteSettings?.footernav?.filter((i): i is ISbStoryData<any> => {
+							{footernav?.filter((i): i is ISbStoryData<any> => {
 								return typeof i === 'object' && i !== null && 'id' in i
 							}).map((item, index: number) => (
 								<NavLink key={index} href={`/${item.full_slug}`}>{item.name}</NavLink>
@@ -46,7 +41,7 @@ export function Footer() {
 
 							</div>
 							<p className="text-sm text-zinc-400 dark:text-zinc-500">
-								&copy; {new Date().getFullYear()} {siteSettings?.copyright}
+								&copy; {new Date().getFullYear()} {copyright}
 							</p>
 						</div>
 					</ContainerInner>

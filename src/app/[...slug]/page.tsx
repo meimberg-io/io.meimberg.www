@@ -1,6 +1,6 @@
 import { renderPage } from '@/lib/pageRenderer.tsx'
 import type { Metadata } from 'next'
-import { fetchStory } from '@/lib/storyblok.ts'
+import { fetchStory } from '@/lib/storyblokApi'
 import { buildCanonical, buildOgTwitter, deriveDescription, deriveTitle, selectOgImage } from '@/lib/metadata.ts'
 
 

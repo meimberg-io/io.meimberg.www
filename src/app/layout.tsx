@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import { Layout } from '@/components/layout/Layout.tsx'
 import { Providers } from '@/lib/providers.tsx'
 import { StoryblokProvider } from '@/provider'
+import { fetchGlobalsettings } from '@/lib/storyblokApi'
 import '@/styles/tailwind.css'
 import { Analytics } from "@vercel/analytics/react"
 import { MatomoTracker } from '@/components/util/MatomoTracker.tsx'
 
 
-// export const revalidate = 0
-// export const fetchCache = 'force-no-store'
+export const revalidate = 0
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://www.meimberg.io'),
@@ -27,23 +27,23 @@ export const metadata: Metadata = {
 	}
 }
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+	const globalsettings = await fetchGlobalsettings(false)
+
 	return (
-		<StoryblokProvider>
-			<html lang="en" className="h-full antialiased" suppressHydrationWarning>
+		<html lang="en" className="h-full antialiased" suppressHydrationWarning>
 			<body className="flex h-full bg-zinc-50 dark:bg-black" suppressHydrationWarning>
 			<Providers>
 				<div className="flex w-full">
-					<Layout>
+					<Layout globalsettings={globalsettings}>
 						{children}
 					</Layout>
 				</div>
+				<StoryblokProvider />
 			</Providers>
 			<Analytics />
 			<MatomoTracker />
 			</body>
-			</html>
-
-		</StoryblokProvider>
+		</html>
 	)
 }

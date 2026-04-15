@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { fetchNewsFeedSources } from '@/lib/storyblok'
+import { fetchNewsFeedSources } from '@/lib/storyblokApi'
 import { fetchAggregatedNews } from '@/lib/rss'
 import type { NewsItem } from '@/lib/rss'
 

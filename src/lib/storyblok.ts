@@ -5,53 +5,39 @@ import Blog from '@/components/pagetypes/Blog.tsx'
 import Linklist from '@/components/elements/Linklist.tsx'
 import Grid2Column from '@/components/layout/Grid2Column.tsx'
 import Picture from '@/components/elements/Picture.tsx'
-import Richtext from '@/components/elements/Richtext.tsx'
+import dynamic from 'next/dynamic'
 import Divider from '@/components/elements/Divider.tsx'
 import Photos from '@/components/elements/Photos.tsx'
 import Blogteaserlist from '@/components/elements/blogteaserlist/Blogteaserlist.tsx'
 import Articleteaserlist from '@/components/elements/blogteaserlist/Articleteaserlist.tsx'
-import { ISbStoriesParams, ISbStoryData, StoryblokClient } from '@storyblok/react'
-import { ArticleStoryblok, BlogStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
-import { deriveSourceIconUrl, type RssFeedSource } from '@/lib/rss'
 import Stuff from '@/components/pagetypes/Stuff.tsx'
 import Stuffteaserlist from '@/components/elements/stuffteaser/Stuffteaserlist.tsx'
 import Hyperlink from '@/components/elements/Hyperlink.tsx'
 import Pagetitle from '@/components/elements/Pagetitle.tsx'
 import Grouping from '@/components/elements/Grouping.tsx'
 import Tool from '@/components/elements/Tool.tsx'
-import Gallery from '@/components/elements/Gallery.tsx'
-import Youtube from '@/components/elements/Youtube.tsx'
-import Video from '@/components/elements/Video.tsx'
 import Soundcloud from '@/components/elements/Soundcloud.tsx'
-import LuxarisePictureSlideshow from '@/components/elements/LuxarisePictureSlideshow.tsx'
 import Newsfeedlist from '@/components/elements/NewsfeedlistBlock.tsx'
 import NewsletterBlock from '@/components/elements/NewsletterBlock.tsx'
+export {
+	COMPONENTTYPE_ARTICLE,
+	COMPONENTTYPE_BLOG,
+	COMPONENTTYPE_PAGE,
+	COMPONENTTYPE_STUFF,
+	STORYBLOK_FOLDER_ARTICLES,
+	STORYBLOK_FOLDER_BLOG,
+	RESOLVE_RELATIONS,
+	RESOLVE_RELATIONS_NAV
+} from '@/lib/storyblokShared'
 
+const Richtext = dynamic(() => import('@/components/elements/Richtext.tsx'))
+const Gallery = dynamic(() => import('@/components/elements/Gallery.tsx'))
+const Youtube = dynamic(() => import('@/components/elements/Youtube.tsx'))
+const Video = dynamic(() => import('@/components/elements/Video.tsx'))
+const LuxarisePictureSlideshow = dynamic(
+	() => import('@/components/elements/LuxarisePictureSlideshow.tsx')
+)
 
-export const COMPONENTTYPE_BLOG = 'blog'
-export const COMPONENTTYPE_ARTICLE = 'article'
-export const COMPONENTTYPE_PAGE = 'page'
-export const COMPONENTTYPE_STUFF = 'stuff'
-
-export const STORYBLOK_FOLDER_ARTICLES = 'a/'
-export const STORYBLOK_FOLDER_BLOG = 'b/'
-
-export const RESOLVE_RELATIONS_NAV = [
-	'globalsettings.topnav',
-	'globalsettings.footernav'
-]
-export const RESOLVE_RELATIONS = [
-	'linklist.links',
-	'sociallink.icon',
-	'sociallink.url',
-	'blogteaserlist.articles',
-	'articleteaserlist.articles',
-	'stuffteaserlist.stuffs',
-	'luxarise_picture.pic_big',
-	'luxarise_picture.pic_thumb',
-	'globalsettings.topnav',
-	'globalsettings.footernav'
-]
 
 export const getStoryblokApi = storyblokInit({
 	accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN,
@@ -92,70 +78,3 @@ export const getStoryblokApi = storyblokInit({
 		luxarise_picture_slideshow: LuxarisePictureSlideshow
 	}
 })
-
-export async function fetchGlobalsettings(isPreview: boolean): Promise<GlobalsettingsStoryblok> {
-	const version = isPreview ? 'draft' : 'published'
-	const sbParams: ISbStoriesParams = { version: version, resolve_relations: RESOLVE_RELATIONS_NAV }
-	const storyblokApi: StoryblokClient = getStoryblokApi()
-	const { data } = await storyblokApi.getStory('globalsettings', sbParams, { cache: process.env.NEXT_PUBLIC_STORYBOOK_DISABLECACHING ? 'no-cache' : 'default'  })
-	return data.story.content as GlobalsettingsStoryblok
-}
-
-export async function fetchStory(slug: string, isPreview: boolean) {
-	const version = isPreview ? 'draft' : 'published'
-	const sbParams: ISbStoriesParams = { version: version, resolve_relations: RESOLVE_RELATIONS }
-	const storyblokApi: StoryblokClient = getStoryblokApi()
-	const result = storyblokApi.getStory(slug, sbParams, { cache: process.env.NEXT_PUBLIC_STORYBOOK_DISABLECACHING ? 'no-cache' : 'default' })
-	return result
-}
-
-export async function fetchStories(
-	limit: number,
-	componenttype: string,
-	opts?: { folder?: string; tag?: string }
-): Promise<{ data: { stories: ISbStoryData<BlogStoryblok | ArticleStoryblok>[] } }> {
-	const storyblokApi = getStoryblokApi()
-	await storyblokApi.flushCache()
-	const filterQuery: Record<string, unknown> = {
-		component: { in: componenttype }
-	}
-	if (opts?.tag) {
-		filterQuery.tag_list = { any_in_array: opts.tag }
-	}
-	const result = storyblokApi.get('cdn/stories', {
-		version: process.env.SB_VERSION as 'published' | 'draft' | undefined,
-		filter_query: filterQuery,
-		starts_with: opts?.folder,
-		sort_by: 'content.date:desc',
-		per_page: (limit ?? 100) as number
-	})
-	return result
-}
-
-export async function fetchAllStories(): Promise<{ data: { stories: ISbStoryData[] } }> {
-	const storyblokApi = getStoryblokApi()
-	await storyblokApi.flushCache()
-	const types = COMPONENTTYPE_BLOG + "," + COMPONENTTYPE_ARTICLE + "," + COMPONENTTYPE_STUFF + "," + COMPONENTTYPE_PAGE;
-	const result = storyblokApi.get('cdn/stories', {
-		version: process.env.SB_VERSION as 'published' | 'draft' | undefined,
-		filter_query: {
-			component: {
-				in: types
-			}
-		},
-		per_page: 100
-	})
-	return result
-}
-
-export async function fetchNewsFeedSources(): Promise<RssFeedSource[]> {
-	const { data } = await fetchStory('p/news', false)
-	const body = data?.story?.content?.body ?? []
-	const feedBlock = Array.isArray(body) ? body.find((b: { component?: string }) => b.component === 'newsfeedlist') : null
-	const feeds = feedBlock?.feeds ?? []
-	return feeds.map((feed: { name: string; url: string; icon?: { filename?: string } }) => ({
-		name: feed.name,
-		url: feed.url,
-		iconUrl: feed.icon?.filename || deriveSourceIconUrl(feed.url)
-	}))
-}

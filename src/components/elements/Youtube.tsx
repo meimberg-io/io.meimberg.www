@@ -1,6 +1,6 @@
 'use client'
 import { YoutubeStoryblok } from '@/types/component-types-sb'
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player/youtube'
 import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
 import { storyblokEditable } from '@storyblok/react/rsc'
 

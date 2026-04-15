@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { ISbStoryData, useStoryblokBridge } from '@storyblok/react'
 import { StoryblokStory } from '@storyblok/react/rsc'
-import { RESOLVE_RELATIONS } from '@/lib/storyblok.ts'
+import { RESOLVE_RELATIONS } from '@/lib/storyblokShared'
 
 const StoryClient = ({ initialStory }: { initialStory: ISbStoryData }) => {
 	const [story, setStory] = useState(initialStory)

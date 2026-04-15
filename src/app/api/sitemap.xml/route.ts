@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { fetchAllStories } from '@/lib/storyblok.ts'
+import { fetchAllStories } from '@/lib/storyblokApi'
 import { ISbStoryData } from '@storyblok/react'
 
 export const dynamic = 'force-dynamic'

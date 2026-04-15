@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server'
 import {
   COMPONENTTYPE_ARTICLE,
-  fetchStories,
   STORYBLOK_FOLDER_ARTICLES
-} from '@/lib/storyblok'
+} from '@/lib/storyblokShared'
+import { fetchStories } from '@/lib/storyblokApi'
 import type { ISbStoryData } from '@storyblok/react'
 import type { ArticleStoryblok, BlogStoryblok } from '@/types/component-types-sb'
 

@@ -11,7 +11,6 @@ import clsx from 'clsx'
 import { Container } from '@/components/layout/Container.tsx'
 import avatarImage from '@/images/avatar.png'
 import { ChevronDownIcon, CloseIcon, MobileNavItem, MoonIcon, SunIcon } from '@/components/util/Svg.tsx'
-import { fetchGlobalsettings } from '@/lib/storyblok.ts'
 import { GlobalsettingsStoryblok } from '@/types/component-types-sb'
 import { ISbStoryData } from '@storyblok/react'
 
@@ -56,21 +55,19 @@ function NavItem({ href, children, matchSubpaths }: {
 	)
 }
 
-function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
-	const [navItems, setNavItems] = useState<GlobalsettingsStoryblok>()
-	useEffect(() => {
-		fetchGlobalsettings(false).then((x) => {
-			setNavItems(x)
-		})
-	}, [])
-
+function DesktopNavigation({
+	topnav,
+	...props
+}: React.ComponentPropsWithoutRef<'nav'> & {
+	topnav: GlobalsettingsStoryblok['topnav'] | undefined
+}) {
 	return (
 		<nav {...props}>
 			<ul
 				className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 ring-1 shadow-lg shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
 
 
-			{getTopNavItems(navItems?.topnav).map((item) => (
+			{getTopNavItems(topnav).map((item) => (
 				<NavItem key={item.id} href={`/${item.full_slug}`}>
 					{item.name}
 				</NavItem>
@@ -82,15 +79,13 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
 }
 
 function MobileNavigation(
-	props: React.ComponentPropsWithoutRef<typeof Popover>
+	{
+		topnav,
+		...props
+	}: React.ComponentPropsWithoutRef<typeof Popover> & {
+		topnav: GlobalsettingsStoryblok['topnav'] | undefined
+	}
 ) {
-	const [navItems, setNavItems] = useState<GlobalsettingsStoryblok>()
-
-	useEffect(() => {
-		fetchGlobalsettings(false).then((x) => {
-			setNavItems(x)
-		})
-	}, [])
 	return (
 		<Popover {...props}>
 			<PopoverButton
@@ -119,7 +114,7 @@ function MobileNavigation(
 					<ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
 
 
-					{getTopNavItems(navItems?.topnav).map((item) => (
+					{getTopNavItems(topnav).map((item) => (
 						<MobileNavItem key={item.id} href={`/${item.full_slug}`}>
 							{item.name}
 						</MobileNavItem>
@@ -198,7 +193,11 @@ function Avatar({ large = false, className, ...props }: Omit<React.ComponentProp
 	)
 }
 
-export function Header() {
+export function Header({
+	topnav
+}: {
+	topnav: GlobalsettingsStoryblok['topnav'] | undefined
+}) {
 	const isHomePage = usePathname() === '/'
 
 	const headerRef = useRef<HTMLDivElement>(null)
@@ -376,8 +375,8 @@ export function Header() {
 								)}
 							</div>
 							<div className="flex flex-1 justify-end md:justify-center">
-								<MobileNavigation className="pointer-events-auto md:hidden" />
-								<DesktopNavigation className="pointer-events-auto hidden md:block" />
+								<MobileNavigation topnav={topnav} className="pointer-events-auto md:hidden" />
+								<DesktopNavigation topnav={topnav} className="pointer-events-auto hidden md:block" />
 							</div>
 							<div className="flex justify-end md:flex-1">
 								<div className="pointer-events-auto">

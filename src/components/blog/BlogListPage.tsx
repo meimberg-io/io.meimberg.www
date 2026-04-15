@@ -2,10 +2,10 @@ import { Container } from '@/components/layout/Container'
 import {
   COMPONENTTYPE_ARTICLE,
   COMPONENTTYPE_BLOG,
-  fetchStories,
   STORYBLOK_FOLDER_ARTICLES,
   STORYBLOK_FOLDER_BLOG
-} from '@/lib/storyblok'
+} from '@/lib/storyblokShared'
+import { fetchStories } from '@/lib/storyblokApi'
 import { BlogCardList } from '@/components/elements/blogteaserlist/BlogCardList'
 import Link from 'next/link'
 

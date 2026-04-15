@@ -1,7 +1,14 @@
 import { Footer } from '@/components/global/Footer.tsx'
 import { Header } from '@/components/global/Header.tsx'
+import { GlobalsettingsStoryblok } from '@/types/component-types-sb'
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({
+  children,
+  globalsettings
+}: {
+  children: React.ReactNode
+  globalsettings: GlobalsettingsStoryblok
+}) {
   return (
     <>
       <div className="fixed inset-0 flex justify-center sm:px-8">
@@ -10,9 +17,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </div>
       <div className="relative flex w-full flex-col">
-        <Header />
+        <Header topnav={globalsettings.topnav} />
         <main className="flex-auto">{children}</main>
-        <Footer />
+        <Footer footernav={globalsettings.footernav} copyright={globalsettings.copyright} />
       </div>
     </>
   )
