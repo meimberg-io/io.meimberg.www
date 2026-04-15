@@ -31,7 +31,7 @@ export function storyblokImageForCard(
   const base = normalizeProtocol(raw)
   const hasFocal = Boolean(asset.focus && String(asset.focus).length > 0)
   const src = hasFocal
-    ? `${base}/m/${width}x${height}/filters:focal(${asset.focus})/filters:quality(${quality})/filters:format(webp)`
-    : `${base}/m/${width}x${height}/smart/filters:quality(${quality})/filters:format(webp)`
+    ? `${base}/m/${width}x${height}/filters:focal(${asset.focus}):quality(${quality}):format(webp)`
+    : `${base}/m/${width}x${height}/smart/filters:quality(${quality}):format(webp)`
   return { src, unoptimized: false }
 }
