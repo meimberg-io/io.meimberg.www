@@ -19,7 +19,6 @@
 		"@storyblok/richtext": "^3.8.2",
 		"@tailwindcss/postcss": "^4.0.14",
 		"@tailwindcss/typography": "^0.5.16",
-		"@vercel/analytics": "^1.5.0",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"fast-glob": "^3.3.3",

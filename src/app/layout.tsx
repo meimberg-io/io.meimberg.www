@@ -4,7 +4,6 @@ import { Providers } from '@/lib/providers.tsx'
 import { StoryblokProvider } from '@/provider'
 import { fetchGlobalsettings } from '@/lib/storyblokApi'
 import '@/styles/tailwind.css'
-import { Analytics } from "@vercel/analytics/react"
 import { MatomoTracker } from '@/components/util/MatomoTracker.tsx'
 
 
@@ -41,7 +40,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 				</div>
 				<StoryblokProvider />
 			</Providers>
-			<Analytics />
 			<MatomoTracker />
 			</body>
 		</html>
