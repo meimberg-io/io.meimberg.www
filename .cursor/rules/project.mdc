@@ -1,0 +1,9 @@
+---
+title: Atlassion Rules
+description: Personal base rules for all projects
+globs: ["**/*"]
+alwaysApply: true
+---
+# Jira Space
+
+Jira Space for this project is `WWW`
