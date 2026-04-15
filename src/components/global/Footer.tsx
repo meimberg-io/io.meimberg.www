@@ -40,7 +40,7 @@ export function Footer({
 							))}
 
 							</div>
-							<p className="text-sm text-zinc-400 dark:text-zinc-500">
+							<p className="text-sm text-zinc-500 dark:text-zinc-400">
 								&copy; {new Date().getFullYear()} {copyright}
 							</p>
 						</div>
