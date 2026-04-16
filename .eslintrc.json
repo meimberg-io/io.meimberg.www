@@ -3,5 +3,13 @@
 	"rules": {
 		"@typescript-eslint/no-explicit-any": ["off"]
 	},
+	"overrides": [
+		{
+			"files": ["**/*.cjs"],
+			"rules": {
+				"@typescript-eslint/no-require-imports": "off"
+			}
+		}
+	],
 	"ignorePatterns": ["src/types/component-types-sb.d.ts"]
 }
