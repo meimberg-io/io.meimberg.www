@@ -12,10 +12,21 @@
  * or var(--font-headline) in custom CSS).
  * ============================================================================ */
 
-import { DM_Sans } from 'next/font/google'
+import localFont from 'next/font/local'
 
-export const headlineFont = DM_Sans({
-	subsets: ['latin'],
+export const headlineFont = localFont({
+	src: [
+		{
+			path: '../../node_modules/@fontsource-variable/zalando-sans-semiexpanded/files/zalando-sans-semiexpanded-latin-wght-normal.woff2',
+			style: 'normal',
+			weight: '200 900'
+		},
+		{
+			path: '../../node_modules/@fontsource-variable/zalando-sans-semiexpanded/files/zalando-sans-semiexpanded-latin-wght-italic.woff2',
+			style: 'italic',
+			weight: '200 900'
+		}
+	],
 	variable: '--_headline-raw',
 	display: 'swap'
 })

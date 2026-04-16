@@ -91,7 +91,8 @@ export default function NewsletterForm({ variant, title, description }: Newslett
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="ml-4 flex-none cursor-pointer inline-flex items-center justify-center gap-2 rounded-md py-2 px-3 text-sm font-semibold outline-offset-2 transition                 bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-800  disabled:opacity-60                  dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:black "               >
+                className="ml-4 flex-none cursor-pointer inline-flex items-center justify-center gap-2 rounded-md py-2 px-3 text-sm font-semibold text-zinc-900 outline-offset-2 transition bg-primary hover:bg-primary-hover active:bg-primary disabled:opacity-60"
+              >
                 {status === 'loading' ? 'Wird gesendet…' : 'Abonnieren'}
               </button>
             </div>
