@@ -30,7 +30,13 @@ function NewsCard({ item }: { item: NewsItem }) {
     >
       <div className="absolute -inset-x-2 -inset-y-2 z-0 scale-[0.98] rounded-2xl bg-zinc-50 opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50" />
 
-      <Link href={item.link} target="_blank" rel="noopener noreferrer" className="absolute -inset-x-2 -inset-y-2 z-20 rounded-2xl" />
+      <Link
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute -inset-x-2 -inset-y-2 z-20 rounded-2xl"
+        aria-label={item.title}
+      />
 
       <div className="relative z-10 py-3 pr-2">
         <div className="mb-3 flex items-center justify-between">
