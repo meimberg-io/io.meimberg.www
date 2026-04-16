@@ -21,6 +21,26 @@ export default function Picture({ blok }: { blok: PictureBlok }) {
 		if (enableLightbox) setOpen(true)
 	}
 
+	const renderLightboxSlide = ({ slide }: { slide: unknown }) => {
+		const typedSlide = slide as { src: string }
+		return (
+			<Image
+				src={typedSlide.src}
+				alt=""
+				width={1600}
+				height={1600}
+				unoptimized
+				sizes="100vw"
+				style={{
+					maxWidth: '100%',
+					maxHeight: '100%',
+					borderRadius: '0.75rem',
+					objectFit: 'contain'
+				}}
+			/>
+		)
+	}
+
 	const imageClasses = enableLightbox ? 'cursor-pointer' : ''
 
 	if (blok.style === 'keyvisual') {
@@ -44,23 +64,7 @@ export default function Picture({ blok }: { blok: PictureBlok }) {
 						open={open}
 						close={() => setOpen(false)}
 						slides={[{ src: blok.image.filename }]}
-						render={{
-							slide: ({ slide }) => {
-								const typedSlide = slide as { src: string }
-								return (
-									<img
-										src={typedSlide.src}
-										alt=""
-										style={{
-											maxWidth: '100%',
-											maxHeight: '100%',
-											borderRadius: '0.75rem',
-											objectFit: 'contain'
-										}}
-									/>
-								)
-							}
-						}}
+						render={{ slide: renderLightboxSlide }}
 					/>
 				)}
 			</ElementWrapper>
@@ -86,23 +90,7 @@ export default function Picture({ blok }: { blok: PictureBlok }) {
 						open={open}
 						close={() => setOpen(false)}
 						slides={[{ src: blok.image.filename }]}
-						render={{
-							slide: ({ slide }) => {
-								const typedSlide = slide as { src: string }
-								return (
-									<img
-										src={typedSlide.src}
-										alt=""
-										style={{
-											maxWidth: '100%',
-											maxHeight: '100%',
-											borderRadius: '0.75rem',
-											objectFit: 'contain'
-										}}
-									/>
-								)
-							}
-						}}
+						render={{ slide: renderLightboxSlide }}
 					/>
 				)}
 			</ElementWrapper>
@@ -126,23 +114,7 @@ export default function Picture({ blok }: { blok: PictureBlok }) {
 						open={open}
 						close={() => setOpen(false)}
 						slides={[{ src: blok.image.filename }]}
-						render={{
-							slide: ({ slide }) => {
-								const typedSlide = slide as { src: string }
-								return (
-									<img
-										src={typedSlide.src}
-										alt=""
-										style={{
-											maxWidth: '100%',
-											maxHeight: '100%',
-											borderRadius: '0.75rem',
-											objectFit: 'contain'
-										}}
-									/>
-								)
-							}
-						}}
+						render={{ slide: renderLightboxSlide }}
 					/>
 				)}
 			</ElementWrapper>

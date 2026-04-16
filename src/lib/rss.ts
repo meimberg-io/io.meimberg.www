@@ -55,7 +55,7 @@ function parseRssItems(xml: string, source: RssFeedSource): NewsItem[] {
     const link = extractTag(block, 'link')
     const pubDateStr = extractTag(block, 'pubDate')
     const description = extractTag(block, 'description')
-    const imageUrl = resolveNewsImageUrl(extractImageUrl(block), link)
+    const imageUrl = resolveNewsImageUrl(extractImageUrl(block), link ?? undefined)
 
     if (!title || !link) continue
 

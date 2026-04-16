@@ -15,7 +15,7 @@ export function MatomoTracker() {
 
 	useEffect(() => {
 		if (!enabled) return
-		if (localStorage.getItem("matomo-disable") === "true") return
+		if (localStorage.getItem('matomo-disable') === 'true') return
 
 
 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -31,7 +31,7 @@ export function MatomoTracker() {
 		g.async = true
 		g.src = 'https://matomo.meimberg.io/matomo.js'
 		s.parentNode?.insertBefore(g, s)
-	}, [])
+	}, [enabled])
 
 	return null
 }
