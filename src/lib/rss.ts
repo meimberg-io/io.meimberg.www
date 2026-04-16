@@ -109,9 +109,27 @@ function extractImageUrl(block: string): string | undefined {
   return undefined
 }
 
+function isNonImageRedirectUrl(url: string): boolean {
+  try {
+    const { hostname, pathname } = new URL(url)
+    // Brandfetch's /icon/fallback/lettermark endpoint 302-redirects to
+    // docs.brandfetch.com (HTML) when the domain has no registered lettermark,
+    // which browsers then block via ORB when loaded as an image.
+    if (hostname === 'cdn.brandfetch.io' && /\/icon\/fallback\/lettermark\b/.test(pathname)) {
+      return true
+    }
+    return false
+  } catch {
+    return false
+  }
+}
+
 export function resolveNewsImageUrl(imageUrl?: string, linkUrl?: string): string | undefined {
   if (!imageUrl) return undefined
-  return normalizeUrl(imageUrl, linkUrl)
+  const normalized = normalizeUrl(imageUrl, linkUrl)
+  if (!normalized) return undefined
+  if (isNonImageRedirectUrl(normalized)) return undefined
+  return normalized
 }
 
 function isOptimizableNewsHost(hostname: string): boolean {
