@@ -46,7 +46,7 @@ export async function BlogListPage({
             Gefiltert nach:{' '}
             <span className="font-medium text-zinc-700 dark:text-zinc-300">{tag}</span>
             {' · '}
-            <Link href={basePath} className="text-teal-500 hover:underline">
+            <Link href={basePath} className="text-interactive hover:underline">
               Filter entfernen
             </Link>
           </p>

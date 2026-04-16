@@ -13,8 +13,8 @@ export interface PagetitleProps {
 
 export default function Pagetitle({ blok }: { blok: PagetitleStoryblok | PagetitleProps }) {
   const isHome = blok.layout === 'home'
-  const textcolor_title = isHome ? 'text-zinc-800 dark:text-white ' : 'text-teal-900 dark:text-teal-300 '
-  const textcolor_intro = isHome ? 'text-zinc-800 dark:text-zinc-300 ' : 'text-teal-900 dark:text-teal-300 '
+  const textcolor_title = isHome ? 'text-zinc-800 dark:text-white ' : 'text-display '
+  const textcolor_intro = isHome ? 'text-zinc-800 dark:text-zinc-300 ' : 'text-lead '
   return (
     <div {...(blok as PagetitleStoryblok).content && storyblokEditable(blok as PagetitleStoryblok)}>
 

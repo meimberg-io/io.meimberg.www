@@ -121,7 +121,7 @@ function NewsCard({ item }: { item: NewsItem }) {
                 {item.description}
               </p>
             )}
-            <div className="mt-2.5 flex items-center text-sm font-medium text-teal-500">
+            <div className="mt-2.5 flex items-center text-sm font-medium text-internal">
               Weiterlesen
               <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className="ml-1 h-4 w-4 stroke-current transition-transform duration-200 group-hover:translate-x-0.5">
                 <path d="M6.75 5.75 9.25 8l-2.5 2.25" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

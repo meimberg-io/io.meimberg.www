@@ -32,7 +32,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
 	return (
 		<html lang="en" className={`h-full antialiased ${headlineFont.variable}`} suppressHydrationWarning>
-			<body className="flex h-full bg-zinc-50 dark:bg-black" suppressHydrationWarning>
+			<body className="flex h-full bg-background" suppressHydrationWarning>
 			<Providers>
 				<div className="flex w-full">
 					<Layout globalsettings={globalsettings}>

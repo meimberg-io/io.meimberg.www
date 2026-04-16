@@ -19,7 +19,7 @@ export default function NotFound() {
               <div className="mt-6">
                 <Link
                   href="/"
-                  className="text-sm font-medium text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300 transition-colors"
+                  className="text-sm font-medium text-interactive hover:text-interactive-hover transition-colors"
                 >
                   &larr; Zurück zur Startseite
                 </Link>

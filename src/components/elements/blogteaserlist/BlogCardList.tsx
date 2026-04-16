@@ -84,7 +84,7 @@ export function BlogCardList(props: {
                   <h2 className="mt-2 line-clamp-2 text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
                     <Link
                       href={href}
-                      className="text-zinc-900 transition hover:text-teal-500 dark:text-zinc-100 dark:hover:text-teal-400"
+                      className="text-zinc-900 transition hover:text-internal dark:text-zinc-100"
                     >
                       {blog.content.teasertitle}
                     </Link>
@@ -94,7 +94,7 @@ export function BlogCardList(props: {
                   </p>
                   <Link
                     href={href}
-                    className="mt-auto inline-flex items-center pt-4 text-sm font-medium text-teal-500 transition hover:text-teal-500 dark:text-teal-400 dark:hover:text-teal-400"
+                    className="mt-auto inline-flex items-center pt-4 text-sm font-medium text-internal transition-colors hover:text-internal-hover"
                   >
                     {blog.content.readmoretext ?? 'Weiterlesen'}
                     <svg

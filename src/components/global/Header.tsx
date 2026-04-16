@@ -11,6 +11,7 @@ import clsx from 'clsx'
 import { Container } from '@/components/layout/Container.tsx'
 import avatarImage from '@/images/avatar.png'
 import { ChevronDownIcon, CloseIcon, MobileNavItem, MoonIcon, SunIcon } from '@/components/util/Svg.tsx'
+import { Logo } from '@/components/util/Logo.tsx'
 import { GlobalsettingsStoryblok } from '@/types/component-types-sb'
 import { ISbStoryData } from '@storyblok/react'
 
@@ -41,14 +42,14 @@ function NavItem({ href, children, matchSubpaths }: {
 				className={clsx(
 					'relative block px-3 py-2 transition',
 					isActive
-						? 'text-teal-500 dark:text-teal-400'
-						: 'hover:text-teal-500 dark:hover:text-teal-400'
+						? 'text-internal'
+						: 'hover:text-internal'
 				)}
 			>
 				{children}
 				{isActive && (
 					<span
-						className="absolute inset-x-1 -bottom-px h-px bg-linear-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
+						className="absolute inset-x-1 -bottom-px h-px bg-linear-to-r from-accent/0 via-accent/40 to-accent/0" />
 				)}
 			</Link>
 		</li>
@@ -104,9 +105,9 @@ function MobileNavigation(
 			>
 				<div className="flex flex-row-reverse items-center justify-between">
 					<PopoverButton aria-label="Close menu" className="-m-1 p-1">
-						<CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
+						<CloseIcon className="h-6 w-6 text-muted-foreground" />
 					</PopoverButton>
-					<h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+					<h2 className="text-sm font-medium text-body">
 						Navigation
 					</h2>
 				</div>
@@ -353,12 +354,20 @@ export function Header({
 				)}
 				<div
 					ref={headerRef}
-					className="top-0 z-10 h-16 pt-6"
+					className="top-0 z-10 h-20 pt-6"
 					style={{
 						position:
 							'var(--header-position)' as React.CSSProperties['position']
 					}}
 				>
+					<div
+						aria-hidden="true"
+						className="pointer-events-none absolute inset-0 sm:px-8"
+					>
+						<div className="mx-auto h-full w-full max-w-7xl lg:px-8">
+							<div className="h-full w-full bg-surface" />
+						</div>
+					</div>
 					<Container
 						className="top-(--header-top,--spacing(6)) w-full"
 						style={{
@@ -366,19 +375,27 @@ export function Header({
 								'var(--header-inner-position)' as React.CSSProperties['position']
 						}}
 					>
-						<div className="relative flex gap-4">
-							<div className="flex flex-1">
-								{!isHomePage && (
-									<AvatarContainer>
-										<Avatar />
-									</AvatarContainer>
-								)}
+						<div className="relative flex items-center gap-4">
+							<div className="flex items-center">
+								<Link
+									href="/"
+									aria-label="Home"
+									className="pointer-events-auto text-primary transition-colors hover:text-primary-hover"
+								>
+									<Logo className="h-4 w-auto sm:h-5" />
+								</Link>
 							</div>
 							<div className="flex flex-1 justify-end md:justify-center">
-								<MobileNavigation topnav={topnav} className="pointer-events-auto md:hidden" />
-								<DesktopNavigation topnav={topnav} className="pointer-events-auto hidden md:block" />
+								<MobileNavigation
+									topnav={topnav}
+									className="pointer-events-auto md:hidden"
+								/>
+								<DesktopNavigation
+									topnav={topnav}
+									className="pointer-events-auto hidden md:block"
+								/>
 							</div>
-							<div className="flex justify-end md:flex-1">
+							<div className="flex justify-end">
 								<div className="pointer-events-auto">
 									<ThemeToggle />
 								</div>

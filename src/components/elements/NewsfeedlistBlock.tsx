@@ -33,8 +33,8 @@ export default function Newsfeedlist({ blok }: Readonly<{ blok: NewsfeedlistBlok
     return (
       <div {...storyblokEditable(blok)}>
         <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-          <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-            <Rss className="h-6 w-6 flex-none text-teal-500" />
+          <h2 className="flex text-sm font-semibold text-primary">
+            <Rss className="h-6 w-6 flex-none text-primary" />
             <span className="ml-3">Neueste Beiträge</span>
           </h2>
           <hr className="mt-4 border-t border-zinc-100 dark:border-zinc-700/40" />

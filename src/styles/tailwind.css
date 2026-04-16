@@ -8,12 +8,12 @@
  *   PRIMITIVE TOKENS    Tailwind defaults (zinc-50..950, teal-*, red-*, ...)
  *          │            Plus our type scale (--text-*).
  *          ▼
- *   SEMANTIC TOKENS     --color-foreground, --color-surface, --color-accent,
+ *   SEMANTIC TOKENS     --color-foreground, --color-surface, --color-interactive,
  *          │            --color-border, ... defined in @theme below.
  *          │            Dark-mode overrides: single .dark block in @layer base.
  *          ▼
  *   COMPONENT USAGE     Tailwind utilities: text-foreground, bg-surface,
- *                       border-border, text-accent, ...
+ *                       border-border, text-interactive, ...
  *                       Avoid raw palette (text-zinc-800) for new code.
  *
  * ── Change guide (always edit in exactly one place) ─────────────────────────
@@ -48,11 +48,57 @@
  * Edit colors / type scale / fonts / spacing here.
  * ============================================================================ */
 @theme {
+  /* Primitive brand palettes
+   * -------------------------------------------------------------------------
+   * Raw color scales. Do NOT use chartreuse-/teal-/orchid-* utilities
+   * directly in components — reference them only through the semantic tokens
+   * defined below (primary, interactive, accent).
+   */
+
+  /* chartreuse — brand primary (yellow-green) */
+  --color-chartreuse-50: #fbfbf8;
+  --color-chartreuse-100: #fcfcf8;
+  --color-chartreuse-200: #fbfbf3;
+  --color-chartreuse-300: #f6f4d5;
+  --color-chartreuse-400: #f4f0ae;
+  --color-chartreuse-500: #f6f188;
+  --color-chartreuse-600: #eee653;
+  --color-chartreuse-700: #dfd630;
+  --color-chartreuse-800: #b1aa25;
+  --color-chartreuse-900: #838325;
+  --color-chartreuse-950: #5a5a20;
+
+  /* teal — decorative accent (cyan-teal) */
+  --color-teal-50: #f8fcfb;
+  --color-teal-100: #f8fcfc;
+  --color-teal-200: #f3fcfb;
+  --color-teal-300: #d4f7f5;
+  --color-teal-400: #acf6f2;
+  --color-teal-500: #85f9f3;
+  --color-teal-600: #50f2ea;
+  --color-teal-700: #2be3da;
+  --color-teal-800: #22b4ad;
+  --color-teal-900: #238686;
+  --color-teal-950: #1f5c5c;
+
+  /* orchid — interactive accent (magenta-purple) */
+  --color-orchid-50: #fbf8fc;
+  --color-orchid-100: #fcf8fc;
+  --color-orchid-200: #fbf3fc;
+  --color-orchid-300: #f5d4f7;
+  --color-orchid-400: #f2acf6;
+  --color-orchid-500: #f385f9;
+  --color-orchid-600: #ea50f2;
+  --color-orchid-700: #da2be3;
+  --color-orchid-800: #ad22b4;
+  --color-orchid-900: #862386;
+  --color-orchid-950: #5c1f5c;
+
   /* Semantic colors (light mode defaults)
    * -------------------------------------------------------------------------
    * Reference primitive palette tokens via var(). Dark-mode values live in
    * the .dark{} block inside @layer base below. Utilities auto-generated:
-   *   text-foreground, bg-surface, border-border, text-accent, ...
+   *   text-foreground, bg-surface, border-border, text-interactive, ...
    */
   --color-background: var(--color-zinc-50);
   --color-surface: #ffffff;
@@ -60,6 +106,7 @@
 
   --color-foreground: var(--color-zinc-800);
   --color-foreground-strong: var(--color-zinc-900);
+  --color-foreground-soft: var(--color-zinc-700);
   --color-body: var(--color-zinc-600);
   --color-muted-foreground: var(--color-zinc-500);
   --color-subtle-foreground: var(--color-zinc-400);
@@ -67,8 +114,49 @@
   --color-border: var(--color-zinc-200);
   --color-border-subtle: var(--color-zinc-100);
 
-  --color-accent: var(--color-teal-500);
-  --color-accent-hover: var(--color-teal-600);
+  /* Brand semantic tokens
+   * -------------------------------------------------------------------------
+   * Semantic ROLES — name describes what the color is FOR, not what it looks
+   * like. If brand palettes change, these slots map onto new shades; component
+   * code keeps using `text-primary`, `text-interactive`, `text-accent`.
+   *
+   *   primary             — ABSTRACT brand color. Rarely used directly in
+   *                         components; acts as the shared source for the
+   *                         concrete role tokens below (display, lead,
+   *                         internal). Swap this → brand flips everywhere.
+   *   primary-hover       — hover counterpart of primary.
+   *   display             — hero display typography: page title (H1),
+   *                         marketing display headlines. Not interactive.
+   *   lead                — page intro / lede paragraph directly under the
+   *                         display heading. Not interactive.
+   *   internal            — color of INTERNAL navigation: teaser CTAs
+   *                         ("Weiterlesen"), top-nav active state, in-site
+   *                         navigational links. Shares chartreuse with primary
+   *                         on purpose — staying on-brand signals "stays on
+   *                         site". Distinct token so link intent is obvious
+   *                         at the component level.
+   *   internal-hover      — hover/pressed state of internal.
+   *   interactive         — color of GENERIC interactive elements: external
+   *                         links, standalone CTAs, focus rings, inline prose
+   *                         link underlines. Different hue from internal so
+   *                         "leaves the site / performs an action" reads as
+   *                         a distinct affordance.
+   *   interactive-hover   — hover/pressed state of interactive.
+   *   accent              — secondary brand color for content headings
+   *                         (prose h2, table headers) and small decorative
+   *                         highlights (chips, status dots). Distinct from
+   *                         primary so the hierarchy primary → accent → body
+   *                         reads as three clear levels.
+   */
+  --color-primary: var(--color-chartreuse-800);
+  --color-primary-hover: var(--color-chartreuse-900);
+  --color-display: var(--color-accent);
+  --color-lead: var(--color-accent);
+  --color-internal: var(--color-accent);
+  --color-internal-hover: var(--color-accent-hover);
+  --color-interactive: var(--color-orchid-700);
+  --color-interactive-hover: var(--color-orchid-800);
+  --color-accent: var(--color-teal-700);
 
   --color-destructive: var(--color-red-600);
 
@@ -129,6 +217,7 @@
 
     --color-foreground: var(--color-zinc-100);
     --color-foreground-strong: var(--color-zinc-100);
+    --color-foreground-soft: var(--color-zinc-300);
     --color-body: var(--color-zinc-400);
     --color-muted-foreground: var(--color-zinc-400);
     --color-subtle-foreground: var(--color-zinc-500);
@@ -136,8 +225,13 @@
     --color-border: var(--color-zinc-800);
     --color-border-subtle: var(--color-zinc-700);
 
-    --color-accent: var(--color-teal-400);
-    --color-accent-hover: var(--color-teal-300);
+    --color-primary: var(--color-chartreuse-400);
+    --color-primary-hover: var(--color-chartreuse-300);
+    /* display, lead, internal alias primary via @theme — dark mode flows
+       through the primary override automatically, no redefinition needed. */
+    --color-interactive: var(--color-orchid-400);
+    --color-interactive-hover: var(--color-orchid-300);
+    --color-accent: var(--color-teal-700);
 
     --color-destructive: var(--color-red-400);
   }

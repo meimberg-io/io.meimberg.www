@@ -59,7 +59,7 @@ Card.Description = function CardDescription({ children }: {
 
 Card.Cta = function CardCta({ children }: { children: React.ReactNode }) {
 	return (
-		<div aria-hidden="true" className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
+		<div aria-hidden="true" className="relative z-10 mt-4 flex items-center text-sm font-medium text-internal">
 			{children}
 			<ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
 		</div>
@@ -88,7 +88,7 @@ Card.Eyebrow = function CardEyebrow<T extends React.ElementType = 'p'>({ as, dec
 
 Card.Icon = function CardIcon({ children }: { children: React.ReactNode }) {
 	return (
-		<div className="z-20 text-teal-500 ">
+		<div className="z-20 text-internal ">
 			{children}
 		</div>
 	)

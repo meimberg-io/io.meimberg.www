@@ -36,7 +36,7 @@ export default function Hyperlink({ blok }: { blok: HyperlinkStoryblok }) {
 				<Link 
 					href={getHref()} 
 					target={getTarget()}
-					className="relative transition flex text-sm font-medium hover:text-zinc-400  text-zink-200 dark:text-teal-500"
+					className="relative flex text-sm font-medium text-interactive transition-colors hover:text-interactive-hover"
 				>
 					<LinkIcon className="h-6 w-6 flex-none" />
 					<span className="ml-2">{blok.label}</span>

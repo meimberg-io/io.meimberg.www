@@ -45,33 +45,33 @@ export default function NewsletterForm({ variant, title, description }: Newslett
   }
 
   return (
-      <div className={`rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 ${variant === 'highlight' ? 'bg-zinc-50 dark:bg-zinc-800/50' : ''}`}>
+      <div className={`rounded-2xl border border-border-subtle p-6 ${variant === 'highlight' ? 'bg-zinc-50 dark:bg-zinc-800/50' : ''}`}>
         {status === 'success' ? (
           <>
-            <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-              <Mail className="h-6 w-6 flex-none text-teal-500" />
+            <h2 className="flex text-sm font-semibold text-primary">
+              <Mail className="h-6 w-6 flex-none text-primary" />
               <span className="ml-3">Newsletter abonnieren – Bestätigung nötig</span>
             </h2>
-            <hr className="mt-4 border-t border-zinc-100 dark:border-zinc-700/40 mb-8" />
-            <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
+            <hr className="mt-4 border-t border-border-subtle mb-8" />
+            <p className="mt-4 text-sm text-body">
               Danke! <b>Prüfe dein Postfach!</b> – Du hast eine Bestätigungsmail erhalten.
             </p>
          
-            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="mt-2 text-sm text-body">
               Ich freue mich riesig, dass du dabei bist!
             </p>
-            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 font-bold">
+            <p className="mt-2 text-sm text-body font-bold">
               Oli
             </p>
           </>
         ) : (
           <form onSubmit={handleSubmit}>
-            <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-              <Mail className="h-6 w-6 flex-none text-teal-500" />
+            <h2 className="flex text-sm font-semibold text-primary">
+              <Mail className="h-6 w-6 flex-none text-primary" />
               <span className="ml-3">{title || DEFAULTS.title}</span>
             </h2>
-            <hr className="mt-4 border-t border-zinc-100 dark:border-zinc-700/40 mb-8" />
-            <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
+            <hr className="mt-4 border-t border-border-subtle mb-8" />
+            <p className="mt-4 text-sm text-body">
               {description || DEFAULTS.description}
             </p>
             <div className="mt-6 flex items-center">
@@ -85,18 +85,18 @@ export default function NewsletterForm({ variant, title, description }: Newslett
                   placeholder="deine@email.de"
                   aria-label="E-Mail-Adresse"
                   disabled={status === 'loading'}
-                  className="w-full appearance-none rounded-lg bg-white px-3 py-2 text-sm text-zinc-900 shadow-md shadow-zinc-800/5 outline outline-zinc-900/10 placeholder:text-zinc-400 focus:ring-4 focus:ring-teal-500/10 focus:outline-teal-500 disabled:opacity-60 sm:text-sm dark:outline-zinc-700 dark:placeholder:text-zinc-500 dark:focus:ring-teal-400/10 dark:focus:outline-teal-400"
+                  className="w-full appearance-none rounded-lg bg-white px-3 py-2 text-sm text-zinc-900 shadow-md shadow-zinc-800/5 outline outline-zinc-900/10 placeholder:text-zinc-400 focus:ring-4 focus:ring-accent/10 focus:outline-accent disabled:opacity-60 sm:text-sm dark:outline-zinc-700 dark:placeholder:text-zinc-500"
                 />
               </span>
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="ml-4 flex-none cursor-pointer inline-flex items-center justify-center gap-2 rounded-md py-2                 px-3 text-sm font-semibold outline-offset-2 transition                 bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-800  disabled:opacity-60                  dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:black "               >
+                className="ml-4 flex-none cursor-pointer inline-flex items-center justify-center gap-2 rounded-md py-2 px-3 text-sm font-semibold outline-offset-2 transition                 bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-800  disabled:opacity-60                  dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:black "               >
                 {status === 'loading' ? 'Wird gesendet…' : 'Abonnieren'}
               </button>
             </div>
             {status === 'error' && message && (
-              <p className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert">
+              <p className="mt-2 text-sm text-destructive" role="alert">
                 {message}
               </p>
             )}
