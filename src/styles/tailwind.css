@@ -1,12 +1,90 @@
-@import "tailwindcss";
+/* ============================================================================
+ * io.meimberg.www - Global Stylesheet (Tailwind v4)
+ *
+ * This is the SINGLE source of truth for all global styling.
+ *
+ * ── Token architecture ──────────────────────────────────────────────────────
+ *
+ *   PRIMITIVE TOKENS    Tailwind defaults (zinc-50..950, teal-*, red-*, ...)
+ *          │            Plus our type scale (--text-*).
+ *          ▼
+ *   SEMANTIC TOKENS     --color-foreground, --color-surface, --color-accent,
+ *          │            --color-border, ... defined in @theme below.
+ *          │            Dark-mode overrides: single .dark block in @layer base.
+ *          ▼
+ *   COMPONENT USAGE     Tailwind utilities: text-foreground, bg-surface,
+ *                       border-border, text-accent, ...
+ *                       Avoid raw palette (text-zinc-800) for new code.
+ *
+ * ── Change guide (always edit in exactly one place) ─────────────────────────
+ *   - Color palette, type scale, font tokens, spacing
+ *       => @theme block below
+ *   - Dark-mode semantic overrides
+ *       => @layer base { .dark { ... } }
+ *   - Semantic HTML defaults (h1-h6, hr, body, links, ...)
+ *       => @layer base below
+ *   - Which actual font is loaded for headlines / body / mono
+ *       => src/styles/fonts.ts  (Next.js build-time concern)
+ *   - Prose / richtext styling (.prose)
+ *       => src/typography.ts
+ *   - Syntax highlighting styles
+ *       => src/styles/prism.css
+ *   - Component styling
+ *       => Tailwind utilities directly on React components
+ *
+ * Do not introduce additional global CSS files or patch files.
+ * ============================================================================ */
+
+@import 'tailwindcss';
 @import './prism.css' layer(components);
-@import './om.css' layer(components);
+
 @plugin '@tailwindcss/typography';
 @config '../typography.ts';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ============================================================================
+ * DESIGN TOKENS
+ * Edit colors / type scale / fonts / spacing here.
+ * ============================================================================ */
 @theme {
+  /* Semantic colors (light mode defaults)
+   * -------------------------------------------------------------------------
+   * Reference primitive palette tokens via var(). Dark-mode values live in
+   * the .dark{} block inside @layer base below. Utilities auto-generated:
+   *   text-foreground, bg-surface, border-border, text-accent, ...
+   */
+  --color-background: var(--color-zinc-50);
+  --color-surface: #ffffff;
+  --color-muted: var(--color-zinc-100);
+
+  --color-foreground: var(--color-zinc-800);
+  --color-foreground-strong: var(--color-zinc-900);
+  --color-body: var(--color-zinc-600);
+  --color-muted-foreground: var(--color-zinc-500);
+  --color-subtle-foreground: var(--color-zinc-400);
+
+  --color-border: var(--color-zinc-200);
+  --color-border-subtle: var(--color-zinc-100);
+
+  --color-accent: var(--color-teal-500);
+  --color-accent-hover: var(--color-teal-600);
+
+  --color-destructive: var(--color-red-600);
+
+  /* Font families
+   * -------------------------------------------------------------------------
+   * The actual font file is loaded via next/font in src/styles/fonts.ts.
+   * That file exposes a raw CSS variable (--_headline-raw); here we wire it
+   * into the design system as a proper token. To change the headline font,
+   * edit src/styles/fonts.ts.
+   *
+   * Utility auto-generated: font-headline (use e.g. className="font-headline").
+   */
+  --font-headline: var(--_headline-raw), sans-serif;
+
+  /* Type scale
+   * ------------------------------------------------------------------------- */
   --text-xs: 0.8125rem;
   --text-xs--line-height: 1.5rem;
   --text-sm: 0.875rem;
@@ -35,41 +113,49 @@
   --text-9xl--line-height: 1;
 }
 
-/* Tighter prose vertical rhythm — overrides @tailwindcss/typography defaults.
-   Uses the same :where() selector pattern as the plugin so specificity matches;
-   placed after @plugin so these win by source order. */
-.prose :where(.prose > *):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
+/* ============================================================================
+ * SEMANTIC HTML DEFAULTS + DARK-MODE TOKEN OVERRIDES
+ * Runs after Tailwind preflight.
+ * ============================================================================ */
+@layer base {
+  /* Dark-mode semantic token overrides.
+   * Single source of truth: change a value here, it propagates to every
+   * component using the corresponding utility (text-foreground, bg-surface, ...)
+   */
+  .dark {
+    --color-background: #000000;
+    --color-surface: var(--color-zinc-900);
+    --color-muted: var(--color-zinc-800);
 
-.prose :where(p):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
+    --color-foreground: var(--color-zinc-100);
+    --color-foreground-strong: var(--color-zinc-100);
+    --color-body: var(--color-zinc-400);
+    --color-muted-foreground: var(--color-zinc-400);
+    --color-subtle-foreground: var(--color-zinc-500);
 
-.prose :where(h2):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-  margin-top: 2.5rem;
-  margin-bottom: 0.75rem;
-}
+    --color-border: var(--color-zinc-800);
+    --color-border-subtle: var(--color-zinc-700);
 
-.prose :where(h3):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-  margin-top: 1.75rem;
-  margin-bottom: 0.75rem;
-  color: var(--tw-prose-bold);
-}
+    --color-accent: var(--color-teal-400);
+    --color-accent-hover: var(--color-teal-300);
 
-.prose :where(li):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
+    --color-destructive: var(--color-red-400);
+  }
 
-.prose :where(li :is(ol, ul)):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-headline);
+  }
 
-.prose :where(li :is(li, p)):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-  margin-top: 0.375rem;
-  margin-bottom: 0.375rem;
+  h1 {
+    @apply text-3xl font-normal tracking-tight text-foreground sm:text-4xl mb-0;
+  }
+
+  hr {
+    @apply border-t border-border-subtle;
+  }
 }

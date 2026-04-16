@@ -5,6 +5,7 @@ import { StoryblokProvider } from '@/provider'
 import { fetchGlobalsettings } from '@/lib/storyblokApi'
 import '@/styles/tailwind.css'
 import { MatomoTracker } from '@/components/util/MatomoTracker.tsx'
+import { headlineFont } from '@/styles/fonts'
 
 
 export const revalidate = 0
@@ -30,7 +31,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 	const globalsettings = await fetchGlobalsettings(false)
 
 	return (
-		<html lang="en" className="h-full antialiased" suppressHydrationWarning>
+		<html lang="en" className={`h-full antialiased ${headlineFont.variable}`} suppressHydrationWarning>
 			<body className="flex h-full bg-zinc-50 dark:bg-black" suppressHydrationWarning>
 			<Providers>
 				<div className="flex w-full">

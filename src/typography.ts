@@ -29,6 +29,7 @@ export default {
       },
       DEFAULT: {
         css: {
+          // Prose-only typography contract: markdown/richtext rhythm and style.
           '--tw-prose-body': theme('colors.zinc.600'),
           '--tw-prose-headings': theme('colors.teal.900'),
           '--tw-prose-links': theme('colors.teal.500'),
@@ -73,12 +74,12 @@ export default {
           color: 'var(--tw-prose-body)',
           lineHeight: theme('lineHeight.7'),
           '> *': {
-            marginTop: theme('spacing.10'),
-            marginBottom: theme('spacing.10'),
+            marginTop: '1.5rem',
+            marginBottom: '1.5rem',
           },
           p: {
-            marginTop: theme('spacing.7'),
-            marginBottom: theme('spacing.7'),
+            marginTop: '0.75rem',
+            marginBottom: '0.75rem',
           },
 
           // Headings
@@ -89,14 +90,14 @@ export default {
           h2: {
             fontSize: theme('fontSize.xl')[0],
             lineHeight: theme('lineHeight.7'),
-            marginTop: theme('spacing.12'),
-            marginBottom: theme('spacing.4'),
+            marginTop: '2.5rem',
+            marginBottom: '0.75rem',
           },
           h3: {
             fontSize: theme('fontSize.base')[0],
             lineHeight: theme('lineHeight.7'),
-            marginTop: theme('spacing.16'),
-            marginBottom: theme('spacing.4'),
+            marginTop: '1.75rem',
+            marginBottom: '0.75rem',
           },
           ':is(h2, h3) + *': {
             marginTop: 0,
@@ -172,8 +173,8 @@ export default {
             paddingLeft: theme('spacing.6'),
           },
           li: {
-            marginTop: theme('spacing.1'),
-            marginBottom: theme('spacing.1'),
+            marginTop: '0.25rem',
+            marginBottom: '0.25rem',
             paddingLeft: theme('spacing[3.5]'),
           },
           'li::marker': {
@@ -187,12 +188,12 @@ export default {
             color: 'var(--tw-prose-bullets)',
           },
           'li :is(ol, ul)': {
-            marginTop: theme('spacing.4'),
-            marginBottom: theme('spacing.4'),
+            marginTop: '0.5rem',
+            marginBottom: '0.5rem',
           },
           'li :is(li, p)': {
-            marginTop: theme('spacing.3'),
-            marginBottom: theme('spacing.3'),
+            marginTop: '0.375rem',
+            marginBottom: '0.375rem',
           },
 
           // Code blocks
