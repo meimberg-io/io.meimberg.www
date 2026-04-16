@@ -26,7 +26,8 @@
  *   - Which actual font is loaded for headlines / body / mono
  *       => src/styles/fonts.ts  (Next.js build-time concern)
  *   - Prose / richtext styling (.prose)
- *       => src/typography.ts
+ *       => src/typography.ts (tokens + rhythm) + src/styles/typography-plugin.cjs
+ *         (plugin `target: legacy` so link colors win over Preflight)
  *   - Syntax highlighting styles
  *       => src/styles/prism.css
  *   - Component styling
@@ -38,7 +39,7 @@
 @import 'tailwindcss';
 @import './prism.css' layer(components);
 
-@plugin '@tailwindcss/typography';
+@plugin './typography-plugin.cjs';
 @config '../typography.ts';
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -218,9 +219,9 @@
     --color-foreground: var(--color-zinc-100);
     --color-foreground-strong: var(--color-zinc-100);
     --color-foreground-soft: var(--color-zinc-300);
-    --color-body: var(--color-zinc-400);
+    --color-body: var(--color-zinc-300);
     --color-muted-foreground: var(--color-zinc-400);
-    --color-subtle-foreground: var(--color-zinc-500);
+    --color-subtle-foreground: var(--color-zinc-400);
 
     --color-border: var(--color-zinc-800);
     --color-border-subtle: var(--color-zinc-700);

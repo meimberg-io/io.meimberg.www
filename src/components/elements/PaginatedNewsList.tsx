@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { newsSourceBadgeClassName } from '@/lib/newsSourceBadge'
 import type { NewsItem } from '@/lib/rss'
 import { getNewsImageRenderConfig } from '@/lib/rss'
 
@@ -16,47 +17,6 @@ interface SerializedNewsItem {
   imageUrl?: string
 }
 
-type SourceTheme = {
-  color: string
-  bgLight: string
-  borderLight: string
-}
-
-const BLOG_ARTICLE_THEME: SourceTheme = {
-  color: '#0d9488',
-  bgLight: 'rgba(13,148,136,0.08)',
-  borderLight: '#2dd4bf',
-}
-
-const SOURCE_THEMES: Record<string, SourceTheme> = {
-  'awesome apps': {
-    color: '#2563eb',
-    bgLight: 'rgba(37,99,235,0.08)',
-    borderLight: '#60a5fa',
-  },
-  morpheuxx: {
-    color: '#dc2626',
-    bgLight: 'rgba(220,38,38,0.08)',
-    borderLight: '#f87171',
-  },
-  blog: BLOG_ARTICLE_THEME,
-  artikel: BLOG_ARTICLE_THEME,
-}
-
-const DEFAULT_THEME: SourceTheme = {
-  color: '#71717a',
-  bgLight: 'rgba(113,113,122,0.08)',
-  borderLight: '#d4d4d8',
-}
-
-function getSourceTheme(sourceName: string): SourceTheme {
-  const key = sourceName.toLowerCase()
-  for (const [k, v] of Object.entries(SOURCE_THEMES)) {
-    if (key.includes(k)) return v
-  }
-  return DEFAULT_THEME
-}
-
 function formatNewsDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString('de-DE', {
     year: 'numeric',
@@ -66,7 +26,6 @@ function formatNewsDate(dateStr: string): string {
 }
 
 function PaginatedNewsCard({ item }: { item: SerializedNewsItem }) {
-  const theme = getSourceTheme(item.sourceName)
   const imageConfig = getNewsImageRenderConfig(item.imageUrl)
 
   return (
@@ -77,13 +36,10 @@ function PaginatedNewsCard({ item }: { item: SerializedNewsItem }) {
       <Link href={item.link} target="_blank" rel="noopener noreferrer" className="absolute -inset-x-2 -inset-y-2 z-20 rounded-2xl" />
       <div className="relative z-10 py-3 pr-2">
         <div className="mb-3 flex items-center justify-between">
-          <time dateTime={item.pubDate} className="text-xs text-zinc-400 dark:text-zinc-500">
+          <time dateTime={item.pubDate} className="text-xs text-subtle-foreground">
             {formatNewsDate(item.pubDate)}
           </time>
-          <span
-            className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium"
-            style={{ color: theme.color, backgroundColor: theme.bgLight }}
-          >
+          <span className={newsSourceBadgeClassName(item.sourceName)}>
             {item.sourceName}
           </span>
         </div>
@@ -106,7 +62,7 @@ function PaginatedNewsCard({ item }: { item: SerializedNewsItem }) {
               {item.title}
             </h3>
             {item.description && (
-              <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+              <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-body">
                 {item.description}
               </p>
             )}

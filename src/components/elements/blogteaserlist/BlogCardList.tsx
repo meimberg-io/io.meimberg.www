@@ -77,7 +77,7 @@ export function BlogCardList(props: {
                 <div className="flex flex-1 flex-col p-6 dark:text-zinc-100">
                   <time
                     dateTime={blog.content.date}
-                    className="text-xs font-medium text-zinc-500 dark:text-zinc-400 sm:text-sm"
+                    className="text-xs font-medium text-subtle-foreground sm:text-sm"
                   >
                     {formatDate(blog.content.date)}
                   </time>
@@ -89,7 +89,7 @@ export function BlogCardList(props: {
                       {blog.content.teasertitle}
                     </Link>
                   </h2>
-                  <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+                  <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-body">
                     {blog.content.abstract}
                   </p>
                   <Link

@@ -1,3 +1,4 @@
+import { newsSourceBadgeClassName } from '@/lib/newsSourceBadge'
 import { fetchAggregatedNews, getNewsImageRenderConfig, type RssFeedSource, type NewsItem } from '@/lib/rss'
 import ElementWrapper from '@/components/layout/ElementWrapper.tsx'
 import Image from 'next/image'
@@ -12,64 +13,9 @@ function formatNewsDate(date: Date): string {
   })
 }
 
-type SourceTheme = {
-  color: string
-  bgLight: string
-  bgDark: string
-  borderLight: string
-  borderDark: string
-}
-
-const BLOG_ARTICLE_THEME: SourceTheme = {
-  color: '#0d9488',
-  bgLight: 'rgba(13,148,136,0.08)',
-  bgDark: 'rgba(45,212,191,0.12)',
-  borderLight: '#2dd4bf',
-  borderDark: 'rgba(45,212,191,0.4)',
-}
-
-const SOURCE_THEMES: Record<string, SourceTheme> = {
-  'awesome apps': {
-    color: '#2563eb',
-    bgLight: 'rgba(37,99,235,0.08)',
-    bgDark: 'rgba(96,165,250,0.12)',
-    borderLight: '#60a5fa',
-    borderDark: 'rgba(96,165,250,0.4)',
-  },
-  morpheuxx: {
-    color: '#dc2626',
-    bgLight: 'rgba(220,38,38,0.08)',
-    bgDark: 'rgba(248,113,113,0.12)',
-    borderLight: '#f87171',
-    borderDark: 'rgba(248,113,113,0.4)',
-  },
-  blog: BLOG_ARTICLE_THEME,
-  artikel: BLOG_ARTICLE_THEME,
-}
-
-const DEFAULT_THEME: SourceTheme = {
-  color: '#71717a',
-  bgLight: 'rgba(113,113,122,0.08)',
-  bgDark: 'rgba(161,161,170,0.12)',
-  borderLight: '#d4d4d8',
-  borderDark: 'rgba(113,113,122,0.4)',
-}
-
-function getSourceTheme(sourceName: string): SourceTheme {
-  const key = sourceName.toLowerCase()
-  for (const [k, v] of Object.entries(SOURCE_THEMES)) {
-    if (key.includes(k)) return v
-  }
-  return DEFAULT_THEME
-}
-
 function SourceBadge({ item }: { item: NewsItem }) {
-  const theme = getSourceTheme(item.sourceName)
   return (
-    <span
-      className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium"
-      style={{ color: theme.color, backgroundColor: theme.bgLight }}
-    >
+    <span className={newsSourceBadgeClassName(item.sourceName)}>
       {item.sourceName}
     </span>
   )
@@ -90,7 +36,7 @@ function NewsCard({ item }: { item: NewsItem }) {
         <div className="mb-3 flex items-center justify-between">
           <time
             dateTime={item.pubDate.toISOString()}
-            className="text-xs text-zinc-400 dark:text-zinc-500"
+            className="text-xs text-subtle-foreground"
           >
             {formatNewsDate(item.pubDate)}
           </time>
@@ -117,7 +63,7 @@ function NewsCard({ item }: { item: NewsItem }) {
               {item.title}
             </h3>
             {item.description && (
-              <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+              <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-body">
                 {item.description}
               </p>
             )}

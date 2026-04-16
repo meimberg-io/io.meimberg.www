@@ -44,7 +44,7 @@ export function BlogLayout({ blog, children }: {
                     <Pagetitle blok={{ pagetitle: blog.pagetitle, pageintro: blog.pageintro, whitetitle: true }} />
                   </div>
                 )}
-                <time dateTime={blog.date} className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500 mb-8">
+                <time dateTime={blog.date} className="order-first mb-8 flex items-center text-base text-subtle-foreground">
                   <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
                   <span className="ml-3">{formatDate(blog.date)}</span>
                 </time>

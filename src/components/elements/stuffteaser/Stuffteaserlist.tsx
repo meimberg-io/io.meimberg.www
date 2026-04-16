@@ -52,7 +52,7 @@ export default function Stuffteaserlist({ blok }: { blok: StuffteaserlistStorybl
 										{stuff.content.pagetitle}
 									</dd>
 									<dt className="sr-only">Role</dt>
-									<dd className="text-xs text-zinc-500 dark:text-zinc-400">
+									<dd className="text-xs text-body">
 										{stuff.content.shortabstact}
 									</dd>
 								</dl>
