@@ -140,7 +140,8 @@ export function getNewsImageRenderConfig(imageUrl?: string): NewsImageRenderConf
       const src = buildStoryblokSquare(parsed, 224, 95)
       return {
         src,
-        unoptimized: true,
+        unoptimized: false,
+        quality: 95,
         sizes: '112px'
       }
     }
