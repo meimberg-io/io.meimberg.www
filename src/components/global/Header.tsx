@@ -42,14 +42,14 @@ function NavItem({ href, children, matchSubpaths }: {
 				className={clsx(
 					'relative block px-3 py-2 transition',
 					isActive
-						? 'text-internal'
-						: 'hover:text-internal'
+						? 'text-primary hover:text-primary-hover'
+						: 'text-inherit hover:text-primary'
 				)}
 			>
 				{children}
 				{isActive && (
 					<span
-						className="absolute inset-x-1 -bottom-px h-px bg-linear-to-r from-accent/0 via-accent/40 to-accent/0" />
+						className="absolute inset-x-1 -bottom-px h-px bg-linear-to-r from-primary/0 via-primary/40 to-primary/0" />
 				)}
 			</Link>
 		</li>
@@ -145,9 +145,9 @@ function ThemeToggle() {
 			onClick={() => setTheme(otherTheme)}
 		>
 			<SunIcon
-				className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600" />
+				className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-primary/15 [@media(prefers-color-scheme:dark)]:stroke-primary [@media(prefers-color-scheme:dark)]:group-hover:fill-primary/15 [@media(prefers-color-scheme:dark)]:group-hover:stroke-primary-hover" />
 			<MoonIcon
-				className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400" />
+				className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media_not_(prefers-color-scheme:dark)]:fill-primary/10 [@media_not_(prefers-color-scheme:dark)]:stroke-primary [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400" />
 		</button>
 	)
 }
@@ -380,9 +380,9 @@ export function Header({
 								<Link
 									href="/"
 									aria-label="Home"
-									className="pointer-events-auto text-primary transition-colors hover:text-primary-hover"
+									className="pointer-events-auto group text-primary transition-colors hover:text-primary-hover"
 								>
-									<Logo className="h-4 w-auto sm:h-5" />
+									<Logo className="h-4 w-auto transition-[filter] duration-200 ease-out group-hover:brightness-105 sm:h-5" />
 								</Link>
 							</div>
 							<div className="flex flex-1 justify-end md:justify-center">
