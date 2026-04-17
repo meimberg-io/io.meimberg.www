@@ -7,7 +7,7 @@ export function Logo({ className }: { className?: string }) {
 			xmlns="http://www.w3.org/2000/svg"
 			fill="currentColor"
 			aria-hidden="true"
-			className={clsx('block h-auto', className)}
+			className={clsx('block', className)}
 			style={{
 				fillRule: 'evenodd',
 				clipRule: 'evenodd',

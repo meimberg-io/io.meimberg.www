@@ -376,11 +376,11 @@ export function Header({
 						}}
 					>
 						<div className="relative flex items-center gap-4">
-							<div className="flex items-center">
+							<div className="flex shrink-0 items-center">
 								<Link
 									href="/"
 									aria-label="Home"
-									className="pointer-events-auto group text-primary transition-colors hover:text-primary-hover"
+									className="pointer-events-auto group inline-flex text-primary transition-colors hover:text-primary-hover"
 								>
 									<Logo className="h-4 w-auto transition-[filter] duration-200 ease-out group-hover:brightness-105 sm:h-5" />
 								</Link>
