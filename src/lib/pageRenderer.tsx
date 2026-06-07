@@ -21,5 +21,16 @@ export async function renderPage( slug?:string[],  secret?: string | undefined )
 		}
 		throw err
 	}
+
+	// Defense-in-depth (MICM-7): Content-Manager-only LinkedIn posts must never
+	// render on the public site, even if one were accidentally published. They
+	// live in the `linkedin/` folder and use the `linkedin_post` component.
+	// Draft-only persistence already keeps them out via 404, this is a second guard.
+	const component = data.story?.content?.component
+	const storyFullSlug = data.story?.full_slug ?? full_slug
+	if (component === 'linkedin_post' || storyFullSlug === 'linkedin' || storyFullSlug?.startsWith('linkedin/')) {
+		notFound()
+	}
+
 	return isPreview ? <StoryClient initialStory={data.story} /> : <StoryblokStory story={data.story} />
 }
