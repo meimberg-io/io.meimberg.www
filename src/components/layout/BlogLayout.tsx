@@ -1,9 +1,9 @@
 'use client'
 
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 
-import { Container } from '@/components/layout/Container.tsx'
+import { ContainerOuter } from '@/components/layout/Container.tsx'
 import { formatDate } from '@/lib/formatDate.ts'
 import { AppContext } from '@/lib/providers.tsx'
 import { BlogStoryblok } from '@/types/component-types-sb'
@@ -11,7 +11,7 @@ import { ArrowLeftIcon } from '@/components/util/Svg.tsx'
 import HeaderPicture from '@/components/global/HeaderPicture.tsx'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Pagetitle from '@/components/elements/Pagetitle.tsx'
-import NewsletterForm from '@/components/elements/NewsletterForm.tsx'
+import NewsletterFormSticky from '@/components/elements/NewsletterFormSticky.tsx'
 
 
 export function BlogLayout({ blog, children }: {
@@ -20,13 +20,15 @@ export function BlogLayout({ blog, children }: {
 }) {
   const router = useRouter()
   const { previousPathname } = useContext(AppContext)
+  const articleRef = useRef<HTMLElement>(null)
+
   return (
     <>
       <HeaderPicture headerpicture={blog.headerpicture} />
-      <Container className="mt-16 lg:mt-32">
+      <ContainerOuter className="mt-16 lg:mt-32">
+        <div className="relative">
 
-        <div className="xl:relative">
-          <div className="mx-auto max-w-3xl">
+          <div className="relative mx-auto max-w-3xl px-4 sm:px-8 lg:px-12">
             {previousPathname && (
               <button
                 type="button"
@@ -38,7 +40,7 @@ export function BlogLayout({ blog, children }: {
               </button>
             )}
 
-            <article>
+            <article ref={articleRef}>
               <header className="flex flex-col">
                 {blog.pagetitle && (<div {...storyblokEditable(blog)}>
                     <Pagetitle blok={{ pagetitle: blog.pagetitle, pageintro: blog.pageintro, whitetitle: true }} />
@@ -50,17 +52,20 @@ export function BlogLayout({ blog, children }: {
                 </time>
               </header>
 
-              <div className="mb-16">
-                <NewsletterForm variant="highlight" />
-              </div>
-
               {children}
             </article>
           </div>
 
+          {/* Sticky newsletter card straddling the surface panel's right border (xl and up).
+              Mobile/tablet fallback is a follow-up (responsive step 2). */}
+          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-0 xl:block">
+            <div className="pointer-events-auto sticky top-28 w-[340px] -translate-x-1/2">
+              <NewsletterFormSticky articleRef={articleRef} />
+            </div>
+          </div>
+
         </div>
-      </Container>
+      </ContainerOuter>
     </>
   )
 }
-
