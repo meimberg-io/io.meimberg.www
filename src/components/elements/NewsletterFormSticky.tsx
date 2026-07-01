@@ -93,12 +93,12 @@ export default function NewsletterFormSticky({
         mounted ? 'translate-x-0 opacity-100' : 'translate-x-6 opacity-0'
       }`}
     >
-      <div className="relative rounded-2xl border border-primary/30 bg-primary/5 p-6 shadow-2xl shadow-primary/10 transition-colors duration-300 hover:border-primary/60 dark:bg-primary/10 dark:shadow-black/60">
+      <div className="relative rounded-2xl border border-accent/30 bg-zinc-50 p-6 shadow-2xl shadow-black/10 transition-colors duration-300 hover:border-accent/60 dark:bg-zinc-800/50 dark:shadow-black/60">
           {/* badge with reading-progress ring + heading */}
           <div className="mt-1.5 mb-4 flex items-center gap-3">
             <div className="relative flex h-11 w-11 flex-none items-center justify-center rounded-full">
               <svg className="absolute inset-0 -rotate-90" width="44" height="44" viewBox="0 0 44 44" aria-hidden>
-                <circle cx="22" cy="22" r={RING_R} fill="none" strokeWidth="2.5" className="stroke-primary/20" />
+                <circle cx="22" cy="22" r={RING_R} fill="none" strokeWidth="2.5" className="stroke-accent/20" />
                 <circle
                   cx="22"
                   cy="22"
@@ -106,7 +106,7 @@ export default function NewsletterFormSticky({
                   fill="none"
                   strokeWidth="2.5"
                   strokeLinecap="round"
-                  className="stroke-primary"
+                  className="stroke-accent"
                   style={{
                     strokeDasharray: RING_C,
                     strokeDashoffset: RING_C * (1 - progress),
@@ -114,21 +114,21 @@ export default function NewsletterFormSticky({
                   }}
                 />
               </svg>
-              <Mail className="relative h-5 w-5 text-primary" />
+              <Mail className="relative h-5 w-5 text-accent" />
             </div>
-            <div className="font-headline text-[17px] leading-tight font-semibold text-primary">
+            <div className="font-headline text-[17px] leading-tight font-semibold text-accent">
               {title || DEFAULTS.title}
             </div>
           </div>
 
           {status === 'success' ? (
             <div className="flex flex-col items-center px-1 pt-1 pb-1 text-center">
-              <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-full border border-primary/35 bg-primary/15">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+              <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-full border border-accent/35 bg-accent/15">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
                   <path d="M20 6 9 17l-5-5" />
                 </svg>
               </div>
-              <p className="font-headline text-[15px] font-semibold text-primary">Prüfe dein Postfach!</p>
+              <p className="font-headline text-[15px] font-semibold text-accent">Prüfe dein Postfach!</p>
               <p className="mt-1 text-[13px] leading-snug text-body">
                 Du hast eine Bestätigungsmail erhalten. Ich freue mich, dass du dabei bist! — Oli
               </p>
@@ -151,7 +151,7 @@ export default function NewsletterFormSticky({
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="inline-flex cursor-pointer items-center justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-zinc-900 transition outline-offset-2 hover:bg-primary-hover active:bg-primary disabled:opacity-60"
+                  className="inline-flex cursor-pointer items-center justify-center rounded-md bg-accent px-3 py-2 text-sm font-semibold text-zinc-900 transition outline-offset-2 hover:bg-accent/90 active:bg-accent disabled:opacity-60"
                 >
                   {status === 'loading' ? 'Wird gesendet…' : 'Abonnieren'}
                 </button>
