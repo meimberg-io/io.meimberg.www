@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { ContainerOuter } from '@/components/layout/Container.tsx'
@@ -14,6 +14,10 @@ import Pagetitle from '@/components/elements/Pagetitle.tsx'
 import NewsletterForm from '@/components/elements/NewsletterForm.tsx'
 import NewsletterFormSticky from '@/components/elements/NewsletterFormSticky.tsx'
 
+// The sticky card (340px, half straddling the panel border) needs a right
+// margin of at least its half-width to not get clipped by the viewport edge.
+// That margin only exists from ~1600px on, well above the xl/2xl breakpoints.
+const STICKY_NEWSLETTER_QUERY = '(min-width: 1600px)'
 
 export function BlogLayout({ blog, children }: {
   blog: BlogStoryblok
@@ -22,6 +26,15 @@ export function BlogLayout({ blog, children }: {
   const router = useRouter()
   const { previousPathname } = useContext(AppContext)
   const articleRef = useRef<HTMLElement>(null)
+  const [showStickyNewsletter, setShowStickyNewsletter] = useState(false)
+
+  useEffect(() => {
+    const mql = window.matchMedia(STICKY_NEWSLETTER_QUERY)
+    setShowStickyNewsletter(mql.matches)
+    const onChange = (e: MediaQueryListEvent) => setShowStickyNewsletter(e.matches)
+    mql.addEventListener('change', onChange)
+    return () => mql.removeEventListener('change', onChange)
+  }, [])
 
   return (
     <>
@@ -53,21 +66,25 @@ export function BlogLayout({ blog, children }: {
                 </time>
               </header>
 
-              <div className="mb-16 xl:hidden">
-                <NewsletterForm variant="highlight" />
-              </div>
+              {!showStickyNewsletter && (
+                <div className="mb-16">
+                  <NewsletterForm variant="highlight" />
+                </div>
+              )}
 
               {children}
             </article>
           </div>
 
-          {/* Sticky newsletter card straddling the surface panel's right border (xl and up).
-              Below xl there's not enough room for it, so the inline form above takes over. */}
-          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-0 xl:block">
-            <div className="pointer-events-auto sticky top-28 w-[340px] -translate-x-1/2">
-              <NewsletterFormSticky articleRef={articleRef} />
+          {/* Sticky newsletter card straddling the surface panel's right border.
+              Below the STICKY_NEWSLETTER_QUERY width the inline form above takes over. */}
+          {showStickyNewsletter && (
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-0">
+              <div className="pointer-events-auto sticky top-28 w-[340px] -translate-x-1/2">
+                <NewsletterFormSticky articleRef={articleRef} />
+              </div>
             </div>
-          </div>
+          )}
 
         </div>
       </ContainerOuter>
