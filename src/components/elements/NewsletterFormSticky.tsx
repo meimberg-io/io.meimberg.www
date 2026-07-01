@@ -93,12 +93,12 @@ export default function NewsletterFormSticky({
         mounted ? 'translate-x-0 opacity-100' : 'translate-x-6 opacity-0'
       }`}
     >
-      <div className="relative rounded-2xl border border-border-subtle bg-zinc-50 p-6 shadow-2xl shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-black/20 dark:bg-zinc-800/50 dark:shadow-black/60 dark:hover:shadow-black/80">
+      <div className="relative rounded-2xl border border-primary/30 bg-primary/5 p-6 shadow-2xl shadow-primary/10 transition duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-primary/20 dark:bg-primary/10 dark:shadow-black/60">
           {/* badge with reading-progress ring + heading */}
           <div className="mt-1.5 mb-4 flex items-center gap-3">
             <div className="relative flex h-11 w-11 flex-none items-center justify-center rounded-full">
               <svg className="absolute inset-0 -rotate-90" width="44" height="44" viewBox="0 0 44 44" aria-hidden>
-                <circle cx="22" cy="22" r={RING_R} fill="none" strokeWidth="2.5" className="stroke-zinc-300 dark:stroke-white/10" />
+                <circle cx="22" cy="22" r={RING_R} fill="none" strokeWidth="2.5" className="stroke-primary/20" />
                 <circle
                   cx="22"
                   cy="22"
