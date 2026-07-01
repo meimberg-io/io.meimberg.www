@@ -7,13 +7,13 @@
  * - Same submit logic / endpoint as NewsletterForm (/api/newsletter).
  * - Reading-progress ring around the mail badge, driven by the <article>'s
  *   scroll position (pass its ref, or it falls back to document.querySelector).
- * - Subtle float + entrance, no extra dependencies, no global CSS.
+ * - Entrance transition, no extra dependencies, no global CSS.
  *
  * Drop this file next to NewsletterForm.tsx:
  *   src/components/elements/NewsletterFormSticky.tsx
  * ==========================================================================*/
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Mail } from 'lucide-react'
 
 interface NewsletterFormStickyProps {
@@ -43,34 +43,23 @@ export default function NewsletterFormSticky({
   const [progress, setProgress] = useState(0)
   const [mounted, setMounted] = useState(false)
 
-  const floatRef = useRef<HTMLDivElement>(null)
-
-  // One rAF loop drives reading-progress + a gentle float. Robust + cheap.
+  // Reading progress, updated on scroll/resize.
   useEffect(() => {
     setMounted(true)
-    const prefersReduced =
-      typeof window !== 'undefined' &&
-      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-
-    let raf = 0
-    const t0 = performance.now()
-    const loop = (t: number) => {
-      const e = (t - t0) / 1000
+    const update = () => {
       const art = articleRef?.current ?? document.querySelector('article')
-      if (art) {
-        const total = art.offsetHeight - window.innerHeight
-        const p = total > 0 ? Math.max(0, Math.min(1, -art.getBoundingClientRect().top / total)) : 0
-        setProgress((prev) => (Math.abs(p - prev) > 0.0015 ? p : prev))
-      }
-      if (floatRef.current) {
-        floatRef.current.style.transform = prefersReduced
-          ? 'none'
-          : `translateY(${(-7 * Math.sin((e * Math.PI) / 3)).toFixed(2)}px)`
-      }
-      raf = requestAnimationFrame(loop)
+      if (!art) return
+      const total = art.offsetHeight - window.innerHeight
+      const p = total > 0 ? Math.max(0, Math.min(1, -art.getBoundingClientRect().top / total)) : 0
+      setProgress((prev) => (Math.abs(p - prev) > 0.0015 ? p : prev))
     }
-    raf = requestAnimationFrame(loop)
-    return () => cancelAnimationFrame(raf)
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
+    return () => {
+      window.removeEventListener('scroll', update)
+      window.removeEventListener('resize', update)
+    }
   }, [articleRef])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -104,8 +93,7 @@ export default function NewsletterFormSticky({
         mounted ? 'translate-x-0 opacity-100' : 'translate-x-6 opacity-0'
       }`}
     >
-      <div ref={floatRef} className="will-change-transform">
-        <div className="relative rounded-2xl border border-border-subtle bg-zinc-50 p-6 shadow-2xl shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-black/20 dark:bg-zinc-800/50 dark:shadow-black/60 dark:hover:shadow-black/80">
+      <div className="relative rounded-2xl border border-border-subtle bg-zinc-50 p-6 shadow-2xl shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-black/20 dark:bg-zinc-800/50 dark:shadow-black/60 dark:hover:shadow-black/80">
           {/* badge with reading-progress ring + heading */}
           <div className="mt-1.5 mb-4 flex items-center gap-3">
             <div className="relative flex h-11 w-11 flex-none items-center justify-center rounded-full">
@@ -182,7 +170,6 @@ export default function NewsletterFormSticky({
               </p>
             </form>
           )}
-        </div>
       </div>
     </div>
   )
