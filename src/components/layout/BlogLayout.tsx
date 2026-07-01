@@ -11,6 +11,7 @@ import { ArrowLeftIcon } from '@/components/util/Svg.tsx'
 import HeaderPicture from '@/components/global/HeaderPicture.tsx'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Pagetitle from '@/components/elements/Pagetitle.tsx'
+import NewsletterForm from '@/components/elements/NewsletterForm.tsx'
 import NewsletterFormSticky from '@/components/elements/NewsletterFormSticky.tsx'
 
 
@@ -52,12 +53,16 @@ export function BlogLayout({ blog, children }: {
                 </time>
               </header>
 
+              <div className="mb-16 xl:hidden">
+                <NewsletterForm variant="highlight" />
+              </div>
+
               {children}
             </article>
           </div>
 
           {/* Sticky newsletter card straddling the surface panel's right border (xl and up).
-              Mobile/tablet fallback is a follow-up (responsive step 2). */}
+              Below xl there's not enough room for it, so the inline form above takes over. */}
           <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-0 xl:block">
             <div className="pointer-events-auto sticky top-28 w-[340px] -translate-x-1/2">
               <NewsletterFormSticky articleRef={articleRef} />
