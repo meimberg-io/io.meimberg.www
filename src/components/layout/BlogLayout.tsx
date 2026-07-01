@@ -50,11 +50,11 @@ export function BlogLayout({ blog, children }: {
                 </time>
               </header>
 
-              {children}
-
-              <div className="mt-16 mb-16">
+              <div className="mb-16">
                 <NewsletterForm variant="highlight" />
               </div>
+
+              {children}
             </article>
           </div>
 
