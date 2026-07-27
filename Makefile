@@ -1,4 +1,4 @@
-.PHONY: help dev stop lint typecheck check build clean sb-pull sb-types docker-build docker-up docker-down
+.PHONY: help dev proxy stop lint typecheck check build clean sb-pull sb-types docker-build docker-up docker-down
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-18s\033[0m %s\n", $$1, $$2}'
@@ -7,6 +7,9 @@ help: ## Show this help
 
 dev: ## Start Next.js dev server
 	npm run dev
+
+proxy: ## Start HTTPS proxy on :3010 -> dev server :3000 (for Storyblok Visual Editor)
+	npm run proxy
 
 stop: ## Kill Next.js dev server
 	@pkill -f "next dev" 2>/dev/null && echo "Stopped." || echo "Not running."
