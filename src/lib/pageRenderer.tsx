@@ -1,8 +1,11 @@
 import { notFound } from 'next/navigation'
-import { fetchStory } from '@/lib/storyblokApi'
+import { fetchStory, fetchSpecialFolder } from '@/lib/storyblokApi'
 import StoryClient from '@/components/global/StoryClient.tsx'
 import { StoryblokStory } from '@storyblok/react/rsc'
 import { getStoryblokApi } from '@/lib/storyblok'
+import { COMPONENTTYPE_SPECIAL, COMPONENTTYPE_SPECIALCHAPTER } from '@/lib/storyblokShared'
+import { buildSpecialContext, specialPathFromSlug } from '@/lib/specials'
+import { SpecialProvider } from '@/components/special/SpecialContext.tsx'
 
 
 export async function renderPage( slug?:string[],  secret?: string | undefined ) {
@@ -32,5 +35,26 @@ export async function renderPage( slug?:string[],  secret?: string | undefined )
 		notFound()
 	}
 
-	return isPreview ? <StoryClient initialStory={data.story} /> : <StoryblokStory story={data.story} />
+	const rendered = isPreview
+		? <StoryClient initialStory={data.story} />
+		: <StoryblokStory story={data.story} />
+
+	// Special-Übersicht und Kapitel brauchen beide die Kapitelliste ihres
+	// Ordners: die Übersicht fürs Verzeichnis, das Kapitel für Sidebar und
+	// Zurück/Weiter. Einmal hier laden und über Context bereitstellen erspart
+	// die sonst nötige Server/Client-Doppelung der Blöcke (vgl.
+	// BlogteaserlistServer/BlogteaserlistClient) und funktioniert im Editor
+	// genauso wie live.
+	if (component === COMPONENTTYPE_SPECIAL || component === COMPONENTTYPE_SPECIALCHAPTER) {
+		const specialPath = specialPathFromSlug(storyFullSlug)
+		const stories = await fetchSpecialFolder(specialPath, isPreview)
+		const fallbackTitle =
+			component === COMPONENTTYPE_SPECIAL
+				? (data.story.content?.pagetitle ?? data.story.name ?? '')
+				: ''
+		const specialContext = buildSpecialContext(specialPath, stories, fallbackTitle)
+		return <SpecialProvider value={specialContext}>{rendered}</SpecialProvider>
+	}
+
+	return rendered
 }
