@@ -12,7 +12,8 @@
 
 ## Global Constraints
 
-- **Keine Testinfrastruktur im Repo.** Es gibt kein vitest/jest, keine Testdateien, kein `test`-Script. Verifikation erfolgt über `npm run lint`, `npm run build` (dient als Typecheck) und die manuellen Browser-Checks in den Tasks. Kein Test-Framework einführen.
+- **Keine Testinfrastruktur im Repo.** Es gibt kein vitest/jest, keine Testdateien, kein `test`-Script. Verifikation erfolgt über **`make check`** (Lint + `tsc --noEmit`) und die manuellen Browser-Checks in den Tasks. Kein Test-Framework einführen.
+- **Niemals `npm run build` als Gate benutzen, solange ein Dev-Server läuft.** `next build` und `next dev` schreiben beide nach `.next`. Ein Build zieht dem laufenden Dev-Server die Chunks unter den Füßen weg; die Folge sind Laufzeitfehler wie `Cannot find module './873.js'` oder `Cannot read properties of undefined (reading 'prototype')`, die aussehen wie Fehler im eigenen Code und keine sind. `make check` prüft dieselben Typen in einer Sekunde und fasst `.next` nicht an. (In dieser Umsetzung real passiert.)
 - **Semantische Farb-Tokens verwenden**, nie rohe Paletten-Werte. Definiert und dokumentiert in `src/styles/tailwind.css`:
   - `text-display` H1 · `text-lead` Vorspann · `text-accent` Content-Überschriften und dekorative Highlights
   - `text-internal` / `hover:text-internal-hover` für **interne Navigation** (die Kapitelnavigation gehört hierher) · `text-interactive` nur für externe Links und generische Aktionen
