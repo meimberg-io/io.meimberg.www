@@ -24,6 +24,7 @@ export interface Article {
     | Grouping
     | Hyperlink
     | Icon
+    | LinkedinPost
     | Linklist
     | LuxariseManagerConfig
     | LuxarisePicture
@@ -39,6 +40,8 @@ export interface Article {
     | Rssfeed
     | Sociallink
     | Soundcloud
+    | Special
+    | Specialchapter
     | Stuff
     | Stuffteaserlist
     | Tool
@@ -83,6 +86,7 @@ export interface Blog {
     | Grouping
     | Hyperlink
     | Icon
+    | LinkedinPost
     | Linklist
     | LuxariseManagerConfig
     | LuxarisePicture
@@ -98,6 +102,8 @@ export interface Blog {
     | Rssfeed
     | Sociallink
     | Soundcloud
+    | Special
+    | Specialchapter
     | Stuff
     | Stuffteaserlist
     | Tool
@@ -113,6 +119,9 @@ export interface Blog {
   cm_publer_post_ids?: string;
   cm_ai_hint?: string;
   cm_image_prompt?: string;
+  cm_intake_pending?: boolean;
+  name?: string;
+  cm_origin?: string;
   component: "blog";
   _uid: string;
   [k: string]: SbBlokKeyDataTypes;
@@ -168,6 +177,7 @@ export interface Grid2Column {
     | Grouping
     | Hyperlink
     | Icon
+    | LinkedinPost
     | Linklist
     | LuxariseManagerConfig
     | LuxarisePicture
@@ -183,6 +193,8 @@ export interface Grid2Column {
     | Rssfeed
     | Sociallink
     | Soundcloud
+    | Special
+    | Specialchapter
     | Stuff
     | Stuffteaserlist
     | Tool
@@ -201,6 +213,7 @@ export interface Grid2Column {
     | Grouping
     | Hyperlink
     | Icon
+    | LinkedinPost
     | Linklist
     | LuxariseManagerConfig
     | LuxarisePicture
@@ -216,6 +229,8 @@ export interface Grid2Column {
     | Rssfeed
     | Sociallink
     | Soundcloud
+    | Special
+    | Specialchapter
     | Stuff
     | Stuffteaserlist
     | Tool
@@ -241,6 +256,7 @@ export interface Grouping {
     | Grouping
     | Hyperlink
     | Icon
+    | LinkedinPost
     | Linklist
     | LuxariseManagerConfig
     | LuxarisePicture
@@ -256,6 +272,8 @@ export interface Grouping {
     | Rssfeed
     | Sociallink
     | Soundcloud
+    | Special
+    | Specialchapter
     | Stuff
     | Stuffteaserlist
     | Tool
@@ -278,6 +296,26 @@ export interface Hyperlink {
 export interface Icon {
   svg?: string;
   component: "icon";
+  _uid: string;
+  [k: string]: SbBlokKeyDataTypes;
+}
+
+export interface LinkedinPost {
+  linkedin_text?: string;
+  linkedin_image?: StoryblokAsset;
+  cm_blog_ref?: string;
+  cm_source_raw?: string;
+  cm_source_summarized?: string;
+  cm_ai_hint?: string;
+  cm_origin?: "" | "import" | "create";
+  cm_content_complete?: boolean;
+  cm_content_confirmed_at?: string;
+  cm_publer_published_at?: string;
+  cm_publer_post_ids?: string;
+  cm_tags?: string;
+  cm_image_prompt?: string;
+  cm_publer_label?: string;
+  component: "linkedin_post";
   _uid: string;
   [k: string]: SbBlokKeyDataTypes;
 }
@@ -347,6 +385,9 @@ export interface News {
 
 export interface Newsfeedlist {
   feeds?: Rssfeed[];
+  limit?: string;
+  pagesize?: string;
+  variant?: "" | "compact" | "full";
   component: "newsfeedlist";
   _uid: string;
   [k: string]: SbBlokKeyDataTypes;
@@ -377,6 +418,7 @@ export interface Page {
     | Grouping
     | Hyperlink
     | Icon
+    | LinkedinPost
     | Linklist
     | LuxariseManagerConfig
     | LuxarisePicture
@@ -392,6 +434,8 @@ export interface Page {
     | Rssfeed
     | Sociallink
     | Soundcloud
+    | Special
+    | Specialchapter
     | Stuff
     | Stuffteaserlist
     | Tool
@@ -462,6 +506,103 @@ export interface Soundcloud {
   [k: string]: SbBlokKeyDataTypes;
 }
 
+export interface Special {
+  pagetitle?: string;
+  pageintro?: string;
+  date: string;
+  headerpicture?: StoryblokAsset;
+  teaser?: unknown;
+  teasertitle?: string;
+  teaserimage?: StoryblokAsset;
+  abstract?: string;
+  readmoretext?: string;
+  body?: (
+    | Article
+    | Articleteaserlist
+    | Blog
+    | Blogteaserlist
+    | Divider
+    | Gallery
+    | Globalsettings
+    | Grid2column
+    | Grouping
+    | Hyperlink
+    | Icon
+    | LinkedinPost
+    | Linklist
+    | LuxariseManagerConfig
+    | LuxarisePicture
+    | LuxarisePictureSlideshow
+    | News
+    | Newsfeedlist
+    | Newsletter
+    | Page
+    | Pagetitle
+    | Photos
+    | Picture
+    | Richtext
+    | Rssfeed
+    | Sociallink
+    | Soundcloud
+    | Special
+    | Specialchapter
+    | Stuff
+    | Stuffteaserlist
+    | Tool
+    | Video
+    | Youtube
+  )[];
+  component: "special";
+  _uid: string;
+  [k: string]: SbBlokKeyDataTypes;
+}
+
+export interface Specialchapter {
+  pagetitle?: string;
+  pageintro?: string;
+  abstract?: string;
+  headerpicture?: StoryblokAsset;
+  body?: (
+    | Article
+    | Articleteaserlist
+    | Blog
+    | Blogteaserlist
+    | Divider
+    | Gallery
+    | Globalsettings
+    | Grid2column
+    | Grouping
+    | Hyperlink
+    | Icon
+    | LinkedinPost
+    | Linklist
+    | LuxariseManagerConfig
+    | LuxarisePicture
+    | LuxarisePictureSlideshow
+    | News
+    | Newsfeedlist
+    | Newsletter
+    | Page
+    | Pagetitle
+    | Photos
+    | Picture
+    | Richtext
+    | Rssfeed
+    | Sociallink
+    | Soundcloud
+    | Special
+    | Specialchapter
+    | Stuff
+    | Stuffteaserlist
+    | Tool
+    | Video
+    | Youtube
+  )[];
+  component: "specialchapter";
+  _uid: string;
+  [k: string]: SbBlokKeyDataTypes;
+}
+
 export interface Stuff {
   pagetitle?: string;
   pageintro?: string;
@@ -479,6 +620,7 @@ export interface Stuff {
     | Grouping
     | Hyperlink
     | Icon
+    | LinkedinPost
     | Linklist
     | LuxariseManagerConfig
     | LuxarisePicture
@@ -494,6 +636,8 @@ export interface Stuff {
     | Rssfeed
     | Sociallink
     | Soundcloud
+    | Special
+    | Specialchapter
     | Stuff
     | Stuffteaserlist
     | Tool
@@ -554,6 +698,7 @@ export type Grid2ColumnStoryblok = Grid2Column
 export type GroupingStoryblok = Grouping
 export type HyperlinkStoryblok = Hyperlink
 export type IconStoryblok = Icon
+export type LinkedinPostStoryblok = LinkedinPost
 export type LinklistStoryblok = Linklist
 export type LuxariseManagerConfigStoryblok = LuxariseManagerConfig
 export type LuxarisePictureStoryblok = LuxarisePicture
@@ -569,6 +714,8 @@ export type RichtextStoryblok = Richtext
 export type RssfeedStoryblok = Rssfeed
 export type SociallinkStoryblok = Sociallink
 export type SoundcloudStoryblok = Soundcloud
+export type SpecialStoryblok = Special
+export type SpecialchapterStoryblok = Specialchapter
 export type StuffStoryblok = Stuff
 export type StuffteaserlistStoryblok = Stuffteaserlist
 export type ToolStoryblok = Tool

@@ -94,7 +94,7 @@
     "display_name": "Artikelliste",
     "description": "",
     "created_at": "2025-03-15T10:06:01.146Z",
-    "updated_at": "2025-10-27T20:12:47.627Z",
+    "updated_at": "2026-03-21T20:55:55.949Z",
     "id": 7090035,
     "schema": {
       "type": {
@@ -149,13 +149,18 @@
         "options": [
           {
             "_uid": "073db3f2-1291-4358-acb8-3cd08c895f1a",
-            "name": "small",
-            "value": "small"
+            "name": "one-column",
+            "value": "one-column"
           },
           {
             "_uid": "127f476f-5fc0-4fa5-85b6-74b93ebe2ebf",
-            "value": "wide",
-            "name": "wide"
+            "name": "two-column",
+            "value": "two-column"
+          },
+          {
+            "_uid": "ceb9db24-8971-4a5d-b0b3-3d897f398d13",
+            "name": "cards",
+            "value": "cards"
           }
         ],
         "id": "bN26aeqHS4-ZuShy9r9WbQ"
@@ -182,7 +187,7 @@
     "display_name": "Blog",
     "description": "",
     "created_at": "2025-10-26T16:37:49.287Z",
-    "updated_at": "2026-02-08T21:58:36.990Z",
+    "updated_at": "2026-06-20T22:55:06.562Z",
     "id": 105705755804828,
     "schema": {
       "pagetitle": {
@@ -294,6 +299,19 @@
         "type": "textarea",
         "pos": 18,
         "id": "AlL-9KsFT5iU_RDt3H3NVA"
+      },
+      "cm_intake_pending": {
+        "type": "boolean",
+        "pos": 19,
+        "id": "kjEgs13qTniFILNGx1mwlw"
+      },
+      "name": {
+        "type": "text",
+        "id": "OFFKDwQcQICuH0lJJVwe4A"
+      },
+      "cm_origin": {
+        "type": "text",
+        "id": "-z960IJUSLKeG_AQiIIhwg"
       }
     },
     "image": null,
@@ -317,7 +335,7 @@
     "display_name": "Blogliste",
     "description": "",
     "created_at": "2025-10-27T20:12:13.975Z",
-    "updated_at": "2025-10-27T20:18:40.330Z",
+    "updated_at": "2026-03-21T20:55:56.118Z",
     "id": 106112343969683,
     "schema": {
       "type": {
@@ -372,18 +390,18 @@
         "options": [
           {
             "_uid": "073db3f2-1291-4358-acb8-3cd08c895f1a",
-            "name": "small",
-            "value": "small"
+            "name": "one-column",
+            "value": "one-column"
           },
           {
             "_uid": "127f476f-5fc0-4fa5-85b6-74b93ebe2ebf",
-            "value": "wide",
-            "name": "wide"
+            "name": "two-column",
+            "value": "two-column"
           },
           {
-            "_uid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-            "value": "cards",
-            "name": "cards"
+            "_uid": "ceb9db24-8971-4a5d-b0b3-3d897f398d13",
+            "name": "cards",
+            "value": "cards"
           }
         ],
         "id": "bN26aeqHS4-ZuShy9r9WbQ"
@@ -688,6 +706,135 @@
     "component_group_uuid": "5d33208a-61fd-4063-b4e6-3745797f7073",
     "color": "#374dc3",
     "icon": "block-image",
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "linkedin_post",
+    "display_name": "LinkedIn Post",
+    "description": "Content-Manager-only LinkedIn post (draft-only, never published to the public website). Either standalone or attached to a blog story via cm_blog_ref.",
+    "created_at": "2026-06-07T22:50:10.007Z",
+    "updated_at": "2026-06-09T22:21:57.765Z",
+    "id": 185069608993392,
+    "schema": {
+      "linkedin_text": {
+        "type": "textarea",
+        "pos": 0,
+        "display_name": "LinkedIn Text",
+        "description": "Post text as plain text with line breaks (no rich text / markdown).",
+        "id": "7_iRmPIwSRShpu-84fxNrg"
+      },
+      "linkedin_image": {
+        "type": "asset",
+        "pos": 1,
+        "filetypes": [
+          "images"
+        ],
+        "display_name": "LinkedIn Image",
+        "description": "Standalone posts only: single image. Attached posts use the blog Open-Graph link card instead.",
+        "id": "_ySr-HneRY-1RPUjnFLGYg"
+      },
+      "cm_blog_ref": {
+        "type": "text",
+        "pos": 2,
+        "display_name": "Blog reference (UUID)",
+        "description": "Blog story UUID this post is attached to. Empty = standalone. One-directional LinkedIn -> Blog.",
+        "id": "y2P1GK3AST-HfAdbxhNV0A"
+      },
+      "cm_source_raw": {
+        "type": "textarea",
+        "pos": 3,
+        "display_name": "Source (raw)",
+        "id": "xTs5S-zhQ--n_HEBhAymwQ"
+      },
+      "cm_source_summarized": {
+        "type": "textarea",
+        "pos": 4,
+        "display_name": "Source (summarized)",
+        "id": "hbUvq9VzQciTqgYlvDvbug"
+      },
+      "cm_ai_hint": {
+        "type": "text",
+        "pos": 5,
+        "display_name": "AI hint",
+        "id": "O2gIIntgRIivSTzD2X9x-w"
+      },
+      "cm_origin": {
+        "type": "option",
+        "pos": 6,
+        "display_name": "Origin",
+        "exclude_empty_option": false,
+        "options": [
+          {
+            "name": "Import",
+            "value": "import"
+          },
+          {
+            "name": "Create",
+            "value": "create"
+          }
+        ],
+        "id": "iFe17IqSTd2uD-W51wEEiw"
+      },
+      "cm_content_complete": {
+        "type": "boolean",
+        "pos": 7,
+        "display_name": "Content complete",
+        "id": "zZdj55d8Sw2sLPI3iicvIw"
+      },
+      "cm_content_confirmed_at": {
+        "type": "text",
+        "pos": 8,
+        "display_name": "Content confirmed at (ISO)",
+        "id": "33CqH_c8QYC4LiAbn0K2Dg"
+      },
+      "cm_publer_published_at": {
+        "type": "text",
+        "pos": 9,
+        "display_name": "Publer published at (ISO)",
+        "id": "WcVyEjCqSnq8mHCkXvHsCg"
+      },
+      "cm_publer_post_ids": {
+        "type": "text",
+        "pos": 10,
+        "display_name": "Publer post IDs (comma-separated)",
+        "id": "lMvADEiKR4iZJpvfdVdTVg"
+      },
+      "cm_tags": {
+        "type": "text",
+        "pos": 11,
+        "display_name": "Tags (comma-separated)",
+        "description": "Content-Manager categorization tags. Comma-separated; internal organization only, not rendered in the post text.",
+        "id": "Z05jqr9CTu2unm7DHsugCw"
+      },
+      "cm_image_prompt": {
+        "type": "textarea",
+        "pos": 12,
+        "display_name": "Image prompt (DALL-E)",
+        "description": "Standalone posts only: prompt used to generate the LinkedIn image via DALL-E.",
+        "id": "Pqwi-lwCRUWaZIwOj5qdUA"
+      },
+      "cm_publer_label": {
+        "type": "text",
+        "pos": 13,
+        "display_name": "Publer slot label",
+        "description": "Publer label = posting slot/series (e.g. Standard, Series 1). Drives AutoSchedule into the matching timeslot. Defaults to Standard.",
+        "id": "zBFonA2jTTqdBeoB0Y2qgQ"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": true,
+    "preview_tmpl": null,
+    "is_nestable": false,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "LinkedIn Post",
+    "component_group_uuid": "700ea8ae-4f6c-49a5-809c-1cd92dccd9f4",
+    "color": "#0a66c2",
+    "icon": "block-share",
     "internal_tags_list": [],
     "internal_tag_ids": [],
     "content_type_asset_preview": null,
@@ -1051,7 +1198,7 @@
     "display_name": "News Feed List",
     "description": null,
     "created_at": "2026-02-19T23:37:27.734Z",
-    "updated_at": "2026-02-19T23:37:27.734Z",
+    "updated_at": "2026-03-01T11:35:13.083Z",
     "id": 146860637126952,
     "schema": {
       "feeds": {
@@ -1064,6 +1211,39 @@
         ],
         "pos": 0,
         "id": "kGW_wk8AR4Sj8ZHuwxFP3g"
+      },
+      "limit": {
+        "type": "text",
+        "pos": 1,
+        "display_name": "Limit",
+        "description": "Max number of items (empty = all). Used in compact variant.",
+        "id": "nMDzRIWkRzCzFWs0XM8rEw"
+      },
+      "pagesize": {
+        "type": "text",
+        "pos": 2,
+        "display_name": "Page size",
+        "description": "If set, enable pagination (e.g. 20 for News page).",
+        "id": "DxY7_O9xT6q3POUO9kkplQ"
+      },
+      "variant": {
+        "type": "option",
+        "pos": 3,
+        "display_name": "Variant",
+        "default_value": "full",
+        "options": [
+          {
+            "_uid": "mm7ob4av-af4tvsrl",
+            "name": "Compact (Startseite)",
+            "value": "compact"
+          },
+          {
+            "_uid": "mm7ob4av-4s2gmli2",
+            "name": "Full (News-Seite)",
+            "value": "full"
+          }
+        ],
+        "id": "7XtwkHJTRtql6XvqvrFIWw"
       }
     },
     "image": null,
@@ -1281,7 +1461,7 @@
     "display_name": null,
     "description": "",
     "created_at": "2025-03-15T09:41:37.232Z",
-    "updated_at": "2025-04-06T13:33:56.196Z",
+    "updated_at": "2026-03-01T13:26:41.711Z",
     "id": 7089998,
     "schema": {
       "image": {
@@ -1313,7 +1493,8 @@
             "name": "small"
           }
         ],
-        "id": "d7gw288lTj6MsAnz4wIKaw"
+        "id": "d7gw288lTj6MsAnz4wIKaw",
+        "default_value": "normal"
       },
       "spacing": {
         "type": "option",
@@ -1332,7 +1513,8 @@
             "name": "large"
           }
         ],
-        "id": "xZtELDrnQaeB47prOKFNbg"
+        "id": "xZtELDrnQaeB47prOKFNbg",
+        "default_value": "default"
       }
     },
     "image": null,
@@ -1518,6 +1700,126 @@
     "internal_tag_ids": [],
     "content_type_asset_preview": null,
     "metadata": {}
+  },
+  {
+    "name": "special",
+    "display_name": "Special",
+    "description": "",
+    "schema": {
+      "pagetitle": {
+        "type": "text",
+        "pos": 0
+      },
+      "pageintro": {
+        "type": "textarea",
+        "pos": 1
+      },
+      "date": {
+        "type": "datetime",
+        "pos": 2,
+        "disable_time": true,
+        "required": true
+      },
+      "headerpicture": {
+        "type": "asset",
+        "pos": 3,
+        "filetypes": [
+          "images"
+        ]
+      },
+      "teaser": {
+        "type": "section",
+        "pos": 4,
+        "keys": [
+          "teasertitle",
+          "teaserimage",
+          "abstract",
+          "readmoretext"
+        ],
+        "display_name": "Teaser"
+      },
+      "teasertitle": {
+        "type": "text",
+        "pos": 5
+      },
+      "teaserimage": {
+        "type": "asset",
+        "pos": 6,
+        "filetypes": [
+          "images"
+        ]
+      },
+      "abstract": {
+        "type": "textarea",
+        "pos": 7
+      },
+      "readmoretext": {
+        "type": "text",
+        "pos": 8
+      },
+      "body": {
+        "type": "bloks",
+        "pos": 9
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": true,
+    "preview_tmpl": null,
+    "is_nestable": false,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "Special",
+    "component_group_uuid": "700ea8ae-4f6c-49a5-809c-1cd92dccd9f4",
+    "color": "#1a1f36",
+    "icon": "block-doc",
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null
+  },
+  {
+    "name": "specialchapter",
+    "display_name": "Special-Kapitel",
+    "description": "",
+    "schema": {
+      "pagetitle": {
+        "type": "text",
+        "pos": 0
+      },
+      "pageintro": {
+        "type": "textarea",
+        "pos": 1
+      },
+      "abstract": {
+        "type": "textarea",
+        "pos": 2
+      },
+      "headerpicture": {
+        "type": "asset",
+        "pos": 3,
+        "filetypes": [
+          "images"
+        ]
+      },
+      "body": {
+        "type": "bloks",
+        "pos": 4
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": true,
+    "preview_tmpl": null,
+    "is_nestable": false,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "Special-Kapitel",
+    "component_group_uuid": "700ea8ae-4f6c-49a5-809c-1cd92dccd9f4",
+    "color": "#1a1f36",
+    "icon": "block-doc",
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null
   },
   {
     "name": "stuff",
