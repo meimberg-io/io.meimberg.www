@@ -407,18 +407,29 @@ Er wird ersetzt durch:
   // genauso wie live.
   if (component === COMPONENTTYPE_SPECIAL || component === COMPONENTTYPE_SPECIALCHAPTER) {
     const specialPath = specialPathFromSlug(storyFullSlug)
-    const stories = await fetchSpecialFolder(specialPath, isPreview)
-    const fallbackTitle =
-      component === COMPONENTTYPE_SPECIAL
-        ? (data.story.content?.pagetitle ?? data.story.name ?? '')
-        : ''
-    const specialContext = buildSpecialContext(specialPath, stories, fallbackTitle)
-    return <SpecialProvider value={specialContext}>{rendered}</SpecialProvider>
+    try {
+      const stories = await fetchSpecialFolder(specialPath, isPreview)
+      const fallbackTitle =
+        component === COMPONENTTYPE_SPECIAL
+          ? (data.story.content?.pagetitle ?? data.story.name ?? '')
+          : ''
+      const specialContext = buildSpecialContext(specialPath, stories, fallbackTitle)
+      return <SpecialProvider value={specialContext}>{rendered}</SpecialProvider>
+    } catch (err: unknown) {
+      // Die Kapitelliste ist Beiwerk. Fällt sie aus, liefern wir die Seite
+      // ohne Navigation aus statt einen 500er zu werfen, obwohl der
+      // eigentliche Inhalt längst geladen ist. Der Fehler landet im
+      // Server-Log, verschwindet also nicht stillschweigend.
+      console.error(`fetchSpecialFolder failed for special path "${specialPath}":`, err)
+      return rendered
+    }
   }
 
   return rendered
 }
 ```
+
+Ohne Provider greift der leere Vorgabewert aus `useSpecial()`, und alle Verbraucher rendern `null` — die Seite ist vollständig lesbar, ihr fehlt nur die Kapitelnavigation.
 
 Die Variablen `component` und `storyFullSlug` existieren in der Funktion bereits (sie werden für den LinkedIn-Guard verwendet) und werden hier wiederverwendet.
 
