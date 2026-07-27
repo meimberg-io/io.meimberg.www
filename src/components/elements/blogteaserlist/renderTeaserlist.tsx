@@ -1,7 +1,9 @@
 import {
   COMPONENTTYPE_ARTICLE,
   COMPONENTTYPE_BLOG,
-  STORYBLOK_FOLDER_ARTICLES
+  COMPONENTTYPE_SPECIAL,
+  STORYBLOK_FOLDER_ARTICLES,
+  STORYBLOK_FOLDER_SPECIALS
 } from '@/lib/storyblokShared'
 import BlogteaserlistClient from './BlogteaserlistClient'
 import BlogteaserlistServer from './BlogteaserlistServer'
@@ -18,6 +20,9 @@ export interface TeaserlistProps {
 export function componentTypeForFolder(folder?: string): string {
   if (folder === STORYBLOK_FOLDER_ARTICLES || folder === 'a') {
     return COMPONENTTYPE_ARTICLE
+  }
+  if (folder === STORYBLOK_FOLDER_SPECIALS || folder === 's') {
+    return COMPONENTTYPE_SPECIAL
   }
   return COMPONENTTYPE_BLOG
 }
