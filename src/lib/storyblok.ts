@@ -3,6 +3,7 @@ import FallbackComponent from '@/components/FallbackComponent.tsx'
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
 import Blog from '@/components/pagetypes/Blog.tsx'
 import Special from '@/components/pagetypes/Special.tsx'
+import SpecialChapter from '@/components/pagetypes/SpecialChapter.tsx'
 import Linklist from '@/components/elements/Linklist.tsx'
 import Grid2Column from '@/components/layout/Grid2Column.tsx'
 import Picture from '@/components/elements/Picture.tsx'
@@ -58,6 +59,7 @@ export const getStoryblokApi = storyblokInit({
 		blog: Blog,
 		stuff: Stuff,
 		special: Special,
+		specialchapter: SpecialChapter,
 		linklist: Linklist,
 		picture: Picture,
 		richtext: Richtext,
