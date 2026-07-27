@@ -119,7 +119,12 @@ Das Ergebnis notieren:
 - `full_slug` ist **`s/netzkultur`** → alles wie geplant, in Task 3 entfällt Step 6.
 - `full_slug` ist etwas anderes (z. B. `s/netzkultur/index`) → **den exakten Wert notieren**, Task 3 Step 6 wird ausgeführt.
 
-Ebenfalls prüfen und notieren: **erscheint die Übersichts-Story in der Antwort auf `starts_with=s/netzkultur/`?** Davon hängt ab, ob der Rücklink der Sidebar den Titel des Specials kennt (Task 2 behandelt beide Fälle bereits, aber das Verhalten muss bekannt sein).
+Ebenfalls prüfen und notieren — **das ist eine eigene Frage, nicht dieselbe:** erscheint die Übersichts-Story in der Antwort auf `starts_with=s/netzkultur/`? Ihr `full_slug` wäre `s/netzkultur` und beginnt damit streng genommen *nicht* mit `s/netzkultur/`.
+
+Davon hängt die Begründung für den kombinierten Query ab. Liefert Storyblok die Startpage nicht mit, holt `fetchSpecialFolder()` auf Kapitelseiten exakt dieselbe Menge wie ein Query mit Component-Filter, und der Rücklink der Sidebar zeigt dauerhaft „Zur Übersicht" statt des Special-Titels. Die Seite funktioniert, aber der Verzicht auf den Filter hätte dann nichts gebracht.
+
+- Startpage kommt mit → alles wie geplant.
+- Startpage fehlt → entweder den `component`-Filter wieder einbauen und einen zweiten Call für den Titel akzeptieren, oder den Titel aus dem `specialPath` ableiten.
 
 - [ ] **Step 5: Typen generieren**
 
@@ -725,7 +730,7 @@ git commit -m "Übersichtsseite des Specials mit automatischem Kapitelverzeichni
 - Consumes: `useSpecial()` aus Task 3, `SpecialchapterStoryblok` aus Task 1
 - Produces: registrierte Komponente `specialchapter`
 
-**Breitenrechnung**, damit die Zahlen nicht geraten wirken: `ContainerOuter` gibt `max-w-7xl` = 1280px, davon gehen `lg:px-8` (64px) und `lg:px-12` (96px) ab, bleiben 1120px. Sidebar 16rem = 256px plus `gap-12` = 48px macht 304px, für den Text bleiben 816px — genug für `max-w-3xl` = 768px. Deshalb greift der Zweispalter erst ab `xl` (1280px).
+**Breitenrechnung**, damit die Zahlen nicht geraten wirken: bei 1280px Viewport — dem `xl`-Breakpoint — gehen ab: `sm:px-8` der äußeren `ContainerOuter`-Hülle (64px), `lg:px-8` der inneren (64px) und `lg:px-12` des Layouts (96px). Bleiben 1056px. Sidebar 16rem = 256px plus `gap-12` = 48px macht 304px, für den Text bleiben 752px. `max-w-3xl` (768px) greift also erst knapp oberhalb des Breakpoints — schadet nicht, eine nicht bindende Maximalbreite ist folgenlos. Deshalb startet der Zweispalter bei `xl`.
 
 - [ ] **Step 1: `src/components/special/ChapterNav.tsx` anlegen**
 
@@ -1195,3 +1200,25 @@ Aus der Spec übernommen, jederzeit nachrüstbar:
 - Lesefortschritt in Prozent, geschätzte Lesedauer
 - „Alles auf einer Seite lesen" oder Druckansicht
 - Sprungmarken innerhalb eines Kapitels
+
+---
+
+## Nachtrag: was der Abschluss-Review geändert hat
+
+Die Code-Blöcke oben sind der Stand *vor* dem Review über den gesamten Branch. Zwei Layout-Fehler
+darin waren nur im Zusammenspiel mit dem Rest der Seite sichtbar und sind in `5f40ece` behoben —
+wer die Blöcke oben abtippt, baut sie wieder ein:
+
+- **Die eingeklappte Kapitelleiste war unsichtbar.** `sticky top-0` lag komplett hinter dem
+  Seiten-Header (z-50, opak, 5rem hoch, ab dem ersten Scroll-Pixel gepinnt). Unter 1280px ist diese
+  Leiste die gesamte Navigation des Features. Richtig ist `top-20`.
+- **Der Artikel klappte in die Sidebar-Spalte.** `ChapterNav` liefert `null`, wenn es keine Kapitel
+  gibt, und trägt dann keinen DOM-Knoten bei — der `<article>` rutschte damit in die 16rem-Spur des
+  Grids. Genau der Fall, den wir absichtlich gebaut haben (Fehler beim Laden der Kapitelliste,
+  leerer Context im Visual Editor), lieferte also eine unlesbare Seite. Richtig ist
+  `xl:col-start-2` am `<article>`.
+
+Dazu Kleineres: interner Link-Token auf den Kapitelkarten, `aria-controls` am Aufklapp-Button,
+Rücklink auch dann, wenn kein Kapitel zum Pfad passt, korrigierter Full-Bleed zwischen 1024 und
+1279px, und ein Hinweis in `SpecialContext.tsx`, dass nur Client-Komponenten `useSpecial()` lesen
+können.
