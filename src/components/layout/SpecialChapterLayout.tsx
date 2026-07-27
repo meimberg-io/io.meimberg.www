@@ -5,6 +5,8 @@ import { ContainerOuter } from '@/components/layout/Container.tsx'
 import HeaderPicture from '@/components/global/HeaderPicture.tsx'
 import Pagetitle from '@/components/elements/Pagetitle.tsx'
 import ChapterNav from '@/components/special/ChapterNav.tsx'
+import ChapterPagination from '@/components/special/ChapterPagination.tsx'
+import NewsletterForm from '@/components/elements/NewsletterForm.tsx'
 import { SpecialchapterStoryblok } from '@/types/component-types-sb'
 
 export function SpecialChapterLayout({
@@ -38,6 +40,10 @@ export function SpecialChapterLayout({
                 )}
               </header>
               {children}
+              <div className="mt-16">
+                <NewsletterForm variant="highlight" />
+              </div>
+              <ChapterPagination />
             </article>
           </div>
         </div>
