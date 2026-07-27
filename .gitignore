@@ -43,3 +43,6 @@ next-env.d.ts
 
 certificates
 /tmp/
+
+# superpowers scratch (Ledger, Task-Briefs, Review-Pakete)
+/.superpowers/
