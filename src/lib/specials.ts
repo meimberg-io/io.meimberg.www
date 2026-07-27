@@ -38,6 +38,13 @@ function storyTitle(story: ISbStoryData): string {
  * Kapitel kommt aus der API (sort_by=position:asc) und wird hier nicht
  * angefasst.
  *
+ * `specialPath` kommt als geratener Ordnerpfad herein (die ersten beiden
+ * Segmente) und wird durch den echten `full_slug` der Übersichts-Story
+ * ersetzt, sobald die in der Ordner-Antwort auftaucht. Damit stimmt der
+ * Rücklink unabhängig davon, ob die Übersicht als Startpage des Ordners
+ * angelegt ist oder als gewöhnliche Story darin liegt — eine Storyblok-
+ * Eigenheit, auf die wir uns sonst verlassen müssten.
+ *
  * fallbackTitle greift, wenn die Übersichts-Story nicht Teil der Ordner-
  * Antwort ist — dann ist sie die gerade gerenderte Story und der Aufrufer
  * kennt ihren Titel bereits.
@@ -63,7 +70,7 @@ export function buildSpecialContext(
     }))
 
   return {
-    specialPath,
+    specialPath: overview?.full_slug ?? specialPath,
     specialTitle: overview ? storyTitle(overview) : fallbackTitle,
     chapters
   }
