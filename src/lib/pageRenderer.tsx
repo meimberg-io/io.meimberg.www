@@ -47,13 +47,18 @@ export async function renderPage( slug?:string[],  secret?: string | undefined )
 	// genauso wie live.
 	if (component === COMPONENTTYPE_SPECIAL || component === COMPONENTTYPE_SPECIALCHAPTER) {
 		const specialPath = specialPathFromSlug(storyFullSlug)
-		const stories = await fetchSpecialFolder(specialPath, isPreview)
-		const fallbackTitle =
-			component === COMPONENTTYPE_SPECIAL
-				? (data.story.content?.pagetitle ?? data.story.name ?? '')
-				: ''
-		const specialContext = buildSpecialContext(specialPath, stories, fallbackTitle)
-		return <SpecialProvider value={specialContext}>{rendered}</SpecialProvider>
+		try {
+			const stories = await fetchSpecialFolder(specialPath, isPreview)
+			const fallbackTitle =
+				component === COMPONENTTYPE_SPECIAL
+					? (data.story.content?.pagetitle ?? data.story.name ?? '')
+					: ''
+			const specialContext = buildSpecialContext(specialPath, stories, fallbackTitle)
+			return <SpecialProvider value={specialContext}>{rendered}</SpecialProvider>
+		} catch (err: unknown) {
+			console.error(`fetchSpecialFolder failed for special path "${specialPath}":`, err)
+			return rendered
+		}
 	}
 
 	return rendered
