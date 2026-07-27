@@ -57,6 +57,31 @@ export async function fetchStories(
   })
 }
 
+/**
+ * Lädt den kompletten Inhalt eines Special-Ordners: die Übersichts-Story und
+ * alle Kapitel in einem Rutsch. Bewusst ohne Component-Filter — die Sidebar
+ * braucht auf Kapitelseiten auch den Titel des Specials für den Rücklink, und
+ * ein zweiter Call nur dafür wäre Verschwendung. Getrennt wird im Code.
+ *
+ * sort_by=position:asc bildet die manuelle Drag-and-Drop-Reihenfolge der
+ * Storyblok-Ordneransicht ab. Sie gilt jeweils innerhalb eines Ordners, was
+ * hier genau passt: ein Ordner pro Special.
+ */
+export async function fetchSpecialFolder(
+  specialPath: string,
+  isPreview: boolean
+): Promise<ISbStoryData[]> {
+  const storyblokApi = getStoryblokApi()
+  await storyblokApi.flushCache()
+  const { data } = await storyblokApi.get('cdn/stories', {
+    version: isPreview ? 'draft' : 'published',
+    starts_with: `${specialPath}/`,
+    sort_by: 'position:asc',
+    per_page: 100
+  })
+  return data.stories
+}
+
 export async function fetchAllStories(): Promise<{ data: { stories: ISbStoryData[] } }> {
   const storyblokApi = getStoryblokApi()
   await storyblokApi.flushCache()
