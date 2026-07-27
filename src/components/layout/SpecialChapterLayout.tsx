@@ -21,11 +21,17 @@ export function SpecialChapterLayout({
       <HeaderPicture headerpicture={chapter.headerpicture} />
       <ContainerOuter className="mt-16 lg:mt-32">
         <div className="relative px-4 sm:px-8 lg:px-12">
-          {/* 1120px nutzbar: 16rem Sidebar + 3rem Abstand + max-w-3xl Text.
+          {/* Bei 1280px (xl-Breakpoint) nutzbar: 1280 − 64 (ContainerOuter sm:px-8)
+              − 64 (ContainerOuter-Inner lg:px-8) − 96 (eigenes lg:px-12) = 1056px.
+              Davon 16rem Sidebar + 3rem Gap ab bleiben 752px für den Text —
+              max-w-3xl (768px) bindet also erst etwas oberhalb des xl-Breakpoints.
               Deshalb greift der Zweispalter erst ab xl. */}
           <div className="xl:grid xl:grid-cols-[16rem_minmax(0,1fr)] xl:gap-12">
             <ChapterNav />
-            <article className="mx-auto mb-16 max-w-3xl sm:mb-20 xl:mx-0">
+            {/* xl:col-start-2, weil ChapterNav bei leerer Kapitelliste null
+                zurückgibt und keinen DOM-Knoten für die erste Spalte beisteuert –
+                ohne das würde der Artikel in die 16rem-Sidebar-Spalte rutschen. */}
+            <article className="mx-auto mb-16 max-w-3xl sm:mb-20 xl:col-start-2 xl:mx-0">
               <header>
                 {chapter.pagetitle && (
                   <div {...storyblokEditable(chapter)}>

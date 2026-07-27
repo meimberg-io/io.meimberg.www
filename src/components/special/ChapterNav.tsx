@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
@@ -11,6 +11,7 @@ export default function ChapterNav() {
   const { specialPath, specialTitle, chapters } = useSpecial()
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const panelId = useId()
 
   if (chapters.length === 0) return null
 
@@ -68,12 +69,13 @@ export default function ChapterNav() {
       {/* unter xl: klebende Zeile, aufklappbar */}
       <nav
         aria-label="Kapitel dieses Specials"
-        className="not-prose sticky top-0 z-20 -mx-4 mb-8 border-b border-border bg-surface/95 px-4 py-3 backdrop-blur sm:-mx-8 sm:px-8 xl:hidden"
+        className="not-prose sticky top-20 z-20 -mx-4 mb-8 border-b border-border bg-surface/95 px-4 py-3 backdrop-blur sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12 xl:hidden"
       >
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
+          aria-controls={panelId}
           className="flex w-full cursor-pointer items-center justify-between text-left text-sm text-internal hover:text-internal-hover"
         >
           <span>
@@ -85,12 +87,10 @@ export default function ChapterNav() {
             {open ? '▲' : '▼'}
           </span>
         </button>
-        {open && (
-          <div className="mt-4">
-            {backLink}
-            {chapterList}
-          </div>
-        )}
+        <div id={panelId} className="mt-4" hidden={!open}>
+          {backLink}
+          {chapterList}
+        </div>
       </nav>
     </>
   )

@@ -10,7 +10,23 @@ export default function ChapterPagination() {
   const pathname = usePathname()
 
   const currentIndex = chapters.findIndex((chapter) => `/${chapter.fullSlug}` === pathname)
-  if (currentIndex < 0) return null
+
+  if (currentIndex < 0) {
+    // Kein Chapter passt zum Pfad (z. B. degradierter Pfad ohne Provider-Daten).
+    // Ohne specialPath gibt es aber gar kein Ziel für einen Rücklink.
+    if (!specialPath) return null
+
+    return (
+      <nav aria-label="Weitere Kapitel" className="not-prose mt-16 border-t border-border pt-8">
+        <Link
+          href={`/${specialPath}`}
+          className="block text-sm font-semibold text-internal hover:text-internal-hover"
+        >
+          ← Alle Kapitel{specialTitle ? `: ${specialTitle}` : ''}
+        </Link>
+      </nav>
+    )
+  }
 
   const previous = currentIndex > 0 ? chapters[currentIndex - 1] : null
   const next = currentIndex < chapters.length - 1 ? chapters[currentIndex + 1] : null

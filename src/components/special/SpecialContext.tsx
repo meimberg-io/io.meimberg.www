@@ -27,6 +27,11 @@ export function SpecialProvider({
  * Story auch außerhalb des normalen Renderpfads gerendert werden, und ein
  * Throw würde dort die Vorschau schwarz schalten statt nur die Navigation
  * wegzulassen.
+ *
+ * Achtung: React Context ist nur in Client Components lesbar. Bloks, die über
+ * StoryblokServerComponent gerendert werden, sind Server Components und
+ * erhalten von useSpecial() daher immer den leeren Default-Wert, unabhängig
+ * vom Provider.
  */
 export function useSpecial(): SpecialContextValue {
   return useContext(SpecialContext)

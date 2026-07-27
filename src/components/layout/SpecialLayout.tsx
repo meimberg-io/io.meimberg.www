@@ -45,9 +45,11 @@ export function SpecialLayout({
             </header>
             {children}
           </article>
-          <div className="mb-16 sm:mb-20">
-            <ChapterIndex />
-          </div>
+          {/* Bewusst volle Breite statt mx-auto max-w-3xl wie der Artikel oben:
+              Übersichtsseiten dürfen die ganze Breite nutzen, nur der Lesetext
+              bleibt auf Lesebreite. Die Kartenreihe darf daher links/rechts über
+              die Textspalte hinausragen. */}
+          <ChapterIndex />
         </div>
       </ContainerOuter>
     </>

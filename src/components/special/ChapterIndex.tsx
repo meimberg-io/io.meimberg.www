@@ -9,19 +9,19 @@ export default function ChapterIndex() {
   if (chapters.length === 0) return null
 
   return (
-    <nav aria-label="Kapitel dieses Specials" className="not-prose mt-16 sm:mt-24">
+    <nav aria-label="Kapitel dieses Specials" className="not-prose mt-16 mb-16 sm:mt-24 sm:mb-20">
       <h2 className="mb-8 font-headline text-2xl font-semibold text-accent">Kapitel</h2>
       <ol className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {chapters.map((chapter, index) => (
           <li key={chapter.uuid}>
             <Link
               href={`/${chapter.fullSlug}`}
-              className="block h-full rounded-2xl bg-muted p-6 ring-1 ring-border transition hover:ring-internal"
+              className="group block h-full rounded-2xl bg-muted p-6 ring-1 ring-border transition hover:ring-internal"
             >
               <span className="text-sm font-semibold text-accent">
                 Kapitel {index + 1}
               </span>
-              <span className="mt-2 block text-lg font-semibold text-foreground-strong">
+              <span className="mt-2 block text-lg font-semibold text-internal transition group-hover:text-internal-hover">
                 {chapter.title}
               </span>
               {chapter.abstract && (
