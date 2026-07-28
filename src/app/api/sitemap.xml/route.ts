@@ -4,7 +4,7 @@ import { ISbStoryData } from '@storyblok/react'
 
 export const dynamic = 'force-dynamic'
 
-const generateSitemap = (pages: { data: { stories: ISbStoryData[] } }) => {
+const generateSitemap = (stories: ISbStoryData[]) => {
     const baseUrl = "https://www.meimberg.io/"; // Deine Domain
 
     const entry = (url: string, date: string) => {
@@ -16,7 +16,7 @@ const generateSitemap = (pages: { data: { stories: ISbStoryData[] } }) => {
                 </url>`;
     }
 
-    const urls = pages.data.stories.map(story => {
+    const urls = stories.map(story => {
         return entry("" + story.full_slug, story.published_at ?? "");
     }).join('');
 
@@ -32,10 +32,9 @@ const generateSitemap = (pages: { data: { stories: ISbStoryData[] } }) => {
 };
 
 export async function GET() {
-	const articles = await fetchAllStories()
+	const stories = await fetchAllStories()
 
-
-    return new NextResponse(generateSitemap(articles), {
+    return new NextResponse(generateSitemap(stories), {
         status: 200,
         headers: {
             'Content-Type': 'application/xml',
