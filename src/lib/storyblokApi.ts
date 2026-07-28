@@ -82,10 +82,18 @@ export async function fetchSpecialFolder(
   return data.stories
 }
 
-export async function fetchAllStories(): Promise<{ data: { stories: ISbStoryData[] } }> {
+/**
+ * Liefert *alle* veröffentlichten Stories der Typen aus STORY_TYPES — Basis der
+ * Sitemap. `getAll()` läuft dafür selbst über alle Seiten: es holt Seite 1,
+ * rechnet aus dem `total`-Header die letzte Seite aus und lädt den Rest nach.
+ * Ein einzelnes `get()` mit `per_page: 100` würde ab Story 101 still abschneiden
+ * — die Sitemap sähe vollständig aus, wäre es aber nicht. Relevant, weil ein
+ * Special pro Longread eine Übersicht plus n Kapitel-Stories mitbringt.
+ */
+export async function fetchAllStories(): Promise<ISbStoryData[]> {
   const storyblokApi = getStoryblokApi()
   await storyblokApi.flushCache()
-  return storyblokApi.get('cdn/stories', {
+  return storyblokApi.getAll('cdn/stories', {
     version: process.env.SB_VERSION as 'published' | 'draft' | undefined,
     filter_query: {
       component: {
