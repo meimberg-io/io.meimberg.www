@@ -6,11 +6,12 @@ import { getStoryblokApi } from '@/lib/storyblok'
 import { COMPONENTTYPE_SPECIAL, COMPONENTTYPE_SPECIALCHAPTER } from '@/lib/storyblokShared'
 import { buildSpecialContext, specialPathFromSlug } from '@/lib/specials'
 import { SpecialProvider } from '@/components/special/SpecialContext.tsx'
+import { isPreviewRequest } from '@/lib/preview'
 
 
 export async function renderPage( slug?:string[],  secret?: string | undefined ) {
 	const full_slug = slug?.join('/') ?? 'home'
-	const isPreview = secret === process.env.NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET
+	const isPreview = isPreviewRequest(secret)
 	getStoryblokApi()
 	let data: Awaited<ReturnType<typeof fetchStory>>['data']
 	try {

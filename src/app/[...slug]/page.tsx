@@ -2,6 +2,7 @@ import { renderPage } from '@/lib/pageRenderer.tsx'
 import type { Metadata } from 'next'
 import { fetchStory } from '@/lib/storyblokApi'
 import { buildCanonical, buildOgTwitter, deriveDescription, deriveTitle, selectOgImage } from '@/lib/metadata.ts'
+import { isPreviewRequest } from '@/lib/preview'
 
 
 export default async function StoryPage({ params, searchParams }: any) {
@@ -15,7 +16,7 @@ export async function generateMetadata({ params, searchParams }: any): Promise<M
   const resolvedParams = await params
   const resolvedSearchParams = await searchParams
   const secret = Array.isArray(resolvedSearchParams?.secret) ? resolvedSearchParams.secret[0] : resolvedSearchParams?.secret
-  const isPreview = secret === process.env.NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET
+  const isPreview = isPreviewRequest(secret)
 
   const slugParts: string[] = resolvedParams?.slug ?? []
   const slug = Array.isArray(slugParts) ? slugParts.join('/') : 'home'

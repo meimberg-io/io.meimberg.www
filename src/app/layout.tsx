@@ -6,6 +6,7 @@ import { fetchGlobalsettings } from '@/lib/storyblokApi'
 import '@/styles/tailwind.css'
 import { MatomoTracker } from '@/components/util/MatomoTracker.tsx'
 import { headlineFont } from '@/styles/fonts'
+import { isPreviewRequest } from '@/lib/preview'
 
 
 export const revalidate = 0
@@ -28,7 +29,11 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-	const globalsettings = await fetchGlobalsettings(false)
+	// Ein Root-Layout bekommt keine searchParams, kann den Query-Parameter also
+	// nicht sehen. Über den Env-Schalter folgen Navigation und Footer der
+	// Preview jetzt trotzdem — im Visual Editor bleiben sie wie bisher
+	// veröffentlicht.
+	const globalsettings = await fetchGlobalsettings(isPreviewRequest())
 
 	return (
 		<html lang="en" className={`h-full antialiased ${headlineFont.variable}`} suppressHydrationWarning>
