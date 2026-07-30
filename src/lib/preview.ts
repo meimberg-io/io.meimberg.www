@@ -28,10 +28,29 @@ if (previewAlwaysOn) {
   )
 }
 
+function secretMatches(secret?: string): boolean {
+  return Boolean(secret) && secret === process.env.NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET
+}
+
 /**
+ * Welcher Inhaltsstand wird geholt — Entwurf oder veröffentlicht?
+ *
  * @param secret Wert des `secret`-Query-Parameters, falls vorhanden.
  */
 export function isPreviewRequest(secret?: string): boolean {
-  if (previewAlwaysOn) return true
-  return Boolean(secret) && secret === process.env.NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET
+  return previewAlwaysOn || secretMatches(secret)
+}
+
+/**
+ * Läuft die Seite im Storyblok Visual Editor, braucht also die Live-Editing-
+ * Bridge und damit client-seitiges Rendern über StoryClient?
+ *
+ * Bewusst NICHT am Env-Schalter hängend, obwohl beides „Preview" heißt. Der
+ * Client-Renderpfad ist ein anderer als der produktive: async Server-
+ * Komponenten (etwa NewsFeedList, das seine Feeds selbst holt) funktionieren
+ * dort nicht. Wer lokal gegen Entwürfe testet, will den *echten* Renderpfad
+ * sehen, nur mit anderem Inhaltsstand — nicht den Editor-Pfad.
+ */
+export function isEditorRequest(secret?: string): boolean {
+  return secretMatches(secret)
 }

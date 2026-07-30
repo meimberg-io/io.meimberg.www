@@ -6,7 +6,7 @@ import { getStoryblokApi } from '@/lib/storyblok'
 import { COMPONENTTYPE_SPECIAL, COMPONENTTYPE_SPECIALCHAPTER } from '@/lib/storyblokShared'
 import { buildSpecialContext, specialPathFromSlug } from '@/lib/specials'
 import { SpecialProvider } from '@/components/special/SpecialContext.tsx'
-import { isPreviewRequest } from '@/lib/preview'
+import { isEditorRequest, isPreviewRequest } from '@/lib/preview'
 
 
 export async function renderPage( slug?:string[],  secret?: string | undefined ) {
@@ -36,7 +36,11 @@ export async function renderPage( slug?:string[],  secret?: string | undefined )
 		notFound()
 	}
 
-	const rendered = isPreview
+	// Zwei getrennte Fragen: `isPreview` bestimmt den Inhaltsstand (oben beim
+	// Fetch), `isEditorRequest` den Renderpfad. Nur im Visual Editor braucht es
+	// StoryClient samt Bridge; sonst rendert die Seite server-seitig wie im
+	// Produktivbetrieb — was async Server-Komponenten im Body voraussetzen.
+	const rendered = isEditorRequest(secret)
 		? <StoryClient initialStory={data.story} />
 		: <StoryblokStory story={data.story} />
 
