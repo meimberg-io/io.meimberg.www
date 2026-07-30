@@ -1,7 +1,7 @@
 import React from 'react'
 import { storyblokEditable } from '@storyblok/react/rsc'
 
-import { ContainerOuter } from '@/components/layout/Container.tsx'
+import { Container } from '@/components/layout/Container.tsx'
 import HeaderPicture from '@/components/global/HeaderPicture.tsx'
 import Pagetitle from '@/components/elements/Pagetitle.tsx'
 import ChapterIndex from '@/components/special/ChapterIndex.tsx'
@@ -18,8 +18,8 @@ export function SpecialLayout({
   return (
     <>
       <HeaderPicture headerpicture={special.headerpicture} />
-      <ContainerOuter className="mt-16 lg:mt-32">
-        <div className="relative px-4 sm:px-8 lg:px-12">
+      <Container className="mt-16 lg:mt-32">
+        <div className="relative">
           <article className="mx-auto max-w-3xl">
             <header className="flex flex-col">
               {special.pagetitle && (
@@ -51,7 +51,7 @@ export function SpecialLayout({
               die Textspalte hinausragen. */}
           <ChapterIndex />
         </div>
-      </ContainerOuter>
+      </Container>
     </>
   )
 }

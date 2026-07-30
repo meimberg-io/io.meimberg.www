@@ -1223,3 +1223,21 @@ Dazu Kleineres: interner Link-Token auf den Kapitelkarten, `aria-controls` am Au
 Rücklink auch dann, wenn kein Kapitel zum Pfad passt, korrigierter Full-Bleed zwischen 1024 und
 1279px, und ein Hinweis in `SpecialContext.tsx`, dass nur Client-Komponenten `useSpecial()` lesen
 können.
+
+### Nachtrag 2: Ausrichtung an der Top-Bar
+
+Die Layouts benutzten `ContainerOuter` plus eigenes `px-4 sm:px-8 lg:px-12`. Der Header benutzt
+`Container`, also dieselbe Kette **plus** `ContainerInner` mit `mx-auto max-w-2xl lg:max-w-5xl`.
+Die Special-Inhaltsbox war dadurch 1120px breit, die des Headers 1024px, zentriert darin — Sidebar
+und Verzeichnis begannen 48px links vom Logo.
+
+Behoben durch `Container` statt `ContainerOuter` in beiden Special-Layouts; die handgeschriebene
+Padding-Zeile entfällt. Gemessen bei 1425px Viewport: Logo und Sidebar beginnen bei 201, Artikel und
+Theme-Umschalter enden bei 1225.
+
+Damit ändert sich die Breitenrechnung aus Task 5: die Textspalte ist ab `xl` **720px**
+(1024 − 16rem Sidebar − 3rem Gap), nicht 752px. `max-w-3xl` bindet dort nicht mehr und wirkt nur
+noch unterhalb von `xl`, wo der Text einspaltig zentriert steht.
+
+Die eingeklappte Kapitelleiste hat ihre negativen Ränder (`-mx-4 sm:-mx-8 lg:-mx-12`) verloren: sie
+ragten nach der Ausrichtung über die Logo-Kante hinaus. Sie schließt jetzt mit der Inhaltsbox ab.

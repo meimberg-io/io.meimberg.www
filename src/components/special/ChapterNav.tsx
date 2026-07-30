@@ -69,7 +69,10 @@ export default function ChapterNav() {
       {/* unter xl: klebende Zeile, aufklappbar */}
       <nav
         aria-label="Kapitel dieses Specials"
-        className="not-prose sticky top-20 z-20 -mx-4 mb-8 border-b border-border bg-surface/95 px-4 py-3 backdrop-blur sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12 xl:hidden"
+        // Kein negativer Rand mehr: die Inhaltsbox der Special-Layouts ist
+        // absichtlich exakt die des Headers, also soll die Leiste mit ihr
+        // abschließen statt darüber hinauszuragen.
+        className="not-prose sticky top-20 z-20 mb-8 border-b border-border bg-surface/95 py-3 backdrop-blur xl:hidden"
       >
         <button
           type="button"

@@ -1,7 +1,7 @@
 import React from 'react'
 import { storyblokEditable } from '@storyblok/react/rsc'
 
-import { ContainerOuter } from '@/components/layout/Container.tsx'
+import { Container } from '@/components/layout/Container.tsx'
 import HeaderPicture from '@/components/global/HeaderPicture.tsx'
 import Pagetitle from '@/components/elements/Pagetitle.tsx'
 import ChapterNav from '@/components/special/ChapterNav.tsx'
@@ -19,13 +19,15 @@ export function SpecialChapterLayout({
   return (
     <>
       <HeaderPicture headerpicture={chapter.headerpicture} />
-      <ContainerOuter className="mt-16 lg:mt-32">
-        <div className="relative px-4 sm:px-8 lg:px-12">
-          {/* Bei 1280px (xl-Breakpoint) nutzbar: 1280 − 64 (ContainerOuter sm:px-8)
-              − 64 (ContainerOuter-Inner lg:px-8) − 96 (eigenes lg:px-12) = 1056px.
-              Davon 16rem Sidebar + 3rem Gap ab bleiben 752px für den Text —
-              max-w-3xl (768px) bindet also erst etwas oberhalb des xl-Breakpoints.
-              Deshalb greift der Zweispalter erst ab xl. */}
+      <Container className="mt-16 lg:mt-32">
+        <div className="relative">
+          {/* Container (nicht ContainerOuter), damit die Inhaltsbox exakt die des
+              Headers ist: dieselbe Kette bis lg:px-12 plus dessen
+              `mx-auto max-w-2xl lg:max-w-5xl`. Nur so schließen Sidebar und
+              Artikel links mit dem Logo und rechts mit dem Theme-Umschalter ab.
+              Ab lg sind das 1024px: 16rem Sidebar + 3rem Gap lassen 720px für
+              den Text, max-w-3xl bindet dort also nicht mehr — es gilt nur noch
+              unterhalb von xl, wo der Text einspaltig zentriert steht. */}
           <div className="xl:grid xl:grid-cols-[16rem_minmax(0,1fr)] xl:gap-12">
             <ChapterNav />
             {/* xl:col-start-2, weil ChapterNav bei leerer Kapitelliste null
@@ -53,7 +55,7 @@ export function SpecialChapterLayout({
             </article>
           </div>
         </div>
-      </ContainerOuter>
+      </Container>
     </>
   )
 }
