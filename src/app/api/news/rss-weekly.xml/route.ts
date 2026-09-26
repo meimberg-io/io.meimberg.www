@@ -32,9 +32,21 @@ function channelDisplayName(sourceName: string): string {
   return sourceName === 'Blog' ? 'Oli' : sourceName
 }
 
+/**
+ * Storyblok-Bilder in Mail-Größe: doppelte Mailbreite für Retina, als JPEG, weil Outlook für
+ * Windows kein WebP anzeigt. Die Originale sind PNGs mit mehreren MB.
+ */
+function mailImageUrl(url: string): { url: string; type: string } {
+  if (/^https:\/\/a\.storyblok\.com\/f\//.test(url) && !url.includes('/m/')) {
+    return { url: `${url}/m/1200x0/filters:format(jpeg):quality(80)`, type: 'image/jpeg' }
+  }
+  return { url, type: 'image/png' }
+}
+
 function itemXml({ item, section, first }: WeeklyItem): string {
-  const imageXml = item.imageUrl
-    ? `\n      <enclosure url="${escapeXml(item.imageUrl)}" type="image/png" />\n      <media:thumbnail url="${escapeXml(item.imageUrl)}" />`
+  const image = item.imageUrl ? mailImageUrl(item.imageUrl) : null
+  const imageXml = image
+    ? `\n      <enclosure url="${escapeXml(image.url)}" type="${image.type}" />\n      <media:thumbnail url="${escapeXml(image.url)}" />`
     : ''
   const source = escapeXml(channelDisplayName(item.sourceName))
   return `
