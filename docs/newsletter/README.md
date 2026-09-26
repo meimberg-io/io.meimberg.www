@@ -9,7 +9,7 @@ Stand 2026-09-26: Brevo läuft im Testbetrieb, Buttondown verschickt weiter prod
 - Höchstens 10 Items, weil Brevo pro RSS-Kampagne nicht mehr holt. Blog, Artikel und Morpheuxx gehen immer komplett rein, Awesome Apps füllen die restlichen Plätze, neueste zuerst.
 - Sortiert nach Sektion (Blog und Artikel, Morpheuxx, Awesome Apps), darin neueste zuerst.
 - Jedes Item trägt `<mb:section>` (`blog`, `morpheuxx`, `apps`, `other`) und `<mb:first>` (`1` beim ersten Item seiner Sektion, sonst `0`). Brevo macht daraus `item.MB_SECTION` und `item.MB_FIRST`.
-- `pubDate` ist das Originaldatum.
+- `pubDate` ist der Freischaltzeitpunkt (Freitag 00:00 plus einige Sekunden), das Originaldatum steht in `<dc:date>`. Grund: Brevo übernimmt nur Items, deren `pubDate` zwischen den letzten beiden Prüfzeiten liegt (jeweils 30 Minuten vorher). Mit dem Originaldatum fielen Freitags-Beiträge vor der Prüfzeit heraus, Blogartikel mit Datum 00:00 immer.
 - `?now=<ISO-8601>` berechnet das Fenster für einen anderen Zeitpunkt, zum Prüfen beliebiger Wochen, etwa `?now=2026-09-25T08:00:00%2B02:00`.
 - Wochengrenzen und Auswahl prüft `npx --yes tsx scripts/verify-weekly-window.ts`.
 
@@ -21,7 +21,7 @@ RSS-Campaign-Integration:
 
 - Feed-URL `https://www.meimberg.io/api/news/rss-weekly.xml`
 - Template: eigenes Template „Newsletter" (ID 1), Aufbau siehe unten
-- Zeitplan: wöchentlich, Freitag, morgens. Brevo liest den Feed nur zur Prüfzeit; Items müssen laut Brevo mindestens eine Stunde vorher im Feed stehen.
+- Zeitplan: Freitag 10:00, Versand automatisch. Brevo liest den Feed nur zur Prüfzeit; Items müssen laut Brevo mindestens eine Stunde vorher im Feed stehen.
 - Versand: im Testbetrieb „Manually", Brevo legt dann nur einen Entwurf an.
 
 Schneller Template-Test ohne RSS-Lauf: `node --env-file=.env scripts/brevo-template-test.mjs` schickt das Template sofort mit dem aktuellen Wochen-Feed als Testmail (braucht `BREVO_API_KEY`, `BREVO_TEST_TO`, `BREVO_TEST_FROM` in `.env`). Mit `--template 1` nimmt es stattdessen das in Brevo gespeicherte Template „Newsletter" samt Kopf und Footer, mit `--template 1 --local` darin den Stand der lokalen Datei, bevor er in Brevo eingefügt ist.

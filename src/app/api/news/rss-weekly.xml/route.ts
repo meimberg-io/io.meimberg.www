@@ -43,7 +43,18 @@ function mailImageUrl(url: string): { url: string; type: string } {
   return { url, type: 'image/png' }
 }
 
-function itemXml({ item, section, first }: WeeklyItem): string {
+/**
+ * Brevo übernimmt nur Items, deren pubDate zwischen den letzten beiden Prüfzeiten liegt (jeweils
+ * eine halbe Stunde davor). Mit dem Originaldatum fiele alles heraus, was freitags vor der Prüfzeit
+ * erschienen ist, Blogartikel mit Datum 00:00 also immer. Deshalb trägt jedes Item den
+ * Freischaltzeitpunkt (Ende des Fensters) plus einige Sekunden, absteigend in Feed-Reihenfolge.
+ * Das Originaldatum steht in dc:date.
+ */
+function releasedPubDate(released: Date, index: number, count: number): Date {
+  return new Date(released.getTime() + (count - index) * 1000)
+}
+
+function itemXml({ item, section, first }: WeeklyItem, pubDate: Date): string {
   const image = item.imageUrl ? mailImageUrl(item.imageUrl) : null
   const imageXml = image
     ? `\n      <enclosure url="${escapeXml(image.url)}" type="${image.type}" />\n      <media:thumbnail url="${escapeXml(image.url)}" />`
@@ -54,7 +65,8 @@ function itemXml({ item, section, first }: WeeklyItem): string {
       <title>${escapeXml(item.title)}</title>
       <link>${escapeXml(item.link)}</link>
       <guid>${escapeXml(item.link)}</guid>
-      <pubDate>${item.pubDate.toUTCString()}</pubDate>
+      <pubDate>${pubDate.toUTCString()}</pubDate>
+      <dc:date>${item.pubDate.toISOString()}</dc:date>
       <description><![CDATA[${item.description ?? ''}]]></description>
       <author>${source}</author>
       <category>${source}</category>
@@ -74,7 +86,7 @@ function feedXml(items: WeeklyItem[], lastBuildDate: Date): string {
     <language>de</language>
     <lastBuildDate>${lastBuildDate.toUTCString()}</lastBuildDate>
     <copyright>© ${new Date().getFullYear()} meimberg.io</copyright>
-    ${items.map(itemXml).join('\n')}
+    ${items.map((entry, index) => itemXml(entry, releasedPubDate(lastBuildDate, index, items.length))).join('\n')}
   </channel>
 </rss>`
 }
