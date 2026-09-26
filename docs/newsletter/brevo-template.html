@@ -8,6 +8,8 @@
   - Beschreibung mit "| safe", sonst escaped Brevo HTML-Entities.
   - Im Blog-Abschnitt stand Beschreibung und "Weiterlesen" innerhalb von {% if item.enclosure %},
     Items ohne Bild verloren beides. Jetzt hängt nur das Bild an der Bedingung.
+  - Template-Tags stehen nur dort, wo HTML Text erlaubt (Top-Level oder innerhalb von <td>), nie
+    zwischen <table>, <tr> und <td>. Sonst verschiebt der Brevo-Editor sie beim Speichern.
 -->
 
 <p style="margin:0; padding:0 0 32px 0; font-size:28px; line-height:1.2; color:#555555;">
@@ -165,13 +167,13 @@
 
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            {% if item.ENCLOSURE %}
             <td valign="top" width="90" style="padding:0 16px 0 0;">
+              {% if item.ENCLOSURE %}
               <a href="{{ item.LINK }}" target="_blank" rel="noopener noreferrer nofollow" style="text-decoration:none;">
                 <img src="{{ item.ENCLOSURE }}" alt="{{ item.TITLE }}" width="80" style="display:block; width:80px; max-width:80px; height:auto; border:0; border-radius:12px;">
               </a>
+              {% endif %}
             </td>
-            {% endif %}
             <td valign="top" style="font-size:17px; line-height:1.65; color:#222222;">
               {% if item.DESCRIPTION %}{{ item.DESCRIPTION | safe }}{% endif %}
               <div style="margin-top:10px;">
