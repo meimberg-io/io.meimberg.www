@@ -23,7 +23,7 @@ Edit `.env` with your values:
 - [ ] `NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET` - Set editor preview secret
 - [ ] `NEXT_PUBLIC_STORYBOOK_DISABLECACHING` - Set to `false` for dev
 - [ ] `NEXT_PUBLIC_MATOMO_TRACKER` - Set to `false` for dev
-- [ ] `BUTTONDOWN_API_KEY` - (optional) Buttondown API key for newsletter; [Settings → API](https://buttondown.com/settings/api)
+- [ ] `BREVO_API_KEY` - (optional) Brevo API key for newsletter signup (Brevo → SMTP & API → API Keys)
 
 ### 3. Install & Test
 
@@ -68,7 +68,7 @@ docker compose --profile dev up
 - [ ] `NEXT_PUBLIC_STORYBLOK_TOKEN` - Production Storyblok token
 - [ ] `NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET` - Editor preview secret
 - [ ] `REVALIDATE_SECRET` - Cache revalidation secret
-- [ ] `BUTTONDOWN_API_KEY` - (optional) Buttondown API key for newsletter signup
+- [ ] `BREVO_API_KEY` - (optional) Brevo API key for newsletter signup; plus variables `BREVO_LIST_ID`, `BREVO_DOI_TEMPLATE_ID`, `BREVO_DOI_REDIRECT_URL`
 
 ### 7. DNS Configuration
 
