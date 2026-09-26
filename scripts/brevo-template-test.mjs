@@ -1,11 +1,12 @@
 /**
  * Schickt das Newsletter-Template sofort als Testmail über Brevo, gefüllt mit dem echten Wochen-Feed.
  *
- * Aufruf: node --env-file=.env scripts/brevo-template-test.mjs [--template <id>] [feed-url]
+ * Aufruf: node --env-file=.env scripts/brevo-template-test.mjs [--template <id> [--local]] [feed-url]
  *
  * Ohne --template wird nur docs/newsletter/brevo-template.html geschickt. Mit --template das in Brevo
  * gespeicherte Template samt Kopf und Footer, so wie es im Editor steht; die ID zeigt Brevo in der
- * Template-Liste.
+ * Template-Liste. --local ersetzt darin die Schleifen des HTML-Blocks durch den Stand der lokalen Datei,
+ * um eine Änderung im Gesamtbild zu sehen, bevor sie in Brevo eingefügt ist.
  *
  * Braucht in .env: BREVO_API_KEY, BREVO_TEST_TO (Empfänger), BREVO_TEST_FROM (in Brevo verifizierter Absender).
  *
@@ -18,6 +19,8 @@ import { readFile } from 'node:fs/promises'
 const args = process.argv.slice(2)
 const templateFlag = args.indexOf('--template')
 const templateId = templateFlag >= 0 ? args.splice(templateFlag, 2)[1] : null
+const localFlag = args.indexOf('--local')
+const useLocalBlock = localFlag >= 0 && args.splice(localFlag, 1).length > 0
 const feedUrl = args[0] ?? 'https://www.meimberg.io/api/news/rss-weekly.xml'
 const { BREVO_API_KEY, BREVO_TEST_TO, BREVO_TEST_FROM } = process.env
 
@@ -54,6 +57,20 @@ function toBrevoItem(itemXml) {
   }
 }
 
+// Bereich von der ersten Item-Schleife bis zum letzten endfor, in beiden Templates gleich abgegrenzt.
+function loopRange(html) {
+  const start = html.search(/\{%\s*for item in items\s*%\}/)
+  const end = html.lastIndexOf('{% endfor %}') + '{% endfor %}'.length
+  if (start < 0 || end < start) throw new Error('Keine Item-Schleife im Template gefunden')
+  return [start, end]
+}
+
+function spliceLoops(saved, local) {
+  const [savedStart, savedEnd] = loopRange(saved)
+  const [localStart, localEnd] = loopRange(local)
+  return saved.slice(0, savedStart) + local.slice(localStart, localEnd) + saved.slice(savedEnd)
+}
+
 const feed = await (await fetch(feedUrl)).text()
 const items = [...feed.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((match) => toBrevoItem(match[1]))
 
@@ -68,8 +85,8 @@ if (templateId) {
     process.exit(1)
   }
   const saved = await res.json()
-  template = saved.htmlContent
   subject = saved.subject || saved.name
+  template = useLocalBlock ? spliceLoops(saved.htmlContent, template) : saved.htmlContent
 }
 const htmlContent = template.replace(/\{%\s*for item in items\s*%\}/g, '{% for item in params.items %}')
 
