@@ -11,8 +11,9 @@
  * Braucht in .env: BREVO_API_KEY, BREVO_TEST_TO (Empfänger), BREVO_TEST_FROM (in Brevo verifizierter Absender).
  *
  * Die RSS-Integration liest den Feed nur zur Prüfzeit und verlangt eine Stunde Vorlauf. Dieses Skript
- * umgeht das über die Transaktions-API: Brevo wertet dieselbe Template-Sprache aus, und die Items
- * kommen wie bei RSS-Kampagnen als params.items an. Für die Abnahme bleibt ein echter RSS-Lauf nötig.
+ * umgeht das über die Transaktions-API: Brevo wertet dieselbe Template-Sprache aus, die Items kommen
+ * dort als params.items an. Ob der RSS-Versand items oder params.items erwartet, zeigt nur ein echter
+ * RSS-Lauf.
  */
 import { readFile } from 'node:fs/promises'
 
@@ -91,10 +92,9 @@ if (templateId) {
   subject = saved.subject || saved.name
   template = useLocalBlock ? spliceLoops(saved.htmlContent, template) : saved.htmlContent
 }
-const htmlContent = template
-if (!/\{%\s*for \w+ in params\.items\b/.test(htmlContent)) {
-  console.warn('Warnung: keine Schleife über params.items im Template, im RSS-Versand blieben die Items leer.')
-}
+// Die Transaktions-API kennt die Items nur als params.items. Brevos HTML-Block speichert Schleifen
+// aber als "items", auch wenn "params.items" eingefügt wurde; für den Test wird das angeglichen.
+const htmlContent = template.replace(/(\{%\s*for \w+ in )items\b/g, '$1params.items')
 
 const res = await fetch('https://api.brevo.com/v3/smtp/email', {
   method: 'POST',
