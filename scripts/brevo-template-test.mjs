@@ -62,7 +62,7 @@ function toBrevoItem(itemXml) {
 
 // Bereich von der ersten Item-Schleife bis zum letzten endfor, in beiden Templates gleich abgegrenzt.
 function loopRange(html) {
-  const start = html.search(/\{%\s*for \w+ in params\.items\b/)
+  const start = html.search(/\{%\s*for \w+ in (params\.)?items\b/)
   const end = html.lastIndexOf('{% endfor %}') + '{% endfor %}'.length
   if (start < 0 || end < start) throw new Error('Keine Item-Schleife im Template gefunden')
   return [start, end]
