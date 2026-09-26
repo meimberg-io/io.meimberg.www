@@ -1,7 +1,11 @@
 /**
  * Schickt das Newsletter-Template sofort als Testmail über Brevo, gefüllt mit dem echten Wochen-Feed.
  *
- * Aufruf: node --env-file=.env scripts/brevo-template-test.mjs [feed-url]
+ * Aufruf: node --env-file=.env scripts/brevo-template-test.mjs [--template <id>] [feed-url]
+ *
+ * Ohne --template wird nur docs/newsletter/brevo-template.html geschickt. Mit --template das in Brevo
+ * gespeicherte Template samt Kopf und Footer, so wie es im Editor steht; die ID zeigt Brevo in der
+ * Template-Liste.
  *
  * Braucht in .env: BREVO_API_KEY, BREVO_TEST_TO (Empfänger), BREVO_TEST_FROM (in Brevo verifizierter Absender).
  *
@@ -11,7 +15,10 @@
  */
 import { readFile } from 'node:fs/promises'
 
-const feedUrl = process.argv[2] ?? 'https://www.meimberg.io/api/news/rss-weekly.xml'
+const args = process.argv.slice(2)
+const templateFlag = args.indexOf('--template')
+const templateId = templateFlag >= 0 ? args.splice(templateFlag, 2)[1] : null
+const feedUrl = args[0] ?? 'https://www.meimberg.io/api/news/rss-weekly.xml'
 const { BREVO_API_KEY, BREVO_TEST_TO, BREVO_TEST_FROM } = process.env
 
 if (!BREVO_API_KEY || !BREVO_TEST_TO || !BREVO_TEST_FROM) {
@@ -50,16 +57,29 @@ function toBrevoItem(itemXml) {
 const feed = await (await fetch(feedUrl)).text()
 const items = [...feed.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((match) => toBrevoItem(match[1]))
 
-const template = await readFile(new URL('../docs/newsletter/brevo-template.html', import.meta.url), 'utf8')
+const headers = { 'api-key': BREVO_API_KEY, 'Content-Type': 'application/json', Accept: 'application/json' }
+
+let template = await readFile(new URL('../docs/newsletter/brevo-template.html', import.meta.url), 'utf8')
+let subject = 'Template-Test'
+if (templateId) {
+  const res = await fetch(`https://api.brevo.com/v3/smtp/templates/${templateId}`, { headers })
+  if (!res.ok) {
+    console.error(`Template ${templateId} nicht ladbar: HTTP ${res.status} ${await res.text()}`)
+    process.exit(1)
+  }
+  const saved = await res.json()
+  template = saved.htmlContent
+  subject = saved.subject || saved.name
+}
 const htmlContent = template.replace(/\{%\s*for item in items\s*%\}/g, '{% for item in params.items %}')
 
 const res = await fetch('https://api.brevo.com/v3/smtp/email', {
   method: 'POST',
-  headers: { 'api-key': BREVO_API_KEY, 'Content-Type': 'application/json', Accept: 'application/json' },
+  headers,
   body: JSON.stringify({
     sender: { email: BREVO_TEST_FROM, name: 'Newsletter-Test' },
     to: [{ email: BREVO_TEST_TO }],
-    subject: `Template-Test ${new Date().toLocaleString('de-DE')} (${items.length} Items)`,
+    subject: `${subject} · Test ${new Date().toLocaleString('de-DE')} (${items.length} Items)`,
     htmlContent,
     params: { items }
   })
