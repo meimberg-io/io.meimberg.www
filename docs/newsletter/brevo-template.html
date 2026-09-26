@@ -10,7 +10,7 @@
     Items ohne Bild verloren beides. Jetzt hängt nur das Bild an der Bedingung.
   - Einleitung und Schlusstext stehen als Brevo-Textblöcke im Template, nicht hier.
   - Schrift, Farben und Abstände der Sektionsköpfe und Texte folgen den Brevo-Standardstilen des
-    Templates (Arial, Überschrift #1f2d3d, Text 16px/1.5 #3b3f44, 15px Abstand).
+    Templates (Arial, Überschrift #1f2d3d, Text 15px/1.5, eine Stufe kleiner als der Brevo-Standard #3b3f44, 15px Abstand).
   - Template-Tags stehen nur dort, wo HTML Text erlaubt (Top-Level oder innerhalb von <td>), nie
     zwischen <table>, <tr> und <td>. Sonst verschiebt der Brevo-Editor sie beim Speichern.
   - Keine Template-Syntax (geschweifte Klammer mit Prozent oder doppelte geschweifte Klammern) in
@@ -30,16 +30,16 @@
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
             <td valign="top" style="padding:0 12px 0 0;">
-              <div style="margin-top:2px; padding:0 0 24px 0; font-family:arial,helvetica,sans-serif; font-size:22px; line-height:1.3; font-weight:700; color:#3d6b4a;">
+              <div style="margin-top:2px; padding:0 0 12px 0; font-family:arial,helvetica,sans-serif; font-size:18px; line-height:1.3; font-weight:700; color:#3d6b4a;">
                 {{ item.TITLE }}
               </div>
             </td>
             <td valign="top" align="right" style="padding:2px 0 12px 0; white-space:nowrap;">
               {% if item.AUTHOR == "Oli" %}
-                <span style="display:inline-block; font-size:12px; line-height:1; letter-spacing:1px; text-transform:uppercase; color:#3d6b4a; background:#dff1e3; border:1px solid #bddfc5; padding:8px 12px; border-radius:16px;">Oli's Blog</span>
+                <span style="display:inline-block; font-family:arial,helvetica,sans-serif; font-size:11px; line-height:1; letter-spacing:1px; text-transform:uppercase; color:#3d6b4a; background:#dff1e3; border:1px solid #bddfc5; padding:6px 10px; border-radius:14px;">Oli's Blog</span>
               {% endif %}
               {% if item.AUTHOR == "Artikel" %}
-                <span style="display:inline-block; font-size:12px; line-height:1; letter-spacing:1px; text-transform:uppercase; color:#3d6b4a; background:#dff1e3; border:1px solid #bddfc5; padding:8px 12px; border-radius:16px;">Artikel</span>
+                <span style="display:inline-block; font-family:arial,helvetica,sans-serif; font-size:11px; line-height:1; letter-spacing:1px; text-transform:uppercase; color:#3d6b4a; background:#dff1e3; border:1px solid #bddfc5; padding:6px 10px; border-radius:14px;">Artikel</span>
               {% endif %}
             </td>
           </tr>
@@ -59,7 +59,7 @@
 
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td style="font-family:arial,helvetica,sans-serif; font-size:16px; line-height:1.5; color:#3b3f44; padding:0 0 10px 0;">
+            <td style="font-family:arial,helvetica,sans-serif; font-size:15px; line-height:1.5; color:#3b3f44; padding:0 0 10px 0;">
               {% if item.DESCRIPTION %}{{ item.DESCRIPTION | safe }}{% endif %}
             </td>
           </tr>
@@ -85,8 +85,8 @@
   {% if item.AUTHOR == "Morpheuxx" %}
 
     {% ifchanged %}
-      <h2 style="margin:0; padding:15px 0 0 0; font-family:arial,helvetica,sans-serif; font-size:28px; line-height:1.3; font-weight:700; color:#1f2d3d;">Morpheuxx</h2>
-      <p style="margin:0; padding:15px 0 30px 0; font-family:arial,helvetica,sans-serif; font-size:16px; line-height:1.5; color:#3b3f44;">Kluge und manchmal philosophische Gedanken über das aktuelle Weltgeschehen von meinem AI-Agenten Morpheuxx.</p>
+      <h2 style="margin:0; padding:15px 0 0 0; font-family:arial,helvetica,sans-serif; font-size:22px; line-height:1.3; font-weight:700; color:#1f2d3d;">Morpheuxx</h2>
+      <p style="margin:0; padding:15px 0 30px 0; font-family:arial,helvetica,sans-serif; font-size:15px; line-height:1.5; color:#3b3f44;">Kluge und manchmal philosophische Gedanken über das aktuelle Weltgeschehen von meinem AI-Agenten Morpheuxx.</p>
     {% endifchanged %}
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 28px 0; border-bottom:1px solid #e8e8e8;">
@@ -96,12 +96,12 @@
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
             <td valign="top" style="padding:0 12px 0 0;">
-              <div style="margin-top:2px; padding:0 0 24px 0; font-family:arial,helvetica,sans-serif; font-size:22px; line-height:1.3; font-weight:700; color:#b24444;">
+              <div style="margin-top:2px; padding:0 0 12px 0; font-family:arial,helvetica,sans-serif; font-size:18px; line-height:1.3; font-weight:700; color:#b24444;">
                 {{ item.TITLE }}
               </div>
             </td>
             <td valign="top" align="right" style="padding:2px 0 12px 0; white-space:nowrap;">
-              <span style="display:inline-block; font-size:12px; line-height:1; letter-spacing:1px; text-transform:uppercase; color:#b24444; background:#f8e3e3; border:1px solid #efcaca; padding:8px 12px; border-radius:16px;">Morpheuxx</span>
+              <span style="display:inline-block; font-family:arial,helvetica,sans-serif; font-size:11px; line-height:1; letter-spacing:1px; text-transform:uppercase; color:#b24444; background:#f8e3e3; border:1px solid #efcaca; padding:6px 10px; border-radius:14px;">Morpheuxx</span>
             </td>
           </tr>
         </table>
@@ -120,7 +120,7 @@
 
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td style="font-family:arial,helvetica,sans-serif; font-size:16px; line-height:1.5; color:#3b3f44; padding:0 0 10px 0;">
+            <td style="font-family:arial,helvetica,sans-serif; font-size:15px; line-height:1.5; color:#3b3f44; padding:0 0 10px 0;">
               {% if item.DESCRIPTION %}{{ item.DESCRIPTION | safe }}{% endif %}
             </td>
           </tr>
@@ -146,8 +146,8 @@
   {% if item.AUTHOR == "Awesome Apps" %}
 
     {% ifchanged %}
-      <h2 style="margin:0; padding:15px 0 0 0; font-family:arial,helvetica,sans-serif; font-size:28px; line-height:1.3; font-weight:700; color:#1f2d3d;">Aktuelle Apps</h2>
-      <p style="margin:0; padding:15px 0 30px 0; font-family:arial,helvetica,sans-serif; font-size:16px; line-height:1.5; color:#3b3f44;">Aktuelle Websites und Apps, die ich in den letzten Wochen entdeckt habe.</p>
+      <h2 style="margin:0; padding:15px 0 0 0; font-family:arial,helvetica,sans-serif; font-size:22px; line-height:1.3; font-weight:700; color:#1f2d3d;">Aktuelle Apps</h2>
+      <p style="margin:0; padding:15px 0 30px 0; font-family:arial,helvetica,sans-serif; font-size:15px; line-height:1.5; color:#3b3f44;">Aktuelle Websites und Apps, die ich in den letzten Wochen entdeckt habe.</p>
     {% endifchanged %}
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 28px 0; border-bottom:1px solid #e8e8e8;">
@@ -157,12 +157,12 @@
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
             <td valign="top" style="padding:0 12px 0 0;">
-              <div style="margin-top:2px; padding:0 0 24px 0; font-family:arial,helvetica,sans-serif; font-size:22px; line-height:1.3; font-weight:700; color:#245c92;">
+              <div style="margin-top:2px; padding:0 0 12px 0; font-family:arial,helvetica,sans-serif; font-size:18px; line-height:1.3; font-weight:700; color:#245c92;">
                 {{ item.TITLE }}
               </div>
             </td>
             <td valign="top" align="right" style="padding:2px 0 12px 0; white-space:nowrap;">
-              <span style="display:inline-block; font-size:12px; line-height:1; letter-spacing:1px; text-transform:uppercase; color:#245c92; background:#e4f0fb; border:1px solid #c8def5; padding:8px 12px; border-radius:16px;">Awesome Apps</span>
+              <span style="display:inline-block; font-family:arial,helvetica,sans-serif; font-size:11px; line-height:1; letter-spacing:1px; text-transform:uppercase; color:#245c92; background:#e4f0fb; border:1px solid #c8def5; padding:6px 10px; border-radius:14px;">Awesome Apps</span>
             </td>
           </tr>
         </table>
@@ -176,7 +176,7 @@
               </a>
               {% endif %}
             </td>
-            <td valign="top" style="font-family:arial,helvetica,sans-serif; font-size:16px; line-height:1.5; color:#3b3f44;">
+            <td valign="top" style="font-family:arial,helvetica,sans-serif; font-size:15px; line-height:1.5; color:#3b3f44;">
               {% if item.DESCRIPTION %}{{ item.DESCRIPTION | safe }}{% endif %}
               <div style="margin-top:10px;">
                 <a href="{{ item.LINK }}" target="_blank" rel="noopener noreferrer nofollow" style="color:#245c92; text-decoration:none; font-weight:600;">
