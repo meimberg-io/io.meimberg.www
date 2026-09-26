@@ -20,7 +20,7 @@
 
 <!-- Blog und Artikel -->
 
-{% for item in items %}
+{% for item in params.items %}
   {% if item.AUTHOR == "Oli" or item.AUTHOR == "Artikel" %}
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 28px 0;">
@@ -81,7 +81,7 @@
 
 <!-- Morpheuxx -->
 
-{% for item in items %}
+{% for item in params.items %}
   {% if item.AUTHOR == "Morpheuxx" %}
 
     {% ifchanged %}
@@ -142,7 +142,7 @@
 
 <!-- Awesome Apps -->
 
-{% for item in items %}
+{% for item in params.items %}
   {% if item.AUTHOR == "Awesome Apps" %}
 
     {% ifchanged %}
