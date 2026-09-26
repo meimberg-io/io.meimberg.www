@@ -22,6 +22,8 @@ RSS-Campaign-Integration:
 - Zeitplan: wöchentlich, Freitag, morgens. Brevo liest den Feed nur zur Prüfzeit; Items müssen laut Brevo mindestens eine Stunde vorher im Feed stehen.
 - Versand: im Testbetrieb „Manually", Brevo legt dann nur einen Entwurf an.
 
+Schneller Template-Test ohne RSS-Lauf: `node --env-file=.env scripts/brevo-template-test.mjs` schickt das Template sofort mit dem aktuellen Wochen-Feed als Testmail (braucht `BREVO_API_KEY`, `BREVO_TEST_TO`, `BREVO_TEST_FROM` in `.env`).
+
 Die Sektionen trennt das Template über `item.AUTHOR` (`Oli`, `Artikel`, `Morpheuxx`, `Awesome Apps`). Eine Brevo-Integration liest genau einen Feed, getrennte Feeds pro Sektion würden getrennte Mails ergeben.
 
 ## Anmeldung
