@@ -24,7 +24,7 @@ Initial configuration required for automatic deployment.
 | `NEXT_PUBLIC_STORYBLOK_TOKEN` | `<storyblok token>` | Storyblok API token (**required**) |
 | `NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET` | `<editor secret>` | Storyblok editor/preview secret (**required**) |
 | `REVALIDATE_SECRET` | `<revalidate secret>` | Cache revalidation secret (currently unused) |
-| `BREVO_API_KEY` | `<brevo api key>` | Brevo API key for newsletter signup (optional; Brevo → SMTP & API → API Keys). Also set the repository variables `BREVO_LIST_ID`, `BREVO_DOI_TEMPLATE_ID`, `BREVO_DOI_REDIRECT_URL` |
+| `BUTTONDOWN_API_KEY` | `<buttondown api key>` | Buttondown API key for newsletter signup (optional; get from [Buttondown Settings → API](https://buttondown.com/settings/api)) |
 
 **Get SSH private key:**
 ```bash
@@ -83,7 +83,7 @@ ansible-playbook -i inventory/hosts.ini playbooks/site.yml --vault-password-file
 Before first deployment:
 
 - [ ] GitHub Variables added: `APP_DOMAIN`, `SERVER_HOST`, `SERVER_USER`, `NEXT_PUBLIC_STORYBOOK_DISABLECACHING`, `NEXT_PUBLIC_MATOMO_TRACKER`
-- [ ] GitHub Secrets added: `SSH_PRIVATE_KEY`, `NEXT_PUBLIC_STORYBLOK_TOKEN`, `NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET`, `REVALIDATE_SECRET`, `BREVO_API_KEY` (optional, for newsletter)
+- [ ] GitHub Secrets added: `SSH_PRIVATE_KEY`, `NEXT_PUBLIC_STORYBLOK_TOKEN`, `NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET`, `REVALIDATE_SECRET`, `BUTTONDOWN_API_KEY` (optional, for newsletter)
 - [ ] DNS CNAME record configured
 - [ ] Server infrastructure ready (Ansible deployed)
 - [ ] Can SSH to server: `ssh deploy@hc-02.meimberg.io`

@@ -22,4 +22,4 @@ In `.env.local` (or copy from `env.example` to `.env`):
 NEXT_PUBLIC_STORYBLOK_TOKEN=your_token_here
 ```
 
-Optional (newsletter signup on homepage): `BREVO_API_KEY`, `BREVO_LIST_ID`, `BREVO_DOI_TEMPLATE_ID`, `BREVO_DOI_REDIRECT_URL` – Brevo API key, target list, double-opt-in template and the page shown after confirmation. Server-side only (used in `/api/newsletter`).
+Optional (newsletter signup on homepage): `BUTTONDOWN_API_KEY` – API key from [Buttondown Settings → API](https://buttondown.com/settings/api). Server-side only (used in `/api/newsletter`).
