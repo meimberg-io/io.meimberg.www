@@ -6,10 +6,12 @@
   - Brevo-Platzhalter sind die RSS-Tags in Großbuchstaben: item.TITLE, item.LINK, item.ENCLOSURE,
     item.DESCRIPTION, item.AUTHOR.
   - Beschreibung mit "| safe", sonst escaped Brevo HTML-Entities.
-  - Im Blog-Abschnitt stand Beschreibung und "Weiterlesen" innerhalb von {% if item.enclosure %},
+  - Im Blog-Abschnitt stand Beschreibung und "Weiterlesen" innerhalb der Bild-Bedingung,
     Items ohne Bild verloren beides. Jetzt hängt nur das Bild an der Bedingung.
   - Template-Tags stehen nur dort, wo HTML Text erlaubt (Top-Level oder innerhalb von <td>), nie
     zwischen <table>, <tr> und <td>. Sonst verschiebt der Brevo-Editor sie beim Speichern.
+  - Keine Template-Syntax (geschweifte Klammer mit Prozent oder doppelte geschweifte Klammern) in
+    Kommentaren: Brevo wertet sie auch dort aus.
 -->
 
 <p style="margin:0; padding:0 0 32px 0; font-size:28px; line-height:1.2; color:#555555;">
