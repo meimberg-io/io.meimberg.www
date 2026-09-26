@@ -8,7 +8,7 @@
  * Arithmetik (Zeitzone, Umstellung, Monats- und Jahreswechsel).
  */
 import { getWeeklyWindow, isInWindow } from '../src/lib/weeklyWindow'
-import { selectWeeklyItems, WEEKLY_MAX_ITEMS } from '../src/lib/weeklyNews'
+import { selectWeeklyItems, WEEKLY_MAX_ITEMS, type WeeklyItem } from '../src/lib/weeklyNews'
 import type { NewsItem } from '../src/lib/rss'
 
 let failures = 0
@@ -134,7 +134,7 @@ function item(sourceName: string, iso: string, title = `${sourceName} ${iso}`): 
 const inWeek = (day: number, hour = 12) =>
   `2026-08-${String(day).padStart(2, '0')}T${String(hour).padStart(2, '0')}:00:00Z`
 
-const titles = (items: NewsItem[]) => items.map((i) => i.title).join(', ')
+const titles = (items: WeeklyItem[]) => items.map(({ item }) => item.title).join(', ')
 
 check(
   'nur Items im Fenster, ohne Datum verworfen, neueste zuerst',
@@ -163,17 +163,35 @@ const selected = selectWeeklyItems(crowded, weekly)
 check('Obergrenze wird eingehalten', String(selected.length), String(WEEKLY_MAX_ITEMS))
 check(
   'Blog und Morpheuxx vollständig',
-  String(selected.filter((i) => i.sourceName !== 'Awesome Apps').length),
+  String(selected.filter(({ item }) => item.sourceName !== 'Awesome Apps').length),
   '6'
 )
 check(
   'Awesome Apps: die neuesten bleiben',
   selected
-    .filter((i) => i.sourceName === 'Awesome Apps')
-    .map((i) => i.title)
+    .filter(({ item }) => item.sourceName === 'Awesome Apps')
+    .map(({ item }) => item.title)
     .sort()
     .join(', '),
   'app3, app4, app5, app6'
+)
+
+check(
+  'nach Sektion sortiert, darin neueste zuerst',
+  selected.map(({ section }) => section).join(','),
+  'blog,blog,blog,blog,morpheuxx,morpheuxx,apps,apps,apps,apps'
+)
+check(
+  'erstes Item je Sektion markiert',
+  selected.filter(({ first }) => first).map(({ item }) => item.title).join(', '),
+  'blog3, morph1, app6'
+)
+check(
+  'Artikel zählen zur Blog-Sektion',
+  selectWeeklyItems([item('Morpheuxx', inWeek(9), 'm'), item('Artikel', inWeek(8), 'a')], weekly)
+    .map(({ section, first }) => `${section}:${first}`)
+    .join(','),
+  'blog:true,morpheuxx:true'
 )
 
 if (failures > 0) {

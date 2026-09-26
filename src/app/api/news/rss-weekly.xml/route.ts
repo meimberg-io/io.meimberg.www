@@ -1,14 +1,14 @@
 import { NextResponse } from 'next/server'
 import { fetchNewsFeedSources } from '@/lib/storyblokApi'
 import { fetchAggregatedNews } from '@/lib/rss'
-import type { NewsItem } from '@/lib/rss'
 import { getWeeklyWindow } from '@/lib/weeklyWindow'
-import { selectWeeklyItems } from '@/lib/weeklyNews'
+import { selectWeeklyItems, type WeeklyItem } from '@/lib/weeklyNews'
 
 /**
  * Wochen-Feed für den Brevo-Newsletter: genau die abgeschlossene Woche Fr–Do.
  *
- * Item-Format wie /api/news/rss.xml. Die Helfer sind bewusst kopiert statt
+ * Item-Format wie /api/news/rss.xml, plus mb:section und mb:first für die Sektionen im
+ * Brevo-Template (dort als item.MB_SECTION und item.MB_FIRST). Die Helfer sind bewusst kopiert statt
  * geteilt, damit der bestehende Feed, an dem noch Buttondown hängt, byte-gleich
  * bleibt.
  */
@@ -17,6 +17,7 @@ import { selectWeeklyItems } from '@/lib/weeklyNews'
 export const dynamic = 'force-dynamic'
 
 const BASE_URL = 'https://www.meimberg.io/'
+const NEWSLETTER_NS = 'https://www.meimberg.io/ns/newsletter'
 
 function escapeXml(value: string): string {
   return value
@@ -31,7 +32,7 @@ function channelDisplayName(sourceName: string): string {
   return sourceName === 'Blog' ? 'Oli' : sourceName
 }
 
-function itemXml(item: NewsItem): string {
+function itemXml({ item, section, first }: WeeklyItem): string {
   const imageXml = item.imageUrl
     ? `\n      <enclosure url="${escapeXml(item.imageUrl)}" type="image/png" />\n      <media:thumbnail url="${escapeXml(item.imageUrl)}" />`
     : ''
@@ -45,13 +46,15 @@ function itemXml(item: NewsItem): string {
       <description><![CDATA[${item.description ?? ''}]]></description>
       <author>${source}</author>
       <category>${source}</category>
-      <dc:creator>${source}</dc:creator>${imageXml}
+      <dc:creator>${source}</dc:creator>
+      <mb:section>${section}</mb:section>
+      <mb:first>${first ? 1 : 0}</mb:first>${imageXml}
     </item>`
 }
 
-function feedXml(items: NewsItem[], lastBuildDate: Date): string {
+function feedXml(items: WeeklyItem[], lastBuildDate: Date): string {
   return `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:mb="${NEWSLETTER_NS}">
   <channel>
     <title>Wochen-News | meimberg.io</title>
     <link>${BASE_URL}</link>

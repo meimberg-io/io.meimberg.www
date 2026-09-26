@@ -53,13 +53,16 @@ function toBrevoItem(itemXml) {
     DESCRIPTION: tag(itemXml, 'description'),
     AUTHOR: tag(itemXml, 'author'),
     CATEGORY: tag(itemXml, 'category'),
-    ENCLOSURE: decode(itemXml.match(/<enclosure url="([^"]*)"/)?.[1] ?? '')
+    ENCLOSURE: decode(itemXml.match(/<enclosure url="([^"]*)"/)?.[1] ?? ''),
+    // Namespace-Doppelpunkt wird bei Brevo zum Unterstrich
+    MB_SECTION: tag(itemXml, 'mb:section'),
+    MB_FIRST: tag(itemXml, 'mb:first')
   }
 }
 
 // Bereich von der ersten Item-Schleife bis zum letzten endfor, in beiden Templates gleich abgegrenzt.
 function loopRange(html) {
-  const start = html.search(/\{%\s*for item in items\s*%\}/)
+  const start = html.search(/\{%\s*for \w+ in items\b/)
   const end = html.lastIndexOf('{% endfor %}') + '{% endfor %}'.length
   if (start < 0 || end < start) throw new Error('Keine Item-Schleife im Template gefunden')
   return [start, end]
@@ -88,7 +91,7 @@ if (templateId) {
   subject = saved.subject || saved.name
   template = useLocalBlock ? spliceLoops(saved.htmlContent, template) : saved.htmlContent
 }
-const htmlContent = template.replace(/\{%\s*for item in items\s*%\}/g, '{% for item in params.items %}')
+const htmlContent = template.replace(/(\{%\s*for \w+ in )items\b/g, '$1params.items')
 
 const res = await fetch('https://api.brevo.com/v3/smtp/email', {
   method: 'POST',
@@ -102,6 +105,6 @@ const res = await fetch('https://api.brevo.com/v3/smtp/email', {
   })
 })
 
-console.log(`${items.length} Items aus ${feedUrl}: ${items.map((i) => i.AUTHOR).join(', ')}`)
+console.log(`${items.length} Items aus ${feedUrl}: ${items.map((i) => `${i.MB_SECTION || i.AUTHOR}${i.MB_FIRST === '1' ? '*' : ''}`).join(', ')}`)
 console.log(`Brevo: HTTP ${res.status} ${await res.text()}`)
 process.exit(res.ok ? 0 : 1)
