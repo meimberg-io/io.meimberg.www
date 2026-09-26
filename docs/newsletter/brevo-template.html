@@ -1,0 +1,197 @@
+<!--
+  Newsletter-Template für die Brevo-RSS-Kampagne, gespeist aus /api/news/rss-weekly.xml.
+  Einsetzen als HTML-Block im Brevo-Drag-&-Drop-Editor (ersetzt den Dynamic-content-Block).
+
+  Übernommen aus dem Buttondown-Template. Unterschiede:
+  - Brevo-Platzhalter sind die RSS-Tags in Großbuchstaben: item.TITLE, item.LINK, item.ENCLOSURE,
+    item.DESCRIPTION, item.AUTHOR.
+  - Beschreibung mit "| safe", sonst escaped Brevo HTML-Entities.
+  - Im Blog-Abschnitt stand Beschreibung und "Weiterlesen" innerhalb von {% if item.enclosure %},
+    Items ohne Bild verloren beides. Jetzt hängt nur das Bild an der Bedingung.
+-->
+
+<p style="margin:0; padding:0 0 32px 0; font-size:28px; line-height:1.2; color:#555555;">
+  Wieder ein kurzes Update aus meiner AI-Dev-Woche: neue Artikel, Tools und Gedanken, die hängen geblieben sind. Viel Spaß beim Stöbern.
+</p>
+
+<!-- Blog und Artikel -->
+
+{% for item in items %}
+  {% if item.AUTHOR == "Oli" or item.AUTHOR == "Artikel" %}
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 28px 0;">
+    <tr>
+      <td style="padding:0 0 24px 0;">
+
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td valign="top" style="padding:0 12px 0 0;">
+              <div style="margin-top:2px; padding:0 0 24px 0; font-size:22px; line-height:1.25; font-weight:700; color:#3d6b4a;">
+                {{ item.TITLE }}
+              </div>
+            </td>
+            <td valign="top" align="right" style="padding:2px 0 12px 0; white-space:nowrap;">
+              {% if item.AUTHOR == "Oli" %}
+                <span style="display:inline-block; font-size:12px; line-height:1; letter-spacing:1px; text-transform:uppercase; color:#3d6b4a; background:#dff1e3; border:1px solid #bddfc5; padding:8px 12px; border-radius:16px;">Oli's Blog</span>
+              {% endif %}
+              {% if item.AUTHOR == "Artikel" %}
+                <span style="display:inline-block; font-size:12px; line-height:1; letter-spacing:1px; text-transform:uppercase; color:#3d6b4a; background:#dff1e3; border:1px solid #bddfc5; padding:8px 12px; border-radius:16px;">Artikel</span>
+              {% endif %}
+            </td>
+          </tr>
+        </table>
+
+        {% if item.ENCLOSURE %}
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td style="padding:0 0 16px 0;">
+              <a href="{{ item.LINK }}" target="_blank" rel="noopener noreferrer nofollow" style="text-decoration:none;">
+                <img src="{{ item.ENCLOSURE }}" alt="{{ item.TITLE }}" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border:0; border-radius:16px;">
+              </a>
+            </td>
+          </tr>
+        </table>
+        {% endif %}
+
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td style="font-size:17px; line-height:1.7; color:#222222; padding:0 0 10px 0;">
+              {% if item.DESCRIPTION %}{{ item.DESCRIPTION | safe }}{% endif %}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="{{ item.LINK }}" target="_blank" rel="noopener noreferrer nofollow" style="color:#3d6b4a; text-decoration:none; font-weight:600;">
+                <span style="color:#3d6b4a !important">Weiterlesen...</span>
+              </a>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+  {% endif %}
+{% endfor %}
+
+<!-- Morpheuxx -->
+
+{% for item in items %}
+  {% if item.AUTHOR == "Morpheuxx" %}
+
+    {% ifchanged %}
+      <h2 style="margin:0; padding:0; font-size:28px; line-height:1.2; font-weight:700; color:#111111;">Morpheuxx</h2>
+      <p style="margin:0; padding:0 0 24px 0; font-size:28px; line-height:1.2; color:#555555;">Kluge und manchmal philosophische Gedanken über das aktuelle Weltgeschehen von meinem AI-Agenten Morpheuxx.</p>
+    {% endifchanged %}
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 28px 0; border-bottom:1px solid #e8e8e8;">
+    <tr>
+      <td style="padding:0 0 24px 0;">
+
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td valign="top" style="padding:0 12px 0 0;">
+              <div style="margin-top:2px; padding:0 0 24px 0; font-size:22px; line-height:1.25; font-weight:700; color:#b24444;">
+                {{ item.TITLE }}
+              </div>
+            </td>
+            <td valign="top" align="right" style="padding:2px 0 12px 0; white-space:nowrap;">
+              <span style="display:inline-block; font-size:12px; line-height:1; letter-spacing:1px; text-transform:uppercase; color:#b24444; background:#f8e3e3; border:1px solid #efcaca; padding:8px 12px; border-radius:16px;">Morpheuxx</span>
+            </td>
+          </tr>
+        </table>
+
+        {% if item.ENCLOSURE %}
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td style="padding:0 0 16px 0;">
+              <a href="{{ item.LINK }}" target="_blank" rel="noopener noreferrer nofollow" style="text-decoration:none;">
+                <img src="{{ item.ENCLOSURE }}" alt="{{ item.TITLE }}" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border:0; border-radius:16px;">
+              </a>
+            </td>
+          </tr>
+        </table>
+        {% endif %}
+
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td style="font-size:17px; line-height:1.7; color:#222222; padding:0 0 10px 0;">
+              {% if item.DESCRIPTION %}{{ item.DESCRIPTION | safe }}{% endif %}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="{{ item.LINK }}" target="_blank" rel="noopener noreferrer nofollow" style="color:#b24444; text-decoration:none; font-weight:600;">
+                <span style="color:#b24444 !important">Weiterlesen...</span>
+              </a>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+  {% endif %}
+{% endfor %}
+
+<!-- Awesome Apps -->
+
+{% for item in items %}
+  {% if item.AUTHOR == "Awesome Apps" %}
+
+    {% ifchanged %}
+      <h2 style="margin:0; padding:0; font-size:28px; line-height:1.2; font-weight:700; color:#111111;">Aktuelle Apps</h2>
+      <p style="margin:0; padding:0 0 24px 0; font-size:28px; line-height:1.2; color:#555555;">Aktuelle Websites und Apps, die ich in den letzten Wochen entdeckt habe.</p>
+    {% endifchanged %}
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 28px 0; border-bottom:1px solid #e8e8e8;">
+    <tr>
+      <td style="padding:0 0 24px 0;">
+
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td valign="top" style="padding:0 12px 0 0;">
+              <div style="margin-top:2px; padding:0 0 24px 0; font-size:22px; line-height:1.25; font-weight:700; color:#245c92;">
+                {{ item.TITLE }}
+              </div>
+            </td>
+            <td valign="top" align="right" style="padding:2px 0 12px 0; white-space:nowrap;">
+              <span style="display:inline-block; font-size:12px; line-height:1; letter-spacing:1px; text-transform:uppercase; color:#245c92; background:#e4f0fb; border:1px solid #c8def5; padding:8px 12px; border-radius:16px;">Awesome Apps</span>
+            </td>
+          </tr>
+        </table>
+
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            {% if item.ENCLOSURE %}
+            <td valign="top" width="90" style="padding:0 16px 0 0;">
+              <a href="{{ item.LINK }}" target="_blank" rel="noopener noreferrer nofollow" style="text-decoration:none;">
+                <img src="{{ item.ENCLOSURE }}" alt="{{ item.TITLE }}" width="80" style="display:block; width:80px; max-width:80px; height:auto; border:0; border-radius:12px;">
+              </a>
+            </td>
+            {% endif %}
+            <td valign="top" style="font-size:17px; line-height:1.65; color:#222222;">
+              {% if item.DESCRIPTION %}{{ item.DESCRIPTION | safe }}{% endif %}
+              <div style="margin-top:10px;">
+                <a href="{{ item.LINK }}" target="_blank" rel="noopener noreferrer nofollow" style="color:#245c92; text-decoration:none; font-weight:600;">
+                  <span style="color:#245c92 !important">Weiterlesen...</span>
+                </a>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+  {% endif %}
+{% endfor %}
+
+<p style="margin:0; padding:0 0 32px 0; font-size:28px; line-height:1.2; color:#555555;">
+  Ich hoffe, es war etwas dabei, das dich interessiert hat oder dich auf neue Ideen gebracht hat.
+  Danke, dass du dabei bist, und bis zum nächsten Update.<br><br>
+  <em>Oli</em>
+</p>

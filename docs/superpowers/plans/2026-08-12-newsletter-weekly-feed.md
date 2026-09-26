@@ -1,5 +1,7 @@
 # Wochen-Feed für den Newsletter — Umsetzungsplan
 
+> **Überholt (2026-09-26):** Der Newsletter wechselt zu Brevo. Umgesetzt ist ein Wochen-Feed Fr–Do ohne `pubDate`-Umschreibung, siehe [docs/newsletter/README.md](../../newsletter/README.md).
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Ein zweiter RSS-Feed `/api/news/rss-weekly.xml`, der ausschließlich die letzte abgeschlossene Woche (Samstag bis Freitag) zeigt und samstags um 00:00 Berliner Zeit umschaltet, damit Buttondown Items erst einsammelt, wenn sie nicht mehr gelöscht werden können.

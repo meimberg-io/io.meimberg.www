@@ -1,5 +1,7 @@
 # Wochen-Feed für den Newsletter: verzögerter RSS-Feed mit Sa–Fr-Fenster
 
+> **Überholt (2026-09-26):** Der Newsletter wechselt zu Brevo. Umgesetzt ist ein Wochen-Feed Fr–Do ohne `pubDate`-Umschreibung, siehe [docs/newsletter/README.md](../../newsletter/README.md).
+
 *Datum: 2026-08-12 · Status: abgestimmt, bereit für Umsetzungsplanung*
 
 ## Ausgangslage und Ziel
