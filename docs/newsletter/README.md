@@ -26,9 +26,10 @@ Die Sektionen trennt das Template über `item.AUTHOR` (`Oli`, `Artikel`, `Morphe
 
 ## Anmeldung
 
-`/api/newsletter` meldet per Double-Opt-In bei Brevo an. Variablen: `BREVO_API_KEY` (Secret), `BREVO_LIST_ID`, `BREVO_DOI_TEMPLATE_ID`, `BREVO_DOI_REDIRECT_URL`.
+`/api/newsletter` meldet bis zur Umstellung weiter bei Buttondown an. Die Brevo-Variante (Double-Opt-In, Variablen `BREVO_API_KEY` als Secret, `BREVO_LIST_ID`, `BREVO_DOI_TEMPLATE_ID`, `BREVO_DOI_REDIRECT_URL`) liegt in Commit `0592063` und wurde für den Testbetrieb zurückgenommen; zur Umstellung per `git revert` des Revert-Commits wieder einspielen.
 
 ## Nach der Umstellung
 
+- Anmeldung auf Brevo umstellen (siehe oben), Abonnenten aus Buttondown importieren.
 - Buttondown-RSS-Automation abschalten.
 - [Design](../superpowers/specs/2026-08-12-newsletter-weekly-feed-design.md) und [Plan](../superpowers/plans/2026-08-12-newsletter-weekly-feed.md) des Buttondown-Wochen-Feeds sind überholt.
