@@ -10,6 +10,7 @@ Stand 2026-09-26: Brevo läuft im Testbetrieb, Buttondown verschickt weiter prod
 - Sortiert nach Sektion (Blog und Artikel, Morpheuxx, Awesome Apps), darin neueste zuerst.
 - Jedes Item trägt `<mb:section>` (`blog`, `morpheuxx`, `apps`, `other`) und `<mb:first>` (`1` beim ersten Item seiner Sektion, sonst `0`). Brevo macht daraus `item.MB_SECTION` und `item.MB_FIRST`.
 - `pubDate` ist der Freischaltzeitpunkt (Freitag 00:00 plus einige Sekunden), das Originaldatum steht in `<dc:date>`. Grund: Brevo übernimmt nur Items, deren `pubDate` zwischen den letzten beiden Prüfzeiten liegt (jeweils 30 Minuten vorher). Mit dem Originaldatum fielen Freitags-Beiträge vor der Prüfzeit heraus, Blogartikel mit Datum 00:00 immer.
+- `?test=1` ist der Testmodus für eine täglich prüfende Test-Integration: gleicher Inhalt, aber `pubDate` eine Stunde vor dem Abruf und `guid` pro Tag neu, damit Brevo die Woche bei jeder Prüfung als neu sieht. Nie für die echte Integration verwenden, sonst geht dieselbe Woche jeden Tag raus.
 - `?now=<ISO-8601>` berechnet das Fenster für einen anderen Zeitpunkt, zum Prüfen beliebiger Wochen, etwa `?now=2026-09-25T08:00:00%2B02:00`.
 - Wochengrenzen und Auswahl prüft `npx --yes tsx scripts/verify-weekly-window.ts`.
 

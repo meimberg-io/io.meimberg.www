@@ -54,7 +54,19 @@ function releasedPubDate(released: Date, index: number, count: number): Date {
   return new Date(released.getTime() + (count - index) * 1000)
 }
 
-function itemXml({ item, section, first }: WeeklyItem, pubDate: Date): string {
+/**
+ * Testmodus (`?test=1`) für eine täglich prüfende Test-Integration: pubDate eine Stunde vor dem
+ * Abruf, damit jede Prüfung die Woche als neu sieht, und die guid pro Tag neu, falls Brevo
+ * bereits verschickte Items wiedererkennt. Inhalt bleibt die abgeschlossene Woche.
+ */
+const TEST_LEAD_MS = 60 * 60 * 1000
+
+interface ItemStamp {
+  pubDate: Date
+  guid: string
+}
+
+function itemXml({ item, section, first }: WeeklyItem, stamp: ItemStamp): string {
   const image = item.imageUrl ? mailImageUrl(item.imageUrl) : null
   const imageXml = image
     ? `\n      <enclosure url="${escapeXml(image.url)}" type="${image.type}" />\n      <media:thumbnail url="${escapeXml(image.url)}" />`
@@ -64,8 +76,8 @@ function itemXml({ item, section, first }: WeeklyItem, pubDate: Date): string {
     <item>
       <title>${escapeXml(item.title)}</title>
       <link>${escapeXml(item.link)}</link>
-      <guid>${escapeXml(item.link)}</guid>
-      <pubDate>${pubDate.toUTCString()}</pubDate>
+      <guid isPermaLink="false">${escapeXml(stamp.guid)}</guid>
+      <pubDate>${stamp.pubDate.toUTCString()}</pubDate>
       <dc:date>${item.pubDate.toISOString()}</dc:date>
       <description><![CDATA[${item.description ?? ''}]]></description>
       <author>${source}</author>
@@ -76,7 +88,7 @@ function itemXml({ item, section, first }: WeeklyItem, pubDate: Date): string {
     </item>`
 }
 
-function feedXml(items: WeeklyItem[], lastBuildDate: Date): string {
+function feedXml(items: WeeklyItem[], lastBuildDate: Date, stampOf: (index: number, link: string) => ItemStamp): string {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:mb="${NEWSLETTER_NS}">
   <channel>
@@ -86,7 +98,7 @@ function feedXml(items: WeeklyItem[], lastBuildDate: Date): string {
     <language>de</language>
     <lastBuildDate>${lastBuildDate.toUTCString()}</lastBuildDate>
     <copyright>© ${new Date().getFullYear()} meimberg.io</copyright>
-    ${items.map((entry, index) => itemXml(entry, releasedPubDate(lastBuildDate, index, items.length))).join('\n')}
+    ${items.map((entry, index) => itemXml(entry, stampOf(index, entry.item.link))).join('\n')}
   </channel>
 </rss>`
 }
@@ -100,15 +112,28 @@ function resolveNow(req: Request): Date {
 
 export async function GET(req: Request) {
   const weekly = getWeeklyWindow(resolveNow(req))
+  const testMode = new URL(req.url).searchParams.get('test') === '1'
   const sources = await fetchNewsFeedSources()
   const items = sources.length > 0 ? await fetchAggregatedNews(sources) : []
-  const xml = feedXml(selectWeeklyItems(items, weekly), weekly.end)
+  const selected = selectWeeklyItems(items, weekly)
+
+  const fetchedAt = Date.now()
+  const testDay = new Date(fetchedAt).toISOString().slice(0, 10)
+  const stampOf = (index: number, link: string): ItemStamp =>
+    testMode
+      ? {
+          pubDate: new Date(fetchedAt - TEST_LEAD_MS + (selected.length - index) * 1000),
+          guid: `${link}#test-${testDay}`
+        }
+      : { pubDate: releasedPubDate(weekly.end, index, selected.length), guid: link }
+
+  const xml = feedXml(selected, weekly.end, stampOf)
 
   return new NextResponse(xml, {
     status: 200,
     headers: {
       'Content-Type': 'application/rss+xml; charset=utf-8',
-      'Cache-Control': 's-maxage=300, stale-while-revalidate=60'
+      'Cache-Control': testMode ? 'no-store' : 's-maxage=300, stale-while-revalidate=60'
     }
   })
 }
