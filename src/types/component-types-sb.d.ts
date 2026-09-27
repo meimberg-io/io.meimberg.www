@@ -121,9 +121,9 @@ export interface Blog {
   cm_ai_hint?: string;
   cm_image_prompt?: string;
   cm_intake_pending?: boolean;
+  hidden?: boolean;
   name?: string;
   cm_origin?: string;
-  hidden?: boolean;
   component: "blog";
   _uid: string;
   [k: string]: SbBlokKeyDataTypes;
