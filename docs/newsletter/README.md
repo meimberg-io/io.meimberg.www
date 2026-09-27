@@ -4,6 +4,12 @@ Stand 2026-09-26: Brevo läuft im Testbetrieb, Buttondown verschickt weiter prod
 
 ## Feed
 
+Brevo liest den normalen News-Feed `/api/news/rss.xml` und filtert selbst: in jede Kampagne kommen die Items, deren `pubDate` zwischen den letzten beiden Prüfzeiten liegt (jeweils 30 Minuten vorher). Damit das für Blogartikel stimmt, tragen sie eine echte Uhrzeit: der SmartEditor setzt das Storyblok-Feld `date` beim Veröffentlichen einer nicht veröffentlichten Story auf den Veröffentlichungszeitpunkt (Kanal-Einstellung „Veröffentlichungszeit in Feld" = `date`), der Blog-Feed liest den Wert als UTC. Storyblok-Bilder liefert der News-Feed als 1200-px-JPEG.
+
+Zum Testen den Wochentag der Prüfung in Brevo verschieben: bei wöchentlichem Zeitplan kommen die letzten sieben Tage.
+
+### Wochen-Feed (abgelöst)
+
 `/api/news/rss-weekly.xml` enthält genau die abgeschlossene Woche Freitag 00:00 bis Donnerstag 24:00, Europe/Berlin. Ab Freitag 00:00 steht die eben beendete Woche im Feed.
 
 - Höchstens 10 Items, weil Brevo pro RSS-Kampagne nicht mehr holt. Blog, Artikel und Morpheuxx gehen immer komplett rein, Awesome Apps füllen die restlichen Plätze, neueste zuerst.

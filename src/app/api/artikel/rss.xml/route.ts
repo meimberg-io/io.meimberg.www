@@ -5,6 +5,7 @@ import {
 } from '@/lib/storyblokShared'
 import { fetchStories } from '@/lib/storyblokApi'
 import type { ISbStoryData } from '@storyblok/react'
+import { parseStoryblokDate } from '@/lib/formatDate'
 import type { ArticleStoryblok, BlogStoryblok } from '@/types/component-types-sb'
 
 const BASE_URL = 'https://www.meimberg.io/'
@@ -43,7 +44,7 @@ function itemXml(story: ISbStoryData<TeaserStory>): string {
     ''
   const pubDate =
     (story.content as { date?: string })?.date
-      ? new Date((story.content as { date: string }).date).toUTCString()
+      ? parseStoryblokDate((story.content as { date: string }).date).toUTCString()
       : story.published_at
         ? new Date(story.published_at).toUTCString()
         : new Date().toUTCString()
