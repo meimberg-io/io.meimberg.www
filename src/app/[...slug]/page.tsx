@@ -34,6 +34,8 @@ export async function generateMetadata({ params, searchParams }: any): Promise<M
     description,
     alternates: { canonical },
     openGraph,
-    twitter
+    twitter,
+    // Versteckte Stories (siehe NOT_HIDDEN_FILTER) sind nur per direktem Link gedacht.
+    ...(story.content?.hidden ? { robots: { index: false, follow: false } } : {})
   }
 }

@@ -2,7 +2,7 @@ import { ISbStoriesParams, ISbStoryData, StoryblokClient } from '@storyblok/reac
 import { ArticleStoryblok, BlogStoryblok, GlobalsettingsStoryblok } from '@/types/component-types-sb'
 import { deriveSourceIconUrl, type RssFeedSource } from '@/lib/rss'
 import StoryblokClientJs from 'storyblok-js-client'
-import { RESOLVE_RELATIONS, RESOLVE_RELATIONS_NAV, STORY_TYPES } from '@/lib/storyblokShared'
+import { NOT_HIDDEN_FILTER, RESOLVE_RELATIONS, RESOLVE_RELATIONS_NAV, STORY_TYPES } from '@/lib/storyblokShared'
 
 let cachedApi: StoryblokClient | null = null
 
@@ -43,7 +43,8 @@ export async function fetchStories(
   const storyblokApi = getStoryblokApi()
   await storyblokApi.flushCache()
   const filterQuery: Record<string, unknown> = {
-    component: { in: componenttype }
+    component: { in: componenttype },
+    ...NOT_HIDDEN_FILTER
   }
   if (opts?.tag) {
     filterQuery.tag_list = { any_in_array: opts.tag }
@@ -98,7 +99,8 @@ export async function fetchAllStories(): Promise<ISbStoryData[]> {
     filter_query: {
       component: {
         in: STORY_TYPES
-      }
+      },
+      ...NOT_HIDDEN_FILTER
     },
     per_page: 100
   })

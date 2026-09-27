@@ -48,6 +48,7 @@ export interface Article {
     | Video
     | Youtube
   )[];
+  hidden?: boolean;
   component: "article";
   _uid: string;
   [k: string]: SbBlokKeyDataTypes;
@@ -122,6 +123,7 @@ export interface Blog {
   cm_intake_pending?: boolean;
   name?: string;
   cm_origin?: string;
+  hidden?: boolean;
   component: "blog";
   _uid: string;
   [k: string]: SbBlokKeyDataTypes;

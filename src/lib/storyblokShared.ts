@@ -25,6 +25,17 @@ export const RESOLVE_RELATIONS = [
   'luxarise_picture.pic_thumb'
 ]
 
+/**
+ * Blendet Stories mit gesetztem Häkchen „Versteckt" (Feld `hidden` an Artikel
+ * und Blog) aus allen Listen aus: RSS-Feeds und damit Wochen-Feed, Sitemap,
+ * Blogliste, automatische Teaserlisten. Die Story selbst bleibt über ihre URL
+ * erreichbar, etwa zur Freigabe durch einen Kunden.
+ *
+ * `is: false` trifft auch Stories, die das Feld noch nie gespeichert haben —
+ * gegen die Delivery API geprüft.
+ */
+export const NOT_HIDDEN_FILTER = { hidden: { is: 'false' } }
+
 export const STORY_TYPES = [
   COMPONENTTYPE_BLOG,
   COMPONENTTYPE_ARTICLE,
