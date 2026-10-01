@@ -121,8 +121,11 @@ NEXT_PUBLIC_STORYBOOK_DISABLECACHING=false
 NEXT_PUBLIC_MATOMO_TRACKER=false
 NEXT_PUBLIC_STORYBLOK_EDITOR_SECRET=your-secret-here
 REVALIDATE_SECRET=your-revalidate-secret-here
-# Newsletter (server-side only): https://buttondown.com/settings/api
-BUTTONDOWN_API_KEY=
+# Newsletter (Brevo, server-side only)
+BREVO_API_KEY=
+BREVO_LIST_ID=
+BREVO_DOI_TEMPLATE_ID=
+BREVO_DOI_REDIRECT_URL=
 ```
 
 ### Port Mapping
