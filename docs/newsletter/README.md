@@ -1,6 +1,6 @@
 # Newsletter über Brevo
 
-Stand 2026-09-26: Brevo läuft im Testbetrieb, Buttondown verschickt weiter produktiv über `/api/news/rss.xml`. Dieser Feed bleibt unverändert, bis umgestellt ist.
+Stand 2026-10-01: Der Newsletter läuft über Brevo (RSS-Integration auf `/api/news/rss.xml`, freitags 10:00). Buttondown ist abgeschaltet.
 
 ## Feed
 
@@ -37,10 +37,9 @@ Die Sektionen entstehen im Template aus nativen Brevo-Blöcken: ein Dynamic-cont
 
 ## Anmeldung
 
-`/api/newsletter` meldet bis zur Umstellung weiter bei Buttondown an. Die Brevo-Variante (Double-Opt-In, Variablen `BREVO_API_KEY` als Secret, `BREVO_LIST_ID`, `BREVO_DOI_TEMPLATE_ID`, `BREVO_DOI_REDIRECT_URL`) liegt in Commit `0592063` und wurde für den Testbetrieb zurückgenommen; zur Umstellung per `git revert` des Revert-Commits wieder einspielen.
+`/api/newsletter` meldet per Double-Opt-In bei Brevo an: Brevo schickt die Bestätigungsmail, erst nach dem Klick landet der Kontakt in der Liste. Konfiguration: Secret `BREVO_API_KEY` und Variablen `BREVO_LIST_ID` (Liste 2), `BREVO_DOI_TEMPLATE_ID` (Double-Opt-In-Vorlage aus Brevo) und `BREVO_DOI_REDIRECT_URL` (Seite nach der Bestätigung) in GitHub. Fehlt eine davon, antwortet die Route mit „nicht konfiguriert". Die Buttondown-Variante steht in der Git-Historie (Commit `0592063` ist die Umstellung).
 
 ## Nach der Umstellung
 
-- Anmeldung auf Brevo umstellen (siehe oben), Abonnenten aus Buttondown importieren.
-- Buttondown-RSS-Automation abschalten.
+- Abonnenten sind importiert, Buttondown ist abgeschaltet, die Anmeldung läuft über Brevo.
 - [Design](../superpowers/specs/2026-08-12-newsletter-weekly-feed-design.md) und [Plan](../superpowers/plans/2026-08-12-newsletter-weekly-feed.md) des Buttondown-Wochen-Feeds sind überholt.
