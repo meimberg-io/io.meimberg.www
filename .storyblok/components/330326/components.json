@@ -4,7 +4,7 @@
     "display_name": null,
     "description": "",
     "created_at": "2025-03-15T09:58:02.400Z",
-    "updated_at": "2026-09-27T21:22:31.637Z",
+    "updated_at": "2026-09-27T22:04:06.615Z",
     "id": 7090004,
     "schema": {
       "pagetitle": {
@@ -21,7 +21,7 @@
         "type": "datetime",
         "pos": 2,
         "id": "pu87N2QMR1eNibipaOlhww",
-        "disable_time": true,
+        "disable_time": false,
         "required": true
       },
       "headerpicture": {
@@ -195,7 +195,7 @@
     "display_name": "Blog",
     "description": "",
     "created_at": "2025-10-26T16:37:49.287Z",
-    "updated_at": "2026-09-27T21:22:31.741Z",
+    "updated_at": "2026-09-27T22:01:52.171Z",
     "id": 105705755804828,
     "schema": {
       "pagetitle": {
@@ -212,7 +212,7 @@
         "type": "datetime",
         "pos": 2,
         "id": "pu87N2QMR1eNibipaOlhww",
-        "disable_time": true,
+        "disable_time": false,
         "required": true
       },
       "headerpicture": {
@@ -1477,7 +1477,7 @@
     "display_name": null,
     "description": "",
     "created_at": "2025-03-15T09:41:37.232Z",
-    "updated_at": "2026-03-01T13:26:41.711Z",
+    "updated_at": "2026-10-21T19:57:29.043Z",
     "id": 7089998,
     "schema": {
       "image": {
@@ -1531,6 +1531,14 @@
         ],
         "id": "xZtELDrnQaeB47prOKFNbg",
         "default_value": "default"
+      },
+      "caption": {
+        "type": "textarea",
+        "pos": 3,
+        "display_name": "Bildunterschrift",
+        "description": "Optional, wird unter dem Bild ausgegeben. Alt-Text gehört ins Bildfeld.",
+        "max_length": "500",
+        "id": "_M3wkkovSH2-UWyhrwy47A"
       }
     },
     "image": null,

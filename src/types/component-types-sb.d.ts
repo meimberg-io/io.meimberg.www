@@ -469,6 +469,7 @@ export interface Picture {
   image?: StoryblokAsset;
   style?: "" | "normal" | "keyvisual" | "small";
   spacing: "" | "default" | "large";
+  caption?: string;
   component: "picture";
   _uid: string;
   [k: string]: SbBlokKeyDataTypes;
