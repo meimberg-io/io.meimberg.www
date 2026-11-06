@@ -12,7 +12,7 @@ export function SimplePageLayout({ blok, layout, title, intro, children }: {
 	intro: string | false | undefined,
 	children?: React.ReactNode
 }) {
-	const containerClass = layout === 'home' ? 'mt-9 sm:mt-9' : 'mt-16 sm:mt-32'
+	const containerClass = layout === 'home' ? 'mt-12 sm:mt-16' : 'mt-16 sm:mt-32'
 	
 	// For narrow layout, use a custom container with max-w-3xl like the project pages
 	if (layout === 'narrow') {
