@@ -1,0 +1,8 @@
+{
+  "enabledPlugins": {
+    "meimberg-io-base@io-meimberg-colony": false,
+    "meimberg-io-development@io-meimberg-colony": false,
+    "meimberg-io-meimberg-all@io-meimberg-colony-meimberg": false,
+    "meimberg-io-meimberg-digital@io-meimberg-colony-meimberg": false
+  }
+}

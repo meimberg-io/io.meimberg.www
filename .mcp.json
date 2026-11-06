@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "linear": {
+      "type": "http",
+      "url": "https://mcp.linear.app/mcp",
+      "headersHelper": "node ${HOME}/.config/colonies/secret.mjs headers 'Authorization=Bearer LINEAR_TOKEN_MEIMBERG'"
+    },
+    "positioning": {
+      "type": "http",
+      "url": "https://positioning.meimberg.digital/api/mcp",
+      "headersHelper": "node ${HOME}/.config/colonies/secret.mjs headers 'Authorization=Bearer POSITIONING_TOKEN_MEIMBERG'"
+    },
+    "smarteditor": {
+      "type": "http",
+      "url": "https://smarteditor.app/api/mcp",
+      "headersHelper": "node ${HOME}/.config/colonies/secret.mjs headers 'Authorization=Bearer SMARTEDITOR_TOKEN_MEIMBERG'"
+    }
+  }
+}

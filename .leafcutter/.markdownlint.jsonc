@@ -1,0 +1,18 @@
+{
+  // Every markdownlint rule at its default, then what prose in a governed repository needs.
+  "default": true,
+  // Line length: off. Without this, MD013 caps every line at 80 characters and reports every
+  // paragraph of every document the scaffold writes ("Line length [Expected: 80; Actual: 86]").
+  "MD013": false,
+  // Several top-level headings in one file: the vendor entry documents are concatenations.
+  "MD025": false,
+  // A repeated heading is a defect only among siblings; a generated CHANGELOG repeats "Minor Changes".
+  "MD024": { "siblings_only": true },
+  // Inline HTML, bare URLs, bold as a pseudo-heading and fences without a language all occur in prose.
+  "MD033": false,
+  "MD034": false,
+  "MD036": false,
+  "MD040": false,
+  // Compact pipe tables.
+  "MD060": false,
+}

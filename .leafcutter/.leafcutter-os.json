@@ -1,0 +1,7 @@
+{
+  "kind": "local",
+  "scope": "@meimberg-io",
+  "vendors": [
+    "claude"
+  ]
+}

@@ -1,0 +1,16 @@
+minimumReleaseAgeExclude:
+  - '@leafcutter-os/*'
+  - '@leafcutter-governance/*'
+  - '@leafcutter-strict/*'
+  - '@leafcutter-library/*'
+  - '@meimberg-io/*'
+
+# The artifacts of this local colony's own, one package per artifact, never published (leafcutter-os#628).
+packages:
+  - 'packages/*/*'
+
+# This colony names only its colony package, which carries the engine; governance.config.mjs imports
+# @leafcutter-os/rules from the root, and pnpm links a package no manifest here names into the root only when it is
+# hoisted. The version is the colony package's, never a pin of this repository's own (CORE-FUN-root-colonys-package-carries-engine).
+publicHoistPattern:
+  - '@leafcutter-os/rules'
