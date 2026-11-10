@@ -12,11 +12,11 @@ importers:
         specifier: ^0.8.1
         version: 0.8.1
       '@meimberg-io/collection-development':
-        specifier: ^0.3.53
-        version: 0.3.53(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/skill-secrets@0.2.0)
+        specifier: ^0.3.55
+        version: 0.3.55(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/collection-meimberg-all':
-        specifier: ^0.2.32
-        version: 0.2.32(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/adapter-local-files@0.1.10)(@meimberg-io/adapter-todoist@0.1.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/collection-base@0.9.4)(@meimberg-io/datapool-todos@0.4.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-google-account@0.2.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-onedrive@0.2.0)(@meimberg-io/skill-secrets@0.2.0)(@meimberg-io/skill-todoist-rest@0.1.0(@meimberg-io/skill-secrets@0.2.0))
+        specifier: ^0.2.33
+        version: 0.2.33(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/adapter-todoist@0.1.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/collection-base@0.9.6)(@meimberg-io/datapool-todos@0.4.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-google-account@0.2.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-onedrive@0.2.0)(@meimberg-io/skill-secrets@0.2.0)(@meimberg-io/skill-todoist-rest@0.1.0(@meimberg-io/skill-secrets@0.2.0))
       '@meimberg-io/colony':
         specifier: ^0.3.9
         version: 0.3.9(@leafcutter-governance/check@1.2.0(zod@4.6.7))(@leafcutter-governance/compose@1.2.0(zod@4.6.7))(@leafcutter-governance/declare@1.2.0(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
@@ -250,8 +250,8 @@ packages:
   '@meimberg-io/adapter-linear-meimberg@0.1.1':
     resolution: {integrity: sha512-JzxWHfqtU2rbVkQ8dllRADIijNG4Zlan5U+cgUjMlCPcVHSKQtwKUBNnTz6Lki0LHf0caTAYL4j1O8nzxeoT6A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-linear-meimberg/0.1.1/7c5b5afb5b716b0b139c96488bf1afb02743f6ca}
 
-  '@meimberg-io/adapter-local-files@0.1.10':
-    resolution: {integrity: sha512-f4dDvdBWx+oF1/zQZMwWlL1ZYBzL1lfgB06eDKFemg7ZrCQRIQlFz+H44o6SXZITA+AEFqzdgxbPgJy1XwVMtg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-local-files/0.1.10/d9361892fa2f467278010a755819bac7a445c805}
+  '@meimberg-io/adapter-local-files@0.1.11':
+    resolution: {integrity: sha512-jss5RKQwvoSTMW5v2OIrFjgzHkKEb3SkHWqIfxQssNN+Hi4lb6YPRs/YiXTKw2i9rm5vUXgKsjUbGNLRbjmx9Q==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-local-files/0.1.11/15db9ed0cd9a92be02117d6d8d971947cbcf01db}
 
   '@meimberg-io/adapter-markitdown@0.1.2':
     resolution: {integrity: sha512-Wm8ZADWdk8WoG1hU4WXGI0s0C3cG6sggLwyScxCbGMUorYXF529AEzLe6k4+hysqedFd8wUpX7V31XwCInafOQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-markitdown/0.1.2/e7b9873adb77387095d8e3db5843c49da2ee55b6}
@@ -326,36 +326,36 @@ packages:
     peerDependencies:
       '@meimberg-io/skill-secrets': ^0.2.0
 
-  '@meimberg-io/agent-architect@0.1.10':
-    resolution: {integrity: sha512-hL26Q9al9mWlYFeq8XCMUhCLudsna00o6AODmoUK5+415k9Nb/rCXRRiAb7YgyW2EY3ccsCeD3MsCAqFm+ELBA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-architect/0.1.10/fcd316e84bbb78dab45cc4ab25c4c3afaaf2d314}
+  '@meimberg-io/agent-architect@0.1.11':
+    resolution: {integrity: sha512-oF3g7AfqBy3ocVUeEZ8KRjP7QgUOIEN04pJ5oEZ2P9Ulyk0tTWH4yoMIRUxSg6bACq1/bDtWNsbBWu9INghxyg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-architect/0.1.11/4ac2a43bffb64f02f97089eb79f59000364e9796}
 
-  '@meimberg-io/agent-developer@0.1.17':
-    resolution: {integrity: sha512-qc5fyi5b2t6yuAEOWw19IXrzgmby3AzX6J+gFytug2RIb41rPKqaUVHHBJfkZj2Q1YhN03sMU0DsuiGsQ67H+A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-developer/0.1.17/bde66a6e32a9581c6f72352bdcab3899d28eebb0}
+  '@meimberg-io/agent-developer@0.1.19':
+    resolution: {integrity: sha512-8/KM3eNpgsNJA8vQogfpjN+cLjDF3nU8/n/YMr6vEu91LQI97i1+VWi7H399ZA+TWPaNYeI6EjJURUOGm0eAhw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-developer/0.1.19/9de94ff5403ff20f85e0a329519ae17878a3c8aa}
 
-  '@meimberg-io/agent-legacy-requirements-engineer@0.1.12':
-    resolution: {integrity: sha512-0ozbWg6/n0ZqK6gOQoyNC/JL72GL/S0zg+JtgTAgoVtVQRr1A4N4HO5e3wuI5mZPUhuFlRQpIy+3PXyFpmX++A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-legacy-requirements-engineer/0.1.12/bccc599467219ea3deac90a3b65fd20681b7afee}
+  '@meimberg-io/agent-legacy-requirements-engineer@0.1.13':
+    resolution: {integrity: sha512-v169mmvohLC0FG7b+N+9UirpxUBBZqsSLf24xgTYT8eW0Zul01omSNm9KUqGxFOIwAgHdDdgiq8KTiE20Sr5/w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-legacy-requirements-engineer/0.1.13/5b32a9e41794ff7bc82ad2f2d65ea8d441ba7a01}
 
-  '@meimberg-io/agent-requirements-analyst@0.1.14':
-    resolution: {integrity: sha512-Qvjj5NjFJii0UQtCoK8UjjbnWzZv0qptrUtE6Pmu8qToemDEsbdgoT55ZFt6lirHEP2nI972AjGwdZAXRc9vwg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-requirements-analyst/0.1.14/403bd094d47225f68a72ce9f454bf267e90bcd45}
+  '@meimberg-io/agent-requirements-analyst@0.1.16':
+    resolution: {integrity: sha512-rW/QYH1iBPGC0ie0QCR4UA6kq2rc5tdVDf9hMwEQZhpu8TlnrU94SjgCwYXtvIqhn9RdsqUhqhpUOzx3gK/QFQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-requirements-analyst/0.1.16/aa943febb0911ff9549bd8fe60d066bd9f17025a}
 
-  '@meimberg-io/agent-technical-designer@0.1.14':
-    resolution: {integrity: sha512-ZCcoAkap+UcMxgPx80t0XgZ/xFyRfqk9UpdpJ1dktUsPXkYXH7TcjUyuXItxAdigh2rD/9YC5viXU08gocP5IA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-technical-designer/0.1.14/8caf8e023dbaae1888e706b733fb65cb461a60da}
+  '@meimberg-io/agent-technical-designer@0.1.16':
+    resolution: {integrity: sha512-pJSMNxKRC3um4JOnBmrvbfRp6SWqG/UzHebpe7JZyA8Q2BbZLwoOiB5c93ZJtQfZBmQe3hSEFO0fGWBEnmCrBw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-technical-designer/0.1.16/c59597d0908a9ccb8be4fb17056737b9b7111649}
 
-  '@meimberg-io/collection-base@0.9.4':
-    resolution: {integrity: sha512-JXWaDEqQR6jnvumlOD7zOKJswaAyx+P9Hr0LcrSkTXY6oC8/Esx7Ppqg5lm1xN3c3WCWgMI/9MmXbTlVTKfKWw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-base/0.9.4/7bc28ebbab2069261f2115402afa3f11c94b62e0}
+  '@meimberg-io/collection-base@0.9.6':
+    resolution: {integrity: sha512-H+Q9wFm/V+aoDrCLNUKI47mqPLmJpiAmEScKJypYW0TZykUAISjyW1VpjjIUMjtO097iKt49QdDb6pHEnFt1gg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-base/0.9.6/9d86acc933aa4800a3866574a658279160edb783}
 
-  '@meimberg-io/collection-development@0.3.53':
-    resolution: {integrity: sha512-6gUjPEEHNI/c9ORA1EsxJTQDyiq1wb8lATuwXsDuNNYIXJz2ZZyyX5rPKajszA3Jt5uKB67RR9rbpwHxNjVvRw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-development/0.3.53/38305e92e43c72f15d76dea82de6047bff130479}
+  '@meimberg-io/collection-development@0.3.55':
+    resolution: {integrity: sha512-YBWbm9RFCqjtAYjm1DPpuMBmaMUWvw7AlIHwQr4mRY0D01uz1N0vZmOY3SYBEqWg0I3/KTRdbHsVaFYOIog9fg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-development/0.3.55/c6569ba26eb3152d61f5350e1efd9ee4a342c283}
 
-  '@meimberg-io/collection-meimberg-all@0.2.32':
-    resolution: {integrity: sha512-Z/jet7y2zNo06AvkhmJdPpZKjz0I4U/DOieoQCl1SFX9TTKJkJYGVYVCrIPRzpDMI+/m6kGuhL8jQloPxrHQiQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-meimberg-all/0.2.32/22f8f9692c0219814f77259f62388ac6413c6897}
+  '@meimberg-io/collection-meimberg-all@0.2.33':
+    resolution: {integrity: sha512-fbKzwA9UXLbnaKafPNfqvm4DmtKY5GQjyuxiHwRYJGwGmWOtRya6nCCtfvZu8SMlYfrmVtsZzIjtQ/LmkjEU0Q==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-meimberg-all/0.2.33/ff2b6cf035b52d3eef15cb5d9c271f5dec4bd69e}
     peerDependencies:
-      '@meimberg-io/collection-base': ^0.9.4
+      '@meimberg-io/collection-base': ^0.9.6
 
-  '@meimberg-io/collection-meimberg-digital@0.6.2':
-    resolution: {integrity: sha512-cizq7LwbVYR+4BBtRV1G6VAoUrfei7bjAclz4qYaqvJI5nH5aFbmx3/Of/lYPvbkKnsIqqkWJSgVPYDhw6tQjQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-meimberg-digital/0.6.2/ca7385f374682da8272486c4359a4a5664723752}
+  '@meimberg-io/collection-meimberg-digital@0.6.3':
+    resolution: {integrity: sha512-HhB2CcmJCOBowIGIwXyiOULMvvuIfeL4slXz+RrqQN0JKpmz4oI1n12qUinO9CcVpPUAacLNe6ppJQdKaUz7Og==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-meimberg-digital/0.6.3/20539b8a89a336b2b6f22f6c6807382825a77b23}
     peerDependencies:
-      '@meimberg-io/collection-base': ^0.9.4
+      '@meimberg-io/collection-base': ^0.9.6
 
   '@meimberg-io/colony@0.3.9':
     resolution: {integrity: sha512-x8S99PyomeRAAPwNcnvvDUpus6FaePBewJFj61JMh94zvx+QSM0Tm3cN1x0/2tc7EiqriP9bpb5Cg4ubqKW7FQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/colony/0.3.9/619adb503daab5048ad37bc975f7261fe6568a26}
@@ -414,8 +414,8 @@ packages:
   '@meimberg-io/foundation-code-conventions@0.1.2':
     resolution: {integrity: sha512-AJjROAJx9bqoXXvWaCCThTgAmrxoWXVXexKvIXHZsECnggDEn9pLHRmxilx/li5k/t/szW1t08rISTj/xwSKSQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-code-conventions/0.1.2/ec268f5eb8acef187ee160e804569860246c3020}
 
-  '@meimberg-io/foundation-communication@0.2.0':
-    resolution: {integrity: sha512-66XsV7tU/0PjwtSjf1FF6pR8n8O6HzFzB1ig78VZ+6928ZA8eNwT5vMtMjY4/A+slUI8DEuT2AT5QOctFG0aLA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-communication/0.2.0/90283f68c65dcf32a9f997373bead7f7dd957535}
+  '@meimberg-io/foundation-communication@0.3.0':
+    resolution: {integrity: sha512-4gmC7iR1UdcQ8kLhdbyLq9GR8B6MOe+blSSjSd3fjp/Yc+avMvgGRU4tuj/uEvR1fbiSSxlOSvYjUlkNwxhmVA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-communication/0.3.0/7215407ce0759f35de025e6f9c4a535cc2ec70db}
 
   '@meimberg-io/foundation-delivery-conduct@0.3.0':
     resolution: {integrity: sha512-mOkuO6gVGtXfb+27jz6PO0GKPf9s2BVO/lOxOt7UsuNj4RfAW7fJlxSSywOK1S32xUtge7CKBZHLNnr4zcNVwg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-delivery-conduct/0.3.0/41f47cb7c2a9b89abfe6f48e658e5a65554c06e6}
@@ -423,8 +423,8 @@ packages:
   '@meimberg-io/foundation-forbidden-commands-and-secrets@0.1.6':
     resolution: {integrity: sha512-rAvTGBqENvPg714hlxS9N8I+Jp/g8Vp1wq8+a7uvFswnuJDU1y0TlWXaMiFZm6IaHa6jl+1M89I9WmKC8Udrpg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-forbidden-commands-and-secrets/0.1.6/1f396f8710eda1cff77613bbb406e85cfaee4bd1}
 
-  '@meimberg-io/foundation-git-conduct@0.2.0':
-    resolution: {integrity: sha512-99OeWo2BYesX7m3zXC91XVNR0xSrNRntNkMske6B/6rsFxErprtSHaN9CVUt1rbO736LOWKkHggMo1kaD2mlQg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-git-conduct/0.2.0/c6e66ea7ced19471c8fa1112deabc2fe81f3628c}
+  '@meimberg-io/foundation-git-conduct@0.3.0':
+    resolution: {integrity: sha512-QR4/E01/4XT+hYjPHMgy+01TyIdsvIO+uJf8z8Y59kfyUu8dWkhfWqmx7p/DcZjyBkaRDhUkRAciNE6B/Rn/bQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-git-conduct/0.3.0/839950b98a5aa8d584de564776e01654136021e5}
 
   '@meimberg-io/foundation-knowledge-in-repo@0.2.4':
     resolution: {integrity: sha512-44u1ZTT41pmWPcZimAmRlmzI3MvFK5Zsn20edszmIAT3srsC9Sqg1YN54uD8kthx+D6kQrl7EBxuDs9gbBeftQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-knowledge-in-repo/0.2.4/5ee1c960ff26e078dbfac42226693c21439551cf}
@@ -438,29 +438,29 @@ packages:
   '@meimberg-io/method-single-lens-review@0.1.2':
     resolution: {integrity: sha512-rUO826dNqryn9mhjFrO6+8ZPwMGa3TSdEZlsBwyN0cReTWORToke8E748Vl12tgDk1lS8VDGMituFbQq0ax1Hw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/method-single-lens-review/0.1.2/d5ae0afc752b9a7660e099e4b8bf11692b7b90af}
 
-  '@meimberg-io/playbook-extract-requirements@0.1.12':
-    resolution: {integrity: sha512-dozV/RuOLuHweE8xLQjCHPwvvIrtPqreI04wTtckeDVlc5lj5QefI5NJ4OFqIIp+Rtm+K5uuibcyblNZXRtmWg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-extract-requirements/0.1.12/6f57e59c21298abb176aeee898e4ac6579e20a08}
+  '@meimberg-io/playbook-extract-requirements@0.1.13':
+    resolution: {integrity: sha512-nuxy3zaL4ztMd0WpQ692XQfCCtvjP4M7lOibmltJIjzHp9WY8hqnSIHJOypXlUoJ7V7RDkH49tkIVMUK18JdXw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-extract-requirements/0.1.13/90073972bfa9e2de708bcfa26f63120337a4b39e}
 
-  '@meimberg-io/playbook-fix-bug@0.2.10':
-    resolution: {integrity: sha512-uvo2FXH25+DPVNhoVdFLa3KFRBtThPVrrUjkl4XCu0puXnOBmJeCRuYav7Cd07/E9yumoY5uUWu6UmPpj+HfAA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-fix-bug/0.2.10/287dbed2af6a868c2d510f3e272eb8fdaec2f276}
+  '@meimberg-io/playbook-fix-bug@0.2.11':
+    resolution: {integrity: sha512-Kypnp5XeYHaIgtye/QNrGAd6HMOfi2ueQjIvjTN4bjiZLUgtnJGD1swVsSh1TSQ8u7lE/Fi5KTExdDTKNG9zEQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-fix-bug/0.2.11/f4e7e570fc35595f5d8b62f1f7ac2c5455f218f7}
 
-  '@meimberg-io/playbook-implement-feature@0.1.14':
-    resolution: {integrity: sha512-ckN/lJREvhZDF+bzjMGF7GoWcPIomobOrtlf/PorUJbq4+Z2lzN+LhZYSncMtanQxAYM7X0jJZlQhniSZZffLQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-implement-feature/0.1.14/e91ecaf67696144cfd952c99a1d0fa733984b33e}
+  '@meimberg-io/playbook-implement-feature@0.1.16':
+    resolution: {integrity: sha512-9dG8ib/tXFLQf9rqsy5nZa66Xi6EuPS5KOa/gTdi961cZPAkanvO+aCpdfeFhsWoj0e9GCQWGMVhVpkSNJizHg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-implement-feature/0.1.16/1a2ae386ba5c532c58ce960ccaf7e241db96b092}
 
-  '@meimberg-io/playbook-implement-in-worktree@0.1.14':
-    resolution: {integrity: sha512-c9hjgi/ong41aOWwPfCFX4yGGQX3FG90Sikd8N9NIE+L314o0DlmS6Us6zOD/DqSTVfRENtrIqEzhDaWeMELRQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-implement-in-worktree/0.1.14/9e584d73a29a3d1b0af87f7431e059b1b415b9c4}
+  '@meimberg-io/playbook-implement-in-worktree@0.1.16':
+    resolution: {integrity: sha512-cDtNKv8Y+NgopYDfyQybTL9WF/Eob8diWsMTmf5nSZxq9epUZplqPjObyMzysUBiyh21SVG/tDZ7e8+Mab/Tug==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-implement-in-worktree/0.1.16/07d20f69b5f983396f0d20c9be8607e7c5a49428}
 
-  '@meimberg-io/playbook-rebuild-legacy-app@0.1.13':
-    resolution: {integrity: sha512-7BDzMvjQDa60NLej5ruBg+LIRKLS5NCfGxIyX6fpFOey1fwWtz0tsbF3JVJkVj769Wv88SM6jiVBgC4s9u47Kg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-rebuild-legacy-app/0.1.13/b22f8aed13752c3dcaa36f896db0abcf556ae065}
+  '@meimberg-io/playbook-rebuild-legacy-app@0.1.14':
+    resolution: {integrity: sha512-OYbLrrkjUMCZROfMoFowOmoqGFGdKYIoXLdI/kfxG2l+1ZVWxGQyMO7hmE7U8MD9Hz2UmddKu5J67irdqQY1IQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-rebuild-legacy-app/0.1.14/fefde44c12f10307b33ec6b308f82278ad16d071}
 
-  '@meimberg-io/playbook-requirements-to-dev@0.1.14':
-    resolution: {integrity: sha512-F/kKanN53LisJQllLjW1HzZb3bubxguHaIIVmecSdCJamdzXdYLgwwaNhpFwC3yC8KnQmK1WvfuAMG0hY6jcDQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-requirements-to-dev/0.1.14/09a3825617d06fabb048db57ce3e8771091add3d}
+  '@meimberg-io/playbook-requirements-to-dev@0.1.16':
+    resolution: {integrity: sha512-yjEAPf5LBSECIoWIXHGH5TKB1ys3hVsMOfq5ORB8BK4oQm0vyFqFjmpm+89p2qzEAoXLGDG190N00OK1ydzRSw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-requirements-to-dev/0.1.16/699056702761eb00c039a02ac39aed050c27bfd2}
 
-  '@meimberg-io/playbook-specify-and-review@0.1.11':
-    resolution: {integrity: sha512-T1pf3l1LKjY1hVAoe8zUb/paN/tsV27kNO1H9XP5VwBUSt9wb8KSwjPA3+qq5QWgMaJJGTgNzyb8CWa4iGlf6w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-specify-and-review/0.1.11/8c41228b6239f31d12905a458f58c6b5d95b7085}
+  '@meimberg-io/playbook-specify-and-review@0.1.12':
+    resolution: {integrity: sha512-cxzUF9ivtY25xzUdiiq/ciLBa7q4FoT+K//jUzCA8U8Zi7HOY7PcdcGHeH/aI2nO9eKuhCirIQdPUhbWZrc1Ng==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-specify-and-review/0.1.12/35574ac1c5430b8e1f092f05c3f90c22e627f0a0}
 
-  '@meimberg-io/playbook-technical-concept@0.1.14':
-    resolution: {integrity: sha512-rNpMO5V0x7KHmEVnC+s3/XX8PZg8ZeEnDlWYCHKiGpP9kMHtbiMHQ6lrF8JOklYIa+QsbiG/8mDA3dMMXs0zIg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-technical-concept/0.1.14/967a0d16ca3878a0353ba031c063134388b65d9a}
+  '@meimberg-io/playbook-technical-concept@0.1.16':
+    resolution: {integrity: sha512-u2B+ZqxtURL47/XiiBEYpyNcq4BAcCRn5vZMHwvg0ANW3tyJXA0GnfAUTJP+fblYx7AVWGfqZbHvgBhE+bfSXQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-technical-concept/0.1.16/31c00dc05dd9d255978d58fd076cfc763d80dced}
 
   '@meimberg-io/role-author@0.1.2':
     resolution: {integrity: sha512-kRoqXFKEVrO+QY//+PbB3hBTK3FKqxPlNaNvnW1ktasaMBFQcCEr0eMOLykMi4dU5c4TKsNGNLzUJosgiQzYGg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/role-author/0.1.2/371af6227c7739f54a04e2d47e3fad91315bf127}
@@ -480,17 +480,17 @@ packages:
   '@meimberg-io/skill-bookkeeping@0.3.11':
     resolution: {integrity: sha512-vZOt3v7NvWME/6eZgrf7exRANMvK0ZezC/Z6+DiR3w2HclzhKXxtlLS8UGc7L2eIwR0l4Svs1qEh2OqkpqOTlg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-bookkeeping/0.3.11/27ce563f8c5ecc5fb5022bb8819c16476208284e}
 
-  '@meimberg-io/skill-brainstorming@0.2.3':
-    resolution: {integrity: sha512-rvjIS0odjH8ssMiRWZqCbrAha8fTb22dAQkbVckJf0dExJa/SIFjh34Yk5agF/vAJI4winUZACgPz22X8c7s5g==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-brainstorming/0.2.3/2040668ff3a692bc017eca57fe59d593c9a081bc}
+  '@meimberg-io/skill-brainstorming@0.2.4':
+    resolution: {integrity: sha512-KRW6+VYL8/AEBLpJL6gHYr5pwTy9pdT8DPbmy+RUrMYzUN0UvZ3jILeoJOGbm8ZuAPWlolrplAgJl/KnjD1diA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-brainstorming/0.2.4/7c4ebbe1717d37e1f67acdc21c782a68e04af9ec}
 
   '@meimberg-io/skill-build-and-ci@0.1.3':
     resolution: {integrity: sha512-oTv5zwGawtwMwNhOks5jkW1NY5us7xkWr9daCpdTUb2lhreZBVhupbIRVahMrKkBkdk8V79F3ehESQzHevQVcg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-build-and-ci/0.1.3/4ed7f4cf7f9c88cc9b78928b4b9a07287e58c256}
 
-  '@meimberg-io/skill-capture-project-memory@0.1.7':
-    resolution: {integrity: sha512-tz2DnwJqFcOsgYiO5ZIwHLwvLvsmJUDQyypVLka3+NGItkaxBisdCgvIsKeqFQZJBeV0GdBfrQQhBS0v8DHHcg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-capture-project-memory/0.1.7/31700b84ad344b74650d928cb15f1aaf2acead0a}
+  '@meimberg-io/skill-capture-project-memory@0.1.8':
+    resolution: {integrity: sha512-zEhV/+pV4oV6pG5y/uGZ533z4WOr2shtEh15clEsoyq6rAFKTQOHBjdbSCf8BesHIJz5yzYjJw1XMkJFMYYgXg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-capture-project-memory/0.1.8/0bffee7502c9511e7744ecab2c61ead6a68e3d49}
 
-  '@meimberg-io/skill-chapter-colony@0.1.16':
-    resolution: {integrity: sha512-0IdZbpbDPGwHYWjJg4PnuLfQvv5tQQP3KEjo9w7BXD7v9x8g9jnzgYBukCCClQtlRXyIqVGHXOAiCx/rIyGxBw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-chapter-colony/0.1.16/20d6001b8319af3b9c19a2d6fd2b1d242ff29dc5}
+  '@meimberg-io/skill-chapter-colony@0.1.17':
+    resolution: {integrity: sha512-A6+2y+KL0vL08HN6JHJlYyhwX1d0RUlbMVGbLQenECd8WO7uM3K3HRN5acJZW0UYDVfk7pPsv4oMBBPaI5MKHQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-chapter-colony/0.1.17/ff01e5d3f6736789448732323c5620c71b6153f7}
 
   '@meimberg-io/skill-coding-rules@0.1.2':
     resolution: {integrity: sha512-3qJ4rKwawOQxDEr2G5bEErT4Cr2fkkQw7oIqsquSgE3/kf2JT1YEexM8SoHBEbHvUIZ6dtjtmAEhO5EWSnQF4g==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-coding-rules/0.1.2/312a4a8efa9547543ec6ee52c01f925b868c671f}
@@ -510,8 +510,8 @@ packages:
   '@meimberg-io/skill-frontend-development@0.1.2':
     resolution: {integrity: sha512-0yuJ0OuV2PhrCTTYI1mBnjxlAj4ijQkScsy16YIOQGvdkJCV/74BxZMSsUeinJBZCRfOar96koy2Rb9GEPCJ2g==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-frontend-development/0.1.2/bccb477e6aa1c619374e4c53fde3555ec7e1fef7}
 
-  '@meimberg-io/skill-git-workflow@0.1.12':
-    resolution: {integrity: sha512-3W1SNHz4fxyAis9ScvxlWGe9lf1coy6J+xdKULh/oWREcfa8H8Qtj96kebojLTagvzZ/Lpw07lhAs86n8KYDtA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-git-workflow/0.1.12/a3bc5fda1a4f99e32dd4a87d2ee4e1165d234914}
+  '@meimberg-io/skill-git-workflow@0.1.13':
+    resolution: {integrity: sha512-olWD16IWZLDDonWft3TvC4bsr3dOgWKW80Pj3k38zxFkeuuZxnqq9HBq7wGWsSGt6RrOaRLXhzs3TGaSD279IQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-git-workflow/0.1.13/57b1368dc3185da7359946f5060214b57500a381}
 
   '@meimberg-io/skill-google-account@0.2.0':
     resolution: {integrity: sha512-2aTUwhWJxjA0XEPk+UY8x/pD+uvT0VrnR6wR2x+pga0LPA8fuOgWHWjCtyHPjE0UH9XIcKC65kplujTbt7yEqA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-google-account/0.2.0/0bb75cc5847b675ab984a3afdcd70264a04afd69}
@@ -524,8 +524,8 @@ packages:
   '@meimberg-io/skill-i-have-adhd@0.1.2':
     resolution: {integrity: sha512-F2hQiPQ7tKalHtNDrAzQRENPXg9mZpLxSeAmJRgG06OgBPIpLshe2mIe8tKsTDMo/lywHACxnlhchvR+//xnXw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-i-have-adhd/0.1.2/489b8c1e82ab6f2c31aab036641fbfc800dfc178}
 
-  '@meimberg-io/skill-implement@0.2.8':
-    resolution: {integrity: sha512-+bbIum9RNUo5FmY54Bod2M9IWwBDA2Uwoas2laigqR0brpBH+xFFiqkZQ8LHgAP7BpdHlL5aXk6lwfvcm1le4A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-implement/0.2.8/95078bc926fed91952a5968463cac2d26b26df00}
+  '@meimberg-io/skill-implement@0.2.10':
+    resolution: {integrity: sha512-qaWom90vKWU2bZ95/mxEe9aAFpb0WhYeJ5UzveZmbk5oRTCQvyFPDKANDtofE31i03X+Y5qp7D75kHiyiGqhVQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-implement/0.2.10/cccd107212e7739954e0facfcc519981fbb1cc17}
 
   '@meimberg-io/skill-it-administration@0.1.0':
     resolution: {integrity: sha512-H334x9+fhU/XFopDvzABgf9rQGYrbw9FDUsLbRYqkzty9K0hTpzH1v1pAyz/j2u9uNnIivP03WzR4d+d+rtCig==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-it-administration/0.1.0/b8ad592aafcf89fe8aa1e141fa4fa6a38ddeea65}
@@ -561,14 +561,14 @@ packages:
   '@meimberg-io/skill-plan-to-tickets@0.1.10':
     resolution: {integrity: sha512-8RGuOI+NVmi05iu6+aUcwTegL2ETRElBP4jpdr/Co/nrj4OudS1jfaNGyo8qNCc89J1HBNTKC/e1wJJ5Gg1y5Q==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-plan-to-tickets/0.1.10/326318945416712795a3c2bd8e95e91ec2566711}
 
-  '@meimberg-io/skill-requirements-repo@0.1.12':
-    resolution: {integrity: sha512-JiXFdcDA0L2jPQJPUraq1uHnf/wF7Gbkj63vi0OQCE+n20H4pb8O+yTSajeK3H+aNYwad8wmvg8JHwp0uYCWWg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-requirements-repo/0.1.12/96953dfee4d06bf1c6ed0d2ae7836d532d9c9fb3}
+  '@meimberg-io/skill-requirements-repo@0.1.13':
+    resolution: {integrity: sha512-4UCa65+HzAIU1mkccEPJ/lyl0FwS7QcDQQvGblb08o8W8CX24V/7jc1VdPx+gXQ5ocH8JORAQDKASANHHDgPpw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-requirements-repo/0.1.13/a508d879416d3e73e344c9e8e894586597c59ddb}
 
   '@meimberg-io/skill-secrets@0.2.0':
     resolution: {integrity: sha512-1T5KzwU4MDkIO1S88fXY9G4rm9QDMKBwscHK5WXCevuZg4Jd6kvU+ppl8CDvORcEXnT0huZC3+/FsRkYpBSqmQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-secrets/0.2.0/42f7488d32b961e7aa8100d354a8439a2c1026ed}
 
-  '@meimberg-io/skill-specify@0.1.10':
-    resolution: {integrity: sha512-kdNC/SLJ9nOwDSo471RfjKn4cQq1aNrw9xentyrqC3jEwaQINizr+3zNx4INEB60T9hG6WNlSZklx0wwXsFBPw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-specify/0.1.10/d2726e9c64148de837018c4efe43917986b4f1b1}
+  '@meimberg-io/skill-specify@0.1.11':
+    resolution: {integrity: sha512-SNgfFjChmdqZswn9X9Je/OnY2pjozbR1Bcpg1eEHvBeShcdB06D8Dx+L6J+e00aZgOu+WRlhxnksb8DiOm2/cA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-specify/0.1.11/a7f6a050099049b35c65fae96af045e3c06880bf}
 
   '@meimberg-io/skill-spring-boot-development@0.1.3':
     resolution: {integrity: sha512-EbmPKyldu9uQDLNVujg37tqNtHFMryOwggm5ioe+zH5g0TwBjVk7ap05UpngmfpXeeT6S78oKn1Birf+FpecqQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-spring-boot-development/0.1.3/392cf1eac1debb26dcacf3664f8679212d5effe8}
@@ -593,13 +593,13 @@ packages:
     peerDependencies:
       '@meimberg-io/skill-secrets': ^0.2.0
 
-  '@meimberg-io/skill-transcripts-and-minutes@0.2.1':
-    resolution: {integrity: sha512-GsFX3jfiwr1yav+GF4awCaZLu44rkUHC4B0yZoC/He1sWOTE7c12m+p3eiH0hPwGO9O8t7V3cjeD9/O6kiArhw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-transcripts-and-minutes/0.2.1/6d19995420e430b67e49286afb1a3273c290b23b}
+  '@meimberg-io/skill-transcripts-and-minutes@0.2.2':
+    resolution: {integrity: sha512-C2qJqr/HzhyPBd/t1cDQIMsS+JKxB2MI9OR/88fBt1EBnV/SNRau+08+NW0oRkoWw0kkOVwpmRl0gnxVC9lbvg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-transcripts-and-minutes/0.2.2/91085a6476939ddd6ac73a47e56546584c7224a6}
     peerDependencies:
       '@meimberg-io/skill-secrets': ^0.2.0
 
-  '@meimberg-io/skill-worktree-management@0.1.12':
-    resolution: {integrity: sha512-ewj2vk27IrCo64vNwXIqe0sgCuUBOnhaSS2NLzCMZaA8Kuj0oVHux8ESiIjeBlnfuRVpJwp7raIR+1OKO0mINQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-worktree-management/0.1.12/84bdd1676a38dab447db2ca4d5bb19f69750abcc}
+  '@meimberg-io/skill-worktree-management@0.1.13':
+    resolution: {integrity: sha512-Dm38IFBgdz+8b3pzdUus+3Hjy2SMY7nalVPcopTHdOtbJd/oDDcVWS5/t2UM8F7Tj3It3pfngAXF46IJmAgXZw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-worktree-management/0.1.13/7b9ca9a75c068a042d578dc36e8a3a734a056ef5}
 
   '@meimberg-io/skill-writing-style-rules@0.1.3':
     resolution: {integrity: sha512-IP9VDyZHoKq21Mh00cFo3D4u01Ahyl9ZDq76hrDA+pYqTLcAGwExNHRWkJizNJxhqSaSy9GFeiHjo/YEcRJCAw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-writing-style-rules/0.1.3/34bfa0404ed6119d77e0f3a79e2ea0051b9c7bd3}
@@ -1370,10 +1370,10 @@ snapshots:
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/adapter-local-files@0.1.10':
+  '@meimberg-io/adapter-local-files@0.1.11':
     dependencies:
       '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
-      '@meimberg-io/foundation-git-conduct': 0.2.0
+      '@meimberg-io/foundation-git-conduct': 0.3.0
 
   '@meimberg-io/adapter-markitdown@0.1.2': {}
 
@@ -1458,65 +1458,65 @@ snapshots:
     dependencies:
       '@meimberg-io/skill-secrets': 0.2.0
 
-  '@meimberg-io/agent-architect@0.1.10(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/agent-architect@0.1.11(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@meimberg-io/skill-coding-rules': 0.1.2
-      '@meimberg-io/skill-specify': 0.1.10(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-specify': 0.1.11(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/agent-developer@0.1.17(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/agent-developer@0.1.19(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@meimberg-io/adapter-github': 0.1.3(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/foundation-git-conduct': 0.2.0
-      '@meimberg-io/playbook-fix-bug': 0.2.10(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/playbook-implement-feature': 0.1.14(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/playbook-fix-bug': 0.2.11(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/playbook-implement-feature': 0.1.16(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/role-developer': 0.2.1
       '@meimberg-io/skill-coding-rules': 0.1.2
       '@meimberg-io/skill-frontend-development': 0.1.2
-      '@meimberg-io/skill-git-workflow': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-implement': 0.2.8(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-git-workflow': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-implement': 0.2.10(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-nextjs-development': 0.1.3
-      '@meimberg-io/skill-specify': 0.1.10(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-specify': 0.1.11(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-ticket-systems': 0.1.9(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@leafcutter-library/adapter-github-cli'
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/agent-legacy-requirements-engineer@0.1.12(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/agent-legacy-requirements-engineer@0.1.13(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/role-requirements-engineer': 0.5.0
-      '@meimberg-io/foundation-git-conduct': 0.2.0
-      '@meimberg-io/playbook-extract-requirements': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-git-workflow': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-requirements-repo': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/playbook-extract-requirements': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-git-workflow': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-requirements-repo': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/agent-requirements-analyst@0.1.14(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/agent-requirements-analyst@0.1.16(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/role-requirements-engineer': 0.5.0
-      '@meimberg-io/playbook-requirements-to-dev': 0.1.14(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/playbook-requirements-to-dev': 0.1.16(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-draft-requirements': 0.1.4
       '@meimberg-io/skill-plan-to-tickets': 0.1.10(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-specify': 0.1.10(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-specify': 0.1.11(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-ticket-systems': 0.1.9(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/agent-technical-designer@0.1.14(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/agent-technical-designer@0.1.16(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-planner': 0.4.0
-      '@meimberg-io/playbook-technical-concept': 0.1.14(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/playbook-technical-concept': 0.1.16(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-convert-to-markdown': 0.1.3
       '@meimberg-io/skill-technical-concept-writing': 0.1.4
       '@meimberg-io/skill-writing-style-rules': 0.1.3
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/collection-base@0.9.4':
+  '@meimberg-io/collection-base@0.9.6':
     dependencies:
       '@leafcutter-library/adapter-github-cli': 1.2.0
       '@leafcutter-library/role-orchestrator': 0.5.0
@@ -1525,21 +1525,21 @@ snapshots:
       '@leafcutter-os/playbook-upgrade-colonies': 0.2.2
       '@meimberg-io/adapter-jira-mcp': 0.1.3
       '@meimberg-io/adapter-linear-mcp': 0.1.4(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/adapter-local-files': 0.1.10
+      '@meimberg-io/adapter-local-files': 0.1.11
       '@meimberg-io/adapter-markitdown': 0.1.2
       '@meimberg-io/adapter-notion': 0.1.6
       '@meimberg-io/adapter-plaud': 0.1.0(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/foundation-communication': 0.2.0
+      '@meimberg-io/foundation-communication': 0.3.0
       '@meimberg-io/foundation-delivery-conduct': 0.3.0
       '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
-      '@meimberg-io/foundation-git-conduct': 0.2.0
+      '@meimberg-io/foundation-git-conduct': 0.3.0
       '@meimberg-io/foundation-knowledge-in-repo': 0.2.4
       '@meimberg-io/method-single-lens-review': 0.1.2
       '@meimberg-io/role-author': 0.1.2
       '@meimberg-io/role-owner': 0.1.2
-      '@meimberg-io/skill-brainstorming': 0.2.3
-      '@meimberg-io/skill-capture-project-memory': 0.1.7
-      '@meimberg-io/skill-chapter-colony': 0.1.16
+      '@meimberg-io/skill-brainstorming': 0.2.4
+      '@meimberg-io/skill-capture-project-memory': 0.1.8
+      '@meimberg-io/skill-chapter-colony': 0.1.17
       '@meimberg-io/skill-colony-handoff': 0.2.4
       '@meimberg-io/skill-convert-to-markdown': 0.1.3
       '@meimberg-io/skill-google-account': 0.2.0(@meimberg-io/skill-secrets@0.2.0)
@@ -1552,27 +1552,27 @@ snapshots:
       '@meimberg-io/skill-secrets': 0.2.0
       '@meimberg-io/skill-technical-writing': 0.1.3
       '@meimberg-io/skill-ticket-systems': 0.1.9(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-transcripts-and-minutes': 0.2.1(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-transcripts-and-minutes': 0.2.2(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-writing-style-rules': 0.1.3
 
-  '@meimberg-io/collection-development@0.3.53(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/collection-development@0.3.55(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@meimberg-io/adapter-github': 0.1.3(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/agent-architect': 0.1.10(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/agent-developer': 0.1.17(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/agent-legacy-requirements-engineer': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/agent-requirements-analyst': 0.1.14(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/agent-technical-designer': 0.1.14(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/collection-base': 0.9.4
+      '@meimberg-io/agent-architect': 0.1.11(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/agent-developer': 0.1.19(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/agent-legacy-requirements-engineer': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/agent-requirements-analyst': 0.1.16(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/agent-technical-designer': 0.1.16(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/collection-base': 0.9.6
       '@meimberg-io/foundation-code-conventions': 0.1.2
-      '@meimberg-io/playbook-extract-requirements': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/playbook-fix-bug': 0.2.10(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/playbook-implement-feature': 0.1.14(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/playbook-implement-in-worktree': 0.1.14(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/playbook-rebuild-legacy-app': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/playbook-requirements-to-dev': 0.1.14(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/playbook-specify-and-review': 0.1.11(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/playbook-technical-concept': 0.1.14(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/playbook-extract-requirements': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/playbook-fix-bug': 0.2.11(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/playbook-implement-feature': 0.1.16(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/playbook-implement-in-worktree': 0.1.16(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/playbook-rebuild-legacy-app': 0.1.14(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/playbook-requirements-to-dev': 0.1.16(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/playbook-specify-and-review': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/playbook-technical-concept': 0.1.16(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/role-customer': 0.1.2
       '@meimberg-io/role-developer': 0.2.1
       '@meimberg-io/role-project-manager': 0.1.2
@@ -1581,23 +1581,23 @@ snapshots:
       '@meimberg-io/skill-customer-hidden-context': 0.1.4
       '@meimberg-io/skill-draft-requirements': 0.1.4
       '@meimberg-io/skill-frontend-development': 0.1.2
-      '@meimberg-io/skill-git-workflow': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-implement': 0.2.8(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-git-workflow': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-implement': 0.2.10(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-meimberg-deployment-stack': 0.1.2
       '@meimberg-io/skill-nextjs-development': 0.1.3
       '@meimberg-io/skill-plan-to-tickets': 0.1.10(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-requirements-repo': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-specify': 0.1.10(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-requirements-repo': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-specify': 0.1.11(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-spring-boot-development': 0.1.3
       '@meimberg-io/skill-supabase-development': 0.1.2
       '@meimberg-io/skill-systematic-debugging': 0.2.2
       '@meimberg-io/skill-technical-concept-writing': 0.1.4
-      '@meimberg-io/skill-worktree-management': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-worktree-management': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@leafcutter-library/adapter-github-cli'
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/collection-meimberg-all@0.2.32(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/adapter-local-files@0.1.10)(@meimberg-io/adapter-todoist@0.1.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/collection-base@0.9.4)(@meimberg-io/datapool-todos@0.4.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-google-account@0.2.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-onedrive@0.2.0)(@meimberg-io/skill-secrets@0.2.0)(@meimberg-io/skill-todoist-rest@0.1.0(@meimberg-io/skill-secrets@0.2.0))':
+  '@meimberg-io/collection-meimberg-all@0.2.33(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/adapter-todoist@0.1.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/collection-base@0.9.6)(@meimberg-io/datapool-todos@0.4.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-google-account@0.2.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-onedrive@0.2.0)(@meimberg-io/skill-secrets@0.2.0)(@meimberg-io/skill-todoist-rest@0.1.0(@meimberg-io/skill-secrets@0.2.0))':
     dependencies:
       '@meimberg-io/adapter-github-meimberg': 0.1.2(@leafcutter-library/adapter-github-cli@1.2.0)(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/adapter-google-meimberg': 0.1.3(@meimberg-io/skill-google-account@0.2.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-secrets@0.2.0)
@@ -1606,14 +1606,14 @@ snapshots:
       '@meimberg-io/adapter-sanity-meimberg-digital': 0.1.1(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/adapter-smarteditor-meimberg': 0.1.1(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/adapter-storyblok-meimberg': 0.1.1(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/collection-base': 0.9.4
-      '@meimberg-io/collection-meimberg-digital': 0.6.2(@meimberg-io/adapter-local-files@0.1.10)(@meimberg-io/adapter-todoist@0.1.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/collection-base@0.9.4)(@meimberg-io/datapool-todos@0.4.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-onedrive@0.2.0)(@meimberg-io/skill-secrets@0.2.0)(@meimberg-io/skill-todoist-rest@0.1.0(@meimberg-io/skill-secrets@0.2.0))
+      '@meimberg-io/collection-base': 0.9.6
+      '@meimberg-io/collection-meimberg-digital': 0.6.3(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/adapter-todoist@0.1.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/collection-base@0.9.6)(@meimberg-io/datapool-todos@0.4.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-onedrive@0.2.0)(@meimberg-io/skill-secrets@0.2.0)(@meimberg-io/skill-todoist-rest@0.1.0(@meimberg-io/skill-secrets@0.2.0))
       '@meimberg-io/datapool-bookkeeping': 0.3.0(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/datapool-digital-circus-media': 0.1.6(@meimberg-io/adapter-local-files@0.1.10)
-      '@meimberg-io/datapool-luxarise-documents': 0.1.6(@meimberg-io/adapter-local-files@0.1.10)
+      '@meimberg-io/datapool-digital-circus-media': 0.1.6(@meimberg-io/adapter-local-files@0.1.11)
+      '@meimberg-io/datapool-luxarise-documents': 0.1.6(@meimberg-io/adapter-local-files@0.1.11)
       '@meimberg-io/datapool-mailbox': 0.5.8(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/datapool-meimberg-io-documents': 0.1.6(@meimberg-io/adapter-local-files@0.1.10)
-      '@meimberg-io/datapool-risau-meimberg-gbr-documents': 0.1.5(@meimberg-io/adapter-local-files@0.1.10)
+      '@meimberg-io/datapool-meimberg-io-documents': 0.1.6(@meimberg-io/adapter-local-files@0.1.11)
+      '@meimberg-io/datapool-risau-meimberg-gbr-documents': 0.1.5(@meimberg-io/adapter-local-files@0.1.11)
     transitivePeerDependencies:
       - '@leafcutter-library/adapter-github-cli'
       - '@meimberg-io/adapter-local-files'
@@ -1626,23 +1626,23 @@ snapshots:
       - '@meimberg-io/skill-secrets'
       - '@meimberg-io/skill-todoist-rest'
 
-  '@meimberg-io/collection-meimberg-digital@0.6.2(@meimberg-io/adapter-local-files@0.1.10)(@meimberg-io/adapter-todoist@0.1.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/collection-base@0.9.4)(@meimberg-io/datapool-todos@0.4.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-onedrive@0.2.0)(@meimberg-io/skill-secrets@0.2.0)(@meimberg-io/skill-todoist-rest@0.1.0(@meimberg-io/skill-secrets@0.2.0))':
+  '@meimberg-io/collection-meimberg-digital@0.6.3(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/adapter-todoist@0.1.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/collection-base@0.9.6)(@meimberg-io/datapool-todos@0.4.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-onedrive@0.2.0)(@meimberg-io/skill-secrets@0.2.0)(@meimberg-io/skill-todoist-rest@0.1.0(@meimberg-io/skill-secrets@0.2.0))':
     dependencies:
       '@meimberg-io/adapter-attio-mcp': 0.2.1
       '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.7.0(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/adapter-onedrive-meimberg': 0.2.1(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-onedrive@0.2.0)(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/adapter-sevdesk-meimberg': 0.1.3(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/collection-base': 0.9.4
+      '@meimberg-io/collection-base': 0.9.6
       '@meimberg-io/datapool-calendar': 0.2.4(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/datapool-meimberg-digital-crm': 0.2.1
-      '@meimberg-io/datapool-meimberg-digital-documents': 0.5.2(@meimberg-io/adapter-local-files@0.1.10)
-      '@meimberg-io/datapool-meimberg-digital-projects': 0.2.2(@meimberg-io/adapter-local-files@0.1.10)
-      '@meimberg-io/datapool-meimberg-holding-documents': 0.2.2(@meimberg-io/adapter-local-files@0.1.10)
+      '@meimberg-io/datapool-meimberg-digital-documents': 0.5.2(@meimberg-io/adapter-local-files@0.1.11)
+      '@meimberg-io/datapool-meimberg-digital-projects': 0.2.2(@meimberg-io/adapter-local-files@0.1.11)
+      '@meimberg-io/datapool-meimberg-holding-documents': 0.2.2(@meimberg-io/adapter-local-files@0.1.11)
       '@meimberg-io/foundation-meimberg-digital-company': 0.2.1
       '@meimberg-io/foundation-meimberg-holding-company': 0.2.0
-      '@meimberg-io/skill-bookkeeping': 0.3.11(@meimberg-io/adapter-local-files@0.1.10)(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-bookkeeping': 0.3.11(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-it-administration': 0.1.0
-      '@meimberg-io/skill-mail-intake': 0.3.9(@meimberg-io/adapter-local-files@0.1.10)(@meimberg-io/adapter-todoist@0.1.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/datapool-todos@0.4.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-secrets@0.2.0)(@meimberg-io/skill-todoist-rest@0.1.0(@meimberg-io/skill-secrets@0.2.0))
+      '@meimberg-io/skill-mail-intake': 0.3.9(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/adapter-todoist@0.1.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/datapool-todos@0.4.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-secrets@0.2.0)(@meimberg-io/skill-todoist-rest@0.1.0(@meimberg-io/skill-secrets@0.2.0))
     transitivePeerDependencies:
       - '@meimberg-io/adapter-local-files'
       - '@meimberg-io/adapter-todoist'
@@ -1683,13 +1683,13 @@ snapshots:
       - '@meimberg-io/skill-microsoft-365-graph'
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/datapool-digital-circus-media@0.1.6(@meimberg-io/adapter-local-files@0.1.10)':
+  '@meimberg-io/datapool-digital-circus-media@0.1.6(@meimberg-io/adapter-local-files@0.1.11)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.10
+      '@meimberg-io/adapter-local-files': 0.1.11
 
-  '@meimberg-io/datapool-luxarise-documents@0.1.6(@meimberg-io/adapter-local-files@0.1.10)':
+  '@meimberg-io/datapool-luxarise-documents@0.1.6(@meimberg-io/adapter-local-files@0.1.11)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.10
+      '@meimberg-io/adapter-local-files': 0.1.11
 
   '@meimberg-io/datapool-mailbox@0.5.8(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
@@ -1702,25 +1702,25 @@ snapshots:
     dependencies:
       '@meimberg-io/adapter-attio-mcp': 0.2.1
 
-  '@meimberg-io/datapool-meimberg-digital-documents@0.5.2(@meimberg-io/adapter-local-files@0.1.10)':
+  '@meimberg-io/datapool-meimberg-digital-documents@0.5.2(@meimberg-io/adapter-local-files@0.1.11)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.10
+      '@meimberg-io/adapter-local-files': 0.1.11
 
-  '@meimberg-io/datapool-meimberg-digital-projects@0.2.2(@meimberg-io/adapter-local-files@0.1.10)':
+  '@meimberg-io/datapool-meimberg-digital-projects@0.2.2(@meimberg-io/adapter-local-files@0.1.11)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.10
+      '@meimberg-io/adapter-local-files': 0.1.11
 
-  '@meimberg-io/datapool-meimberg-holding-documents@0.2.2(@meimberg-io/adapter-local-files@0.1.10)':
+  '@meimberg-io/datapool-meimberg-holding-documents@0.2.2(@meimberg-io/adapter-local-files@0.1.11)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.10
+      '@meimberg-io/adapter-local-files': 0.1.11
 
-  '@meimberg-io/datapool-meimberg-io-documents@0.1.6(@meimberg-io/adapter-local-files@0.1.10)':
+  '@meimberg-io/datapool-meimberg-io-documents@0.1.6(@meimberg-io/adapter-local-files@0.1.11)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.10
+      '@meimberg-io/adapter-local-files': 0.1.11
 
-  '@meimberg-io/datapool-risau-meimberg-gbr-documents@0.1.5(@meimberg-io/adapter-local-files@0.1.10)':
+  '@meimberg-io/datapool-risau-meimberg-gbr-documents@0.1.5(@meimberg-io/adapter-local-files@0.1.11)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.10
+      '@meimberg-io/adapter-local-files': 0.1.11
 
   '@meimberg-io/datapool-todos@0.4.0(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
@@ -1730,13 +1730,13 @@ snapshots:
 
   '@meimberg-io/foundation-code-conventions@0.1.2': {}
 
-  '@meimberg-io/foundation-communication@0.2.0': {}
+  '@meimberg-io/foundation-communication@0.3.0': {}
 
   '@meimberg-io/foundation-delivery-conduct@0.3.0': {}
 
   '@meimberg-io/foundation-forbidden-commands-and-secrets@0.1.6': {}
 
-  '@meimberg-io/foundation-git-conduct@0.2.0': {}
+  '@meimberg-io/foundation-git-conduct@0.3.0': {}
 
   '@meimberg-io/foundation-knowledge-in-repo@0.2.4': {}
 
@@ -1746,89 +1746,89 @@ snapshots:
 
   '@meimberg-io/method-single-lens-review@0.1.2': {}
 
-  '@meimberg-io/playbook-extract-requirements@0.1.12(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/playbook-extract-requirements@0.1.13(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/role-requirements-engineer': 0.5.0
-      '@meimberg-io/foundation-git-conduct': 0.2.0
-      '@meimberg-io/skill-git-workflow': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-requirements-repo': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/skill-git-workflow': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-requirements-repo': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/playbook-fix-bug@0.2.10(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/playbook-fix-bug@0.2.11(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/role-code-reviewer': 0.5.0
       '@leafcutter-library/role-orchestrator': 0.5.0
-      '@meimberg-io/foundation-git-conduct': 0.2.0
+      '@meimberg-io/foundation-git-conduct': 0.3.0
       '@meimberg-io/role-developer': 0.2.1
       '@meimberg-io/skill-coding-rules': 0.1.2
-      '@meimberg-io/skill-git-workflow': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-git-workflow': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-systematic-debugging': 0.2.2
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/playbook-implement-feature@0.1.14(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/playbook-implement-feature@0.1.16(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-code-reviewer': 0.5.0
       '@leafcutter-library/role-orchestrator': 0.5.0
-      '@meimberg-io/foundation-git-conduct': 0.2.0
+      '@meimberg-io/foundation-git-conduct': 0.3.0
       '@meimberg-io/role-developer': 0.2.1
       '@meimberg-io/skill-coding-rules': 0.1.2
       '@meimberg-io/skill-frontend-development': 0.1.2
-      '@meimberg-io/skill-git-workflow': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-implement': 0.2.8(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-specify': 0.1.10(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-git-workflow': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-implement': 0.2.10(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-specify': 0.1.11(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-ticket-systems': 0.1.9(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/playbook-implement-in-worktree@0.1.14(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/playbook-implement-in-worktree@0.1.16(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/role-code-reviewer': 0.5.0
-      '@meimberg-io/foundation-git-conduct': 0.2.0
+      '@meimberg-io/foundation-git-conduct': 0.3.0
       '@meimberg-io/skill-coding-rules': 0.1.2
-      '@meimberg-io/skill-implement': 0.2.8(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-worktree-management': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-implement': 0.2.10(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-worktree-management': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/playbook-rebuild-legacy-app@0.1.13(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/playbook-rebuild-legacy-app@0.1.14(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-code-reviewer': 0.5.0
       '@leafcutter-library/role-requirements-auditor': 0.5.0
       '@leafcutter-library/role-requirements-engineer': 0.5.0
-      '@meimberg-io/foundation-git-conduct': 0.2.0
-      '@meimberg-io/playbook-extract-requirements': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/playbook-extract-requirements': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/role-developer': 0.2.1
-      '@meimberg-io/skill-requirements-repo': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-requirements-repo': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/playbook-requirements-to-dev@0.1.14(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/playbook-requirements-to-dev@0.1.16(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/role-requirements-engineer': 0.5.0
       '@meimberg-io/skill-draft-requirements': 0.1.4
       '@meimberg-io/skill-plan-to-tickets': 0.1.10(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-specify': 0.1.10(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-specify': 0.1.11(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-ticket-systems': 0.1.9(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-transcripts-and-minutes': 0.2.1(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-transcripts-and-minutes': 0.2.2(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/playbook-specify-and-review@0.1.11(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/playbook-specify-and-review@0.1.12(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-orchestrator': 0.5.0
       '@meimberg-io/method-single-lens-review': 0.1.2
       '@meimberg-io/role-developer': 0.2.1
-      '@meimberg-io/skill-specify': 0.1.10(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-specify': 0.1.11(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-ticket-systems': 0.1.9(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/playbook-technical-concept@0.1.14(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/playbook-technical-concept@0.1.16(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-planner': 0.4.0
@@ -1837,9 +1837,9 @@ snapshots:
       '@meimberg-io/role-project-manager': 0.1.2
       '@meimberg-io/skill-convert-to-markdown': 0.1.3
       '@meimberg-io/skill-plan-to-tickets': 0.1.10(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/skill-specify': 0.1.10(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-specify': 0.1.11(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-technical-concept-writing': 0.1.4
-      '@meimberg-io/skill-transcripts-and-minutes': 0.2.1(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-transcripts-and-minutes': 0.2.2(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
@@ -1853,35 +1853,35 @@ snapshots:
 
   '@meimberg-io/role-project-manager@0.1.2': {}
 
-  '@meimberg-io/skill-bookkeeping@0.3.11(@meimberg-io/adapter-local-files@0.1.10)(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/skill-bookkeeping@0.3.11(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.7.0(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/adapter-sevdesk-meimberg': 0.1.3(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/datapool-bookkeeping': 0.3.0(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/datapool-mailbox': 0.5.8(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/datapool-meimberg-digital-documents': 0.5.2(@meimberg-io/adapter-local-files@0.1.10)
+      '@meimberg-io/datapool-meimberg-digital-documents': 0.5.2(@meimberg-io/adapter-local-files@0.1.11)
     transitivePeerDependencies:
       - '@meimberg-io/adapter-local-files'
       - '@meimberg-io/skill-microsoft-365-graph'
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/skill-brainstorming@0.2.3':
+  '@meimberg-io/skill-brainstorming@0.2.4':
     dependencies:
-      '@meimberg-io/foundation-communication': 0.2.0
+      '@meimberg-io/foundation-communication': 0.3.0
       '@meimberg-io/foundation-knowledge-in-repo': 0.2.4
 
   '@meimberg-io/skill-build-and-ci@0.1.3': {}
 
-  '@meimberg-io/skill-capture-project-memory@0.1.7':
+  '@meimberg-io/skill-capture-project-memory@0.1.8':
     dependencies:
-      '@meimberg-io/foundation-git-conduct': 0.2.0
+      '@meimberg-io/foundation-git-conduct': 0.3.0
       '@meimberg-io/foundation-knowledge-in-repo': 0.2.4
       '@meimberg-io/skill-customer-hidden-context': 0.1.4
 
-  '@meimberg-io/skill-chapter-colony@0.1.16':
+  '@meimberg-io/skill-chapter-colony@0.1.17':
     dependencies:
       '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
-      '@meimberg-io/foundation-git-conduct': 0.2.0
+      '@meimberg-io/foundation-git-conduct': 0.3.0
 
   '@meimberg-io/skill-coding-rules@0.1.2': {}
 
@@ -1906,12 +1906,12 @@ snapshots:
     dependencies:
       '@meimberg-io/skill-coding-rules': 0.1.2
 
-  '@meimberg-io/skill-git-workflow@0.1.12(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/skill-git-workflow@0.1.13(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@meimberg-io/adapter-jira-mcp': 0.1.3
       '@meimberg-io/adapter-linear-mcp': 0.1.4(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
-      '@meimberg-io/foundation-git-conduct': 0.2.0
+      '@meimberg-io/foundation-git-conduct': 0.3.0
       '@meimberg-io/skill-ticket-systems': 0.1.9(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
@@ -1924,13 +1924,13 @@ snapshots:
 
   '@meimberg-io/skill-i-have-adhd@0.1.2': {}
 
-  '@meimberg-io/skill-implement@0.2.8(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/skill-implement@0.2.10(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/adapter-github-cli': 1.2.0
       '@meimberg-io/adapter-jira-mcp': 0.1.3
       '@meimberg-io/adapter-linear-mcp': 0.1.4(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/foundation-communication': 0.2.0
-      '@meimberg-io/foundation-git-conduct': 0.2.0
+      '@meimberg-io/foundation-communication': 0.3.0
+      '@meimberg-io/foundation-git-conduct': 0.3.0
       '@meimberg-io/skill-frontend-development': 0.1.2
       '@meimberg-io/skill-ticket-systems': 0.1.9(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
@@ -1943,13 +1943,13 @@ snapshots:
       '@leafcutter-library/adapter-github-cli': 1.2.0
       '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
 
-  '@meimberg-io/skill-mail-intake@0.3.9(@meimberg-io/adapter-local-files@0.1.10)(@meimberg-io/adapter-todoist@0.1.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/datapool-todos@0.4.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-secrets@0.2.0)(@meimberg-io/skill-todoist-rest@0.1.0(@meimberg-io/skill-secrets@0.2.0))':
+  '@meimberg-io/skill-mail-intake@0.3.9(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/adapter-todoist@0.1.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/datapool-todos@0.4.0(@meimberg-io/skill-secrets@0.2.0))(@meimberg-io/skill-secrets@0.2.0)(@meimberg-io/skill-todoist-rest@0.1.0(@meimberg-io/skill-secrets@0.2.0))':
     dependencies:
       '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.7.0(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/adapter-todoist': 0.1.0(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/datapool-mailbox': 0.5.8(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/datapool-meimberg-digital-documents': 0.5.2(@meimberg-io/adapter-local-files@0.1.10)
-      '@meimberg-io/datapool-meimberg-holding-documents': 0.2.2(@meimberg-io/adapter-local-files@0.1.10)
+      '@meimberg-io/datapool-meimberg-digital-documents': 0.5.2(@meimberg-io/adapter-local-files@0.1.11)
+      '@meimberg-io/datapool-meimberg-holding-documents': 0.2.2(@meimberg-io/adapter-local-files@0.1.11)
       '@meimberg-io/datapool-todos': 0.4.0(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-todoist-rest': 0.1.0(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
@@ -1984,11 +1984,11 @@ snapshots:
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/skill-requirements-repo@0.1.12(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/skill-requirements-repo@0.1.13(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
-      '@meimberg-io/foundation-git-conduct': 0.2.0
+      '@meimberg-io/foundation-git-conduct': 0.3.0
       '@meimberg-io/skill-customer-hidden-context': 0.1.4
-      '@meimberg-io/skill-git-workflow': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/skill-git-workflow': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-technical-writing': 0.1.3
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
@@ -1997,12 +1997,12 @@ snapshots:
     dependencies:
       '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
 
-  '@meimberg-io/skill-specify@0.1.10(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/skill-specify@0.1.11(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@leafcutter-library/adapter-github-cli': 1.2.0
       '@meimberg-io/adapter-jira-mcp': 0.1.3
       '@meimberg-io/adapter-linear-mcp': 0.1.4(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/foundation-communication': 0.2.0
+      '@meimberg-io/foundation-communication': 0.3.0
       '@meimberg-io/method-single-lens-review': 0.1.2
       '@meimberg-io/skill-coding-rules': 0.1.2
       '@meimberg-io/skill-ticket-systems': 0.1.9(@meimberg-io/skill-secrets@0.2.0)
@@ -2043,17 +2043,17 @@ snapshots:
       '@meimberg-io/adapter-todoist': 0.1.0(@meimberg-io/skill-secrets@0.2.0)
       '@meimberg-io/skill-secrets': 0.2.0
 
-  '@meimberg-io/skill-transcripts-and-minutes@0.2.1(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/skill-transcripts-and-minutes@0.2.2(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
       '@meimberg-io/adapter-plaud': 0.1.0(@meimberg-io/skill-secrets@0.2.0)
-      '@meimberg-io/foundation-git-conduct': 0.2.0
+      '@meimberg-io/foundation-git-conduct': 0.3.0
       '@meimberg-io/skill-secrets': 0.2.0
       '@meimberg-io/skill-writing-style-rules': 0.1.3
 
-  '@meimberg-io/skill-worktree-management@0.1.12(@meimberg-io/skill-secrets@0.2.0)':
+  '@meimberg-io/skill-worktree-management@0.1.13(@meimberg-io/skill-secrets@0.2.0)':
     dependencies:
-      '@meimberg-io/foundation-git-conduct': 0.2.0
-      '@meimberg-io/skill-git-workflow': 0.1.12(@meimberg-io/skill-secrets@0.2.0)
+      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/skill-git-workflow': 0.1.13(@meimberg-io/skill-secrets@0.2.0)
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 

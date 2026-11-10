@@ -36,7 +36,7 @@ Pushes stay with the user unless a marker allows pushing: the agent never pushes
 
 ### Working on the current branch
 
-- The agent never creates a branch by itself: not silently, not "to be safe", normally not even after asking, and never as a side effect of another step. It does not switch away from the user's branch unasked either; switching between existing branches is the user's business.
+- The agent never creates a branch by itself: not silently, not "to be safe", normally not even after asking, and never as a side effect of another step. It does not switch away from the user's branch unasked either; switching between existing branches is the user's business, except back to the default branch once the checked-out branch is merged, as the section on merged branches sets.
 - Commits go onto the branch that is checked out, the main branch included. That is safe because only the user pushes. This takes precedence over any instruction to "branch first when on the default branch".
 - Only when a separate branch really seems necessary, such as a risky rebuild the user would want to keep apart, does the agent ask and give its reason instead of creating it. The default remains no branch.
 
@@ -62,17 +62,19 @@ Pushes stay with the user unless a marker allows pushing: the agent never pushes
 ### What is checked first
 
 - Only what the merge contains is deleted. The local branch goes only when its tip is the merged head or an ancestor of it (`git merge-base --is-ancestor <branch> <headRefOid>`), the remote branch only when it still points at that head (`git ls-remote origin refs/heads/<branch>`). A branch with commits beyond the merged head is named and kept.
-- The default branch is never deleted, nor a branch checked out in a worktree with uncommitted changes, nor the worktree the session runs in. A merged branch the user has checked out in the main worktree is named, not deleted; the agent does not switch away from it.
+- The default branch is never deleted, nor a branch checked out in a worktree with uncommitted changes, nor the worktree the session runs in. A merged branch checked out in the main worktree is no reason to stop: when that worktree is clean, the agent switches it to the default branch first, as the order below sets.
 
 ### The order
 
-1. A clean worktree that has the branch checked out is removed with `git worktree remove <path>`, without `--force`.
+1. When the main worktree has the branch checked out and is clean, the agent switches it to the default branch (`git switch <default>`) and brings that up to the remote with `git merge --ff-only origin/<default>`. With uncommitted changes it stays where it is, and the agent names the branch.
+1. Another clean worktree that has the branch checked out is removed with `git worktree remove <path>`, without `--force`.
 1. The local branch is deleted with `git branch -D <branch>`. After a squash merge `git branch -d` refuses although nothing is lost; the check above is what makes `-D` safe.
 1. The remote branch is deleted with `git push origin --delete <branch>`, unless GitHub has already removed it because the repository deletes head branches on merge. When the client refuses the push, the agent leaves the remote branch to the user with its name, as for any push.
 
 ### When it runs
 
 - Right after a merge the agent carries out at the user's word, as the last step of that merge.
+- When a pull request the agent opened is merged later, such as by auto-merge, while the session still works on it: the agent watches it until it is merged and then cleans up, without waiting to be asked. A session that ends before the merge says so; the next session that touches the repository finds the leftover as the next item sets.
 - Whenever the agent works with a repository's branches or worktrees anyway, such as in a worktree cleanup audit, when it pushes a branch for a pull request, or when the user returns to the main branch. Merged leftovers it finds there are cleaned up the same way and named in the report.
 - Not as a scan at the start of every session.
 
