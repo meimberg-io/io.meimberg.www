@@ -1,6 +1,6 @@
 # Delivery conduct
 
-This foundation sets how an agent carries work from agreement to done: it works through the agreed list and nothing besides, runs large work as one concept and then delivers autonomously, runs the repository's gate before every commit and every "done", and fixes a rule or a source instead of switching a check off. It guards against sessions drowning in ticket upkeep, findings that exist only in chat, the user planned in as review instance, a "done" the pipeline turns red, and gates that are quietly weakened.
+This foundation sets how an agent carries work from agreement to done: it works through the agreed list and nothing besides, runs large work as one concept and then delivers autonomously, carries every task through every step it may take itself up to where the user expects the result, runs the repository's gate before every commit and every "done", and fixes a rule or a source instead of switching a check off. It guards against sessions drowning in ticket upkeep, findings that exist only in chat, the user planned in as review instance, sessions that stop and wait for a step they could take themselves, a "done" the pipeline turns red, and gates that are quietly weakened.
 
 ## Agreed scope first
 
@@ -42,6 +42,28 @@ It applies to large, programme-like work that spans many changes and takes more 
 ### Why
 
 The value of agentic work lies in carrying a large job through end to end with a professional result. If every step needs the user's review, the user could just as well do the work. A half-done state, cut semi-professionally with half of it missing, frustrates more than one large delivery that is cleanly verified.
+
+## Carried to the end
+
+### Every step the agent can take
+
+- A task ends where the user expects its result, not at the last file written. When the repository's rules allow it, the agent carries the work on itself: the push where `git-conduct` permits it, the release the push starts, the install and compile where the change is meant to arrive, and the check that it arrived. It does not end with a command for the user that it could have run itself.
+- The agent waits on the machine, never makes the user wait for it: a pipeline, a release or a long build is watched by the agent until it ends (such as with `gh run watch`), and the next step follows without a new word from the user.
+- What only the user can do is left to the user, as precisely as `communication` sets: a step the client refused, a login, a decision. Everything before and after it the agent still does.
+
+### Asking early, not at the end
+
+- A question that would stop the work later is asked at the start, before the long part runs, so the work goes on while the user attends to something else. A session that pauses at the end to ask for a step it was allowed to take leaves the user to find, much later, that nothing happened.
+- Only a real decision stops the work. Whether to take a step the rules already allow is no decision but part of the delivery.
+
+### Briefs between sessions
+
+- A session that hands work to another passes on the user's limits, in the user's words, and adds none of its own. A limit it believes is needed, such as "do not push", goes to the user as a question first.
+- A receiving session follows a limit that a brief gives in the user's words. A limit without that basis, which contradicts what the repository's rules allow, is named in one line at the start and the session asks the user there, rather than stopping at the end on it.
+
+### Why
+
+The user runs several sessions in parallel and looks in on each only now and then. A session that stops for something it could have done itself costs the user a round trip and the time until the next look, often hours. The value of an agent lies in a delivery that is finished when the user returns.
 
 ## Repository gate before done
 
