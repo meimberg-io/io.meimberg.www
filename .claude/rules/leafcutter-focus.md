@@ -7,7 +7,7 @@ The adapters of this repository and the values to work with, as the compile reso
 - `adapter-github`, implemented by `adapter-github-meimberg`: `token-variable` GITHUB_TOKEN_MEIMBERG; `owner` meimberg-io
 - `adapter-google-account`, implemented by `adapter-google-meimberg`: `account` oli@meimberg.io; `services` drive, ads, analytics, tagmanager; `token-variable` GOOGLE_REFRESH_TOKEN_MEIMBERG; `client-variable` GOOGLE_OAUTH_CLIENT_MEIMBERG; `developer-token-variable` GOOGLE_ADS_DEVELOPER_TOKEN_MEIMBERG
 - `adapter-linear-mcp`, implemented by `adapter-linear-meimberg`: `token-variable` LINEAR_TOKEN_MEIMBERG
-- `adapter-microsoft-365-graph`, implemented by `adapter-microsoft-365-graph-meimberg`: `tenant` meimberg.digital; `mailbox` oliver@meimberg.digital; `services` mail, send, calendar, calendar-write; `token-variable` MS365_REFRESH_TOKEN_MEIMBERG
+- `adapter-microsoft-365-graph`, implemented by `adapter-microsoft-365-graph-meimberg`: `tenant` meimberg.digital; `mailbox` oliver@meimberg.digital; `services` mail, mail-shared, send, calendar, calendar-write; `token-variable` MS365_REFRESH_TOKEN_MEIMBERG
 - `adapter-plaud`: `token-variable` PLAUD_REFRESH_TOKEN_BASE
 - `adapter-sanity`, implemented by `adapter-sanity-meimberg-digital`: `project` bdq1icag; `dataset` production, campaigns; `repository` digital.meimberg.www, digital.meimberg.campains; `token-variable` SANITY_TOKEN_MEIMBERG
 - `adapter-sevdesk`, implemented by `adapter-sevdesk-meimberg`: `company` meimberg.digital GmbH; `token-variable` SEVDESK_TOKEN_MEIMBERG

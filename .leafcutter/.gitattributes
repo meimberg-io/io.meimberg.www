@@ -1,0 +1,2 @@
+# Leafcutter OS: every text file with LF on every host, Windows included; Git tells binary files apart itself.
+* text=auto eol=lf
