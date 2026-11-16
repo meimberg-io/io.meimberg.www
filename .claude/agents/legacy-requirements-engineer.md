@@ -12,7 +12,7 @@ tools:
   - mcp__linear__*
 ---
 <!-- leafcutter-settle
-hash: 382c8a17755cc6c3
+hash: b49a582b21411e11
 model: opus
 tools: Read, Glob, Grep, Write, Edit, Bash, mcp__linear__*
 -->
@@ -59,4 +59,5 @@ Business contradictions that only a stakeholder can resolve, and an unclear cut 
 
 The adapters this agent reaches and the values it works with, as the compile resolved them; a list is a focus on each of its values.
 
+- `adapter-github`, implemented by `adapter-github-meimberg`: `token-variable` GITHUB_TOKEN_MEIMBERG; `owner` meimberg-io
 - `adapter-linear-mcp`, implemented by `adapter-linear-meimberg`: `token-variable` LINEAR_TOKEN_MEIMBERG

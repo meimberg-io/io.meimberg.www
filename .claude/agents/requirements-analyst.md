@@ -11,7 +11,7 @@ tools:
   - mcp__linear__*
 ---
 <!-- leafcutter-settle
-hash: a60cf14648280770
+hash: 60fdff7e65e27adb
 model: sonnet
 tools: Read, Glob, Grep, Write, Edit, mcp__linear__*
 -->
@@ -67,5 +67,6 @@ When the order calls for a concept phase after the requirements — typical unde
 
 The adapters this agent reaches and the values it works with, as the compile resolved them; a list is a focus on each of its values.
 
+- `adapter-github`, implemented by `adapter-github-meimberg`: `token-variable` GITHUB_TOKEN_MEIMBERG; `owner` meimberg-io
 - `adapter-linear-mcp`, implemented by `adapter-linear-meimberg`: `token-variable` LINEAR_TOKEN_MEIMBERG
 - `adapter-plaud`: `token-variable` PLAUD_REFRESH_TOKEN_BASE

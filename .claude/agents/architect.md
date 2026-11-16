@@ -12,7 +12,7 @@ tools:
   - mcp__linear__*
 ---
 <!-- leafcutter-settle
-hash: 7dc7c4f8f2a0b2eb
+hash: 874dd1a7ea4bddbe
 model: opus
 tools: Read, Glob, Grep, Write, Edit, Bash, mcp__linear__*
 -->
@@ -54,4 +54,5 @@ When the work is not a decision inside one task but the concept phase of a whole
 
 The adapters this agent reaches and the values it works with, as the compile resolved them; a list is a focus on each of its values.
 
+- `adapter-github`, implemented by `adapter-github-meimberg`: `token-variable` GITHUB_TOKEN_MEIMBERG; `owner` meimberg-io
 - `adapter-linear-mcp`, implemented by `adapter-linear-meimberg`: `token-variable` LINEAR_TOKEN_MEIMBERG

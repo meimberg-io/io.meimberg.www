@@ -15,3 +15,4 @@ The adapters of this repository and the values to work with, as the compile reso
 - `adapter-smarteditor`, implemented by `adapter-smarteditor-meimberg`: `token-variable` SMARTEDITOR_TOKEN_MEIMBERG
 - `adapter-storyblok`, implemented by `adapter-storyblok-meimberg`: `space` 330326; `region` eu; `repository` io.meimberg.www, io.meimberg.smarteditor; `token-variable` STORYBLOK_TOKEN_MEIMBERG
 - `adapter-todoist`: `token-variable` TODOIST_TOKEN_BASE
+- `adapter-vault`, implemented by `adapter-vault-meimberg`: `url` https://leafcutter-vault.meimberg.io

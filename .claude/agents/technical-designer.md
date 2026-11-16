@@ -13,7 +13,7 @@ tools:
   - mcp__linear__*
 ---
 <!-- leafcutter-settle
-hash: c7d725eea807d373
+hash: 5312a189f99add06
 model: opus
 tools: Read, Glob, Grep, Write, Edit, Bash, Agent, mcp__linear__*
 -->
@@ -58,5 +58,6 @@ After acceptance and a reviewed development plan, the handover dossier goes to `
 
 The adapters this agent reaches and the values it works with, as the compile resolved them; a list is a focus on each of its values.
 
+- `adapter-github`, implemented by `adapter-github-meimberg`: `token-variable` GITHUB_TOKEN_MEIMBERG; `owner` meimberg-io
 - `adapter-linear-mcp`, implemented by `adapter-linear-meimberg`: `token-variable` LINEAR_TOKEN_MEIMBERG
 - `adapter-plaud`: `token-variable` PLAUD_REFRESH_TOKEN_BASE
