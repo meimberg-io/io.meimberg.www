@@ -4,10 +4,12 @@
   "private": true,
   "description": "The local colony of io.meimberg.www: Leafcutter OS artifacts installed here and compiled into the repository above.",
   "devDependencies": {
-    "@leafcutter-os/navigator": "^0.10.0",
-    "@meimberg-io/collection-development": "^0.4.0",
-    "@meimberg-io/collection-meimberg-all": "^0.2.40",
-    "@meimberg-io/colony": "^0.3.12"
+    "@leafcutter-guide/skill-guide": "^1.0.6",
+    "@leafcutter-os/collection-setup-local": "^0.2.1",
+    "@leafcutter-os/navigator": "^0.10.2",
+    "@meimberg-io/collection-development": "^0.4.7",
+    "@meimberg-io/collection-meimberg-all": "^0.2.49",
+    "@meimberg-io/colony": "^0.4.0"
   },
   "scripts": {
     "validate:structure": "leafcutter-governance validate-structure",

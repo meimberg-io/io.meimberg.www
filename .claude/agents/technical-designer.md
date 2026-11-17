@@ -13,7 +13,7 @@ tools:
   - mcp__linear__*
 ---
 <!-- leafcutter-settle
-hash: 5312a189f99add06
+hash: c0daec847ed729b8
 model: opus
 tools: Read, Glob, Grep, Write, Edit, Bash, Agent, mcp__linear__*
 -->
@@ -60,4 +60,4 @@ The adapters this agent reaches and the values it works with, as the compile res
 
 - `adapter-github`, implemented by `adapter-github-meimberg`: `token-variable` GITHUB_TOKEN_MEIMBERG; `owner` meimberg-io
 - `adapter-linear-mcp`, implemented by `adapter-linear-meimberg`: `token-variable` LINEAR_TOKEN_MEIMBERG
-- `adapter-plaud`: `token-variable` PLAUD_REFRESH_TOKEN_BASE
+- `adapter-plaud`, implemented by `adapter-plaud-base`: `account` google-103468724689332867910-1770467535@plaud.ai; `token-variable` PLAUD_REFRESH_TOKEN_BASE

@@ -9,7 +9,7 @@
  * - **Where a repository exists**, the setup copies this file, byte for byte, into it as `.leafcutter/token.mjs` (in a
  *   local colony that is its own folder), and `--update` renews the copy. The line is `node .leafcutter/token.mjs
  *   <host>`, short enough to paste, and the copy runs with nothing installed: it imports Node's built-in modules only.
- * - **Where no repository exists yet** — the collection question `npm create` puts in an empty folder — the line is
+ * - **Where no repository exists yet** — the collection question a first setup puts in an empty folder — the line is
  *   `node -e` with the function below as its text, and the host as its one argument. That text has to reach Node
  *   unchanged through every shell a person types it into: inside double quotes, bash and zsh read `$`, the backquote
  *   and `!`, PowerShell `$` and the backquote, cmd.exe `%`, and a double quote ends the argument in all of them. So the
@@ -20,18 +20,27 @@
  *
  * - Without a host it reads nothing, writes nothing, names the missing host and exits 2, rather than writing a line for
  *   the host `undefined`.
+ * - It is the one route to a token (SDR-2026-1117-registry-token-first-login-deferred): the registry's login in the
+ *   browser does not work for customers yet, and the CLI starts this script itself where it meets a refusal.
+ * - It takes its user configuration from `NPM_CONFIG_USERCONFIG` where that is set, in any case of the name, as npm
+ *   does; npm 11 refuses `npm config get userconfig` then ("The userconfig option is protected"). Otherwise it asks npm
+ *   which file it is (`npm config get userconfig`, the file `npm config set` writes). Where that file already holds a token for the host, it asks the registry whether it answers to it (`npm whoami`,
+ *   the registry given as `https://<host>/` in the child's environment, so no command line holds the host or the
+ *   token). Where the registry answers, it asks for nothing, writes nothing and exits 0; where it does not, it says so
+ *   and asks for a new token (the product owner's answer of 2026-11-15 to DEM-where-setup-script-writes-token-asks).
  * - Where its input is no terminal — a line run through an agent's command input — it reads nothing, writes nothing
- *   and says that the line is run in the person's own terminal (CORE-FUN-script-fetched-public-url-first).
+ *   and says that the line is run in the person's own terminal (CORE-FUN-script-fetched-public-url-first). Where npm
+ *   names no file, it reads nothing, writes nothing and exits 1.
  * - It reads the token in raw mode, so nothing typed is echoed; Backspace takes the last character back, Ctrl-C stops
  *   without writing, and Enter ends the token. Raw mode works in the terminals of macOS, Linux, WSL and Windows alike.
  *   An escape sequence a key sends, an arrow or another key that moves the cursor, is skipped whole, also when it arrives
  *   in two chunks: after the escape character, `[` opens a control sequence that ends at its final character, `@` to
  *   `~`, and `O` takes one character more; any other character after it is read as typed.
- * - It asks npm which file is its user configuration (`npm config get userconfig`, the file `npm config set` writes),
- *   and writes the line `//<host>/:_authToken=<token>` there itself, replacing one for the same host, with the mode
- *   600 where it creates the file. npm is asked through the host's shell with a command line that holds no token: the
- *   token never stands on a command line, neither the person's nor a child process's, and on Windows it never passes
- *   through cmd.exe. A line written by hand is the line npm writes; this repeats nothing npm decides.
+ * - It writes the line `//<host>/:_authToken=<token>` into npm's user configuration itself, replacing one for the same
+ *   host, with the mode 600 where it creates the file; nothing goes into the repository. npm is asked through the
+ *   host's shell with a command line that holds no token: the token never stands on a command line, neither the
+ *   person's nor a child process's, and on Windows it never passes through cmd.exe. A line written by hand is the line
+ *   npm writes; this repeats nothing npm decides.
  * - It prints the host and the file it wrote, never the token.
  *
  * The function reads the host only through the process it is given, so a test gives it a stand-in; the text is a
@@ -49,6 +58,7 @@
  * @property {string[]} argv
  * @property {TokenInput} stdin
  * @property {{ write: (text: string) => unknown }} stderr
+ * @property {Record<string, string | undefined>} [env]
  * @property {number | string | null | undefined} [exitCode]
  */
 
@@ -64,39 +74,71 @@ export function readToken(proc, load) {
   const host = proc.argv[1];
   const input = proc.stdin;
   const say = (/** @type {string} */ text) => proc.stderr.write(text + '\n');
-  const write = (/** @type {string} */ token) => {
-    const key = '//' + host + '/:_authToken';
-    if (token.trim() === '') {
-      say('No token was typed, so nothing was written.');
-      proc.exitCode = 1;
-      return;
-    }
-    const asked = load('node:child_process').spawnSync('npm config get userconfig', { shell: true, encoding: 'utf8' });
-    const file = String(asked.stdout ?? '').trim();
-    if (asked.status === 0 && file) {
-      const fs = load('node:fs');
-      /** @type {string[]} */
-      let lines;
-      try {
-        lines = fs.readFileSync(file, 'utf8').split(/\r?\n/u);
-      } catch {
-        lines = [];
-      }
-      lines = lines.filter((line) => line.trim().startsWith(key + '=') === false);
-      while (lines.length > 0 && lines[lines.length - 1].trim() === '') lines.pop();
-      fs.writeFileSync(file, lines.concat(key + '=' + token.trim()).join('\n') + '\n', { mode: 0o600 });
-      say('Wrote the read token for ' + host + ' into ' + file + ', without showing it.');
-    } else {
-      say('npm named no configuration file to write into, so nothing was written. Is npm on the path?');
-      proc.exitCode = 1;
-    }
-  };
   if (host === undefined || host.trim() === '') {
     say(
       'No registry host was given, so nothing was read and nothing was written. Name the host after the script, as the line the setup prints does.',
     );
     proc.exitCode = 2;
-  } else if (input.isTTY) {
+    return;
+  }
+  const key = '//' + host + '/:_authToken';
+  const fs = load('node:fs');
+  const env = proc.env || {};
+  const named = Object.keys(env).find((name) => name.toLowerCase() === 'npm_config_userconfig');
+  let file = named && env[named] ? String(env[named]).trim() : '';
+  if (file === '') {
+    const asked = load('node:child_process').spawnSync('npm config get userconfig', { shell: true, encoding: 'utf8' });
+    file = asked.status === 0 ? String(asked.stdout ?? '').trim() : '';
+  }
+  /** @type {string[]} */
+  let lines;
+  try {
+    lines = fs.readFileSync(file, 'utf8').split(/\r?\n/u);
+  } catch {
+    lines = [];
+  }
+  const held = lines.some((line) => line.trim().startsWith(key + '=') && line.trim().length > key.length + 1);
+  if (held) {
+    const checked = load('node:child_process').spawnSync('npm whoami', {
+      shell: true,
+      encoding: 'utf8',
+      timeout: 60000,
+      env: Object.assign({}, proc.env, { npm_config_registry: 'https://' + host + '/' }),
+    });
+    if (checked.status === 0) {
+      say(
+        'The registry ' +
+          host +
+          ' already answers to the token in ' +
+          file +
+          ', so no token was asked for and nothing was written.',
+      );
+      return;
+    }
+    say('The registry ' + host + ' does not answer to the token in ' + file + ', so a new one is asked for.');
+  }
+  const write = (/** @type {string} */ token) => {
+    if (token.trim() === '') {
+      say('No token was typed, so nothing was written.');
+      proc.exitCode = 1;
+      return;
+    }
+    lines = lines.filter((line) => line.trim().startsWith(key + '=') === false);
+    while (lines.length > 0 && lines[lines.length - 1].trim() === '') lines.pop();
+    fs.writeFileSync(file, lines.concat(key + '=' + token.trim()).join('\n') + '\n', { mode: 0o600 });
+    say('Wrote the read token for ' + host + ' into ' + file + ', without showing it.');
+  };
+  if (Boolean(input.isTTY) === false) {
+    say(
+      'There is no terminal to read the token in, so nothing was read and nothing was written. Run this line in your own terminal, not through the command input of an agent.',
+    );
+    proc.exitCode = 2;
+  } else if (file === '') {
+    say(
+      'npm named no configuration file to write the token into, so nothing was read and nothing was written. Is npm on the path?',
+    );
+    proc.exitCode = 1;
+  } else {
     let token = '';
     let done = false;
     let escape = '';
@@ -133,11 +175,6 @@ export function readToken(proc, load) {
       }
     });
     input.resume();
-  } else {
-    say(
-      'There is no terminal to read the token in, so nothing was read and nothing was written. Run this line in your own terminal, not through the command input of an agent.',
-    );
-    proc.exitCode = 2;
   }
 }
 
@@ -166,6 +203,7 @@ export function main(proc = process, load = createRequire(import.meta.url)) {
       argv: proc.argv.slice(1),
       stdin: /** @type {TokenInput} */ (/** @type {unknown} */ (proc.stdin)),
       stderr: proc.stderr,
+      env: proc.env,
       /** @param {number | string | null | undefined} code */
       set exitCode(code) {
         proc.exitCode = code;

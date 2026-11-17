@@ -4,6 +4,7 @@ minimumReleaseAgeExclude:
   - '@leafcutter-strict/*'
   - '@leafcutter-library/*'
   - '@meimberg-io/*'
+  - '@leafcutter-guide/*'
 
 # The artifacts of this local colony's own, one package per artifact, never published (leafcutter-os#628).
 packages:

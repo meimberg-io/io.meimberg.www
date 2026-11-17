@@ -46,3 +46,5 @@ certificates
 
 # superpowers scratch (Ledger, Task-Briefs, Review-Pakete)
 /.superpowers/
+# Written by the colony's compile: opens this project in the Leafcutter Navigator app.
+/Leafcutter Navigator.app/

@@ -9,10 +9,10 @@ The adapters of this repository and the values to work with, as the compile reso
 - `adapter-linear-mcp`, implemented by `adapter-linear-meimberg`: `token-variable` LINEAR_TOKEN_MEIMBERG
 - `adapter-microsoft-365-graph`, implemented by `adapter-microsoft-365-graph-meimberg`: `tenant` meimberg.digital; `mailbox` oliver@meimberg.digital; `services` mail, mail-shared, send, calendar, calendar-write, files, files-write, sites; `token-variable` MS365_REFRESH_TOKEN_MEIMBERG
 - `adapter-onedrive`, implemented by `adapter-onedrive-meimberg`: `drive` OneDrive-meimbergdigitalGmbH, OneDrive-meimbergdigitalGmbH–meimberg.digital-Documents, OneDrive-meimbergdigitalGmbH–projects.meimberg.digital-Documents, OneDrive-meimbergdigitalGmbH–meimberg.io-Documents, OneDrive-meimbergdigitalGmbH–meimbergHolding-Documents, OneDrive-meimbergdigitalGmbH–luxarise-Documents, OneDrive-meimbergdigitalGmbH–luxarise-Pictures, OneDrive-meimbergdigitalGmbH–DigitalCircus-Documents, OneDrive-meimbergdigitalGmbH–AOC-Documents, OneDrive-meimbergdigitalGmbH–nahwaermenetze-Documents; `graph-implementation` microsoft-365-graph-meimberg
-- `adapter-plaud`: `token-variable` PLAUD_REFRESH_TOKEN_BASE
+- `adapter-plaud`, implemented by `adapter-plaud-base`: `account` google-103468724689332867910-1770467535@plaud.ai; `token-variable` PLAUD_REFRESH_TOKEN_BASE
 - `adapter-sanity`, implemented by `adapter-sanity-meimberg-digital`: `project` bdq1icag; `dataset` production, campaigns; `repository` digital.meimberg.www, digital.meimberg.campains; `token-variable` SANITY_TOKEN_MEIMBERG
-- `adapter-sevdesk`, implemented by `adapter-sevdesk-meimberg`: `company` meimberg.digital GmbH; `token-variable` SEVDESK_TOKEN_MEIMBERG
+- `adapter-sevdesk`, implemented by `adapter-sevdesk-meimberg`: `company` meimberg.digital GmbH; `token-variable` SEVDESK_TOKEN_MEIMBERG; `approver` Oli
 - `adapter-smarteditor`, implemented by `adapter-smarteditor-meimberg`: `token-variable` SMARTEDITOR_TOKEN_MEIMBERG
 - `adapter-storyblok`, implemented by `adapter-storyblok-meimberg`: `space` 330326; `region` eu; `repository` io.meimberg.www, io.meimberg.smarteditor; `token-variable` STORYBLOK_TOKEN_MEIMBERG
-- `adapter-todoist`: `token-variable` TODOIST_TOKEN_BASE
+- `adapter-todoist`, implemented by `adapter-todoist-base`: `account` oliver.meimberg@gmail.com; `token-variable` TODOIST_TOKEN_BASE
 - `adapter-vault`, implemented by `adapter-vault-meimberg`: `url` https://leafcutter-vault.meimberg.io

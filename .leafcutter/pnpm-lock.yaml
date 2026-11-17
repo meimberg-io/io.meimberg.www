@@ -8,18 +8,24 @@ importers:
 
   .:
     devDependencies:
+      '@leafcutter-guide/skill-guide':
+        specifier: ^1.0.6
+        version: 1.0.6
+      '@leafcutter-os/collection-setup-local':
+        specifier: ^0.2.1
+        version: 0.2.1(@leafcutter-os/cli@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
       '@leafcutter-os/navigator':
-        specifier: ^0.10.0
-        version: 0.10.0
+        specifier: ^0.10.2
+        version: 0.10.2
       '@meimberg-io/collection-development':
-        specifier: ^0.4.0
-        version: 0.4.0(@meimberg-io/skill-secrets@0.3.1)
+        specifier: ^0.4.7
+        version: 0.4.7
       '@meimberg-io/collection-meimberg-all':
-        specifier: ^0.2.40
-        version: 0.2.40(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/adapter-todoist@0.1.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/collection-base@0.9.11)(@meimberg-io/datapool-todos@0.4.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-google-account@0.2.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/skill-onedrive@0.3.0)(@meimberg-io/skill-secrets@0.3.1)(@meimberg-io/skill-todoist-rest@0.1.1(@meimberg-io/skill-secrets@0.3.1))
+        specifier: ^0.2.49
+        version: 0.2.49(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.1)(@meimberg-io/collection-base@0.15.2)(@meimberg-io/datapool-todos@0.5.1)
       '@meimberg-io/colony':
-        specifier: ^0.3.12
-        version: 0.3.12(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
+        specifier: ^0.4.0
+        version: 0.4.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
 
 packages:
 
@@ -122,8 +128,8 @@ packages:
       markdownlint:
         optional: true
 
-  '@leafcutter-governance/query@1.1.0':
-    resolution: {integrity: sha512-ZvAOYQZ86usHsigRVyDaAm3X2kMXi2eJh4JWNHeGZrIMnh34txwk3DS9+Vxf2CITW5R7oppkkAjY/wze5NX5Rg==, tarball: https://packages.leafcutteros.ai/@leafcutter-governance/query/-/query-1.1.0.tgz}
+  '@leafcutter-governance/query@2.0.1':
+    resolution: {integrity: sha512-I8wZZkyP1wzP5Dye/BfJVycGk/09dzriE70I2KTyo6Q1pbyHq1JfIXyF/AUaNCh5+nVJgb+ojKiUOW1h6jr9XQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-governance/query/-/query-2.0.1.tgz}
     engines: {node: ^22.17.0 || ^24.0.0 || >=26}
     hasBin: true
     peerDependencies:
@@ -133,8 +139,8 @@ packages:
     resolution: {integrity: sha512-Ndj0PkpkmYzSXo1hXna4tQEYj7t/ud95pbNQM/yzXZYa7UVoHzYEDbgQMR4VaLc7ejzZWYGCPBfT2iYe1EZvSg==, tarball: https://packages.leafcutteros.ai/@leafcutter-governance/read/-/read-1.1.0.tgz}
     engines: {node: ^22.17.0 || ^24.0.0 || >=26}
 
-  '@leafcutter-governance/run@1.1.1':
-    resolution: {integrity: sha512-XeC5AMee0pXrJKBt4mPtPtf/JVQsVFQd7RXKC8XzZO+5EKRbaVmDkoJ7E4FM+gfvwYtDA4RM2bV2WJCY/XvnYw==, tarball: https://packages.leafcutteros.ai/@leafcutter-governance/run/-/run-1.1.1.tgz}
+  '@leafcutter-governance/run@2.1.0':
+    resolution: {integrity: sha512-SQBPhKhD0Wxw22oUOPzOZimEBgI7PQWgGLcT+DZTbyKY8x+QYRTUZFt8bDecJLO0p5xmr7gyu3le+rxHaPojVQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-governance/run/-/run-2.1.0.tgz}
     engines: {node: ^22.17.0 || ^24.0.0 || >=26}
     hasBin: true
     peerDependencies:
@@ -144,17 +150,59 @@ packages:
       eslint:
         optional: true
 
-  '@leafcutter-library/adapter-github-cli@1.2.0':
-    resolution: {integrity: sha512-JuNNk+rvFEURuxVxJNUa/oJBQ/vjdDF6MgzqdsIMoUffNsjshCwBFAG3KCUz2Tdjoonnesq3teuv+QyfAm0OVg==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-github-cli/-/adapter-github-cli-1.2.0.tgz}
-    engines: {node: ^22.17.0 || >=24}
-    deprecated: 'Renamed: install @leafcutter-library/adapter-github instead, which also carries the identity of a context.'
+  '@leafcutter-guide/skill-guide@1.0.6':
+    resolution: {integrity: sha512-p6FYr+jYGC8pY3S1BaermY7MyIvil5YqEjyQHhy2p/s7cpbiiVthpRkDI4sggCy93eDoWnNflpeYsuoebdj0fw==, tarball: https://packages.leafcutteros.ai/@leafcutter-guide/skill-guide/-/skill-guide-1.0.6.tgz}
+
+  '@leafcutter-library/adapter-attio-mcp@0.2.1':
+    resolution: {integrity: sha512-4QFCHdUeIOChPbBADMATtn+LOivWCVSgs3jEHIBCX1Zk0/2hZ70SQfI10YeQqvxXDmBe8jRaCctnl7U0h/C+bw==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-attio-mcp/-/adapter-attio-mcp-0.2.1.tgz}
 
   '@leafcutter-library/adapter-github@1.3.1':
     resolution: {integrity: sha512-jyJ7r+Vlh9XjIIyB/MKWFNBoQ9lleHtDK6MYkHNO2Y1ah8OX8Mx0aK2jFY7w4pDPkFABvt/FbUgNBRpQmTDXyQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-github/-/adapter-github-1.3.1.tgz}
     engines: {node: ^22.17.0 || >=24}
 
+  '@leafcutter-library/adapter-google-account@0.2.2':
+    resolution: {integrity: sha512-dp8ddVStqO79fpl+Zmj7AYkA6iPc1RAozEjfs3CTbZ2pji9cZ6YHc+p8zzO8BX1x00wPDRUrs7fPt1rOAd4GGw==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-google-account/-/adapter-google-account-0.2.2.tgz}
+    engines: {node: ^22.17.0 || >=24}
+
+  '@leafcutter-library/adapter-jira-mcp@0.2.1':
+    resolution: {integrity: sha512-eA2rRl/yWVV5/jkMVEzt7IlzgCkWhS6rrT18i09ThByFgpxD0PudInFqBhtIWsczufLb8GZtCIOzfC22KczlAQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-jira-mcp/-/adapter-jira-mcp-0.2.1.tgz}
+
+  '@leafcutter-library/adapter-linear-mcp@0.2.2':
+    resolution: {integrity: sha512-bQOlC1cLIMQK+Hx+ellou3RWbnvfMALVPrkijOeIfgRfECHKebgtpUNFZto4G8ycO/WcVZQ6dQazWMAvs0ugxw==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-linear-mcp/-/adapter-linear-mcp-0.2.2.tgz}
+
+  '@leafcutter-library/adapter-local-files@0.2.2':
+    resolution: {integrity: sha512-8hrH9IidexODaSQx2jKizEycR9NEUJnVZ8zuRs9paRZBFrf9OdKMlUkceaAcqJWaCF8G8EUXaUFhEYYouyFJPw==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-local-files/-/adapter-local-files-0.2.2.tgz}
+
+  '@leafcutter-library/adapter-markitdown@0.2.1':
+    resolution: {integrity: sha512-QoLnRnTKG8Hn5suAmv92Y+Qc8NFKXwtcRqu1bG0ahypWYO5dOAhoDYNNFQwdeaQHMNNuQeuuMnAeU6vFQwQ/XA==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-markitdown/-/adapter-markitdown-0.2.1.tgz}
+
+  '@leafcutter-library/adapter-microsoft-365-graph@0.2.1':
+    resolution: {integrity: sha512-Tl/wVMhOK10pbwJY8N1PMnJOCExSCH9ZcPe9outdqJaLK+EPm/YwQbHqaSKbEPzm7xE0FZM2GEt1lcvnB62laA==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-microsoft-365-graph/-/adapter-microsoft-365-graph-0.2.1.tgz}
+    engines: {node: ^22.17.0 || >=24}
+
+  '@leafcutter-library/adapter-notion@0.2.1':
+    resolution: {integrity: sha512-UR/qjNJcvu/G8twvowa8z4uAxI/UH4KrZM61L61w0Q/zQSTFbPtkqzJI3OR7GFg7HnnvapH1y3TOiXBH1qfMUw==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-notion/-/adapter-notion-0.2.1.tgz}
+
+  '@leafcutter-library/adapter-onedrive@0.2.1':
+    resolution: {integrity: sha512-+C/jblTSD60tDPiXmJT/3uHUQgd6kaIpeSn4cMQ2R0MjagEhBKWtwmxGa6/KgPCQTYdFpLH+PbmuFWQ6q0vQUQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-onedrive/-/adapter-onedrive-0.2.1.tgz}
+    engines: {node: ^22.17.0 || >=24}
+
+  '@leafcutter-library/adapter-plaud@0.2.2':
+    resolution: {integrity: sha512-v8xJUHEYV+cGxbpUjAcNPXu3Uw0ZwYI0MKSioMdWS/9pp0rD2Fq4vwERdxS7T1JGQl/Zn4jdbOjGqsneIL7zGg==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-plaud/-/adapter-plaud-0.2.2.tgz}
+    engines: {node: ^22.17.0 || >=24}
+
   '@leafcutter-library/adapter-sanity@0.2.0':
     resolution: {integrity: sha512-krwVqsPoyZZY+Cx3ZcaTUaLRRBaMn0ZG50bfBkKQQQcrwB0ULTaEFJwDGI+sfaSx1Qb5PjwNKLITtWQt1+hddg==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-sanity/-/adapter-sanity-0.2.0.tgz}
+
+  '@leafcutter-library/adapter-sevdesk@0.2.1':
+    resolution: {integrity: sha512-xRQdTNzAMyHPtdBC298YTeUbnwN8bMYor29d1J564Zf9Mzu5k0BNTSSJK3dK9KQmZsLQzzEii2OK0FyrxkENDw==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-sevdesk/-/adapter-sevdesk-0.2.1.tgz}
+
+  '@leafcutter-library/adapter-storyblok@0.2.1':
+    resolution: {integrity: sha512-bLVKGybAee0qBAPEOYAgzs1SRGsexmxzKh50U3wonbRAnIhQtl3eLW+yMSCMs6PIS1svzQonHkoD1rY9ECGA9w==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-storyblok/-/adapter-storyblok-0.2.1.tgz}
+
+  '@leafcutter-library/adapter-todoist@0.2.1':
+    resolution: {integrity: sha512-lWpPJr7kT8RuDtN8jG0D5fc4jQOYY1O2lQuSd6AFObQc8x1YY/r9/77gaFOJQBMg4M5IWXCIPb8pOpbPQ855WA==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-todoist/-/adapter-todoist-0.2.1.tgz}
+    engines: {node: ^22.17.0 || >=24}
 
   '@leafcutter-library/role-architect@0.5.0':
     resolution: {integrity: sha512-K8tRu3V2de9wejNeE6kAAZrCfkLDakJd65clyjAupzwRTnOAlyLEXgCLNFv+VhWrsEq+pPG7a01xiVSNwveOyQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/role-architect/-/role-architect-0.5.0.tgz}
@@ -179,118 +227,90 @@ packages:
     engines: {node: ^22.17.0 || >=24}
     hasBin: true
 
-  '@leafcutter-os/cli@7.38.0':
-    resolution: {integrity: sha512-LI48+Cpk00Ft5EKQ5xzrTGWpTAQfRXL+ebDDSFZVwujTG1VcKEPI6fmgmwxcbVOPEth1mRmNdvU/f8D1g1lgFg==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/cli/-/cli-7.38.0.tgz}
+  '@leafcutter-os/cli@8.2.0':
+    resolution: {integrity: sha512-UFfChob2d/4/FIpw9RvzDFHW4J7gVNGvgjkF2FqKtQcpRS4ptczyEHOFAFxMFdQ/obGKbkP70++S++gf4I88Pg==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/cli/-/cli-8.2.0.tgz}
     engines: {node: ^22.17.0 || ^24.0.0 || >=26}
     hasBin: true
     peerDependencies:
-      '@leafcutter-governance/run': ^1.1.0
-      '@leafcutter-os/rules': ^7.38.0
+      '@leafcutter-governance/run': ^2.1.0
+      '@leafcutter-os/rules': ^8.2.0
     peerDependenciesMeta:
       '@leafcutter-governance/run':
         optional: true
       '@leafcutter-os/rules':
         optional: true
 
-  '@leafcutter-os/navigator@0.10.0':
-    resolution: {integrity: sha512-E1ZjY3SqgcPXWLaUhG/vFgImOozygtpmBn6mICyQcELTdhYvXFYJ0WK+GyJ0Oh8LhwIAGCS9hCG2ksS67S4ooA==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/navigator/-/navigator-0.10.0.tgz}
+  '@leafcutter-os/collection-setup-local@0.2.1':
+    resolution: {integrity: sha512-a228nIEDbKoGsNZ0XFoFOFwnhpqb5OPjCGsmJHtn9BiWwh7wPuRSePP3Z/1cm1m1kcthFiHEjaOOLbc92MxTlA==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/collection-setup-local/-/collection-setup-local-0.2.1.tgz}
+    peerDependencies:
+      '@leafcutter-os/cli': ^8.0.1
+
+  '@leafcutter-os/navigator@0.10.2':
+    resolution: {integrity: sha512-miHQOebvBbt50L8FyUWIrAOwsSPmaUn1c9Rcy+PlSR4GaUtoLtqqqoVucVtXWj11dceYHbqES1epCgjkxRdZ8w==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/navigator/-/navigator-0.10.2.tgz}
     engines: {node: ^22.17.0 || >=24}
     hasBin: true
 
-  '@leafcutter-os/playbook-set-up-chapter-colony@0.3.1':
-    resolution: {integrity: sha512-1T3DAOLxWdZHvuS8KMgETYynu+ODolNAMDHhFmk4gC4BN+7tFP4BZuEFZPw3HfAUYVuoa3HaQZ/uZLSHJJYC6Q==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-set-up-chapter-colony/-/playbook-set-up-chapter-colony-0.3.1.tgz}
+  '@leafcutter-os/playbook-set-up-chapter-colony@0.5.0':
+    resolution: {integrity: sha512-GXPd2Znh89xqqe7z70k2B/EWAEYxX03/sNClgijGZO/RWn6bMWvRXhk1RfCeO43yfCgCNiJ2A+ZfKgKvGAttGg==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-set-up-chapter-colony/-/playbook-set-up-chapter-colony-0.5.0.tgz}
     engines: {node: ^22.17.0 || ^24.0.0 || >=26}
 
-  '@leafcutter-os/playbook-set-up-local-colony@0.3.0':
-    resolution: {integrity: sha512-3ytR+NXwKJyEV5XiL7b6XN0Jlf/jEm0aS2gIy+FfFYlOAZAEDH1SOgMRcJZAusaKEy0MzJcvI+VD9RS8teI9/A==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-set-up-local-colony/-/playbook-set-up-local-colony-0.3.0.tgz}
+  '@leafcutter-os/playbook-set-up-local-colony@0.4.1':
+    resolution: {integrity: sha512-b/SLJVjbnunwMYbDqNOiPBaWlNxgN6WocmXTDRTZc3aW6EHzVS5r4s850oaUpweHjLyuR4aQjWWjaJL5+MFDww==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-set-up-local-colony/-/playbook-set-up-local-colony-0.4.1.tgz}
     engines: {node: ^22.17.0 || ^24.0.0 || >=26}
 
-  '@leafcutter-os/playbook-upgrade-colonies@0.2.3':
-    resolution: {integrity: sha512-XwVXW7Zot7wQ03/7eciD+C+eUPolHRrrSar/UzAy6v2DMyRqRAScPfRyTg8Ze/eFZnj4+5sqYDtHlmFwVNLcOA==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-upgrade-colonies/-/playbook-upgrade-colonies-0.2.3.tgz}
+  '@leafcutter-os/playbook-upgrade-chapter-colony@0.2.0':
+    resolution: {integrity: sha512-jDWjEfVe/xvg9yv9RU8kjsjRonGTS2qa8X8PYc6YpR/g0jPB48bQpwPXJnNtl9VRDyfUQKlw7LaHgIWhpEwmaQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-upgrade-chapter-colony/-/playbook-upgrade-chapter-colony-0.2.0.tgz}
+
+  '@leafcutter-os/playbook-upgrade-colonies@0.3.0':
+    resolution: {integrity: sha512-GlSD0Y/UMBwQUdDJ+/qcFNWQC+E1jeURruILrF5IYOqaCXRAAbABcN58mQYZKUB6FcoVji57slk/tV6l6C+UjQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-upgrade-colonies/-/playbook-upgrade-colonies-0.3.0.tgz}
     deprecated: 'Replaced: each colony upgrades itself with the upgrade playbook of its kind, @leafcutter-os/playbook-upgrade-root-colony, -upgrade-chapter-colony or -upgrade-local-colony, which the setup collection of its kind brings. This name stays a deprecation alias that brings the three until the next major release.'
 
-  '@leafcutter-os/rules@7.38.0':
-    resolution: {integrity: sha512-CxUq6bAoaIandqJKMT48mLYn+wq0RjYHuh/ed02yASwX7dcQsKX/gfOoTK+WmKovFziRBCn83MDLGPM8sIAc0w==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/rules/-/rules-7.38.0.tgz}
+  '@leafcutter-os/playbook-upgrade-local-colony@0.2.0':
+    resolution: {integrity: sha512-IffDKG1dhp3oHc10fyBaIhsbUAlpvlmaSc10hwu8MxbNOGqsMWnjP8lvvlYAoNKhW72XQpNIsC0SNYVqbFnN8Q==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-upgrade-local-colony/-/playbook-upgrade-local-colony-0.2.0.tgz}
+
+  '@leafcutter-os/playbook-upgrade-root-colony@0.2.0':
+    resolution: {integrity: sha512-/nQ4ACIjK2Nutj+q//FrXMhAvDCDDqlayZqKgeMbEPqVFIfqorG5ywxho0b5Mke0aONWto4Zg2L3x+2NB2cMsw==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-upgrade-root-colony/-/playbook-upgrade-root-colony-0.2.0.tgz}
+
+  '@leafcutter-os/rules@8.2.0':
+    resolution: {integrity: sha512-yQKCMPQdLVSg1iSBJsMbcbmcJg59BOl2QF7tLDoRgs21NqdcH6fprFAXf7gTlXtEWXRQi6fUNBJw7ttXqSrh7g==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/rules/-/rules-8.2.0.tgz}
     engines: {node: ^22.17.0 || ^24.0.0 || >=26}
     peerDependencies:
-      '@leafcutter-governance/check': ^1.3.0
-      '@leafcutter-governance/compose': ^1.3.0
+      '@leafcutter-governance/check': ^1.3.1
+      '@leafcutter-governance/compose': ^1.3.1
       '@leafcutter-governance/lint': ^1.0.0
       '@leafcutter-governance/read': ^1.1.0
-      '@leafcutter-governance/run': ^1.1.0
-      '@leafcutter-os/types': ^7.38.0
+      '@leafcutter-governance/run': ^2.1.0
+      '@leafcutter-os/types': ^8.2.0
       eslint: '>=10'
     peerDependenciesMeta:
       '@leafcutter-governance/run':
         optional: true
 
-  '@leafcutter-os/types@7.38.0':
-    resolution: {integrity: sha512-/Uj7d/9x9sWQS6ivis/Doi5z9zhV1mVvt6l9FBFa+mpW0B6ij/stGwYlh8GNBm1N46ghJsO0D19ra/nf/718Mg==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/types/-/types-7.38.0.tgz}
+  '@leafcutter-os/types@8.2.0':
+    resolution: {integrity: sha512-e7Z+Vhj480RykSSKLgWX23nk1R5XBgj3cPAP4iiPxdsZ1iYi2wmiMGnyBT+eg4eU5FpduFzxJnOiTQ5dftldpQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/types/-/types-8.2.0.tgz}
     engines: {node: ^22.17.0 || ^24.0.0 || >=26}
     peerDependencies:
-      '@leafcutter-governance/check': ^1.3.0
-      '@leafcutter-governance/compose': ^1.3.0
-      '@leafcutter-governance/declare': ^1.3.0
+      '@leafcutter-governance/check': ^1.3.1
+      '@leafcutter-governance/compose': ^1.3.1
+      '@leafcutter-governance/declare': ^1.3.1
 
-  '@meimberg-io/adapter-attio-mcp@0.2.1':
-    resolution: {integrity: sha512-utEUDdD0yUkbPmP6CJ5b7F0DQtiM7q+OUUS6qghxIscr7uQZ3q/ovHLvNRwqu29GvRn5FjBjRK+BASycW72Ovw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-attio-mcp/0.2.1/d97cf7efbee5a65312e02e88b254cb84f1620f48}
+  '@meimberg-io/adapter-github-meimberg@0.2.1':
+    resolution: {integrity: sha512-z6wluh11g5qt5WcIqAiAHwr/YeytfzrdZBF9h9rvyRmG32wW4A10ynbgKMbs2O0PUf4Y5C/HfE+AcK+EvCI68g==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-github-meimberg/0.2.1/c4a21a7253f2f6f751772ad5474554e29fbc6578}
 
-  '@meimberg-io/adapter-github-meimberg@0.2.0':
-    resolution: {integrity: sha512-JNQDHKkovArGzaKq5F0RTBiLVggNtANreLRJ5ru5TWlEGV7/MK5NGhaWmClLoBWD8FSsXdtyPcP9CGE0YXGyXA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-github-meimberg/0.2.0/9957fc02e0512f31d3018db15b035cfdf91c4bfa}
+  '@meimberg-io/adapter-google-meimberg@0.2.1':
+    resolution: {integrity: sha512-1g39DlSl2wPW7DrxxXTpmh2rOpX5/JZfsJ2p9HrhUO9dfBAqkgDJ5xRkD4PnWSLW8znS7U4WGdkvAY8pQViDhg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-google-meimberg/0.2.1/940298a83da3b57e19e35843a65526c26c2d311c}
 
-  '@meimberg-io/adapter-google-account@0.2.1':
-    resolution: {integrity: sha512-Jv/4Jc+OlDWapqexNICL8/yggLlRHRvGAlQL+//Er9MNxYta2vQKoi8wm3L155FaIRxcB6TR85sABj+lWpQflg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-google-account/0.2.1/6b023ac958633f0cb46a9ebdaf70a1be42f37344}
-    peerDependencies:
-      '@meimberg-io/skill-google-account': ^0.2.1
-      '@meimberg-io/skill-secrets': ^0.3.0
+  '@meimberg-io/adapter-linear-meimberg@0.2.1':
+    resolution: {integrity: sha512-4nDh8IxbFItilOlrPjRCGOiep1z8eZ/Kjt0qrJnCxPAYlvPlGjHPjRICx1YQAEl7WRu76j6ODyys/xk35eMjRA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-linear-meimberg/0.2.1/c5d1adb15c9a21b9946ba3ea5ff3b5a574a3e913}
 
-  '@meimberg-io/adapter-google-meimberg@0.1.4':
-    resolution: {integrity: sha512-0Ltz1kZ/H4AABtk3+zM/L/eYtKWFw7T7q4uG/ExRRZtRrZ4y+rTbhBPapC9n/RZ5xy80i8jY9UQ4DHkSUjsKJw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-google-meimberg/0.1.4/656c4f3275fe931f03c846f20f77bf3133b74767}
+  '@meimberg-io/adapter-microsoft-365-graph-meimberg@0.8.2':
+    resolution: {integrity: sha512-D/lNckXFrzF02e0CdB8Gu2TpYlbeirOGjdM5SzFc1OXLytoDeVOVpE2eIzowP4yeYEoZxoKa2WItFCabWrA98g==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-microsoft-365-graph-meimberg/0.8.2/4847b960691dc14178c2a280038d034f5bff1698}
 
-  '@meimberg-io/adapter-jira-mcp@0.1.3':
-    resolution: {integrity: sha512-y2jCQLmse9n8/5T9o8ZYGn6ERr8CmY1qjg1tAKPsCXsOOAXNVfw/I61YwLpAeyaLh2KDtNqcB6QYDDcXiMeGYQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-jira-mcp/0.1.3/9ce0512346d61f23d2704bc10c336b78aa7a2cd3}
+  '@meimberg-io/adapter-onedrive-meimberg@0.3.1':
+    resolution: {integrity: sha512-gjIgl5YOGGy+/aixqe0OG0vDMqaVNwXpyDz558d2qsynZ0+TISALgrYI+hXT9L6NKHzVurfd6vOKmEtS2rdn6A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-onedrive-meimberg/0.3.1/04915b34528dea92e9d9dd7966837ca221648017}
 
-  '@meimberg-io/adapter-linear-mcp@0.1.5':
-    resolution: {integrity: sha512-qKTlXTvU0/LlHepD0yhXIj12uamhNmZNjUfFpNro+PT6tpX/5irAECcXdTXrL04H5PQPVs2P9fxMo1ft06sdEQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-linear-mcp/0.1.5/7efccc2b930fdf46b139d86f0f21c496377149dd}
-    peerDependencies:
-      '@meimberg-io/skill-secrets': ^0.3.0
-
-  '@meimberg-io/adapter-linear-meimberg@0.1.2':
-    resolution: {integrity: sha512-5QB4AIgpkz08UxpDHkfdVzJcoXSo6q3OYKJt55UbntqcLN4JeMBfp2JE4SNeP/RMaEFCy5Zd7qutQAqY01BhMQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-linear-meimberg/0.1.2/99edd25d71ed1dc1e308e728a775f8f240783514}
-
-  '@meimberg-io/adapter-local-files@0.1.11':
-    resolution: {integrity: sha512-jss5RKQwvoSTMW5v2OIrFjgzHkKEb3SkHWqIfxQssNN+Hi4lb6YPRs/YiXTKw2i9rm5vUXgKsjUbGNLRbjmx9Q==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-local-files/0.1.11/15db9ed0cd9a92be02117d6d8d971947cbcf01db}
-
-  '@meimberg-io/adapter-markitdown@0.1.2':
-    resolution: {integrity: sha512-Wm8ZADWdk8WoG1hU4WXGI0s0C3cG6sggLwyScxCbGMUorYXF529AEzLe6k4+hysqedFd8wUpX7V31XwCInafOQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-markitdown/0.1.2/e7b9873adb77387095d8e3db5843c49da2ee55b6}
-
-  '@meimberg-io/adapter-microsoft-365-graph-meimberg@0.7.1':
-    resolution: {integrity: sha512-X3jUQXftX7Z5t/c80LFFNjyKN+kTZNQD8JLHVkJjR1bo/NMJWcvbJBZ3rUP+894ErYLjxGMJZaZiRWAFyu+gRQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-microsoft-365-graph-meimberg/0.7.1/5359d6e2b6e29dcad67ecc524e11b38be2258502}
-
-  '@meimberg-io/adapter-microsoft-365-graph@0.7.1':
-    resolution: {integrity: sha512-ACyXwa3RH8TV/vzNfYMlKEEgg2lBQfo8FbKvgFeVoJfigpUVit6lCytOKJ4GtGSOOOzhZJxwZddZrGtH6QJ1wg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-microsoft-365-graph/0.7.1/141b49f6935d10a9c67ff719b55ae1eb471dbaf7}
-    peerDependencies:
-      '@meimberg-io/skill-microsoft-365-graph': ^0.5.2
-      '@meimberg-io/skill-secrets': ^0.3.0
-
-  '@meimberg-io/adapter-notion@0.1.6':
-    resolution: {integrity: sha512-k+ekiqasNBnETEPItCmX66BW8D9B8EOn8OJBvQfT/tNJzDkkw8iopLZUjKCpPQaX+FWxX1CR4uR4V6/fCoT7DA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-notion/0.1.6/a9f32dbda496759a7b463de9ccc4f45f825d22f0}
-
-  '@meimberg-io/adapter-onedrive-meimberg@0.2.3':
-    resolution: {integrity: sha512-AUzeKDmH7P+bc8ZP4Y8D1+oZm4beJ5JlRmh2Jds4nhZAaMnmYOueWoK03n2S/pYEqlkewkQnqybLzbW29yzN2Q==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-onedrive-meimberg/0.2.3/a73039b450e323fdba269df64a2d0ff409377e29}
-
-  '@meimberg-io/adapter-onedrive@0.2.3':
-    resolution: {integrity: sha512-rGD9haxA9pRMuf9gBfN/YVkaHWYNB82XNbp9Bi7DLhWxiDzYAaxAG4OjeH+4evvV2JqXUtV7MCFUrANQSsT/hQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-onedrive/0.2.3/c8682794216c1bdb6f4fd02785b8bf7e348ed6a6}
-    peerDependencies:
-      '@meimberg-io/skill-convert-to-markdown': ^0.1.3
-      '@meimberg-io/skill-microsoft-365-graph': ^0.5.2
-      '@meimberg-io/skill-onedrive': ^0.3.0
-      '@meimberg-io/skill-secrets': ^0.3.0
-
-  '@meimberg-io/adapter-plaud@0.1.1':
-    resolution: {integrity: sha512-6rVNDfK94ydsj4g21npAFjqujzPrS6jr3Kyl6lS7FioQ4rL+bOeKh67SBoHFHIEl5Qa5KGBHidPapVRwg3OG7A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-plaud/0.1.1/49a52a2d0fbb37e867101ffc18e8ee8bdfaf8b64}
-    peerDependencies:
-      '@meimberg-io/skill-secrets': ^0.3.0
+  '@meimberg-io/adapter-plaud-base@0.1.1':
+    resolution: {integrity: sha512-blNJoiqRZHHXRAxZybkOc/u7RkeAI7jZRq24h1lU80Brjg/2La+eoa06KJW2UkpJ+Rw9hEPu/rDAD26uNh3Ybg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-plaud-base/0.1.1/9234986150178affcba70b73a662af51772fd87c}
 
   '@meimberg-io/adapter-positioning@0.1.2':
     resolution: {integrity: sha512-ejVNt8oBUhnOJzgpbb/e2/cXYVfSRg595ZcHwKHRgLkCa8Xt0TkL8LHL68DPtc4SGOkhom4uPj3MXseKVpWfjg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-positioning/0.1.2/35ebf5bfceacd6040923ac317ea97f85c2e5cbce}
@@ -300,13 +320,8 @@ packages:
   '@meimberg-io/adapter-sanity-meimberg-digital@0.2.0':
     resolution: {integrity: sha512-IfKsQ8e2NYpHypT7jwW9owcoU1nyg8p/c0tUMYSab+ucBEUOEL6nKP52k6FPqTTmFxdOXay0pdLZca/4tx73yg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-sanity-meimberg-digital/0.2.0/24e8a5711cca06de0e016e1a27eaacee828b9f68}
 
-  '@meimberg-io/adapter-sevdesk-meimberg@0.1.4':
-    resolution: {integrity: sha512-NSLwVCnBUpgF2Ms1L0U2p9OcwKIZMeIh6uPgqb5XcTxLZybx/vIVFreNLkBYynXTKIoJBdn2wlochVU8E49kxw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-sevdesk-meimberg/0.1.4/e13ffa00706163d08ba104ed4945cd1eeab3e6be}
-
-  '@meimberg-io/adapter-sevdesk@0.6.1':
-    resolution: {integrity: sha512-+U0Tws/RijDXWVuCr3+K9cPpeRScPnVupSQEc9wuRPgAlFQm1XER0VP8HIAAdqEbrdKddSUAsZEcxA5FMQR1tQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-sevdesk/0.6.1/bd035c9b43ffbce260745897f961a5ede9aaf2fb}
-    peerDependencies:
-      '@meimberg-io/skill-secrets': ^0.3.0
+  '@meimberg-io/adapter-sevdesk-meimberg@0.2.1':
+    resolution: {integrity: sha512-yusDcNYbOJjAUbsHdmbPwgMIXgpufGLuPNpmL2aPGMS6jFCf78ykiJiwhf4mYql2Zcv9Dog2lIT5Z5QFRJLxAQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-sevdesk-meimberg/0.2.1/65aec07d3669a07d0f40a0abf5dacbafae5ec15e}
 
   '@meimberg-io/adapter-smarteditor-meimberg@0.1.2':
     resolution: {integrity: sha512-tY3aunIP2IxidVp/sKMjPyA9WvwZzAp7hk4eGtkUsqhulubUMDmcC6IWgdBuzifYBMjVkSxVkRUV49qEUDjIQQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-smarteditor-meimberg/0.1.2/bc79fa6bb1350d5fa555ac68cc5dd832657fb0fd}
@@ -316,109 +331,99 @@ packages:
     peerDependencies:
       '@meimberg-io/skill-secrets': ^0.3.0
 
-  '@meimberg-io/adapter-storyblok-meimberg@0.1.2':
-    resolution: {integrity: sha512-WUc10pzSE3W2DXH0yDDMxmfmDq9UFT64XEjjrqoYLHuK36gqhW900Cz2BMUFEmAOFkE7MLQhlkbktwJKizRUfQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-storyblok-meimberg/0.1.2/ac426d530e3e9b93d8587614a56a490d40887c44}
+  '@meimberg-io/adapter-storyblok-meimberg@0.2.1':
+    resolution: {integrity: sha512-UqBN4D3KCZBgJySptNWbSQcFD/Cmnh/BgwKdvnjJbkoxvUEusG/S91oWXj/psERc3C0D3cLMgp2HOBNo3Eohwg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-storyblok-meimberg/0.2.1/d60f06cb29f941d2f486cc4403fe1967db5fb33e}
 
-  '@meimberg-io/adapter-storyblok@0.1.4':
-    resolution: {integrity: sha512-VckDVcP2ptMXVO/JM2FIjDLUp87gIlKl/V/I1hs+OKegv07hpS7ebk/1r4EyB28SkVDbV22ENt2S7N+VRFUVRQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-storyblok/0.1.4/5e7a0fe71e4104bf00e6ba2ca08dcc6015d3278a}
-    peerDependencies:
-      '@meimberg-io/skill-secrets': ^0.3.0
-
-  '@meimberg-io/adapter-todoist@0.1.1':
-    resolution: {integrity: sha512-8ji24YYvPSNvZ6DGLUYq9yWorP0vGvshMFvTDC14oATONLNUGU6WeLKm6H7GYrm7IwEz2A12vgjyCBsRId8xDA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-todoist/0.1.1/98932d7bd60be75035d87abc6dc3af4d22a1a20e}
-    peerDependencies:
-      '@meimberg-io/skill-secrets': ^0.3.0
+  '@meimberg-io/adapter-todoist-base@0.1.1':
+    resolution: {integrity: sha512-++HT9DpbiIdY0itnXTv0QOHks8ZR5Pc7SNkGTWZ9Fpg2eaoWF1E7hCzOwfMBv0wMItjf/4ozDjUjW5lPEwmuJQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-todoist-base/0.1.1/08fbe46c60120b54b3a20fe9ca46fa880f90a693}
 
   '@meimberg-io/adapter-vault-meimberg@0.1.0':
     resolution: {integrity: sha512-3Hm9ySlP2og+y0RyP2vGFabNldwNT+hP7fVzz3bCRhwngBdX9DzA1b2YVIhMRBqKHbXqXMfDlud9hv45YlpyLA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/adapter-vault-meimberg/0.1.0/05b9f70f141f92dbe3211b3990d38f9ef4504230}
 
-  '@meimberg-io/agent-architect@0.1.13':
-    resolution: {integrity: sha512-gb64VY4ouubJ55xfRq914HJH4rVR/rLmKujEQubIoxShDSzkT3980malzQ7L9uVDDaSxGTL9AKoznS1js+JnLg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-architect/0.1.13/6e35d298cc20d530e74643deebd7b7b628057ae7}
+  '@meimberg-io/agent-architect@0.1.15':
+    resolution: {integrity: sha512-rAXv/oVReToFD2WdvYrhHtuBI8+7ZHK2RwSlHE/eVmFULR0SAZQ1J48BcyfKl8j/WooQBOXWNfh7W+APMkykkw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-architect/0.1.15/7af9c17c09c6eeb6861a09b4c1864da7f1559247}
 
-  '@meimberg-io/agent-developer@0.1.21':
-    resolution: {integrity: sha512-nce1nCY9FmPk06QpUFWUKOQkbOJxO6EQ5f9Cz3bIXRKxtsXz9us5bRz8qgXMQ4DfMiBVie87mQP23esr5wAXgw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-developer/0.1.21/14309d72845b8c82893d5778ade2f9cd9d201cd7}
+  '@meimberg-io/agent-developer@0.1.24':
+    resolution: {integrity: sha512-V7ymW3ukweGMsQ0twsiwn7eXVRQPsSNrWIhej7fS2MJsEFEX5hajfAMPf92lSGG6V29CpcUhKD0QcvfPQ9HEbQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-developer/0.1.24/95fd70c811be56b063bd92f927c4b977812c089e}
 
-  '@meimberg-io/agent-legacy-requirements-engineer@0.1.15':
-    resolution: {integrity: sha512-2RiUbw8BIxAesvF7yuTDmywNa3Gb0koP2TdgEh50rRy7mli1vRa3mwuRisLBUZL0M1Jpmy6WYYbok6Pas2izcg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-legacy-requirements-engineer/0.1.15/96c9e4087b9d3c57c3977249e6ccd99f55eb3eaa}
+  '@meimberg-io/agent-legacy-requirements-engineer@0.1.17':
+    resolution: {integrity: sha512-oL01s/4CPaSrLEJDCYDJTCJt27xyTs2+tP3y5Nxkxd/PBNNxRVq5o71EUGqAuPUk+oKtk0tV00WSKwfPRbVAyQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-legacy-requirements-engineer/0.1.17/1b62868030e219723cc7f25927525956aa3b4ab3}
 
-  '@meimberg-io/agent-requirements-analyst@0.1.18':
-    resolution: {integrity: sha512-e2iAjmb4DprgDZ/iL2dzkuWaqnfL4bZcMEImyS86K/DziRDby7wC/B5soLTgPYoJF1nbVoABBumgCgy0+5lS7Q==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-requirements-analyst/0.1.18/730d03c5f5863b6c68d01c9de31ed2b56fcbb92e}
+  '@meimberg-io/agent-requirements-analyst@0.1.25':
+    resolution: {integrity: sha512-tmWFnsPtXmKk6PEl8hvUXVlyNXwsGagy8ufwRyQlKMYFLqWkHJPpdcdvAewWaDX09MckDTK4HDe1ghSXxWEtLg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-requirements-analyst/0.1.25/c2f59ece99c51a6cd4742b433095fc2dfd169038}
 
-  '@meimberg-io/agent-technical-designer@0.1.18':
-    resolution: {integrity: sha512-EFg2IjYLI3DTWCVs/38dbMMCv0s35eeRiM0NL+oMs5Ws1UUTCsLx36qYhJVk2AC/sCrH/ZSPvU/5SphZRZZuNQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-technical-designer/0.1.18/0e95ebcb5c45bec2f83e64ae5fca723a26c45947}
+  '@meimberg-io/agent-technical-designer@0.1.24':
+    resolution: {integrity: sha512-UNZgF6hqwiTzjmc3u+kvys2s/yYxhX4EbnX1JsX24qcEl1xjwQoBKmtUpVpapZndc0JHlHKPD8HtfhBgANfKRA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-technical-designer/0.1.24/38a77c9977e8b0248f27169ed3539b1b633436d5}
 
-  '@meimberg-io/collection-base@0.11.0':
-    resolution: {integrity: sha512-Xxwb5NPjEp4CKIMGtCGUJeiSHtUaRORiAjWvRb8J29d7tP2ZEXkWAN+nxTaEP37Wgp3Mkf1iaTD+5Zc+R8+ZLA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-base/0.11.0/5cff9d413e1d27f6ebb1978524e0d6607eb317af}
+  '@meimberg-io/collection-base@0.15.2':
+    resolution: {integrity: sha512-yfw9oXu7wRaybq5qxv+PXXxY396oCGvfl0eu8jqIvsjk1TI15aCHklr0aTxHjgzFzQeliZpdLTJEEoSayMpLSg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-base/0.15.2/6766e0003fa11f5f57bf2bc91dfb595a89e8e17e}
 
-  '@meimberg-io/collection-base@0.9.11':
-    resolution: {integrity: sha512-913/sOB554UVl9KxGu5SZkJj78kRlyqu+3WuCLMy5Oyj93G7GZ+REWa4wxdO/x5ob0G95Nwu7wbKQR81jFVvHw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-base/0.9.11/7be78e2252b9d544ed594e08c4f92dbaba693bdb}
+  '@meimberg-io/collection-development@0.4.7':
+    resolution: {integrity: sha512-XJUkWSPNG+JfESFO+YNJtBTceqSKTbafnNgGyg2692VEWU1DwzNUy8e3CinL2a9+di1sua3O91GIv8NcQde7vw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-development/0.4.7/6593df8d5b186aed56b66977a15e7ebcdfb06c0a}
 
-  '@meimberg-io/collection-development@0.4.0':
-    resolution: {integrity: sha512-uueYbnl88EVZZKQg1KzzLamtHgNJXJ7JdVIUmLKes3iM+3E/M7DJhLAE/q3gX/NRc74O+eT77PlRfNzeO0xxQQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-development/0.4.0/91a90bfabc7074e34366d232cff7b2f8e307e16b}
-
-  '@meimberg-io/collection-meimberg-all@0.2.40':
-    resolution: {integrity: sha512-VsC7W8ZmFnZqAvKTIGJyzDuSmxWsl0ACxexU9zNakef5MEkRndGW2Jiwp/7Er3TTUbjEphxScKmYL12MYHd0KQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-meimberg-all/0.2.40/6a3ebd74b5217cd3444ba10fef71d1ebf55c326d}
+  '@meimberg-io/collection-meimberg-all@0.2.49':
+    resolution: {integrity: sha512-6xmSs8aaDz9tMt2WTzcaP7F6JDNoRl9iZsF4Uc+UYMqovbCV60Daw1zbc0NglIPEGSDnzzUtUgOexRBeWM13tA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-meimberg-all/0.2.49/a2e49b13dec319d46c7a428ce1878b1cae4f8cbb}
     peerDependencies:
-      '@meimberg-io/collection-base': ^0.9.10
+      '@meimberg-io/collection-base': ^0.15.2
 
-  '@meimberg-io/collection-meimberg-digital@0.6.8':
-    resolution: {integrity: sha512-O82Vfps1I2IAXdlj4WIzPtrb7E3vsGdam5ZtwFUQgmaQ6y3gJVUZy32guHxTGPq9A0PtW0TCqjW8t0Nkc3dz9Q==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-meimberg-digital/0.6.8/74c29ad2e4694b1a0301efc41be3de995e8f76b4}
+  '@meimberg-io/collection-meimberg-digital@0.6.16':
+    resolution: {integrity: sha512-V9zSyqELjzYhvIvV64OogjVx1HUTZq8+r1QZQz+AddtlN3F1P2QHfYEPVOUeKoyMmFk9hurniHrVeWaZSX8svg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-meimberg-digital/0.6.16/88dc1c8bb120c5c8410c7dcb41dd13287f9d6044}
     peerDependencies:
-      '@meimberg-io/collection-base': ^0.9.10
+      '@meimberg-io/collection-base': ^0.15.2
 
-  '@meimberg-io/colony@0.3.12':
-    resolution: {integrity: sha512-wxzFYW5srnPBgyvON1pph3ghtY7diWfH9K/lHrsCyaAWzODHRjpqGbadqKXEyl4X+80PqPL/kn5nS6A0XF11Tw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/colony/0.3.12/fcca81b95a53bc715216679cbde40452aee025a7}
+  '@meimberg-io/colony@0.4.0':
+    resolution: {integrity: sha512-dZkzpgJHtKMTq9ZEw4FqePzO1mp2cwGm65tIAg5I0419Wb9m416aqFmUUFMGCxHo2vpgdG0J0hP3vngINc0vjQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/colony/0.4.0/37bc177198e9a65de04fbe37b415566a86021808}
     hasBin: true
 
-  '@meimberg-io/datapool-bookkeeping@0.3.1':
-    resolution: {integrity: sha512-h+CZEfCK6sAqidgWXRmTeg9LkQD0/imP57a95fmaPd3dE/lv0K8m5MGeVZZkqMZ26yrVPaRntP+ZcUp9NO/qjw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-bookkeeping/0.3.1/589dd86f625aa51cbcb2afdee0ed08cf76b82676}
+  '@meimberg-io/datapool-bookkeeping@0.3.3':
+    resolution: {integrity: sha512-whh0hs5dHQ49URWaNcCeTGh/X4CTmKHXiO3PZftkKCVT1jcriJBpQOoZNuZ3eppgZEhEkw0YcRjq7ERxxujJxg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-bookkeeping/0.3.3/563fef6c963e7462aa1377ca01ad83cf753f2841}
 
-  '@meimberg-io/datapool-calendar@0.2.5':
-    resolution: {integrity: sha512-h6Q4FWDfD67Yj+pTrimkJ7KpmPXcNOWJzEMDAzmj9CrK+JdIpWFpnSHto4erOYDItdXOhHQgqvYQW+O2NDocgA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-calendar/0.2.5/730fe851a795523fd6b7dd8fe342f31b85f21954}
+  '@meimberg-io/datapool-calendar@0.2.8':
+    resolution: {integrity: sha512-HsrAgyx120u3AnDoxDBfmNFWyqLej0WLsv6xN/5eyWivkcxXMPcTpkJ5ytkrEldT+dj11axRGuzGP+O47YDFoA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-calendar/0.2.8/9b5768e37760b57d29955d484db7599728b0975a}
 
-  '@meimberg-io/datapool-digital-circus-media@0.1.7':
-    resolution: {integrity: sha512-3BarE7c3CxFDiN9BFAXTUgCgz1Ir05TCMngcGoQHbik8SfGinSEa11nzqCTCEjMtyzWp4LCqPfyH7JzExKSSqQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-digital-circus-media/0.1.7/10c6e4d46b87763ac02bf94fff9eb6d3ea6fa876}
+  '@meimberg-io/datapool-digital-circus-media@0.1.8':
+    resolution: {integrity: sha512-LsMvLswU9XVCBJRRY9aCcJreiVML7ERzJt4U53Fe4jWDm3EcYT1S1Pvpr6Y8o5F1lbA3/L32OTTX7CB1fGNC8Q==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-digital-circus-media/0.1.8/ea5372776c604be4667a8dcbcfac2d349ba792b7}
     peerDependencies:
-      '@meimberg-io/adapter-local-files': ^0.1.4
+      '@leafcutter-library/adapter-local-files': ^0.2.0
 
-  '@meimberg-io/datapool-luxarise-documents@0.1.7':
-    resolution: {integrity: sha512-N3j3wgexVAkqgNH3xR+U5M76b6fZXYc9jIuUd7QP63zZWPqd37/6WNRgClbVX3hp6mETTNKc7WTQ+hUKGabqyQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-luxarise-documents/0.1.7/b030ec7d0328bcd95919fb1099d8ae9234e31cdd}
+  '@meimberg-io/datapool-luxarise-documents@0.1.8':
+    resolution: {integrity: sha512-HPo7/4APD+ox6fhTIOAZ2jR6WIySAfQJkxXXl4tHeWJ5+PaJ2LI8q+VxU8X03owjUQF9wBJn2yMcZAGruzD2Aw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-luxarise-documents/0.1.8/5bb293f73f0448b4dd897c00bcf2bafb23f6a279}
     peerDependencies:
-      '@meimberg-io/adapter-local-files': ^0.1.4
+      '@leafcutter-library/adapter-local-files': ^0.2.0
 
-  '@meimberg-io/datapool-mailbox@0.5.9':
-    resolution: {integrity: sha512-fz3KJDu8GQV4PxzujuWAvz1TJ0UqbPK35iVNJR2RBVrMys2W7jbeHAaOxDx87AfM8XGCkyCtyrqd/49S9EHEtQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-mailbox/0.5.9/8f5e2c47bef3521eaf699dd5dcda36df700411bf}
+  '@meimberg-io/datapool-mailbox@0.5.12':
+    resolution: {integrity: sha512-gFbNOvY2zMCXZsTeUffzVdio6Tdt2tBeao8XZ+24w+Ip9FXWlU1BS2zkSd+UXfWZ+q5WD3d2Xdq+ZG5oPjynEA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-mailbox/0.5.12/a47a14656c9025858ec7f432668d8ac9f6984687}
 
-  '@meimberg-io/datapool-meimberg-digital-crm@0.2.1':
-    resolution: {integrity: sha512-K1VLXcAxD3G1r+wP4s5qEcqyyY43UudDA+O0/rQgWyF+DyxSvYm7j1bnqYYy0q+ObYWZfxBrQsZK/OOULTbvjw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-meimberg-digital-crm/0.2.1/c86bdec8b2747ff7f7abd21129e20c19de438aea}
+  '@meimberg-io/datapool-meimberg-digital-crm@0.2.3':
+    resolution: {integrity: sha512-V38HFVE1wZYGRA64wb6MBMPi6sC8lU19TEg0nqoadMHLKX/SHCC6CHxZtJkExV9F5N2HkNelE+xMap3CqYfj6A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-meimberg-digital-crm/0.2.3/e476c377a69498887f256bf09507bcfcef613e8e}
 
-  '@meimberg-io/datapool-meimberg-digital-documents@0.5.3':
-    resolution: {integrity: sha512-DJE+1ECPxrJqLXCSzY0t9oAoQaZx890WDUp/M7Pq/ofmyOt2H1o4SuDGpp5tihj49mGDLsoApsyGc03bmbt8PQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-meimberg-digital-documents/0.5.3/1fc6fe22e3c7168a267ad32a3515c08b02872ef8}
+  '@meimberg-io/datapool-meimberg-digital-documents@0.5.4':
+    resolution: {integrity: sha512-9kv7QUo5wk0qx0asqNJWSjv1PZI5n2MOenCRFu+OCiaiIP4oFBskDv2mVKV49nblLhPdbdjYeJm1+ZrBpXNSow==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-meimberg-digital-documents/0.5.4/b90b109c59e41557d1743630f40db9a8e91ebb9b}
     peerDependencies:
-      '@meimberg-io/adapter-local-files': ^0.1.4
+      '@leafcutter-library/adapter-local-files': ^0.2.0
 
-  '@meimberg-io/datapool-meimberg-digital-projects@0.2.3':
-    resolution: {integrity: sha512-grToV5MJtWENWsPANDK8WY4Ucpqoe3o0FxbzahEuif6rIym0HCPipvZtwJ7ZyFnv63VRf3Ivov/ryStvgwF7vQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-meimberg-digital-projects/0.2.3/5aa80c53360b2140890c91692db204c67f4be0ae}
+  '@meimberg-io/datapool-meimberg-digital-projects@0.2.4':
+    resolution: {integrity: sha512-XwJwQCvXLqEng+yxPLqQmHHJ8XVb4Mg/jYTMJjE+bGmog9UwMUmWZ0qqlOUYUKsoqUM+AOpFmU1ccTyScT0nfA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-meimberg-digital-projects/0.2.4/0ea1b682e4709f8ab73de96da686925eb502d47d}
     peerDependencies:
-      '@meimberg-io/adapter-local-files': ^0.1.4
+      '@leafcutter-library/adapter-local-files': ^0.2.0
 
-  '@meimberg-io/datapool-meimberg-holding-documents@0.2.3':
-    resolution: {integrity: sha512-OaEqnkROUwajTjPfLGG4bTa3ycqJAHVOivi0HSziuFDtGBl0wrKYJB4MGRlwpO+M+Rgbmv/8isGE8GuJpMS4Hw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-meimberg-holding-documents/0.2.3/f13f95d99c412b746b93fd7737707f6799f8b776}
+  '@meimberg-io/datapool-meimberg-holding-documents@0.2.4':
+    resolution: {integrity: sha512-Z/WieFT2/gO9Bo7CbhKFBbhzR8mGZmHYkm0/SscbR7yLT90yCSyGTVRxuFW2rA3ybJdlJBLmMFdIthOihGNRuQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-meimberg-holding-documents/0.2.4/b2ac88dfade40375049ce0a9891449a4f69f3fb5}
     peerDependencies:
-      '@meimberg-io/adapter-local-files': ^0.1.4
+      '@leafcutter-library/adapter-local-files': ^0.2.0
 
-  '@meimberg-io/datapool-meimberg-io-documents@0.1.7':
-    resolution: {integrity: sha512-6MTUngfbDCjjQIHwiStlE2xhaixpmfrgwGs8OBcFoaDngx3vWONB0Syu7NaBtkUeYV6KI1WuNmlyjLcXbsgURQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-meimberg-io-documents/0.1.7/5b2826bf729522333c27d9a0972ba024d154bdad}
+  '@meimberg-io/datapool-meimberg-io-documents@0.1.8':
+    resolution: {integrity: sha512-tnodoBYQAGQ+ZE1n8HjBV1U49YAfEotxdXNFiQv2dWYlR5CLudA4s1Vlsz7xa66kTT2+cOJNh94jFu3gsrFOCw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-meimberg-io-documents/0.1.8/f3482ee36f3e0aa8ff79c9844de61723117ebd20}
     peerDependencies:
-      '@meimberg-io/adapter-local-files': ^0.1.4
+      '@leafcutter-library/adapter-local-files': ^0.2.0
 
-  '@meimberg-io/datapool-risau-meimberg-gbr-documents@0.1.5':
-    resolution: {integrity: sha512-f2U9zbN6PD/zB5UDAV+h4LPXow31mzzBXxY0xBRdTLzdU7eVSayOhV5YS5HzrNAjPX2y5KByJy4k2xmaSkD9Jw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-risau-meimberg-gbr-documents/0.1.5/4b2c4fb4049df83a430ee96ed0d91cc5a22768d4}
+  '@meimberg-io/datapool-risau-meimberg-gbr-documents@0.1.6':
+    resolution: {integrity: sha512-lmk915fNcKhvYtY+OCuz12tMFPQOFQJuRyyxKm6Ri0QjyH+bCmeXusdX3nXobfYWGbcCAtMz9ecpP/0uzIIxeg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-risau-meimberg-gbr-documents/0.1.6/e83ca0fae87d2d5e723fdb9b331bd7ca13b7b1fc}
     peerDependencies:
-      '@meimberg-io/adapter-local-files': ^0.1.4
+      '@leafcutter-library/adapter-local-files': ^0.2.0
 
-  '@meimberg-io/datapool-todos@0.4.1':
-    resolution: {integrity: sha512-D/jttD3D8hboihORsIiRbFB9Rd73qAoJRRnO6+6ahhBOEE6JgvqWdU9iEeRmgb6pa4rehAn/BhdDSqzEp9dr4g==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-todos/0.4.1/90121811f3e2f3b47c140ef67ddfd04cd014be31}
+  '@meimberg-io/datapool-todos@0.5.1':
+    resolution: {integrity: sha512-4y0pCoNiuf08afr3cA7ohBrK+YYNpXlfci1xI4p/QyRfg25GTjNqi5PY2vtElDgeysQMbS+hZMt8YN2wWQ4VKQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-todos/0.5.1/a5f81cdc2d45e38672299effc319141237a23140}
 
   '@meimberg-io/foundation-code-conventions@0.1.2':
     resolution: {integrity: sha512-AJjROAJx9bqoXXvWaCCThTgAmrxoWXVXexKvIXHZsECnggDEn9pLHRmxilx/li5k/t/szW1t08rISTj/xwSKSQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-code-conventions/0.1.2/ec268f5eb8acef187ee160e804569860246c3020}
@@ -447,29 +452,29 @@ packages:
   '@meimberg-io/method-single-lens-review@0.1.2':
     resolution: {integrity: sha512-rUO826dNqryn9mhjFrO6+8ZPwMGa3TSdEZlsBwyN0cReTWORToke8E748Vl12tgDk1lS8VDGMituFbQq0ax1Hw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/method-single-lens-review/0.1.2/d5ae0afc752b9a7660e099e4b8bf11692b7b90af}
 
-  '@meimberg-io/playbook-extract-requirements@0.1.15':
-    resolution: {integrity: sha512-ZiUsb1Nzb3Pn/T1SJaEATPzahkQNQcjRgJJxF+6NdmLQKtEdvxOW7i5WjM+E+uVJrfc9vo+vm57hyNHp/gIOiA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-extract-requirements/0.1.15/c6f281d0e8399b5b0c015ddfcdadf1e07925f707}
+  '@meimberg-io/playbook-extract-requirements@0.1.17':
+    resolution: {integrity: sha512-JP4Wrjyzi510Qvdv3ZYc9KakaC8RhoODkmfEuLsYHjKZ/sCVCs+8jAHwZVQlkB/z96puDFMyM5fTQ1fBEOZoCA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-extract-requirements/0.1.17/fcd7895189e128f38e11e5bec4a2bc671f34a1b6}
 
-  '@meimberg-io/playbook-fix-bug@0.2.13':
-    resolution: {integrity: sha512-CdGHqQ7xC7SjyvVmCCdC7e9bXsFEXmVwtblOXULcd93eTAKqUIZZjzd5gRwB2hIZYy/4BF6Ummm40aROy1azew==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-fix-bug/0.2.13/768f47d9bae34ab5b7033304ebc9f4da1b543f7d}
+  '@meimberg-io/playbook-fix-bug@0.2.16':
+    resolution: {integrity: sha512-AeTY8e9aG53Q4Ww4VWl4/zzxMCidc0fCjQHpYRcCrlJ22NpehQVI1SQceFRhI96MRnOi8kIVOAUkoNSwuOWgAg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-fix-bug/0.2.16/52620f8a6f919a70daaf930cb0f5664103053bd2}
 
-  '@meimberg-io/playbook-implement-feature@0.1.18':
-    resolution: {integrity: sha512-kriBdYFCnmxuNK0H+2zP0j2gt+SjNAXwC5JLDImY5QtD6+6ObEsZvz6GqT580iIR34OCKBFHWRrc6FmqBT9gYw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-implement-feature/0.1.18/e199077708a741042c778a054f8a2e2744c1f371}
+  '@meimberg-io/playbook-implement-feature@0.1.21':
+    resolution: {integrity: sha512-2kK74UR8u3ise7SGbVMFToy+ChtDOlNy2Ible8X5YEfg27JmpQ9Nujp63RsWC/RvrmwX4VEomgHJhI/Khi4f1A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-implement-feature/0.1.21/853ae044aa8480bb17aa9f8c8bb4dbd6e3c475eb}
 
-  '@meimberg-io/playbook-implement-in-worktree@0.1.18':
-    resolution: {integrity: sha512-fOSGGsrQXGkBFjXCs8fDV/TCS4WVRys2Qy4fJKRoFjEc7h3KX4tH9C3OSnQAD2ney+7Z93qCrANiwtEjf1tNGA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-implement-in-worktree/0.1.18/71b2d701df5a8dc408d59bca6de73a6db127627d}
+  '@meimberg-io/playbook-implement-in-worktree@0.1.21':
+    resolution: {integrity: sha512-93tlwLEY5ByDZIM96UsdrOUi80NB1BxvttweIQSzmCNdTwWjM6s8npP1xylCGYs3aJS3Nm165fEBYgEwnbEaog==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-implement-in-worktree/0.1.21/b33989b3ebc3e843d48844700538e12c53ee1b46}
 
-  '@meimberg-io/playbook-rebuild-legacy-app@0.1.16':
-    resolution: {integrity: sha512-DyWSdgRY+enqCGkVyXUEsuxpAUzfPmzek6CTeI+3Uh3s53L7sPtofTR5ugptdK7XzZq09MWczSjGSge2iU60EQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-rebuild-legacy-app/0.1.16/e2f0f0f68e96b7e7c49b2cc639670d1216b39ce4}
+  '@meimberg-io/playbook-rebuild-legacy-app@0.1.18':
+    resolution: {integrity: sha512-t1wcXnTWOJAZJDSCuhzhijhmj1NZP0okFlRabBQ8DO8xp47ui2rUDiA51CBm5qtvRs9sqS5eg5U/C6r1pP3qpA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-rebuild-legacy-app/0.1.18/48ae934c607fed1e042a9ad8676fb925419eb3aa}
 
-  '@meimberg-io/playbook-requirements-to-dev@0.1.18':
-    resolution: {integrity: sha512-o2fbdHdv/UQtc3x0o2v/ITX1ALzCDpW8rlGmmCm7LMIyNycnrzo7X38Ae9GBrSIkE2fe1YFhTnN0e/bTxjekjw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-requirements-to-dev/0.1.18/1fc5191db6bb641f72dcecf722c5197f18c704d6}
+  '@meimberg-io/playbook-requirements-to-dev@0.1.25':
+    resolution: {integrity: sha512-LEUyEHui1IFtGNBRrNCs2Bc9ZJDRkF5wNYcf+pnagkPxBNTJJOYorOaTOzt8nDyMvViLLaFthuvAE65pOj0DeA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-requirements-to-dev/0.1.25/2a34feb8dc5feba1293b16661b447c8b339842e3}
 
-  '@meimberg-io/playbook-specify-and-review@0.1.14':
-    resolution: {integrity: sha512-cR0DiYwgqfVBoEQCZZJ8cjnilanlzfLpXRD7m1jP2u8OST9kYZfJwR4v0WVWKtrBWndfyKIwbrmawvIKTMxkkA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-specify-and-review/0.1.14/487f375e27927b368d7820fa4181cf41b7e7a146}
+  '@meimberg-io/playbook-specify-and-review@0.1.17':
+    resolution: {integrity: sha512-pqmSsrirGBxNvZKse+Ojhyzyy00MyqTNmt942WwY5VP1XIciZswEFZcbeWkTe4oxbGHFKm1zmVDxw+PP4+cQ9w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-specify-and-review/0.1.17/93f46aeff3e46a69eb6747009488a2dc013c611c}
 
-  '@meimberg-io/playbook-technical-concept@0.1.18':
-    resolution: {integrity: sha512-8awWWVKrHYh/42sfI8jLz2LsKPV7VfOAi5L87kr6WchKqrfIurbBQNKosNxM7gFJFQasJZd6sLYpaXQr/HoBww==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-technical-concept/0.1.18/7be55b81d0345b383e7a628b2212ca306a531ba4}
+  '@meimberg-io/playbook-technical-concept@0.1.24':
+    resolution: {integrity: sha512-xig45V4gI/xusxCs753x1VN4HqpPlgsnvaRUWFIVJJd5PpOl2w0O08Ja8BzaTh+NKYsMZgFBq+5xc6pIweJmaA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-technical-concept/0.1.24/53fab07fbef77065834f7d4eb4df3f078b436eed}
 
   '@meimberg-io/role-author@0.1.2':
     resolution: {integrity: sha512-kRoqXFKEVrO+QY//+PbB3hBTK3FKqxPlNaNvnW1ktasaMBFQcCEr0eMOLykMi4dU5c4TKsNGNLzUJosgiQzYGg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/role-author/0.1.2/371af6227c7739f54a04e2d47e3fad91315bf127}
@@ -486,8 +491,8 @@ packages:
   '@meimberg-io/role-project-manager@0.1.2':
     resolution: {integrity: sha512-DW1ivpLuMUSh/A9tWTrQvO10lQ/UgwgCkX3Ybn4296YCMa+3sYWJsgnzVhh1skZKlK46GoY5Qe7AsWDM6sZoqA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/role-project-manager/0.1.2/f4b4dd23b727c020dfa0654e65bdf9d0903bf801}
 
-  '@meimberg-io/skill-bookkeeping@0.3.13':
-    resolution: {integrity: sha512-7kNWfEhQ13Rkx5zBN2igGbUP5KJkv2uQvpnhKqpKSc9jNphNk0KpT9FzlE9Nf7kRAOF8b7d6GRb51Pp02gGnPw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-bookkeeping/0.3.13/e1c7f4b2698287868e5d968c71fe3ccd60946fac}
+  '@meimberg-io/skill-bookkeeping@0.3.18':
+    resolution: {integrity: sha512-2WIuCLZhn1nkubYwCE1jxBZkA1iKKrO8whoonfLpxoc5whpRqxRMAB+VvJbF4AseeA6y4jjNnJFxkine6xULEw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-bookkeeping/0.3.18/3f0e8aa7817573f7885d3c75d8f3611b87133ff0}
 
   '@meimberg-io/skill-brainstorming@0.2.4':
     resolution: {integrity: sha512-KRW6+VYL8/AEBLpJL6gHYr5pwTy9pdT8DPbmy+RUrMYzUN0UvZ3jILeoJOGbm8ZuAPWlolrplAgJl/KnjD1diA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-brainstorming/0.2.4/7c4ebbe1717d37e1f67acdc21c782a68e04af9ec}
@@ -498,40 +503,29 @@ packages:
   '@meimberg-io/skill-capture-project-memory@0.1.8':
     resolution: {integrity: sha512-zEhV/+pV4oV6pG5y/uGZ533z4WOr2shtEh15clEsoyq6rAFKTQOHBjdbSCf8BesHIJz5yzYjJw1XMkJFMYYgXg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-capture-project-memory/0.1.8/0bffee7502c9511e7744ecab2c61ead6a68e3d49}
 
-  '@meimberg-io/skill-chapter-colony@0.1.19':
-    resolution: {integrity: sha512-mhRAuFSOekF7NCsZfs9K4H+Fpj8cchoQh5yzB45RYepFzZzABUTCjWyMVr0pIgd0WRIMXGmKvgvMsi6lHCMrVw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-chapter-colony/0.1.19/c007bdac39c0d5c8d343fb4de675452f6fb7eb7b}
-
   '@meimberg-io/skill-chapter-colony@0.2.0':
     resolution: {integrity: sha512-OhThKSDqPwPlW6UMcUVZPGjSnIGDGCenFS2sBg1jBq8IoxrTul9bMB0u8J9Jhg0sFeHepmum+NyK52wLNXwzsg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-chapter-colony/0.2.0/e5cd95c3e888921bc943eb1e9deb5ae4a6dad1c8}
 
   '@meimberg-io/skill-coding-rules@0.1.2':
     resolution: {integrity: sha512-3qJ4rKwawOQxDEr2G5bEErT4Cr2fkkQw7oIqsquSgE3/kf2JT1YEexM8SoHBEbHvUIZ6dtjtmAEhO5EWSnQF4g==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-coding-rules/0.1.2/312a4a8efa9547543ec6ee52c01f925b868c671f}
 
-  '@meimberg-io/skill-colony-handoff@0.2.4':
-    resolution: {integrity: sha512-grQ00wBHAwcGF7++psiW6asg01MyY4WHY3/kWBpswFt1Iq4Pzh4CRPfbD0Xusp0lz66CQPx5pQxdwX6N0mrO3A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-colony-handoff/0.2.4/5cd1ffead8e7913f6f272549833a5f5a740a1ca8}
-
   '@meimberg-io/skill-colony-handoff@0.2.5':
     resolution: {integrity: sha512-0irmir+CcPe1hoZOiAMGiOYrQIlvqGeSmjhdJdspAmTb9eRw2FgNMU0Mc+Dcon3fLhRWZOOIGbIHPprfUP/WtA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-colony-handoff/0.2.5/efca860ac1c4c6a8b56ceaf0061fe11fa40b3b91}
 
-  '@meimberg-io/skill-convert-to-markdown@0.1.3':
-    resolution: {integrity: sha512-BWjeAyMHOL3tMgaaupel70sD6BmMkkdwlqcn5kl8/2raY5WHEcpChEagFdKe8yrUqmWyPVVrAnTCMnAKVS92yw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-convert-to-markdown/0.1.3/822598a6cc28cdf5871bc3e281f688576cf5d53b}
+  '@meimberg-io/skill-convert-to-markdown@0.1.5':
+    resolution: {integrity: sha512-6+IfBBHpVCnWDuDYF9io+5Gz5Mj8eLVknty16J8cbrQ7JUQoTOGNt4oieIZITWZP3dFcsActpKrI++GPjSTzpg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-convert-to-markdown/0.1.5/1ec85641f0338b1bfcb9dddf8581f9d4f19d500a}
 
   '@meimberg-io/skill-customer-hidden-context@0.1.4':
     resolution: {integrity: sha512-5OU2M5BfP+i8+glRdn1nNJB9YMT+JSSrgysZLd0cjkTAm5OwPKVO7wLLzjKpNtVKozMf7Elzyl+9r8GZ26C1/Q==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-customer-hidden-context/0.1.4/e2138fb3da7d3e6cdf5b7eebccd11162ad15b650}
 
-  '@meimberg-io/skill-draft-requirements@0.1.4':
-    resolution: {integrity: sha512-HPX0gKvSSEeckWKKtWz4RyLbNzbFRFEdekfiphT5GkV1l5YsxZmKR9ehpno6v5Sm4DmsTf9wU9tHl2aldsTnTA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-draft-requirements/0.1.4/a7dd07b89829e0a15e60985dd96960e668a604cb}
+  '@meimberg-io/skill-draft-requirements@0.1.6':
+    resolution: {integrity: sha512-XLtuP2Q6NY9k7vn/YD+xOlqnzJd7mnMu462ZUlvKz8/Va0Qcec/QdrwDLuoIWYjiMp2dw1eGDgsY05VjNxi+AQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-draft-requirements/0.1.6/a4631ea0840d960a74c66c93068a0aa644f41763}
 
   '@meimberg-io/skill-frontend-development@0.1.2':
     resolution: {integrity: sha512-0yuJ0OuV2PhrCTTYI1mBnjxlAj4ijQkScsy16YIOQGvdkJCV/74BxZMSsUeinJBZCRfOar96koy2Rb9GEPCJ2g==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-frontend-development/0.1.2/bccb477e6aa1c619374e4c53fde3555ec7e1fef7}
 
-  '@meimberg-io/skill-git-workflow@0.1.15':
-    resolution: {integrity: sha512-HafxD0UfzdC9j38h3H7ah07T/q0Ewk86Ypfm5BzS28sUV9xxiH646Enizl4jSOyrl6FW1YWZNAhRZFcMpuIOtQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-git-workflow/0.1.15/fb7580ba5eb7c42a6390545c3eaf7a1adad8318a}
-
-  '@meimberg-io/skill-google-account@0.2.1':
-    resolution: {integrity: sha512-xzgK8QpkInvYzGQbxqV3QISK3H9h6ZixshDjiHKwykTcEdHvwGHk02TnfsG9apOg1hT9s9QeX5x+tHlU+79bPw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-google-account/0.2.1/c1d61254f83f1e93b9ce9feb2009eb126d2dcd20}
-    peerDependencies:
-      '@meimberg-io/skill-secrets': ^0.3.0
+  '@meimberg-io/skill-git-workflow@0.1.17':
+    resolution: {integrity: sha512-nSdRGQhzxNs71MzqfTM6gkXNj9KJs+dzVvY2ztaJyMQ9NH2zFzNS/koX2KHlmYxwWq5tLwdd1I2S9syNfmvJ5A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-git-workflow/0.1.17/32674b609f209cbab028f562aa53921c4596c3c1}
 
   '@meimberg-io/skill-humanize@0.1.2':
     resolution: {integrity: sha512-YfHvAwBRCl6vuL2DwV9s1/8LzSom9DH/Li1kS32XBQa86M3hGMbkFH3pTXNawPFOTPaP+5BjiQ41x/CC8gDQ6w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-humanize/0.1.2/72a35c306340a3aec27f7ba98afe1840cc3d3e9d}
@@ -539,36 +533,23 @@ packages:
   '@meimberg-io/skill-i-have-adhd@0.1.2':
     resolution: {integrity: sha512-F2hQiPQ7tKalHtNDrAzQRENPXg9mZpLxSeAmJRgG06OgBPIpLshe2mIe8tKsTDMo/lywHACxnlhchvR+//xnXw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-i-have-adhd/0.1.2/489b8c1e82ab6f2c31aab036641fbfc800dfc178}
 
-  '@meimberg-io/skill-implement@0.2.12':
-    resolution: {integrity: sha512-kX24gpWuD32fJ9L8EjTtSSyHELNIFsNYHbXQfnUxK51K+iPFtg8NNi0MEdUxUS82yqmni0ntTDUQY0GY2Cz+zw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-implement/0.2.12/0e13ebab5b7f0d6e08fa431e1a982431f9ae98e5}
+  '@meimberg-io/skill-implement@0.2.14':
+    resolution: {integrity: sha512-4nPFAxMWyosA+9KGXFZvah5lsZyPz4k9/QNvuZ0i3ZLAjtbVA6gZPV/CiKO0NavuTnloN1xEfK+dsGuQaxY6Rg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-implement/0.2.14/6388eda05318b5aef2ef5a613017cf4137bca440}
 
   '@meimberg-io/skill-it-administration@0.1.0':
     resolution: {integrity: sha512-H334x9+fhU/XFopDvzABgf9rQGYrbw9FDUsLbRYqkzty9K0hTpzH1v1pAyz/j2u9uNnIivP03WzR4d+d+rtCig==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-it-administration/0.1.0/b8ad592aafcf89fe8aa1e141fa4fa6a38ddeea65}
 
-  '@meimberg-io/skill-local-colony@0.5.1':
-    resolution: {integrity: sha512-AwVxqOTGoIOmkcqVH7hT7Tibf+751kTgtjcpvqcgLxXc7qXHQsU6i5xiPI5ZkG6dt1U6L2dmH1ECZdjKmIT+dQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-local-colony/0.5.1/c3a556374a91115171724589050b5ae6ba7f2864}
-
   '@meimberg-io/skill-local-colony@0.5.2':
     resolution: {integrity: sha512-zsJCIMJmhUisp0dx4RX0NikeUXMAAkfy/VXvgubR9wWIC5LueSs76vqZZRoUbtQcqLppIJh7rhw04tR6gRQV5w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-local-colony/0.5.2/b1aa487d7264f46fa064e1edc4aaea6dab51ad8f}
 
-  '@meimberg-io/skill-mail-intake@0.3.11':
-    resolution: {integrity: sha512-1NklXEymBr+4N6kI5K/BYDS8GsbIVLDEWFqdVKSyH18DYja1jPqvt95mNB+z3EO5/MuBOI371X2wzPqDTR5ZNQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-mail-intake/0.3.11/482f21c224f0d2f05b5843da28968d28ca27b07a}
+  '@meimberg-io/skill-mail-intake@0.4.2':
+    resolution: {integrity: sha512-101Zdqczac38uVhuaEcl66gibcPVu3ePdSaBCYDOBsQCPeeGK65kFbEmfvGaF7VdLBpvfwRSOdLZyLMsaXoQKA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-mail-intake/0.4.2/49fc3380eeeb7ac7ddfe5b22fbc480e4f156d23b}
     peerDependencies:
-      '@meimberg-io/adapter-todoist': ^0.1.0
-      '@meimberg-io/datapool-todos': ^0.4.0
-      '@meimberg-io/skill-microsoft-365-graph': ^0.1.0
-      '@meimberg-io/skill-todoist-rest': ^0.1.0
+      '@leafcutter-library/adapter-todoist': ^0.2.1
+      '@meimberg-io/datapool-todos': ^0.5.0
 
   '@meimberg-io/skill-meimberg-deployment-stack@0.1.2':
     resolution: {integrity: sha512-YIcPClLl2gZsX7Vrhd7yzuvrfpfNt6dcl9u6dUIiuCs9Incik4fD7nCvst8kMpYleXQOiJHix1VJAXMjHadIMw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-meimberg-deployment-stack/0.1.2/5a0f88d268fe00634437e2a89ea6b688752ca929}
-
-  '@meimberg-io/skill-microsoft-365-graph@0.5.2':
-    resolution: {integrity: sha512-KZmf8cr45qWT3HNrALHDIxdbgsn42GGyya/ifQ96E2PRCWIbluuD7GYkWkri/p1EBU4STo59XPjGaxkyVXvuZQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-microsoft-365-graph/0.5.2/876ea8b2af5dcff0f879fef7d058091ec44427e4}
-    peerDependencies:
-      '@meimberg-io/skill-secrets': ^0.3.0
-
-  '@meimberg-io/skill-migrate-project@0.1.4':
-    resolution: {integrity: sha512-prBTu1gcG75JBQj7XDeyDqVsx4WsiXCWMwwPOHMslmpxjiT4Z8D96S/qgwgJ3e5bToxmqzRXoNfWUjMUU5YlNQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-migrate-project/0.1.4/f24b92058ac586afb0b56fdf7b56b9c859edb0db}
 
   '@meimberg-io/skill-migrate-project@0.1.5':
     resolution: {integrity: sha512-66vMjZD97Ywrlmp+yeJJumRUId8UyxsokF0v3rJOeUVZfUfaYWLVVNpjrKNRZ8wtJXtTNaFgRlZn+F8tXYTXFQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-migrate-project/0.1.5/5f4854d35e30c481e4f121d3783fcc828ce760c5}
@@ -576,23 +557,17 @@ packages:
   '@meimberg-io/skill-nextjs-development@0.1.3':
     resolution: {integrity: sha512-ebdfKjYPhG0DUasPdKApXUPcvzoX5DXw+BS5m293FjfNOT0zTrY6E91FQG1mnu8x57g5sbq7MUha2oMMYyBmvQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-nextjs-development/0.1.3/613982c312f259cc31b2197ea5ae1f277a0f345e}
 
-  '@meimberg-io/skill-onedrive@0.3.0':
-    resolution: {integrity: sha512-i7UgSMBPSmH4zrf+YOWtmTv0sbBsNJjglnJQ/7Y1LVQ2yebTzWpJ5KG6+DmIYMIMLJyw2K+iYs+hU1G4qxEZtw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-onedrive/0.3.0/e55e536ed883d951a8a0a2de0454688807956d81}
+  '@meimberg-io/skill-plan-to-tickets@0.1.16':
+    resolution: {integrity: sha512-lqgWuPipgeiFRwtggT91+sulMwdhNgSqnwn1VuMKoZOO90JB/LOgKPRkhC/GlcjYWjHGOiarEvtGl3qrL9r4aQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-plan-to-tickets/0.1.16/f7dd737f992404bcc7946e2747ffe9b7207cb76e}
 
-  '@meimberg-io/skill-plan-to-tickets@0.1.12':
-    resolution: {integrity: sha512-mK1MjsV7KeGWC34C+hGdiqs5ycbVpxS5WkXmBesSvbb1lpqd1Sqt+uoHWdpMFcUu5gaxe2xwNDXGcW/ZW1RpUg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-plan-to-tickets/0.1.12/223e1483e443ac5a9d48602c88c8931a6473b1fd}
-
-  '@meimberg-io/skill-requirements-repo@0.1.15':
-    resolution: {integrity: sha512-KeqEQRs/AZOB/+sWtkbE0Yi3HXiZk77wuGSaAxBOqSHlz0yHCbeSCns3186+xnsNeK1O9NYhfMOqsDkNFlqj4A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-requirements-repo/0.1.15/e493c4780e3eafecf7b2b445ce0fa6161355d858}
-
-  '@meimberg-io/skill-secrets@0.3.0':
-    resolution: {integrity: sha512-uUe1J9Pu8u5xMNOl+AOK0hSMWbch5PgskKxQhuZN/GKzfzYT3Og3TtIqucZYyhnyXAEssQzq8S93bQ9phBaiwg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-secrets/0.3.0/7b633c2a6fd2855199d951458225b1f3e0cf2cdf}
+  '@meimberg-io/skill-requirements-repo@0.1.17':
+    resolution: {integrity: sha512-WB2ajwtDcXAtZuaGd0boas71WdRwOUIORyWX8a2vkeGS9Eg7buU3C3p3ckDA647SQapUjQl0Xd5H95789GOx7w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-requirements-repo/0.1.17/c259971b455fda293810b2f763dd5ddcbd5b66ec}
 
   '@meimberg-io/skill-secrets@0.3.1':
     resolution: {integrity: sha512-Ye9uSnLw0THp3TcmvRO34FPbmKeR4lNHhUouXN8kGI6UZJJ/Q7BmjSYtzvHp5Kjtk359DPuJyc5FSLNA1fMPFw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-secrets/0.3.1/24ca383ebc0d8603145cb37de766aee521f1a689}
 
-  '@meimberg-io/skill-specify@0.1.13':
-    resolution: {integrity: sha512-2fmI85er+8djuslAkjZcYFAFO/BghFmIBO3V6Q5QpkQN5ycrREzDOxmKi5KS/rsmyhqv1vSZZl0BDaXRI4eCjg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-specify/0.1.13/e8e4615cc7accfccc4e8b1dff6361f0a18bfe9ec}
+  '@meimberg-io/skill-specify@0.1.15':
+    resolution: {integrity: sha512-SA+yUt6tSUbtUHsDDOEhVYof2xmxti2vSOSao00FKrk2V3YLyWCZ3vXcJiXlUamtNS+lmV17/LUMmsxJEgg0BQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-specify/0.1.15/2838b56ed0ed22bee9a7ad8f195acf96a9c1ef4f}
 
   '@meimberg-io/skill-spring-boot-development@0.1.3':
     resolution: {integrity: sha512-EbmPKyldu9uQDLNVujg37tqNtHFMryOwggm5ioe+zH5g0TwBjVk7ap05UpngmfpXeeT6S78oKn1Birf+FpecqQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-spring-boot-development/0.1.3/392cf1eac1debb26dcacf3664f8679212d5effe8}
@@ -603,30 +578,20 @@ packages:
   '@meimberg-io/skill-systematic-debugging@0.2.2':
     resolution: {integrity: sha512-VEvdG4RZrlFkMoCeMwrCDX+AJv1WYopVR8wnVk4JwVNmNDMbEIWU+X7QrD1Jt4CLklw9U8lqvvdtsN0GrZQt0Q==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-systematic-debugging/0.2.2/0502efa5d62e0f5300f52106cd246bb6656674de}
 
-  '@meimberg-io/skill-technical-concept-writing@0.1.4':
-    resolution: {integrity: sha512-2raDNWDYgISqzcapoUoXVAnMF5d+CqK/zXmqPgIol/6SmkTnU1dypqnklGlz5uw5llpnsstNUd2ivu2Swx3tmQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-technical-concept-writing/0.1.4/33dd578ddeee05332020a93de4640ebeb8a575d7}
+  '@meimberg-io/skill-technical-concept-writing@0.1.6':
+    resolution: {integrity: sha512-epFfflH7ins0vVqBzTPzfGi6F6AvIKNW+wngpRl+2wF4oMXCYLaozzIObVkwx3tTNHpfRifsZM5gWENZ0xQsyQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-technical-concept-writing/0.1.6/cf372be28f22ca9cfed4c6b2bb9d92fe897c38cf}
 
   '@meimberg-io/skill-technical-writing@0.1.3':
     resolution: {integrity: sha512-3YN0NvDOYGl5s0RfQDkpL2PDFKuLhIzbAZp6leI3tWAY61THWhwCNcsBp8KZB9rbhgpY7/zLkg8NiEn7Le48Jg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-technical-writing/0.1.3/2020f67267953324a517f2e5f56907d109fec74b}
 
-  '@meimberg-io/skill-ticket-systems@0.1.10':
-    resolution: {integrity: sha512-cDeUpoEPy5fq5YjJW7S6BAxj7tgZ9iXEVQKb0zG5cw4R+j9xsATnU2jLqAKLegskBjueCPe0uw1nPMfnEelTrA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-ticket-systems/0.1.10/107333181917412e2be75f68a02a0da8995ff950}
+  '@meimberg-io/skill-ticket-systems@0.1.13':
+    resolution: {integrity: sha512-kDai1Rdjjq/fbPYiPAdCtu1Q4IyXOyWGNHjSXRPfQQWHlMxblqw4d57rg3JIFFSIZwP6TWnWG25eSJPCB2JaXA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-ticket-systems/0.1.13/8d255b2cbdf85a3680b4b2e1fea1190e0d6806de}
 
-  '@meimberg-io/skill-ticket-systems@0.1.11':
-    resolution: {integrity: sha512-I/CiMRXVMZg2OGvUeAmqzUXMNu5V5S67amj7+9pOejDaap0DGzTnhNXkKhZPzNIaiLSxHSBgLlRczB0D6kGzog==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-ticket-systems/0.1.11/7dcb8295b4306e4ce0612d936c7d5a964a0a3bda}
+  '@meimberg-io/skill-transcripts-and-minutes@0.3.1':
+    resolution: {integrity: sha512-CxKYwyH2RFaerYfaSZa1W/N1UFDxpNnaJmofQFnlE4YEbGxJPIOb4s08618m5aGAVrOiKd0mk1X2iJFANuOe6A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-transcripts-and-minutes/0.3.1/46cbcee5ff2a9f20b1ff5c0138f60496cb70c03c}
 
-  '@meimberg-io/skill-todoist-rest@0.1.1':
-    resolution: {integrity: sha512-RU//8U8WclcCqfJn2yw9ctm6dpOAkjrGxFToDu4elRdlolSWZeA8KM1/0jFeAVK17RSLiNThPm006RHwwsyacQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-todoist-rest/0.1.1/05bd89dd4d72ca2435cc23f626b75d03ff0b21a0}
-    peerDependencies:
-      '@meimberg-io/skill-secrets': ^0.3.0
-
-  '@meimberg-io/skill-transcripts-and-minutes@0.2.3':
-    resolution: {integrity: sha512-J2UlxuMCcf+qTGwgLjPxBB0jEy3sofKiIopf95gvede1NDnXOSFgi+9S2LPXmCbo8TjuBTkL5xfXo/OK5+GhhQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-transcripts-and-minutes/0.2.3/22457977778a341d20d0908f452d2ca1b94f00c6}
-    peerDependencies:
-      '@meimberg-io/skill-secrets': ^0.3.0
-
-  '@meimberg-io/skill-worktree-management@0.1.15':
-    resolution: {integrity: sha512-JFonWkeNB51F33jjGlxzlHJHaqPYABecFmg+8vnoNWTCxILccVILQuZ6xIhousGRGmm8NjK2e5fStZE/eT3wWQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-worktree-management/0.1.15/1cdaf3a78c331f275ba42b2603656891bf4e4281}
+  '@meimberg-io/skill-worktree-management@0.1.17':
+    resolution: {integrity: sha512-HUVStS0wyMRSHDiPKbTr51vri44CN4H0lBug9RG+XmUuZx/fkEF2kELx4u0doSIlquY0xWQiW2l0+zugYZI20w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-worktree-management/0.1.17/b8ef406bc5c956a00370f3654bc71dcc80aee8dd}
 
   '@meimberg-io/skill-writing-style-rules@0.1.3':
     resolution: {integrity: sha512-IP9VDyZHoKq21Mh00cFo3D4u01Ahyl9ZDq76hrDA+pYqTLcAGwExNHRWkJizNJxhqSaSy9GFeiHjo/YEcRJCAw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-writing-style-rules/0.1.3/34bfa0404ed6119d77e0f3a79e2ea0051b9c7bd3}
@@ -1086,6 +1051,11 @@ packages:
     resolution: {integrity: sha512-xLgQil4kIUCrAzVk9fRSkxkFNwmygLFjVxXrLc65aE1F0+Zsb8rxumFBy4XKyvgMCTL6kilDq3EZ0piE2dP/Dg==}
     engines: {node: '>=18.0.0'}
 
+  semver@7.8.6:
+    resolution: {integrity: sha512-9lpSSU4Mly3mrtruwLs1eLK6+gzbzqeBFwRNjIjE+9LuDpWdYctrQlQ3ej1Ilgi7gknpsTRnPoLP8DpCHqHIJw==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
     engines: {node: '>=8'}
@@ -1259,7 +1229,7 @@ snapshots:
       - supports-color
       - zod
 
-  '@leafcutter-governance/query@1.1.0(zod@4.6.7)':
+  '@leafcutter-governance/query@2.0.1(zod@4.6.7)':
     dependencies:
       '@leafcutter-governance/compose': 1.3.1(zod@4.6.7)
       '@leafcutter-governance/read': 1.1.0
@@ -1282,13 +1252,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@leafcutter-governance/run@1.1.1(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)':
+  '@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)':
     dependencies:
       '@leafcutter-governance/check': 1.3.1(zod@4.6.7)
       '@leafcutter-governance/compose': 1.3.1(zod@4.6.7)
       '@leafcutter-governance/declare': 1.3.1(zod@4.6.7)
       '@leafcutter-governance/lint': 1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
-      '@leafcutter-governance/query': 1.1.0(zod@4.6.7)
+      '@leafcutter-governance/query': 2.0.1(zod@4.6.7)
       '@leafcutter-governance/read': 1.1.0
       yaml: 2.9.1
       zod: 4.6.7
@@ -1298,11 +1268,41 @@ snapshots:
       - markdownlint
       - supports-color
 
-  '@leafcutter-library/adapter-github-cli@1.2.0': {}
+  '@leafcutter-guide/skill-guide@1.0.6': {}
+
+  '@leafcutter-library/adapter-attio-mcp@0.2.1': {}
 
   '@leafcutter-library/adapter-github@1.3.1': {}
 
+  '@leafcutter-library/adapter-google-account@0.2.2': {}
+
+  '@leafcutter-library/adapter-jira-mcp@0.2.1': {}
+
+  '@leafcutter-library/adapter-linear-mcp@0.2.2': {}
+
+  '@leafcutter-library/adapter-local-files@0.2.2':
+    dependencies:
+      '@leafcutter-library/adapter-markitdown': 0.2.1
+
+  '@leafcutter-library/adapter-markitdown@0.2.1': {}
+
+  '@leafcutter-library/adapter-microsoft-365-graph@0.2.1': {}
+
+  '@leafcutter-library/adapter-notion@0.2.1': {}
+
+  '@leafcutter-library/adapter-onedrive@0.2.1':
+    dependencies:
+      '@leafcutter-library/adapter-microsoft-365-graph': 0.2.1
+
+  '@leafcutter-library/adapter-plaud@0.2.2': {}
+
   '@leafcutter-library/adapter-sanity@0.2.0': {}
+
+  '@leafcutter-library/adapter-sevdesk@0.2.1': {}
+
+  '@leafcutter-library/adapter-storyblok@0.2.1': {}
+
+  '@leafcutter-library/adapter-todoist@0.2.1': {}
 
   '@leafcutter-library/role-architect@0.5.0': {}
 
@@ -1318,46 +1318,63 @@ snapshots:
 
   '@leafcutter-os/adapter-vault@0.6.0': {}
 
-  '@leafcutter-os/cli@7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@1.1.1(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@1.1.1(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))':
+  '@leafcutter-os/cli@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))':
     dependencies:
-      '@leafcutter-os/types': 7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))
+      '@leafcutter-os/types': 8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))
       js-yaml: 5.5.0
       yaml: 2.9.1
     optionalDependencies:
-      '@leafcutter-governance/run': 1.1.1(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
-      '@leafcutter-os/rules': 7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@1.1.1(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)
+      '@leafcutter-governance/run': 2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
+      '@leafcutter-os/rules': 8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)
     transitivePeerDependencies:
       - '@leafcutter-governance/check'
       - '@leafcutter-governance/compose'
       - '@leafcutter-governance/declare'
 
-  '@leafcutter-os/navigator@0.10.0': {}
+  '@leafcutter-os/collection-setup-local@0.2.1(@leafcutter-os/cli@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))':
+    dependencies:
+      '@leafcutter-os/cli': 8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))
+      '@leafcutter-os/playbook-set-up-local-colony': 0.4.1
+      '@leafcutter-os/playbook-upgrade-local-colony': 0.2.0
 
-  '@leafcutter-os/playbook-set-up-chapter-colony@0.3.1': {}
+  '@leafcutter-os/navigator@0.10.2': {}
 
-  '@leafcutter-os/playbook-set-up-local-colony@0.3.0': {}
+  '@leafcutter-os/playbook-set-up-chapter-colony@0.5.0': {}
 
-  '@leafcutter-os/playbook-upgrade-colonies@0.2.3': {}
+  '@leafcutter-os/playbook-set-up-local-colony@0.4.1': {}
 
-  '@leafcutter-os/rules@7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@1.1.1(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)':
+  '@leafcutter-os/playbook-upgrade-chapter-colony@0.2.0': {}
+
+  '@leafcutter-os/playbook-upgrade-colonies@0.3.0':
+    dependencies:
+      '@leafcutter-os/playbook-upgrade-chapter-colony': 0.2.0
+      '@leafcutter-os/playbook-upgrade-local-colony': 0.2.0
+      '@leafcutter-os/playbook-upgrade-root-colony': 0.2.0
+
+  '@leafcutter-os/playbook-upgrade-local-colony@0.2.0': {}
+
+  '@leafcutter-os/playbook-upgrade-root-colony@0.2.0': {}
+
+  '@leafcutter-os/rules@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)':
     dependencies:
       '@leafcutter-governance/check': 1.3.1(zod@4.6.7)
       '@leafcutter-governance/compose': 1.3.1(zod@4.6.7)
       '@leafcutter-governance/lint': 1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
       '@leafcutter-governance/read': 1.1.0
-      '@leafcutter-os/types': 7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))
+      '@leafcutter-os/types': 8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))
       eslint: 10.14.0
       github-actionlint: 1.7.12
       jsonc-parser: 3.3.1
       markdownlint: 0.42.0
       mdast-util-to-string: 4.0.0
+      semver: 7.8.6
       zod: 4.6.7
     optionalDependencies:
-      '@leafcutter-governance/run': 1.1.1(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
+      '@leafcutter-governance/run': 2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
     transitivePeerDependencies:
       - supports-color
 
-  '@leafcutter-os/types@7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))':
+  '@leafcutter-os/types@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))':
     dependencies:
       '@leafcutter-governance/check': 1.3.1(zod@4.6.7)
       '@leafcutter-governance/compose': 1.3.1(zod@4.6.7)
@@ -1365,200 +1382,120 @@ snapshots:
       js-yaml: 5.5.0
       zod: 4.6.7
 
-  '@meimberg-io/adapter-attio-mcp@0.2.1': {}
-
-  '@meimberg-io/adapter-github-meimberg@0.2.0':
+  '@meimberg-io/adapter-github-meimberg@0.2.1':
     dependencies:
       '@leafcutter-library/adapter-github': 1.3.1
 
-  '@meimberg-io/adapter-google-account@0.2.1(@meimberg-io/skill-google-account@0.2.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/adapter-google-meimberg@0.2.1':
     dependencies:
-      '@meimberg-io/skill-google-account': 0.2.1(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-secrets': 0.3.1
+      '@leafcutter-library/adapter-google-account': 0.2.2
 
-  '@meimberg-io/adapter-google-meimberg@0.1.4(@meimberg-io/skill-google-account@0.2.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/adapter-linear-meimberg@0.2.1':
     dependencies:
-      '@meimberg-io/adapter-google-account': 0.2.1(@meimberg-io/skill-google-account@0.2.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-google-account'
-      - '@meimberg-io/skill-secrets'
+      '@leafcutter-library/adapter-linear-mcp': 0.2.2
 
-  '@meimberg-io/adapter-jira-mcp@0.1.3': {}
-
-  '@meimberg-io/adapter-linear-mcp@0.1.5(@meimberg-io/skill-secrets@0.3.0)':
+  '@meimberg-io/adapter-microsoft-365-graph-meimberg@0.8.2':
     dependencies:
-      '@meimberg-io/skill-secrets': 0.3.0
+      '@leafcutter-library/adapter-microsoft-365-graph': 0.2.1
 
-  '@meimberg-io/adapter-linear-mcp@0.1.5(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/adapter-onedrive-meimberg@0.3.1':
     dependencies:
-      '@meimberg-io/skill-secrets': 0.3.1
+      '@leafcutter-library/adapter-onedrive': 0.2.1
 
-  '@meimberg-io/adapter-linear-meimberg@0.1.2(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/adapter-plaud-base@0.1.1':
     dependencies:
-      '@meimberg-io/adapter-linear-mcp': 0.1.5(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@leafcutter-library/adapter-plaud': 0.2.2
 
-  '@meimberg-io/adapter-local-files@0.1.11':
-    dependencies:
-      '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
-      '@meimberg-io/foundation-git-conduct': 0.3.0
-
-  '@meimberg-io/adapter-markitdown@0.1.2': {}
-
-  '@meimberg-io/adapter-microsoft-365-graph-meimberg@0.7.1(@meimberg-io/skill-secrets@0.3.1)':
-    dependencies:
-      '@meimberg-io/adapter-microsoft-365-graph': 0.7.1(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-microsoft-365-graph'
-      - '@meimberg-io/skill-secrets'
-
-  '@meimberg-io/adapter-microsoft-365-graph@0.7.1(@meimberg-io/skill-secrets@0.3.1)':
-    dependencies:
-      '@meimberg-io/skill-secrets': 0.3.1
-
-  '@meimberg-io/adapter-notion@0.1.6': {}
-
-  '@meimberg-io/adapter-onedrive-meimberg@0.2.3(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-onedrive@0.3.0)(@meimberg-io/skill-secrets@0.3.1)':
-    dependencies:
-      '@meimberg-io/adapter-onedrive': 0.2.3(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-onedrive@0.3.0)(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-convert-to-markdown'
-      - '@meimberg-io/skill-microsoft-365-graph'
-      - '@meimberg-io/skill-onedrive'
-      - '@meimberg-io/skill-secrets'
-
-  '@meimberg-io/adapter-onedrive@0.2.3(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-onedrive@0.3.0)(@meimberg-io/skill-secrets@0.3.1)':
-    dependencies:
-      '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
-      '@meimberg-io/skill-convert-to-markdown': 0.1.3
-      '@meimberg-io/skill-onedrive': 0.3.0
-      '@meimberg-io/skill-secrets': 0.3.1
-
-  '@meimberg-io/adapter-plaud@0.1.1(@meimberg-io/skill-secrets@0.3.0)':
-    dependencies:
-      '@meimberg-io/skill-secrets': 0.3.0
-
-  '@meimberg-io/adapter-plaud@0.1.1(@meimberg-io/skill-secrets@0.3.1)':
-    dependencies:
-      '@meimberg-io/skill-secrets': 0.3.1
-
-  '@meimberg-io/adapter-positioning@0.1.2(@meimberg-io/skill-secrets@0.3.1)':
-    dependencies:
-      '@meimberg-io/skill-secrets': 0.3.1
+  '@meimberg-io/adapter-positioning@0.1.2': {}
 
   '@meimberg-io/adapter-sanity-meimberg-digital@0.2.0':
     dependencies:
       '@leafcutter-library/adapter-sanity': 0.2.0
 
-  '@meimberg-io/adapter-sevdesk-meimberg@0.1.4(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/adapter-sevdesk-meimberg@0.2.1':
     dependencies:
-      '@meimberg-io/adapter-sevdesk': 0.6.1(@meimberg-io/skill-secrets@0.3.1)
+      '@leafcutter-library/adapter-sevdesk': 0.2.1
+
+  '@meimberg-io/adapter-smarteditor-meimberg@0.1.2':
+    dependencies:
+      '@meimberg-io/adapter-smarteditor': 0.1.4
     transitivePeerDependencies:
       - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/adapter-sevdesk@0.6.1(@meimberg-io/skill-secrets@0.3.1)':
-    dependencies:
-      '@meimberg-io/skill-secrets': 0.3.1
+  '@meimberg-io/adapter-smarteditor@0.1.4': {}
 
-  '@meimberg-io/adapter-smarteditor-meimberg@0.1.2(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/adapter-storyblok-meimberg@0.2.1':
     dependencies:
-      '@meimberg-io/adapter-smarteditor': 0.1.4(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@leafcutter-library/adapter-storyblok': 0.2.1
 
-  '@meimberg-io/adapter-smarteditor@0.1.4(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/adapter-todoist-base@0.1.1':
     dependencies:
-      '@meimberg-io/skill-secrets': 0.3.1
-
-  '@meimberg-io/adapter-storyblok-meimberg@0.1.2(@meimberg-io/skill-secrets@0.3.1)':
-    dependencies:
-      '@meimberg-io/adapter-storyblok': 0.1.4(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
-
-  '@meimberg-io/adapter-storyblok@0.1.4(@meimberg-io/skill-secrets@0.3.1)':
-    dependencies:
-      '@meimberg-io/skill-secrets': 0.3.1
-
-  '@meimberg-io/adapter-todoist@0.1.1(@meimberg-io/skill-secrets@0.3.1)':
-    dependencies:
-      '@meimberg-io/skill-secrets': 0.3.1
+      '@leafcutter-library/adapter-todoist': 0.2.1
 
   '@meimberg-io/adapter-vault-meimberg@0.1.0':
     dependencies:
       '@leafcutter-os/adapter-vault': 0.6.0
 
-  '@meimberg-io/agent-architect@0.1.13(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/agent-architect@0.1.15':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@meimberg-io/skill-coding-rules': 0.1.2
-      '@meimberg-io/skill-specify': 0.1.13(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/skill-specify': 0.1.15
 
-  '@meimberg-io/agent-developer@0.1.21(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/agent-developer@0.1.24':
     dependencies:
       '@leafcutter-library/adapter-github': 1.3.1
       '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/playbook-fix-bug': 0.2.13(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/playbook-implement-feature': 0.1.18(@meimberg-io/skill-secrets@0.3.1)
+      '@meimberg-io/playbook-fix-bug': 0.2.16
+      '@meimberg-io/playbook-implement-feature': 0.1.21
       '@meimberg-io/role-developer': 0.2.1
       '@meimberg-io/skill-coding-rules': 0.1.2
       '@meimberg-io/skill-frontend-development': 0.1.2
-      '@meimberg-io/skill-git-workflow': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-implement': 0.2.12(@meimberg-io/skill-secrets@0.3.1)
+      '@meimberg-io/skill-git-workflow': 0.1.17
+      '@meimberg-io/skill-implement': 0.2.14
       '@meimberg-io/skill-nextjs-development': 0.1.3
-      '@meimberg-io/skill-specify': 0.1.13(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-ticket-systems': 0.1.11(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/skill-specify': 0.1.15
+      '@meimberg-io/skill-ticket-systems': 0.1.13
 
-  '@meimberg-io/agent-legacy-requirements-engineer@0.1.15(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/agent-legacy-requirements-engineer@0.1.17':
     dependencies:
       '@leafcutter-library/role-requirements-engineer': 0.5.0
       '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/playbook-extract-requirements': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-git-workflow': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-requirements-repo': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/playbook-extract-requirements': 0.1.17
+      '@meimberg-io/skill-git-workflow': 0.1.17
+      '@meimberg-io/skill-requirements-repo': 0.1.17
 
-  '@meimberg-io/agent-requirements-analyst@0.1.18(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/agent-requirements-analyst@0.1.25':
     dependencies:
       '@leafcutter-library/role-requirements-engineer': 0.5.0
-      '@meimberg-io/playbook-requirements-to-dev': 0.1.18(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-draft-requirements': 0.1.4
-      '@meimberg-io/skill-plan-to-tickets': 0.1.12(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-specify': 0.1.13(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-ticket-systems': 0.1.11(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/playbook-requirements-to-dev': 0.1.25
+      '@meimberg-io/skill-draft-requirements': 0.1.6
+      '@meimberg-io/skill-plan-to-tickets': 0.1.16
+      '@meimberg-io/skill-specify': 0.1.15
+      '@meimberg-io/skill-ticket-systems': 0.1.13
 
-  '@meimberg-io/agent-technical-designer@0.1.18(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/agent-technical-designer@0.1.24':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-planner': 0.4.0
-      '@meimberg-io/playbook-technical-concept': 0.1.18(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-convert-to-markdown': 0.1.3
-      '@meimberg-io/skill-technical-concept-writing': 0.1.4
+      '@meimberg-io/playbook-technical-concept': 0.1.24
+      '@meimberg-io/skill-convert-to-markdown': 0.1.5
+      '@meimberg-io/skill-technical-concept-writing': 0.1.6
       '@meimberg-io/skill-writing-style-rules': 0.1.3
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/collection-base@0.11.0':
+  '@meimberg-io/collection-base@0.15.2':
     dependencies:
       '@leafcutter-library/adapter-github': 1.3.1
+      '@leafcutter-library/adapter-jira-mcp': 0.2.1
+      '@leafcutter-library/adapter-linear-mcp': 0.2.2
+      '@leafcutter-library/adapter-local-files': 0.2.2
+      '@leafcutter-library/adapter-markitdown': 0.2.1
+      '@leafcutter-library/adapter-notion': 0.2.1
       '@leafcutter-library/role-orchestrator': 0.5.0
-      '@leafcutter-os/playbook-set-up-chapter-colony': 0.3.1
-      '@leafcutter-os/playbook-set-up-local-colony': 0.3.0
-      '@leafcutter-os/playbook-upgrade-colonies': 0.2.3
-      '@meimberg-io/adapter-jira-mcp': 0.1.3
-      '@meimberg-io/adapter-linear-mcp': 0.1.5(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/adapter-local-files': 0.1.11
-      '@meimberg-io/adapter-markitdown': 0.1.2
-      '@meimberg-io/adapter-notion': 0.1.6
-      '@meimberg-io/adapter-plaud': 0.1.1(@meimberg-io/skill-secrets@0.3.1)
+      '@leafcutter-os/playbook-set-up-chapter-colony': 0.5.0
+      '@leafcutter-os/playbook-set-up-local-colony': 0.4.1
+      '@leafcutter-os/playbook-upgrade-colonies': 0.3.0
+      '@meimberg-io/adapter-plaud-base': 0.1.1
       '@meimberg-io/adapter-vault-meimberg': 0.1.0
       '@meimberg-io/foundation-communication': 0.3.0
       '@meimberg-io/foundation-delivery-conduct': 0.3.0
@@ -1572,161 +1509,107 @@ snapshots:
       '@meimberg-io/skill-capture-project-memory': 0.1.8
       '@meimberg-io/skill-chapter-colony': 0.2.0
       '@meimberg-io/skill-colony-handoff': 0.2.5
-      '@meimberg-io/skill-convert-to-markdown': 0.1.3
-      '@meimberg-io/skill-google-account': 0.2.1(@meimberg-io/skill-secrets@0.3.1)
+      '@meimberg-io/skill-convert-to-markdown': 0.1.5
       '@meimberg-io/skill-humanize': 0.1.2
       '@meimberg-io/skill-i-have-adhd': 0.1.2
       '@meimberg-io/skill-local-colony': 0.5.2
-      '@meimberg-io/skill-microsoft-365-graph': 0.5.2(@meimberg-io/skill-secrets@0.3.1)
       '@meimberg-io/skill-migrate-project': 0.1.5
-      '@meimberg-io/skill-onedrive': 0.3.0
       '@meimberg-io/skill-secrets': 0.3.1
       '@meimberg-io/skill-technical-writing': 0.1.3
-      '@meimberg-io/skill-ticket-systems': 0.1.11(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-transcripts-and-minutes': 0.2.3(@meimberg-io/skill-secrets@0.3.1)
+      '@meimberg-io/skill-ticket-systems': 0.1.13
+      '@meimberg-io/skill-transcripts-and-minutes': 0.3.1
       '@meimberg-io/skill-writing-style-rules': 0.1.3
 
-  '@meimberg-io/collection-base@0.9.11':
-    dependencies:
-      '@leafcutter-library/adapter-github-cli': 1.2.0
-      '@leafcutter-library/role-orchestrator': 0.5.0
-      '@leafcutter-os/playbook-set-up-chapter-colony': 0.3.1
-      '@leafcutter-os/playbook-set-up-local-colony': 0.3.0
-      '@leafcutter-os/playbook-upgrade-colonies': 0.2.3
-      '@meimberg-io/adapter-jira-mcp': 0.1.3
-      '@meimberg-io/adapter-linear-mcp': 0.1.5(@meimberg-io/skill-secrets@0.3.0)
-      '@meimberg-io/adapter-local-files': 0.1.11
-      '@meimberg-io/adapter-markitdown': 0.1.2
-      '@meimberg-io/adapter-notion': 0.1.6
-      '@meimberg-io/adapter-plaud': 0.1.1(@meimberg-io/skill-secrets@0.3.0)
-      '@meimberg-io/foundation-communication': 0.3.0
-      '@meimberg-io/foundation-delivery-conduct': 0.3.0
-      '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
-      '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/foundation-knowledge-in-repo': 0.2.4
-      '@meimberg-io/method-single-lens-review': 0.1.2
-      '@meimberg-io/role-author': 0.1.2
-      '@meimberg-io/role-owner': 0.1.2
-      '@meimberg-io/skill-brainstorming': 0.2.4
-      '@meimberg-io/skill-capture-project-memory': 0.1.8
-      '@meimberg-io/skill-chapter-colony': 0.1.19
-      '@meimberg-io/skill-colony-handoff': 0.2.4
-      '@meimberg-io/skill-convert-to-markdown': 0.1.3
-      '@meimberg-io/skill-google-account': 0.2.1(@meimberg-io/skill-secrets@0.3.0)
-      '@meimberg-io/skill-humanize': 0.1.2
-      '@meimberg-io/skill-i-have-adhd': 0.1.2
-      '@meimberg-io/skill-local-colony': 0.5.1
-      '@meimberg-io/skill-microsoft-365-graph': 0.5.2(@meimberg-io/skill-secrets@0.3.0)
-      '@meimberg-io/skill-migrate-project': 0.1.4
-      '@meimberg-io/skill-onedrive': 0.3.0
-      '@meimberg-io/skill-secrets': 0.3.0
-      '@meimberg-io/skill-technical-writing': 0.1.3
-      '@meimberg-io/skill-ticket-systems': 0.1.10(@meimberg-io/skill-secrets@0.3.0)
-      '@meimberg-io/skill-transcripts-and-minutes': 0.2.3(@meimberg-io/skill-secrets@0.3.0)
-      '@meimberg-io/skill-writing-style-rules': 0.1.3
-
-  '@meimberg-io/collection-development@0.4.0(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/collection-development@0.4.7':
     dependencies:
       '@leafcutter-library/adapter-github': 1.3.1
-      '@meimberg-io/agent-architect': 0.1.13(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/agent-developer': 0.1.21(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/agent-legacy-requirements-engineer': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/agent-requirements-analyst': 0.1.18(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/agent-technical-designer': 0.1.18(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/collection-base': 0.11.0
+      '@meimberg-io/agent-architect': 0.1.15
+      '@meimberg-io/agent-developer': 0.1.24
+      '@meimberg-io/agent-legacy-requirements-engineer': 0.1.17
+      '@meimberg-io/agent-requirements-analyst': 0.1.25
+      '@meimberg-io/agent-technical-designer': 0.1.24
+      '@meimberg-io/collection-base': 0.15.2
       '@meimberg-io/foundation-code-conventions': 0.1.2
-      '@meimberg-io/playbook-extract-requirements': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/playbook-fix-bug': 0.2.13(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/playbook-implement-feature': 0.1.18(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/playbook-implement-in-worktree': 0.1.18(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/playbook-rebuild-legacy-app': 0.1.16(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/playbook-requirements-to-dev': 0.1.18(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/playbook-specify-and-review': 0.1.14(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/playbook-technical-concept': 0.1.18(@meimberg-io/skill-secrets@0.3.1)
+      '@meimberg-io/playbook-extract-requirements': 0.1.17
+      '@meimberg-io/playbook-fix-bug': 0.2.16
+      '@meimberg-io/playbook-implement-feature': 0.1.21
+      '@meimberg-io/playbook-implement-in-worktree': 0.1.21
+      '@meimberg-io/playbook-rebuild-legacy-app': 0.1.18
+      '@meimberg-io/playbook-requirements-to-dev': 0.1.25
+      '@meimberg-io/playbook-specify-and-review': 0.1.17
+      '@meimberg-io/playbook-technical-concept': 0.1.24
       '@meimberg-io/role-customer': 0.1.2
       '@meimberg-io/role-developer': 0.2.1
       '@meimberg-io/role-project-manager': 0.1.2
       '@meimberg-io/skill-build-and-ci': 0.1.3
       '@meimberg-io/skill-coding-rules': 0.1.2
       '@meimberg-io/skill-customer-hidden-context': 0.1.4
-      '@meimberg-io/skill-draft-requirements': 0.1.4
+      '@meimberg-io/skill-draft-requirements': 0.1.6
       '@meimberg-io/skill-frontend-development': 0.1.2
-      '@meimberg-io/skill-git-workflow': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-implement': 0.2.12(@meimberg-io/skill-secrets@0.3.1)
+      '@meimberg-io/skill-git-workflow': 0.1.17
+      '@meimberg-io/skill-implement': 0.2.14
       '@meimberg-io/skill-meimberg-deployment-stack': 0.1.2
       '@meimberg-io/skill-nextjs-development': 0.1.3
-      '@meimberg-io/skill-plan-to-tickets': 0.1.12(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-requirements-repo': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-specify': 0.1.13(@meimberg-io/skill-secrets@0.3.1)
+      '@meimberg-io/skill-plan-to-tickets': 0.1.16
+      '@meimberg-io/skill-requirements-repo': 0.1.17
+      '@meimberg-io/skill-specify': 0.1.15
       '@meimberg-io/skill-spring-boot-development': 0.1.3
       '@meimberg-io/skill-supabase-development': 0.1.2
       '@meimberg-io/skill-systematic-debugging': 0.2.2
-      '@meimberg-io/skill-technical-concept-writing': 0.1.4
-      '@meimberg-io/skill-worktree-management': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/skill-technical-concept-writing': 0.1.6
+      '@meimberg-io/skill-worktree-management': 0.1.17
 
-  '@meimberg-io/collection-meimberg-all@0.2.40(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/adapter-todoist@0.1.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/collection-base@0.9.11)(@meimberg-io/datapool-todos@0.4.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-google-account@0.2.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/skill-onedrive@0.3.0)(@meimberg-io/skill-secrets@0.3.1)(@meimberg-io/skill-todoist-rest@0.1.1(@meimberg-io/skill-secrets@0.3.1))':
+  '@meimberg-io/collection-meimberg-all@0.2.49(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.1)(@meimberg-io/collection-base@0.15.2)(@meimberg-io/datapool-todos@0.5.1)':
     dependencies:
-      '@meimberg-io/adapter-github-meimberg': 0.2.0
-      '@meimberg-io/adapter-google-meimberg': 0.1.4(@meimberg-io/skill-google-account@0.2.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/adapter-linear-meimberg': 0.1.2(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/adapter-positioning': 0.1.2(@meimberg-io/skill-secrets@0.3.1)
+      '@meimberg-io/adapter-github-meimberg': 0.2.1
+      '@meimberg-io/adapter-google-meimberg': 0.2.1
+      '@meimberg-io/adapter-linear-meimberg': 0.2.1
+      '@meimberg-io/adapter-positioning': 0.1.2
       '@meimberg-io/adapter-sanity-meimberg-digital': 0.2.0
-      '@meimberg-io/adapter-smarteditor-meimberg': 0.1.2(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/adapter-storyblok-meimberg': 0.1.2(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/collection-base': 0.9.11
-      '@meimberg-io/collection-meimberg-digital': 0.6.8(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/adapter-todoist@0.1.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/collection-base@0.9.11)(@meimberg-io/datapool-todos@0.4.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-onedrive@0.3.0)(@meimberg-io/skill-secrets@0.3.1)(@meimberg-io/skill-todoist-rest@0.1.1(@meimberg-io/skill-secrets@0.3.1))
-      '@meimberg-io/datapool-bookkeeping': 0.3.1(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/datapool-digital-circus-media': 0.1.7(@meimberg-io/adapter-local-files@0.1.11)
-      '@meimberg-io/datapool-luxarise-documents': 0.1.7(@meimberg-io/adapter-local-files@0.1.11)
-      '@meimberg-io/datapool-mailbox': 0.5.9(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/datapool-meimberg-io-documents': 0.1.7(@meimberg-io/adapter-local-files@0.1.11)
-      '@meimberg-io/datapool-risau-meimberg-gbr-documents': 0.1.5(@meimberg-io/adapter-local-files@0.1.11)
+      '@meimberg-io/adapter-smarteditor-meimberg': 0.1.2
+      '@meimberg-io/adapter-storyblok-meimberg': 0.2.1
+      '@meimberg-io/collection-base': 0.15.2
+      '@meimberg-io/collection-meimberg-digital': 0.6.16(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.1)(@meimberg-io/collection-base@0.15.2)(@meimberg-io/datapool-todos@0.5.1)
+      '@meimberg-io/datapool-bookkeeping': 0.3.3
+      '@meimberg-io/datapool-digital-circus-media': 0.1.8(@leafcutter-library/adapter-local-files@0.2.2)
+      '@meimberg-io/datapool-luxarise-documents': 0.1.8(@leafcutter-library/adapter-local-files@0.2.2)
+      '@meimberg-io/datapool-mailbox': 0.5.12
+      '@meimberg-io/datapool-meimberg-io-documents': 0.1.8(@leafcutter-library/adapter-local-files@0.2.2)
+      '@meimberg-io/datapool-risau-meimberg-gbr-documents': 0.1.6(@leafcutter-library/adapter-local-files@0.2.2)
     transitivePeerDependencies:
-      - '@meimberg-io/adapter-local-files'
-      - '@meimberg-io/adapter-todoist'
+      - '@leafcutter-library/adapter-local-files'
+      - '@leafcutter-library/adapter-todoist'
       - '@meimberg-io/datapool-todos'
-      - '@meimberg-io/skill-convert-to-markdown'
-      - '@meimberg-io/skill-google-account'
-      - '@meimberg-io/skill-microsoft-365-graph'
-      - '@meimberg-io/skill-onedrive'
       - '@meimberg-io/skill-secrets'
-      - '@meimberg-io/skill-todoist-rest'
 
-  '@meimberg-io/collection-meimberg-digital@0.6.8(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/adapter-todoist@0.1.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/collection-base@0.9.11)(@meimberg-io/datapool-todos@0.4.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-onedrive@0.3.0)(@meimberg-io/skill-secrets@0.3.1)(@meimberg-io/skill-todoist-rest@0.1.1(@meimberg-io/skill-secrets@0.3.1))':
+  '@meimberg-io/collection-meimberg-digital@0.6.16(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.1)(@meimberg-io/collection-base@0.15.2)(@meimberg-io/datapool-todos@0.5.1)':
     dependencies:
-      '@meimberg-io/adapter-attio-mcp': 0.2.1
-      '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.7.1(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/adapter-onedrive-meimberg': 0.2.3(@meimberg-io/skill-convert-to-markdown@0.1.3)(@meimberg-io/skill-onedrive@0.3.0)(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/adapter-sevdesk-meimberg': 0.1.4(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/collection-base': 0.9.11
-      '@meimberg-io/datapool-calendar': 0.2.5(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/datapool-meimberg-digital-crm': 0.2.1
-      '@meimberg-io/datapool-meimberg-digital-documents': 0.5.3(@meimberg-io/adapter-local-files@0.1.11)
-      '@meimberg-io/datapool-meimberg-digital-projects': 0.2.3(@meimberg-io/adapter-local-files@0.1.11)
-      '@meimberg-io/datapool-meimberg-holding-documents': 0.2.3(@meimberg-io/adapter-local-files@0.1.11)
+      '@leafcutter-library/adapter-attio-mcp': 0.2.1
+      '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.8.2
+      '@meimberg-io/adapter-onedrive-meimberg': 0.3.1
+      '@meimberg-io/adapter-sevdesk-meimberg': 0.2.1
+      '@meimberg-io/collection-base': 0.15.2
+      '@meimberg-io/datapool-calendar': 0.2.8
+      '@meimberg-io/datapool-meimberg-digital-crm': 0.2.3
+      '@meimberg-io/datapool-meimberg-digital-documents': 0.5.4(@leafcutter-library/adapter-local-files@0.2.2)
+      '@meimberg-io/datapool-meimberg-digital-projects': 0.2.4(@leafcutter-library/adapter-local-files@0.2.2)
+      '@meimberg-io/datapool-meimberg-holding-documents': 0.2.4(@leafcutter-library/adapter-local-files@0.2.2)
       '@meimberg-io/foundation-meimberg-digital-company': 0.2.1
       '@meimberg-io/foundation-meimberg-holding-company': 0.2.0
-      '@meimberg-io/skill-bookkeeping': 0.3.13(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/skill-secrets@0.3.1)
+      '@meimberg-io/skill-bookkeeping': 0.3.18(@leafcutter-library/adapter-local-files@0.2.2)
       '@meimberg-io/skill-it-administration': 0.1.0
-      '@meimberg-io/skill-mail-intake': 0.3.11(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/adapter-todoist@0.1.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/datapool-todos@0.4.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/skill-secrets@0.3.1)(@meimberg-io/skill-todoist-rest@0.1.1(@meimberg-io/skill-secrets@0.3.1))
+      '@meimberg-io/skill-mail-intake': 0.4.2(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.1)(@meimberg-io/datapool-todos@0.5.1)
     transitivePeerDependencies:
-      - '@meimberg-io/adapter-local-files'
-      - '@meimberg-io/adapter-todoist'
+      - '@leafcutter-library/adapter-local-files'
+      - '@leafcutter-library/adapter-todoist'
       - '@meimberg-io/datapool-todos'
-      - '@meimberg-io/skill-convert-to-markdown'
-      - '@meimberg-io/skill-microsoft-365-graph'
-      - '@meimberg-io/skill-onedrive'
-      - '@meimberg-io/skill-secrets'
-      - '@meimberg-io/skill-todoist-rest'
 
-  '@meimberg-io/colony@0.3.12(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)':
+  '@meimberg-io/colony@0.4.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)':
     dependencies:
-      '@leafcutter-governance/run': 1.1.1(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
-      '@leafcutter-os/cli': 7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@1.1.1(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@1.1.1(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))
-      '@leafcutter-os/rules': 7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@1.1.1(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)
-      '@leafcutter-os/types': 7.38.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))
+      '@leafcutter-governance/run': 2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
+      '@leafcutter-os/cli': 8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))
+      '@leafcutter-os/rules': 8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)
+      '@leafcutter-os/types': 8.2.0(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))
     transitivePeerDependencies:
       - '@leafcutter-governance/check'
       - '@leafcutter-governance/compose'
@@ -1738,63 +1621,53 @@ snapshots:
       - supports-color
       - zod
 
-  '@meimberg-io/datapool-bookkeeping@0.3.1(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/datapool-bookkeeping@0.3.3':
     dependencies:
-      '@meimberg-io/adapter-sevdesk-meimberg': 0.1.4(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/adapter-sevdesk-meimberg': 0.2.1
 
-  '@meimberg-io/datapool-calendar@0.2.5(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/datapool-calendar@0.2.8':
     dependencies:
-      '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.7.1(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-microsoft-365-graph'
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.8.2
 
-  '@meimberg-io/datapool-digital-circus-media@0.1.7(@meimberg-io/adapter-local-files@0.1.11)':
+  '@meimberg-io/datapool-digital-circus-media@0.1.8(@leafcutter-library/adapter-local-files@0.2.2)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.11
+      '@leafcutter-library/adapter-local-files': 0.2.2
 
-  '@meimberg-io/datapool-luxarise-documents@0.1.7(@meimberg-io/adapter-local-files@0.1.11)':
+  '@meimberg-io/datapool-luxarise-documents@0.1.8(@leafcutter-library/adapter-local-files@0.2.2)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.11
+      '@leafcutter-library/adapter-local-files': 0.2.2
 
-  '@meimberg-io/datapool-mailbox@0.5.9(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/datapool-mailbox@0.5.12':
     dependencies:
-      '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.7.1(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-microsoft-365-graph'
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.8.2
 
-  '@meimberg-io/datapool-meimberg-digital-crm@0.2.1':
+  '@meimberg-io/datapool-meimberg-digital-crm@0.2.3':
     dependencies:
-      '@meimberg-io/adapter-attio-mcp': 0.2.1
+      '@leafcutter-library/adapter-attio-mcp': 0.2.1
 
-  '@meimberg-io/datapool-meimberg-digital-documents@0.5.3(@meimberg-io/adapter-local-files@0.1.11)':
+  '@meimberg-io/datapool-meimberg-digital-documents@0.5.4(@leafcutter-library/adapter-local-files@0.2.2)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.11
+      '@leafcutter-library/adapter-local-files': 0.2.2
 
-  '@meimberg-io/datapool-meimberg-digital-projects@0.2.3(@meimberg-io/adapter-local-files@0.1.11)':
+  '@meimberg-io/datapool-meimberg-digital-projects@0.2.4(@leafcutter-library/adapter-local-files@0.2.2)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.11
+      '@leafcutter-library/adapter-local-files': 0.2.2
 
-  '@meimberg-io/datapool-meimberg-holding-documents@0.2.3(@meimberg-io/adapter-local-files@0.1.11)':
+  '@meimberg-io/datapool-meimberg-holding-documents@0.2.4(@leafcutter-library/adapter-local-files@0.2.2)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.11
+      '@leafcutter-library/adapter-local-files': 0.2.2
 
-  '@meimberg-io/datapool-meimberg-io-documents@0.1.7(@meimberg-io/adapter-local-files@0.1.11)':
+  '@meimberg-io/datapool-meimberg-io-documents@0.1.8(@leafcutter-library/adapter-local-files@0.2.2)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.11
+      '@leafcutter-library/adapter-local-files': 0.2.2
 
-  '@meimberg-io/datapool-risau-meimberg-gbr-documents@0.1.5(@meimberg-io/adapter-local-files@0.1.11)':
+  '@meimberg-io/datapool-risau-meimberg-gbr-documents@0.1.6(@leafcutter-library/adapter-local-files@0.2.2)':
     dependencies:
-      '@meimberg-io/adapter-local-files': 0.1.11
+      '@leafcutter-library/adapter-local-files': 0.2.2
 
-  '@meimberg-io/datapool-todos@0.4.1(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/datapool-todos@0.5.1':
     dependencies:
-      '@meimberg-io/adapter-todoist': 0.1.1(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/adapter-todoist-base': 0.1.1
 
   '@meimberg-io/foundation-code-conventions@0.1.2': {}
 
@@ -1814,28 +1687,24 @@ snapshots:
 
   '@meimberg-io/method-single-lens-review@0.1.2': {}
 
-  '@meimberg-io/playbook-extract-requirements@0.1.15(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/playbook-extract-requirements@0.1.17':
     dependencies:
       '@leafcutter-library/role-requirements-engineer': 0.5.0
       '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/skill-git-workflow': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-requirements-repo': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/skill-git-workflow': 0.1.17
+      '@meimberg-io/skill-requirements-repo': 0.1.17
 
-  '@meimberg-io/playbook-fix-bug@0.2.13(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/playbook-fix-bug@0.2.16':
     dependencies:
       '@leafcutter-library/role-code-reviewer': 0.5.0
       '@leafcutter-library/role-orchestrator': 0.5.0
       '@meimberg-io/foundation-git-conduct': 0.3.0
       '@meimberg-io/role-developer': 0.2.1
       '@meimberg-io/skill-coding-rules': 0.1.2
-      '@meimberg-io/skill-git-workflow': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
+      '@meimberg-io/skill-git-workflow': 0.1.17
       '@meimberg-io/skill-systematic-debugging': 0.2.2
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
 
-  '@meimberg-io/playbook-implement-feature@0.1.18(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/playbook-implement-feature@0.1.21':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-code-reviewer': 0.5.0
@@ -1844,72 +1713,60 @@ snapshots:
       '@meimberg-io/role-developer': 0.2.1
       '@meimberg-io/skill-coding-rules': 0.1.2
       '@meimberg-io/skill-frontend-development': 0.1.2
-      '@meimberg-io/skill-git-workflow': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-implement': 0.2.12(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-specify': 0.1.13(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-ticket-systems': 0.1.11(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/skill-git-workflow': 0.1.17
+      '@meimberg-io/skill-implement': 0.2.14
+      '@meimberg-io/skill-specify': 0.1.15
+      '@meimberg-io/skill-ticket-systems': 0.1.13
 
-  '@meimberg-io/playbook-implement-in-worktree@0.1.18(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/playbook-implement-in-worktree@0.1.21':
     dependencies:
       '@leafcutter-library/role-code-reviewer': 0.5.0
       '@meimberg-io/foundation-git-conduct': 0.3.0
       '@meimberg-io/skill-coding-rules': 0.1.2
-      '@meimberg-io/skill-implement': 0.2.12(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-worktree-management': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/skill-implement': 0.2.14
+      '@meimberg-io/skill-worktree-management': 0.1.17
 
-  '@meimberg-io/playbook-rebuild-legacy-app@0.1.16(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/playbook-rebuild-legacy-app@0.1.18':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-code-reviewer': 0.5.0
       '@leafcutter-library/role-requirements-auditor': 0.5.0
       '@leafcutter-library/role-requirements-engineer': 0.5.0
       '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/playbook-extract-requirements': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
+      '@meimberg-io/playbook-extract-requirements': 0.1.17
       '@meimberg-io/role-developer': 0.2.1
-      '@meimberg-io/skill-requirements-repo': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/skill-requirements-repo': 0.1.17
 
-  '@meimberg-io/playbook-requirements-to-dev@0.1.18(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/playbook-requirements-to-dev@0.1.25':
     dependencies:
       '@leafcutter-library/role-requirements-engineer': 0.5.0
-      '@meimberg-io/skill-draft-requirements': 0.1.4
-      '@meimberg-io/skill-plan-to-tickets': 0.1.12(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-specify': 0.1.13(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-ticket-systems': 0.1.11(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-transcripts-and-minutes': 0.2.3(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/skill-draft-requirements': 0.1.6
+      '@meimberg-io/skill-plan-to-tickets': 0.1.16
+      '@meimberg-io/skill-specify': 0.1.15
+      '@meimberg-io/skill-ticket-systems': 0.1.13
+      '@meimberg-io/skill-transcripts-and-minutes': 0.3.1
 
-  '@meimberg-io/playbook-specify-and-review@0.1.14(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/playbook-specify-and-review@0.1.17':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-orchestrator': 0.5.0
       '@meimberg-io/method-single-lens-review': 0.1.2
       '@meimberg-io/role-developer': 0.2.1
-      '@meimberg-io/skill-specify': 0.1.13(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-ticket-systems': 0.1.11(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/skill-specify': 0.1.15
+      '@meimberg-io/skill-ticket-systems': 0.1.13
 
-  '@meimberg-io/playbook-technical-concept@0.1.18(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/playbook-technical-concept@0.1.24':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-planner': 0.4.0
       '@meimberg-io/method-single-lens-review': 0.1.2
       '@meimberg-io/role-customer': 0.1.2
       '@meimberg-io/role-project-manager': 0.1.2
-      '@meimberg-io/skill-convert-to-markdown': 0.1.3
-      '@meimberg-io/skill-plan-to-tickets': 0.1.12(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-specify': 0.1.13(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-technical-concept-writing': 0.1.4
-      '@meimberg-io/skill-transcripts-and-minutes': 0.2.3(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/skill-convert-to-markdown': 0.1.5
+      '@meimberg-io/skill-plan-to-tickets': 0.1.16
+      '@meimberg-io/skill-specify': 0.1.15
+      '@meimberg-io/skill-technical-concept-writing': 0.1.6
+      '@meimberg-io/skill-transcripts-and-minutes': 0.3.1
 
   '@meimberg-io/role-author@0.1.2': {}
 
@@ -1921,17 +1778,15 @@ snapshots:
 
   '@meimberg-io/role-project-manager@0.1.2': {}
 
-  '@meimberg-io/skill-bookkeeping@0.3.13(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/skill-bookkeeping@0.3.18(@leafcutter-library/adapter-local-files@0.2.2)':
     dependencies:
-      '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.7.1(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/adapter-sevdesk-meimberg': 0.1.4(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/datapool-bookkeeping': 0.3.1(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/datapool-mailbox': 0.5.9(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/datapool-meimberg-digital-documents': 0.5.3(@meimberg-io/adapter-local-files@0.1.11)
+      '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.8.2
+      '@meimberg-io/adapter-sevdesk-meimberg': 0.2.1
+      '@meimberg-io/datapool-bookkeeping': 0.3.3
+      '@meimberg-io/datapool-mailbox': 0.5.12
+      '@meimberg-io/datapool-meimberg-digital-documents': 0.5.4(@leafcutter-library/adapter-local-files@0.2.2)
     transitivePeerDependencies:
-      - '@meimberg-io/adapter-local-files'
-      - '@meimberg-io/skill-microsoft-365-graph'
-      - '@meimberg-io/skill-secrets'
+      - '@leafcutter-library/adapter-local-files'
 
   '@meimberg-io/skill-brainstorming@0.2.4':
     dependencies:
@@ -1946,11 +1801,6 @@ snapshots:
       '@meimberg-io/foundation-knowledge-in-repo': 0.2.4
       '@meimberg-io/skill-customer-hidden-context': 0.1.4
 
-  '@meimberg-io/skill-chapter-colony@0.1.19':
-    dependencies:
-      '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
-      '@meimberg-io/foundation-git-conduct': 0.3.0
-
   '@meimberg-io/skill-chapter-colony@0.2.0':
     dependencies:
       '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
@@ -1958,105 +1808,68 @@ snapshots:
 
   '@meimberg-io/skill-coding-rules@0.1.2': {}
 
-  '@meimberg-io/skill-colony-handoff@0.2.4':
-    dependencies:
-      '@leafcutter-library/adapter-github-cli': 1.2.0
-      '@meimberg-io/foundation-knowledge-in-repo': 0.2.4
-      '@meimberg-io/skill-customer-hidden-context': 0.1.4
-
   '@meimberg-io/skill-colony-handoff@0.2.5':
     dependencies:
       '@leafcutter-library/adapter-github': 1.3.1
       '@meimberg-io/foundation-knowledge-in-repo': 0.2.4
       '@meimberg-io/skill-customer-hidden-context': 0.1.4
 
-  '@meimberg-io/skill-convert-to-markdown@0.1.3':
+  '@meimberg-io/skill-convert-to-markdown@0.1.5':
     dependencies:
-      '@meimberg-io/adapter-markitdown': 0.1.2
+      '@leafcutter-library/adapter-markitdown': 0.2.1
 
   '@meimberg-io/skill-customer-hidden-context@0.1.4': {}
 
-  '@meimberg-io/skill-draft-requirements@0.1.4':
+  '@meimberg-io/skill-draft-requirements@0.1.6':
     dependencies:
-      '@meimberg-io/skill-convert-to-markdown': 0.1.3
+      '@meimberg-io/skill-convert-to-markdown': 0.1.5
       '@meimberg-io/skill-writing-style-rules': 0.1.3
 
   '@meimberg-io/skill-frontend-development@0.1.2':
     dependencies:
       '@meimberg-io/skill-coding-rules': 0.1.2
 
-  '@meimberg-io/skill-git-workflow@0.1.15(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/skill-git-workflow@0.1.17':
     dependencies:
-      '@meimberg-io/adapter-jira-mcp': 0.1.3
-      '@meimberg-io/adapter-linear-mcp': 0.1.5(@meimberg-io/skill-secrets@0.3.1)
+      '@leafcutter-library/adapter-jira-mcp': 0.2.1
+      '@leafcutter-library/adapter-linear-mcp': 0.2.2
       '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
       '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/skill-ticket-systems': 0.1.11(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
-
-  '@meimberg-io/skill-google-account@0.2.1(@meimberg-io/skill-secrets@0.3.0)':
-    dependencies:
-      '@meimberg-io/skill-secrets': 0.3.0
-
-  '@meimberg-io/skill-google-account@0.2.1(@meimberg-io/skill-secrets@0.3.1)':
-    dependencies:
-      '@meimberg-io/skill-secrets': 0.3.1
+      '@meimberg-io/skill-ticket-systems': 0.1.13
 
   '@meimberg-io/skill-humanize@0.1.2': {}
 
   '@meimberg-io/skill-i-have-adhd@0.1.2': {}
 
-  '@meimberg-io/skill-implement@0.2.12(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/skill-implement@0.2.14':
     dependencies:
       '@leafcutter-library/adapter-github': 1.3.1
-      '@meimberg-io/adapter-jira-mcp': 0.1.3
-      '@meimberg-io/adapter-linear-mcp': 0.1.5(@meimberg-io/skill-secrets@0.3.1)
+      '@leafcutter-library/adapter-jira-mcp': 0.2.1
+      '@leafcutter-library/adapter-linear-mcp': 0.2.2
       '@meimberg-io/foundation-communication': 0.3.0
       '@meimberg-io/foundation-git-conduct': 0.3.0
       '@meimberg-io/skill-frontend-development': 0.1.2
-      '@meimberg-io/skill-ticket-systems': 0.1.11(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/skill-ticket-systems': 0.1.13
 
   '@meimberg-io/skill-it-administration@0.1.0': {}
-
-  '@meimberg-io/skill-local-colony@0.5.1':
-    dependencies:
-      '@leafcutter-library/adapter-github-cli': 1.2.0
-      '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
 
   '@meimberg-io/skill-local-colony@0.5.2':
     dependencies:
       '@leafcutter-library/adapter-github': 1.3.1
       '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
 
-  '@meimberg-io/skill-mail-intake@0.3.11(@meimberg-io/adapter-local-files@0.1.11)(@meimberg-io/adapter-todoist@0.1.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/datapool-todos@0.4.1(@meimberg-io/skill-secrets@0.3.1))(@meimberg-io/skill-secrets@0.3.1)(@meimberg-io/skill-todoist-rest@0.1.1(@meimberg-io/skill-secrets@0.3.1))':
+  '@meimberg-io/skill-mail-intake@0.4.2(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.1)(@meimberg-io/datapool-todos@0.5.1)':
     dependencies:
-      '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.7.1(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/adapter-todoist': 0.1.1(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/datapool-mailbox': 0.5.9(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/datapool-meimberg-digital-documents': 0.5.3(@meimberg-io/adapter-local-files@0.1.11)
-      '@meimberg-io/datapool-meimberg-holding-documents': 0.2.3(@meimberg-io/adapter-local-files@0.1.11)
-      '@meimberg-io/datapool-todos': 0.4.1(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-todoist-rest': 0.1.1(@meimberg-io/skill-secrets@0.3.1)
+      '@leafcutter-library/adapter-todoist': 0.2.1
+      '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.8.2
+      '@meimberg-io/datapool-mailbox': 0.5.12
+      '@meimberg-io/datapool-meimberg-digital-documents': 0.5.4(@leafcutter-library/adapter-local-files@0.2.2)
+      '@meimberg-io/datapool-meimberg-holding-documents': 0.2.4(@leafcutter-library/adapter-local-files@0.2.2)
+      '@meimberg-io/datapool-todos': 0.5.1
     transitivePeerDependencies:
-      - '@meimberg-io/adapter-local-files'
-      - '@meimberg-io/skill-secrets'
+      - '@leafcutter-library/adapter-local-files'
 
   '@meimberg-io/skill-meimberg-deployment-stack@0.1.2': {}
-
-  '@meimberg-io/skill-microsoft-365-graph@0.5.2(@meimberg-io/skill-secrets@0.3.0)':
-    dependencies:
-      '@meimberg-io/skill-secrets': 0.3.0
-
-  '@meimberg-io/skill-microsoft-365-graph@0.5.2(@meimberg-io/skill-secrets@0.3.1)':
-    dependencies:
-      '@meimberg-io/skill-secrets': 0.3.1
-
-  '@meimberg-io/skill-migrate-project@0.1.4':
-    dependencies:
-      '@meimberg-io/skill-secrets': 0.3.0
 
   '@meimberg-io/skill-migrate-project@0.1.5':
     dependencies:
@@ -2067,47 +1880,35 @@ snapshots:
       '@meimberg-io/skill-coding-rules': 0.1.2
       '@meimberg-io/skill-frontend-development': 0.1.2
 
-  '@meimberg-io/skill-onedrive@0.3.0': {}
-
-  '@meimberg-io/skill-plan-to-tickets@0.1.12(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/skill-plan-to-tickets@0.1.16':
     dependencies:
       '@leafcutter-library/adapter-github': 1.3.1
-      '@meimberg-io/adapter-jira-mcp': 0.1.3
-      '@meimberg-io/adapter-linear-mcp': 0.1.5(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-draft-requirements': 0.1.4
-      '@meimberg-io/skill-technical-concept-writing': 0.1.4
-      '@meimberg-io/skill-ticket-systems': 0.1.11(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@leafcutter-library/adapter-jira-mcp': 0.2.1
+      '@leafcutter-library/adapter-linear-mcp': 0.2.2
+      '@meimberg-io/skill-draft-requirements': 0.1.6
+      '@meimberg-io/skill-technical-concept-writing': 0.1.6
+      '@meimberg-io/skill-ticket-systems': 0.1.13
 
-  '@meimberg-io/skill-requirements-repo@0.1.15(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/skill-requirements-repo@0.1.17':
     dependencies:
       '@meimberg-io/foundation-git-conduct': 0.3.0
       '@meimberg-io/skill-customer-hidden-context': 0.1.4
-      '@meimberg-io/skill-git-workflow': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
+      '@meimberg-io/skill-git-workflow': 0.1.17
       '@meimberg-io/skill-technical-writing': 0.1.3
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
-
-  '@meimberg-io/skill-secrets@0.3.0':
-    dependencies:
-      '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
 
   '@meimberg-io/skill-secrets@0.3.1':
     dependencies:
       '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
 
-  '@meimberg-io/skill-specify@0.1.13(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/skill-specify@0.1.15':
     dependencies:
       '@leafcutter-library/adapter-github': 1.3.1
-      '@meimberg-io/adapter-jira-mcp': 0.1.3
-      '@meimberg-io/adapter-linear-mcp': 0.1.5(@meimberg-io/skill-secrets@0.3.1)
+      '@leafcutter-library/adapter-jira-mcp': 0.2.1
+      '@leafcutter-library/adapter-linear-mcp': 0.2.2
       '@meimberg-io/foundation-communication': 0.3.0
       '@meimberg-io/method-single-lens-review': 0.1.2
       '@meimberg-io/skill-coding-rules': 0.1.2
-      '@meimberg-io/skill-ticket-systems': 0.1.11(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/skill-ticket-systems': 0.1.13
 
   '@meimberg-io/skill-spring-boot-development@0.1.3':
     dependencies:
@@ -2120,58 +1921,32 @@ snapshots:
       '@meimberg-io/foundation-delivery-conduct': 0.3.0
       '@meimberg-io/skill-coding-rules': 0.1.2
 
-  '@meimberg-io/skill-technical-concept-writing@0.1.4':
+  '@meimberg-io/skill-technical-concept-writing@0.1.6':
     dependencies:
-      '@meimberg-io/skill-convert-to-markdown': 0.1.3
+      '@meimberg-io/skill-convert-to-markdown': 0.1.5
       '@meimberg-io/skill-writing-style-rules': 0.1.3
 
   '@meimberg-io/skill-technical-writing@0.1.3':
     dependencies:
       '@meimberg-io/skill-writing-style-rules': 0.1.3
 
-  '@meimberg-io/skill-ticket-systems@0.1.10(@meimberg-io/skill-secrets@0.3.0)':
-    dependencies:
-      '@leafcutter-library/adapter-github-cli': 1.2.0
-      '@meimberg-io/adapter-jira-mcp': 0.1.3
-      '@meimberg-io/adapter-linear-mcp': 0.1.5(@meimberg-io/skill-secrets@0.3.0)
-      '@meimberg-io/skill-writing-style-rules': 0.1.3
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
-
-  '@meimberg-io/skill-ticket-systems@0.1.11(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/skill-ticket-systems@0.1.13':
     dependencies:
       '@leafcutter-library/adapter-github': 1.3.1
-      '@meimberg-io/adapter-jira-mcp': 0.1.3
-      '@meimberg-io/adapter-linear-mcp': 0.1.5(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-writing-style-rules': 0.1.3
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
-
-  '@meimberg-io/skill-todoist-rest@0.1.1(@meimberg-io/skill-secrets@0.3.1)':
-    dependencies:
-      '@meimberg-io/adapter-todoist': 0.1.1(@meimberg-io/skill-secrets@0.3.1)
-      '@meimberg-io/skill-secrets': 0.3.1
-
-  '@meimberg-io/skill-transcripts-and-minutes@0.2.3(@meimberg-io/skill-secrets@0.3.0)':
-    dependencies:
-      '@meimberg-io/adapter-plaud': 0.1.1(@meimberg-io/skill-secrets@0.3.0)
-      '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/skill-secrets': 0.3.0
+      '@leafcutter-library/adapter-jira-mcp': 0.2.1
+      '@leafcutter-library/adapter-linear-mcp': 0.2.2
       '@meimberg-io/skill-writing-style-rules': 0.1.3
 
-  '@meimberg-io/skill-transcripts-and-minutes@0.2.3(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/skill-transcripts-and-minutes@0.3.1':
     dependencies:
-      '@meimberg-io/adapter-plaud': 0.1.1(@meimberg-io/skill-secrets@0.3.1)
+      '@meimberg-io/adapter-plaud-base': 0.1.1
       '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/skill-secrets': 0.3.1
       '@meimberg-io/skill-writing-style-rules': 0.1.3
 
-  '@meimberg-io/skill-worktree-management@0.1.15(@meimberg-io/skill-secrets@0.3.1)':
+  '@meimberg-io/skill-worktree-management@0.1.17':
     dependencies:
       '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/skill-git-workflow': 0.1.15(@meimberg-io/skill-secrets@0.3.1)
-    transitivePeerDependencies:
-      - '@meimberg-io/skill-secrets'
+      '@meimberg-io/skill-git-workflow': 0.1.17
 
   '@meimberg-io/skill-writing-style-rules@0.1.3': {}
 
@@ -2820,6 +2595,8 @@ snapshots:
       hookified: 2.2.0
 
   re2js@2.8.6: {}
+
+  semver@7.8.6: {}
 
   shebang-command@2.0.0:
     dependencies:
