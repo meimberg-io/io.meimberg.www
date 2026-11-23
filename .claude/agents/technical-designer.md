@@ -10,12 +10,12 @@ tools:
   - Edit
   - Bash
   - Agent
-  - mcp__linear__*
+  - mcp__github__*
 ---
 <!-- leafcutter-settle
-hash: c0daec847ed729b8
+hash: e63d50156b1aaf43
 model: opus
-tools: Read, Glob, Grep, Write, Edit, Bash, Agent, mcp__linear__*
+tools: Read, Glob, Grep, Write, Edit, Bash, Agent, mcp__github__*
 -->
 
 ## Role
@@ -59,5 +59,14 @@ After acceptance and a reviewed development plan, the handover dossier goes to `
 The adapters this agent reaches and the values it works with, as the compile resolved them; a list is a focus on each of its values.
 
 - `adapter-github`, implemented by `adapter-github-meimberg`: `token-variable` GITHUB_TOKEN_MEIMBERG; `owner` meimberg-io
-- `adapter-linear-mcp`, implemented by `adapter-linear-meimberg`: `token-variable` LINEAR_TOKEN_MEIMBERG
+- `adapter-linear`, implemented by `adapter-linear-meimberg`: `workspace` meimbergio; `token-variable` LINEAR_TOKEN_MEIMBERG
 - `adapter-plaud`, implemented by `adapter-plaud-base`: `account` google-103468724689332867910-1770467535@plaud.ai; `token-variable` PLAUD_REFRESH_TOKEN_BASE
+
+## Commands
+
+The commands that enter a playbook through this agent. Each calls the playbook by its entry name, which is its
+name in the `/` menu; pass the arguments in the order shown.
+
+| Command | Playbook | Arguments |
+| --- | --- | --- |
+| `rebuild-legacy-app` | `playbook-rebuild-legacy-app` | `<legacy-application> [target-stack]` |

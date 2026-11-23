@@ -1,3 +1,6 @@
+<!-- leafcutter-settle
+hash: 0368ae51533a6894
+-->
 # Git conduct
 
 This foundation sets how an agent handles version control: a finished task ends with a local, precisely staged commit on the branch that is checked out, the commit names its AI co-author, a branch whose pull request is merged is cleaned up, and everything else beyond the local commit stays with the user. It guards against finished work left uncommitted, commits that sweep up other sessions' changes, branch sprawl, merged branches left standing, hidden or vague AI attribution, and pushes the user did not ask for.

@@ -1,3 +1,6 @@
+<!-- leafcutter-settle
+hash: a2cd63b6a5a61214
+-->
 # Company data of Meimberg Holding UG
 
 The facts about Meimberg Holding UG (haftungsbeschränkt) that forms, contracts and letters to authorities ask for again and again. An agent takes them from here instead of searching the records, and never invents or guesses a value that is missing.

@@ -9,12 +9,12 @@ tools:
   - Write
   - Edit
   - Bash
-  - mcp__linear__*
+  - mcp__github__*
 ---
 <!-- leafcutter-settle
-hash: 874dd1a7ea4bddbe
+hash: 6658669846e994b7
 model: opus
-tools: Read, Glob, Grep, Write, Edit, Bash, mcp__linear__*
+tools: Read, Glob, Grep, Write, Edit, Bash, mcp__github__*
 -->
 
 ## Role
@@ -42,7 +42,7 @@ Your primary focus:
 
 - Run `specify` when a ticket needs to be worked out into a user story with acceptance criteria.
 - Use the repository's ADR template for decision records.
-- Draw on the proven patterns this colony already carries as skills; a new pattern worth keeping is proposed through the `tenant-intake` playbook instead of being written down ad hoc.
+- Draw on the proven patterns this colony already carries as skills; a new pattern worth keeping is proposed through the `colony-intake` playbook instead of being written down ad hoc.
 
 ### Handoff
 
@@ -55,4 +55,13 @@ When the work is not a decision inside one task but the concept phase of a whole
 The adapters this agent reaches and the values it works with, as the compile resolved them; a list is a focus on each of its values.
 
 - `adapter-github`, implemented by `adapter-github-meimberg`: `token-variable` GITHUB_TOKEN_MEIMBERG; `owner` meimberg-io
-- `adapter-linear-mcp`, implemented by `adapter-linear-meimberg`: `token-variable` LINEAR_TOKEN_MEIMBERG
+- `adapter-linear`, implemented by `adapter-linear-meimberg`: `workspace` meimbergio; `token-variable` LINEAR_TOKEN_MEIMBERG
+
+## Commands
+
+The commands that enter a playbook through this agent. Each calls the playbook by its entry name, which is its
+name in the `/` menu; pass the arguments in the order shown.
+
+| Command | Playbook | Arguments |
+| --- | --- | --- |
+| `rebuild-legacy-app` | `playbook-rebuild-legacy-app` | `<legacy-application> [target-stack]` |

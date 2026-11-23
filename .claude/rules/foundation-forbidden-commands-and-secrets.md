@@ -1,3 +1,6 @@
+<!-- leafcutter-settle
+hash: 9850f78263e04fbd
+-->
 # Forbidden commands and secrets
 
 This foundation sets the commands an agent never runs, the files it never edits or commits, how it handles secrets and where they lie, and how it logs in by SSH to servers protected by fail2ban. It guards against irreversible damage to repositories, hosts and clusters, against secrets leaking into a repository, a log or a conversation, from where they cannot be taken back, and against locking the user out of a server through careless login attempts. Force pushes, other destructive git operations and pushing in general stay with the user as `git-conduct` sets; security conventions for code that talks to a database live in `coding-rules`, and the handling of a private package registry token in `build-and-ci`.

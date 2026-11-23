@@ -1,3 +1,6 @@
+<!-- leafcutter-settle
+hash: ad8f9ab62b5d8f88
+-->
 # Company data of meimberg digital GmbH
 
 The facts about meimberg digital GmbH that forms, contracts, offers, invoices and letters to authorities ask for again and again. An agent takes them from here instead of searching the records, and never invents or guesses a value that is missing.
