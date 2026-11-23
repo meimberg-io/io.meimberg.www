@@ -3,5 +3,6 @@
   "scope": "@meimberg-io",
   "vendors": [
     "claude"
-  ]
+  ],
+  "platform": "github"
 }

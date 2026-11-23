@@ -10,12 +10,12 @@ tools:
   - Edit
   - Bash
   - Agent
-  - mcp__linear__*
+  - mcp__github__*
 ---
 <!-- leafcutter-settle
-hash: 00050d07dabbfcee
+hash: 0ea2580f1489c34e
 model: sonnet
-tools: Read, Glob, Grep, Write, Edit, Bash, Agent, mcp__linear__*
+tools: Read, Glob, Grep, Write, Edit, Bash, Agent, mcp__github__*
 -->
 
 ## Role
@@ -60,4 +60,4 @@ When the requirement is unclear, an architecture decision is needed, or the task
 The adapters this agent reaches and the values it works with, as the compile resolved them; a list is a focus on each of its values.
 
 - `adapter-github`, implemented by `adapter-github-meimberg`: `token-variable` GITHUB_TOKEN_MEIMBERG; `owner` meimberg-io
-- `adapter-linear-mcp`, implemented by `adapter-linear-meimberg`: `token-variable` LINEAR_TOKEN_MEIMBERG
+- `adapter-linear`, implemented by `adapter-linear-meimberg`: `workspace` meimbergio; `token-variable` LINEAR_TOKEN_MEIMBERG

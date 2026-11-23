@@ -4,12 +4,12 @@
   "private": true,
   "description": "The local colony of io.meimberg.www: Leafcutter OS artifacts installed here and compiled into the repository above.",
   "devDependencies": {
-    "@leafcutter-guide/skill-guide": "^1.0.6",
-    "@leafcutter-os/collection-setup-local": "^0.2.1",
+    "@leafcutter-guide/skill-guide": "^1.0.18",
+    "@leafcutter-os/collection-setup-local": "^0.2.3",
     "@leafcutter-os/navigator": "^0.10.2",
-    "@meimberg-io/collection-development": "^0.4.7",
-    "@meimberg-io/collection-meimberg-all": "^0.2.49",
-    "@meimberg-io/colony": "^0.4.0"
+    "@meimberg-io/collection-development": "^0.4.24",
+    "@meimberg-io/collection-meimberg-all": "^0.3.5",
+    "@meimberg-io/colony": "^0.4.6"
   },
   "scripts": {
     "validate:structure": "leafcutter-governance validate-structure",
@@ -23,9 +23,8 @@
     "lint:artifacts": "leafcutter-governance lint-artifacts",
     "lint:links": "leafcutter-governance lint-links",
     "lint:md": "leafcutter-governance lint-md \"README.md\" \"packages/**/README.md\"",
-    "lint:workflows": "leafcutter-governance lint-workflows",
     "generate:index": "leafcutter-governance generate-index",
-    "check": "pnpm validate:structure && pnpm validate:conventions && pnpm validate:topology && pnpm validate:versions && pnpm validate:version-conventions && pnpm validate:changesets && pnpm validate:changeset-migrations && pnpm validate:licence && pnpm lint:artifacts && pnpm lint:links && pnpm lint:md && pnpm lint:workflows && pnpm generate:index --check",
+    "check": "pnpm validate:structure && pnpm validate:conventions && pnpm validate:topology && pnpm validate:versions && pnpm validate:version-conventions && pnpm validate:changesets && pnpm validate:changeset-migrations && pnpm validate:licence && pnpm lint:artifacts && pnpm lint:links && pnpm lint:md && pnpm generate:index --check",
     "compile": "leafcutter-os-compile",
     "doctor": "leafcutter-os-doctor",
     "navigate": "leafcutter-os-navigate"

@@ -9,12 +9,12 @@ tools:
   - Write
   - Edit
   - Bash
-  - mcp__linear__*
+  - mcp__github__*
 ---
 <!-- leafcutter-settle
-hash: b49a582b21411e11
+hash: b7f1a4118fbf4bdc
 model: opus
-tools: Read, Glob, Grep, Write, Edit, Bash, mcp__linear__*
+tools: Read, Glob, Grep, Write, Edit, Bash, mcp__github__*
 -->
 
 ## Role
@@ -60,4 +60,14 @@ Business contradictions that only a stakeholder can resolve, and an unclear cut 
 The adapters this agent reaches and the values it works with, as the compile resolved them; a list is a focus on each of its values.
 
 - `adapter-github`, implemented by `adapter-github-meimberg`: `token-variable` GITHUB_TOKEN_MEIMBERG; `owner` meimberg-io
-- `adapter-linear-mcp`, implemented by `adapter-linear-meimberg`: `token-variable` LINEAR_TOKEN_MEIMBERG
+- `adapter-linear`, implemented by `adapter-linear-meimberg`: `workspace` meimbergio; `token-variable` LINEAR_TOKEN_MEIMBERG
+
+## Commands
+
+The commands that enter a playbook through this agent. Each calls the playbook by its entry name, which is its
+name in the `/` menu; pass the arguments in the order shown.
+
+| Command | Playbook | Arguments |
+| --- | --- | --- |
+| `extract-requirements` | `playbook-extract-requirements` | `<legacy-application>` |
+| `requirements-to-dev` | `playbook-requirements-to-dev` | `<workshop-transcript> <ticket-provider-config>` |

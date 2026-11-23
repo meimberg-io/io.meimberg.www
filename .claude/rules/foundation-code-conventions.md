@@ -1,3 +1,6 @@
+<!-- leafcutter-settle
+hash: 824929e4ee2a8cf3
+-->
 # Code conventions
 
 This foundation sets two conventions every piece of code obeys, in every repository and stack: code is written in English, and a comment states only what holds. It guards against code bases in mixed languages and against comments that pile up history until they hide what really matters. The other conventions every code change must hold live in `coding-rules`.

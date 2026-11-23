@@ -8,12 +8,12 @@ tools:
   - Grep
   - Write
   - Edit
-  - mcp__linear__*
+  - mcp__github__*
 ---
 <!-- leafcutter-settle
-hash: 2b6c828831878db6
+hash: 877d87186983a80e
 model: sonnet
-tools: Read, Glob, Grep, Write, Edit, mcp__linear__*
+tools: Read, Glob, Grep, Write, Edit, mcp__github__*
 -->
 
 ## Role
@@ -68,5 +68,15 @@ When the order calls for a concept phase after the requirements — typical unde
 The adapters this agent reaches and the values it works with, as the compile resolved them; a list is a focus on each of its values.
 
 - `adapter-github`, implemented by `adapter-github-meimberg`: `token-variable` GITHUB_TOKEN_MEIMBERG; `owner` meimberg-io
-- `adapter-linear-mcp`, implemented by `adapter-linear-meimberg`: `token-variable` LINEAR_TOKEN_MEIMBERG
+- `adapter-linear`, implemented by `adapter-linear-meimberg`: `workspace` meimbergio; `token-variable` LINEAR_TOKEN_MEIMBERG
 - `adapter-plaud`, implemented by `adapter-plaud-base`: `account` google-103468724689332867910-1770467535@plaud.ai; `token-variable` PLAUD_REFRESH_TOKEN_BASE
+
+## Commands
+
+The commands that enter a playbook through this agent. Each calls the playbook by its entry name, which is its
+name in the `/` menu; pass the arguments in the order shown.
+
+| Command | Playbook | Arguments |
+| --- | --- | --- |
+| `extract-requirements` | `playbook-extract-requirements` | `<legacy-application>` |
+| `requirements-to-dev` | `playbook-requirements-to-dev` | `<workshop-transcript> <ticket-provider-config>` |
