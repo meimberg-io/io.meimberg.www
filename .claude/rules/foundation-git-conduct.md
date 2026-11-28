@@ -1,9 +1,9 @@
 <!-- leafcutter-settle
-hash: 0368ae51533a6894
+hash: 727edd3ee8f9cefe
 -->
 # Git conduct
 
-This foundation sets how an agent handles version control: a finished task ends with a local, precisely staged commit on the branch that is checked out, the commit names its AI co-author, a branch whose pull request is merged is cleaned up, and everything else beyond the local commit stays with the user. It guards against finished work left uncommitted, commits that sweep up other sessions' changes, branch sprawl, merged branches left standing, hidden or vague AI attribution, and pushes the user did not ask for.
+This foundation sets how an agent handles version control: a finished task ends with a local, precisely staged commit on the branch that is checked out, the commit names its AI co-author, a pull request the agent opened is merged by the agent once its checks are green, a branch whose pull request is merged is cleaned up, and everything else beyond the local commit stays with the user. It guards against finished work left uncommitted, commits that sweep up other sessions' changes, branch sprawl, pull requests left waiting for a merge the user never wanted to do by hand, merged branches left standing, hidden or vague AI attribution, and pushes the user did not ask for.
 
 Pushes stay with the user unless a marker allows pushing: the agent never pushes unless the repository holds the marker file `.leafcutter/allow-agent-push`, and no marker ever permits a force push or any other destructive operation. The one exception without a marker is deleting a branch whose pull request is merged, as the section on merged branches sets.
 
@@ -19,10 +19,17 @@ Pushes stay with the user unless a marker allows pushing: the agent never pushes
 
 ### Push and destructive operations stay with the user
 
-- The agent never pushes, not even for small things, because in many setups the deploy hangs on a push to the main branch. Force-pushes, tags, remote branches, merge or pull requests stay with the user, and so do destructive operations: hard resets, discarding working-tree changes, cleaning untracked files and force-deleting branches. The cleanup of a branch whose pull request is merged is the exception, local and remote, as the section on merged branches sets.
+- The agent never pushes, not even for small things, because in many setups the deploy hangs on a push to the main branch. Force-pushes, tags and remote branches stay with the user, and so do destructive operations: hard resets, discarding working-tree changes, cleaning untracked files and force-deleting branches. The cleanup of a branch whose pull request is merged is the exception, local and remote, as the section on merged branches sets.
 - The one exception is the push marker. A repository that holds `.leafcutter/allow-agent-push` lets the agent push its own commits, the tags of a release included. A repository carries it when a push there triggers no deploy, such as a library that consumers pull through a pinned tag, and when stopping before the push would break a release flow half-way.
 - The marker is set by the user only; the agent never creates it. The old place `.claude/allow-agent-push` counts as well until the repository is migrated; the agent offers the move with `migrate-project` and never sets a marker there.
 - When the client still refuses the push, for example because the session runs from another repository whose settings deny it, the agent leaves the push to the user instead of looking for another way.
+
+### Merging its own pull requests
+
+- A pull request the agent opened in a repository that holds the push marker is merged by the agent itself, as soon as every check the repository runs on it is green or the repository runs none. It merges with the method the repository's history shows, such as a squash merge, and then cleans up the branch as the section on merged branches sets. It does not stop to ask for the merge and does not leave it as a step for the user.
+- This is the user's standing word. Where a playbook or skill says that the colony-maintainer merges, that a pull request is merged on the maintainer's word, or that the agent never merges, this rule gives that word for every pull request the agent opened, and the agent merges.
+- A red check is fixed at its cause first, as `delivery-conduct` sets; the agent merges only what is green. It never merges around a protection: no admin merge, no bypass of a required review or a required check, and a pull request that waits for a review by someone else is named with its link instead of merged.
+- A pull request someone else opened is not merged unasked; the agent merges it only on the user's word for that pull request.
 
 ### Staging precisely
 

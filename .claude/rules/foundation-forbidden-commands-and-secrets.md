@@ -1,9 +1,9 @@
 <!-- leafcutter-settle
-hash: 9850f78263e04fbd
+hash: a0833236e437b0c8
 -->
 # Forbidden commands and secrets
 
-This foundation sets the commands an agent never runs, the files it never edits or commits, how it handles secrets and where they lie, and how it logs in by SSH to servers protected by fail2ban. It guards against irreversible damage to repositories, hosts and clusters, against secrets leaking into a repository, a log or a conversation, from where they cannot be taken back, and against locking the user out of a server through careless login attempts. Force pushes, other destructive git operations and pushing in general stay with the user as `git-conduct` sets; security conventions for code that talks to a database live in `coding-rules`, and the handling of a private package registry token in `build-and-ci`.
+This foundation sets the commands an agent never runs, the files it never edits or commits, how it handles secrets and where they lie, that a server is set up only from versioned automation, and how it logs in by SSH to servers protected by fail2ban. It guards against irreversible damage to repositories, hosts and clusters, against secrets leaking into a repository, a log or a conversation, from where they cannot be taken back, against servers that drift from what any repository says, and against locking the user out of a server through careless login attempts. Force pushes, other destructive git operations and pushing in general stay with the user as `git-conduct` sets; security conventions for code that talks to a database live in `coding-rules`, and the handling of a private package registry token in `build-and-ci`.
 
 ## Forbidden commands and secrets
 
@@ -38,6 +38,27 @@ This foundation sets the commands an agent never runs, the files it never edits 
 - A chat without a shell, such as the chat of claude.ai, has neither store nor resolver; a service reaches it only through a connector whose login the client holds.
 - Credentials that are files, such as a service-account key, keep their place under `~/.config/<organisation>/`, and a registry token stays in `~/.npmrc`, because the tools read them only there.
 - The store is this section's choice, not the adapters'. A tenant that keeps its secrets elsewhere, such as in a password manager with a vault per context, changes this section and the resolver behind the same `run VAR=NAME` contract; adapters and focus stay as they are.
+
+## Servers are set up from code
+
+### Versioned and automated
+
+- Everything that stands on a server comes from a repository and is set up by a run of its automation or by an app's own deploy pipeline: packages, users and keys, services and their configuration, the firewall, scheduled jobs, certificates and the files an app reads. Nothing is set up, changed or fixed by hand, whether over SSH, in a web console or in the hoster's panel, neither by the agent nor handed to the user as a command to type; what comes before the automation and what diagnosis may do for a while are set below.
+- What belongs to the host as a whole goes into the host's automation; what belongs to one app travels with that app's pipeline.
+- The tool follows the context: in form4, Puppet Bolt in the project's own repository; in meimberg.io, Ansible in `io.meimberg.ansible`, as `meimberg-deployment-stack` sets out; elsewhere, the automation the context's repositories name. A server that has no automation yet gets it first, and the change runs through it. When it is unclear where a server's automation lies, the agent asks instead of working around it.
+
+### Before the automation reaches the server
+
+Creating a server and its DNS entries at the hoster, and placing the first root key on it, are done by hand, usually in the hoster's panel, so that the automation can reach the server at all. The rule holds from the moment the server runs: everything after it, further keys and users and the hardening of `sshd` included, comes from the automation.
+
+### Diagnosis on the server
+
+- Logging in by SSH to analyse, debug or research is allowed, the login itself as the next section sets, and so is what that work needs: reading logs, status and configuration, restarting a service, and temporary changes such as a file, a script, a copy or a raised log level.
+- Nothing of it stays. When the analysis ends, the agent removes what it created and reverts what it changed. A fix the analysis finds goes into the automation or the pipeline and reaches the server from there; it is never left standing on the server, not even until the next run.
+
+### Why
+
+What is changed by hand is lost or contradicted at the next run of the automation, and nobody can rebuild the server from its repository any more. A server set up only from code is reproducible, auditable and free of drift.
 
 ## SSH login to protected servers
 

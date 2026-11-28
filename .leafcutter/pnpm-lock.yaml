@@ -9,23 +9,23 @@ importers:
   .:
     devDependencies:
       '@leafcutter-guide/skill-guide':
-        specifier: ^1.0.18
-        version: 1.0.18
+        specifier: ^1.0.25
+        version: 1.0.25
       '@leafcutter-os/collection-setup-local':
-        specifier: ^0.2.3
-        version: 0.2.3(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
+        specifier: ^0.2.7
+        version: 0.2.7(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
       '@leafcutter-os/navigator':
-        specifier: ^0.10.2
-        version: 0.10.2
+        specifier: ^0.11.0
+        version: 0.11.0
       '@meimberg-io/collection-development':
-        specifier: ^0.4.24
-        version: 0.4.24(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
+        specifier: ^0.4.33
+        version: 0.4.33(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
       '@meimberg-io/collection-meimberg-all':
-        specifier: ^0.3.5
-        version: 0.3.5(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.2)(@leafcutter-os/skill-secrets@0.4.7)(@meimberg-io/collection-base@0.19.8(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))))(@meimberg-io/datapool-todos@0.5.3)
+        specifier: ^0.3.6
+        version: 0.3.6(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.2)(@leafcutter-os/skill-secrets@0.4.7)(@meimberg-io/collection-base@0.19.17(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))))(@meimberg-io/datapool-todos@0.5.4)
       '@meimberg-io/colony':
-        specifier: ^0.4.6
-        version: 0.4.6(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
+        specifier: ^0.4.9
+        version: 0.4.9(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
 
 packages:
 
@@ -146,8 +146,8 @@ packages:
       eslint:
         optional: true
 
-  '@leafcutter-guide/skill-guide@1.0.18':
-    resolution: {integrity: sha512-Z8epz1vVb4WPOk/a5yjQzAGUuxztjUzzNIHOqxgB1JNEAkV3KI0iNLK7CeLNhaCvYqSCiRAPIm5ZJppSMW7i9Q==, tarball: https://packages.leafcutteros.ai/@leafcutter-guide/skill-guide/-/skill-guide-1.0.18.tgz}
+  '@leafcutter-guide/skill-guide@1.0.25':
+    resolution: {integrity: sha512-Oo5fXQtVjkMMxsJSgL9bnRUWi2yegU0RIlwk8dF1zaSE3pRLBbm+d2rTWN2fpYtGQ4uIi+c2HThV3tGEAYkmeA==, tarball: https://packages.leafcutteros.ai/@leafcutter-guide/skill-guide/-/skill-guide-1.0.25.tgz}
 
   '@leafcutter-library/adapter-attio-mcp@0.2.1':
     resolution: {integrity: sha512-4QFCHdUeIOChPbBADMATtn+LOivWCVSgs3jEHIBCX1Zk0/2hZ70SQfI10YeQqvxXDmBe8jRaCctnl7U0h/C+bw==, tarball: https://packages.leafcutteros.ai/@leafcutter-library/adapter-attio-mcp/-/adapter-attio-mcp-0.2.1.tgz}
@@ -230,13 +230,13 @@ packages:
     engines: {node: ^22.17.0 || >=24}
     hasBin: true
 
-  '@leafcutter-os/cli@8.14.3':
-    resolution: {integrity: sha512-kUvERPPRXEEflxE4CamFFzrjYt6S8SvYcdK4Ks6emivL2BX0gHpFiXnpbw8Vcjp9c/FR9yuKhu/H+I6zWzCLjQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/cli/-/cli-8.14.3.tgz}
+  '@leafcutter-os/cli@8.22.1':
+    resolution: {integrity: sha512-0hQECXSiQk9UMqtNZ2quZO8n1EA3pA/k40AWNxbbqw0RrNJE93shDf42H7iGRquZ8pUmXyhtStZFUTHjRBb4dg==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/cli/-/cli-8.22.1.tgz}
     engines: {node: ^22.17.0 || ^24.0.0 || >=26}
     hasBin: true
     peerDependencies:
       '@leafcutter-governance/run': ^2.1.0
-      '@leafcutter-os/rules': ^8.14.3
+      '@leafcutter-os/rules': ^8.22.1
     peerDependenciesMeta:
       '@leafcutter-governance/run':
         optional: true
@@ -253,10 +253,10 @@ packages:
     peerDependencies:
       '@leafcutter-os/cli': ^8.13.2
 
-  '@leafcutter-os/collection-setup-local@0.2.3':
-    resolution: {integrity: sha512-dDe8ypN69H6CtnfqmMfHDzpZ+GEUdEMf03GuBXDSxm4YKuiCX2AWms8fElENUAkwRLM51/2cRPy/qUM5CiO2qg==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/collection-setup-local/-/collection-setup-local-0.2.3.tgz}
+  '@leafcutter-os/collection-setup-local@0.2.7':
+    resolution: {integrity: sha512-QHbjxi8SwnpFwjYIgXAOmscpKpgKkcPH/BjXPsZMxjvMjRAfbGCVEmQE4HVDynZPgPsV/Wgzkk4M/yyhs3FRcw==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/collection-setup-local/-/collection-setup-local-0.2.7.tgz}
     peerDependencies:
-      '@leafcutter-os/cli': ^8.7.2
+      '@leafcutter-os/cli': ^8.18.1
 
   '@leafcutter-os/foundation-factual-integrity@1.0.3':
     resolution: {integrity: sha512-ooLpjdRe6yvAhwHH2AW4a6c2d8O/EVTA9RPRnDMxMTwFNFKXsQLeGLaegw2Cfd9RAVRmgwOuID84cYVPpEVYlw==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/foundation-factual-integrity/-/foundation-factual-integrity-1.0.3.tgz}
@@ -265,37 +265,37 @@ packages:
     resolution: {integrity: sha512-PfyCbCrUvDTAeKkMwWpSjRWJVACud6qT5ma3v3e0EZaUOeRufyEr3J/P4rSNRk3o7uMmARpv/v6MyYZzOvzfvQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/foundation-untrusted-input/-/foundation-untrusted-input-1.0.4.tgz}
     engines: {node: ^22.17.0 || >=24}
 
-  '@leafcutter-os/navigator@0.10.2':
-    resolution: {integrity: sha512-miHQOebvBbt50L8FyUWIrAOwsSPmaUn1c9Rcy+PlSR4GaUtoLtqqqoVucVtXWj11dceYHbqES1epCgjkxRdZ8w==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/navigator/-/navigator-0.10.2.tgz}
+  '@leafcutter-os/navigator@0.11.0':
+    resolution: {integrity: sha512-9gIZkq+T2od01vFB3ELdkwN02kSxM6pzK/6ekPI4f61wOX40uNfrEMf/garbwBdSg4ss1NGGFLY/El1m0gYC+Q==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/navigator/-/navigator-0.11.0.tgz}
     engines: {node: ^22.17.0 || >=24}
     hasBin: true
 
-  '@leafcutter-os/playbook-set-up-chapter-colony@0.5.2':
-    resolution: {integrity: sha512-Tf5xBQyHlY6liOs1TXilz/mqHZLiTefEQkra/B//uxjn8QY629QNNdw5ABwxUBuWSlYHoR0KgKFA4eOOsI5m8A==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-set-up-chapter-colony/-/playbook-set-up-chapter-colony-0.5.2.tgz}
+  '@leafcutter-os/playbook-set-up-chapter-colony@0.7.0':
+    resolution: {integrity: sha512-yYU3bjGuu4tCe9SdsNoymRRbTHStqvOCI6oO8aZDRxc6PwLchvMxfTc1yMwTfbHBg5fwA86uPmUgSgrobD4mqA==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-set-up-chapter-colony/-/playbook-set-up-chapter-colony-0.7.0.tgz}
     engines: {node: ^22.17.0 || ^24.0.0 || >=26}
 
-  '@leafcutter-os/playbook-set-up-local-colony@0.4.3':
-    resolution: {integrity: sha512-b2ONsPvrGeSG9ZZ1/Ce56M8QHLhtShx21sQguSIUvrmQVRqfVhupfsT+ZC0DgscEXcu4L8TjdIqAwVZq18QGew==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-set-up-local-colony/-/playbook-set-up-local-colony-0.4.3.tgz}
+  '@leafcutter-os/playbook-set-up-local-colony@0.5.2':
+    resolution: {integrity: sha512-+piGp2S7I4qTsEVETnsNsO3NcGvyQzfgw8W/C4A2utfQOP+izV7dL4bCLCZvJ5rJn+gDSldOxocTpeZFWA/YiQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-set-up-local-colony/-/playbook-set-up-local-colony-0.5.2.tgz}
     engines: {node: ^22.17.0 || ^24.0.0 || >=26}
 
-  '@leafcutter-os/playbook-upgrade-chapter-colony@0.2.0':
-    resolution: {integrity: sha512-jDWjEfVe/xvg9yv9RU8kjsjRonGTS2qa8X8PYc6YpR/g0jPB48bQpwPXJnNtl9VRDyfUQKlw7LaHgIWhpEwmaQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-upgrade-chapter-colony/-/playbook-upgrade-chapter-colony-0.2.0.tgz}
+  '@leafcutter-os/playbook-upgrade-chapter-colony@0.3.1':
+    resolution: {integrity: sha512-MIiFACsedHI+ZV37awOy3UoA0aF/zEhzXjwE2hfoLt2uojnEmBAqSO/UyANWfJZTwh2i9z1y36tgxnZuWXxP+g==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-upgrade-chapter-colony/-/playbook-upgrade-chapter-colony-0.3.1.tgz}
 
-  '@leafcutter-os/playbook-upgrade-colonies@0.3.1':
-    resolution: {integrity: sha512-ABwQz2jPExcCqxFwDrfts7t0G7NrjYBI1ePI3Y/oN129Hj1owS95QZAqyUuyHYFpx1XTu29IDYATrfg9Oe8fDA==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-upgrade-colonies/-/playbook-upgrade-colonies-0.3.1.tgz}
+  '@leafcutter-os/playbook-upgrade-colonies@0.3.3':
+    resolution: {integrity: sha512-PV2QJZO5Ibhu+N0ZxjAgWGa54MggGwPsy/IRhrGeWU+QIckeaIHxh57POXlTYzW8GwP4BO6eFqZlPZRmY5aECw==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-upgrade-colonies/-/playbook-upgrade-colonies-0.3.3.tgz}
     deprecated: 'Replaced: each colony upgrades itself with the upgrade playbook of its kind, @leafcutter-os/playbook-upgrade-root-colony, -upgrade-chapter-colony or -upgrade-local-colony, which the setup collection of its kind brings. This name stays a deprecation alias that brings the three until the next major release.'
 
-  '@leafcutter-os/playbook-upgrade-local-colony@0.2.1':
-    resolution: {integrity: sha512-5YRTXYQt4szTKWFFFiOww7/cobaD2s3802nHJ7wXMQiKWuTPw90lB7vwCmgcbPzOkJ2QMF8M/55x7m9wg8mATw==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-upgrade-local-colony/-/playbook-upgrade-local-colony-0.2.1.tgz}
+  '@leafcutter-os/playbook-upgrade-local-colony@0.3.0':
+    resolution: {integrity: sha512-1QZuUdIF/8OdU3r3ixCSrQq/f+WxRN6hXaloUGAnQ5+Ii5CjYpugUaf8Dca2gbAkhTF24Ib1bE6D4BtbgjACaA==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-upgrade-local-colony/-/playbook-upgrade-local-colony-0.3.0.tgz}
 
-  '@leafcutter-os/playbook-upgrade-root-colony@0.2.0':
-    resolution: {integrity: sha512-/nQ4ACIjK2Nutj+q//FrXMhAvDCDDqlayZqKgeMbEPqVFIfqorG5ywxho0b5Mke0aONWto4Zg2L3x+2NB2cMsw==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-upgrade-root-colony/-/playbook-upgrade-root-colony-0.2.0.tgz}
+  '@leafcutter-os/playbook-upgrade-root-colony@0.3.1':
+    resolution: {integrity: sha512-hbzfGYXEPZy5etBVtUbyVMMdJ+WJdV0+AGikRkIL5yUCB6MCyw2WrAsrxiQ2KLujB6pdkh5jpvcyN8pGLcUAtQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/playbook-upgrade-root-colony/-/playbook-upgrade-root-colony-0.3.1.tgz}
 
   '@leafcutter-os/role-curator@1.0.4':
     resolution: {integrity: sha512-j9hvfropBFbJsY/QdBUHIhdAcpRB7AiZwFsYofa7mEpWS+doQ9FnA9VZyTezOpAPWz/IhR8u2YDDijAbv4ZPLQ==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/role-curator/-/role-curator-1.0.4.tgz}
 
-  '@leafcutter-os/rules@8.14.3':
-    resolution: {integrity: sha512-AheBcY8Qi6VImJ/RPVkkCXgsK7V+FHK9l+JTmuTLhmC57vlTj8B4asXZBhsQXy/Avto56F7mJq52CqiWPuR8Kw==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/rules/-/rules-8.14.3.tgz}
+  '@leafcutter-os/rules@8.22.1':
+    resolution: {integrity: sha512-AR+EBCSROfNGPGsiUagDav5EfAWN865i7S3omKu5UHeSl0V//nwIfnDzbKjBegmzbcQAtxom4RW7Zp0CC5uVJw==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/rules/-/rules-8.22.1.tgz}
     engines: {node: ^22.17.0 || ^24.0.0 || >=26}
     peerDependencies:
       '@leafcutter-governance/check': ^1.3.1
@@ -303,7 +303,7 @@ packages:
       '@leafcutter-governance/lint': ^1.0.0
       '@leafcutter-governance/read': ^1.1.0
       '@leafcutter-governance/run': ^2.1.0
-      '@leafcutter-os/types': ^8.14.3
+      '@leafcutter-os/types': ^8.22.1
       eslint: '>=10'
     peerDependenciesMeta:
       '@leafcutter-governance/run':
@@ -360,8 +360,8 @@ packages:
   '@leafcutter-os/skill-text-to-structure@1.1.4':
     resolution: {integrity: sha512-DrNZTGZEU0skFqHMzUcBJycAvz6t70Rok7XGQDJjsQXYJOj25RdkTim7zt5aOiBDHzTHoKDYtQMMS5UCz4hdEw==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/skill-text-to-structure/-/skill-text-to-structure-1.1.4.tgz}
 
-  '@leafcutter-os/types@8.14.3':
-    resolution: {integrity: sha512-XWfBavcLzsDlxViClpnTu0vSiIi/zpf7nHkoiFbGr47jNz8TpyT182nAJAsRui+xoP53TSyL4TSEiq1KANw9rw==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/types/-/types-8.14.3.tgz}
+  '@leafcutter-os/types@8.22.1':
+    resolution: {integrity: sha512-LEnt/jGjBPMD3+FTBGjrxkvjt1LRhJPPETVI1ouaXUDC7Azl2faSMEkiZMNEMRIxr6yJI9TuI+TerhYJ2CPwRA==, tarball: https://packages.leafcutteros.ai/@leafcutter-os/types/-/types-8.22.1.tgz}
     engines: {node: ^22.17.0 || ^24.0.0 || >=26}
     peerDependencies:
       '@leafcutter-governance/check': ^1.3.1
@@ -417,36 +417,36 @@ packages:
   '@meimberg-io/agent-architect@0.1.19':
     resolution: {integrity: sha512-CnPwu1VXQebLzCWDO78tGYxsSzCW1krEJud2LEgf0rkTWFvpJsZHVOO/IShU1BDuIpYW0+YG0xS9zjXm/Alz4w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-architect/0.1.19/786a28341acd527c299b57f0728eba58990af689}
 
-  '@meimberg-io/agent-developer@0.1.28':
-    resolution: {integrity: sha512-gjCbwNKZWljPnDdVtEfhL24o067up+VZUPHLcD2PeV+7bNfTGAvFl86rQDO35kiF57W8r6s4fAj0gsAF172qBA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-developer/0.1.28/123091d8c8fe81bd34d756def4327a212f70e664}
+  '@meimberg-io/agent-developer@0.1.31':
+    resolution: {integrity: sha512-Bm7dAp0mOKSAEP7Mm68Ba3qCLDdKPWh3J5TGSMh1cZRHqbTt3TWi14uMrJ9CixcnU7slQlkIvbopaUftrEUdEA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-developer/0.1.31/e435212a934d24c81cb1a0363f2854c8da88fecb}
 
-  '@meimberg-io/agent-legacy-requirements-engineer@0.1.21':
-    resolution: {integrity: sha512-05nWyt5IxVvtB/Xa904MdKjj24oyhRekpK7wy33CRns8Jpe5DMMPZUsFShU/3nabzs6Owuei/D/eEkqqA4l9UA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-legacy-requirements-engineer/0.1.21/3d9962458f44c007e7e29d3c52e1583c63a8a0d2}
+  '@meimberg-io/agent-legacy-requirements-engineer@0.1.24':
+    resolution: {integrity: sha512-5/UirqU0mAKsO77OeiS/k4h5GRpXIUHtZtS14zVnERkQun+q+C0KPH9n5Bn+98bNh+zcFFyl3eVyfSeLmeFrfQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-legacy-requirements-engineer/0.1.24/3b74d87694b63419eda5e379ae092bded2250bb2}
 
-  '@meimberg-io/agent-requirements-analyst@0.1.30':
-    resolution: {integrity: sha512-/shTWXXTzhptBw8ehfwRbltS/SrXUNO9QnNy+mSOGAXfJ1mJ1OjvttZUQ/1TvqCYNiftfxgaBZnYDtT5tpFzww==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-requirements-analyst/0.1.30/233b48ed0aeb7845658233ac45b11c3149ecf874}
+  '@meimberg-io/agent-requirements-analyst@0.1.31':
+    resolution: {integrity: sha512-UmsveApm+hgGDuUzuVSayyRkcwkKj0b7Ao1SSZhJiBPy50RNye8oE1k4uqV94MonLDzrFVf/LRFGPZAonhAVcA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-requirements-analyst/0.1.31/8ff2478d6d1a63858927fecb593996a369d66df3}
 
-  '@meimberg-io/agent-technical-designer@0.1.29':
-    resolution: {integrity: sha512-9i6ZqVyq834zrLEGigShE4Zz4wBBi68zw+Rnz4Id93nvmBexSKsWQWMi8NgOZ9T/1TfDLWdB7eggyCq/uQ2E8w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-technical-designer/0.1.29/fbd6c3c135ecedc0d3f88b144cb3171115d54132}
+  '@meimberg-io/agent-technical-designer@0.1.30':
+    resolution: {integrity: sha512-LZR0nW0AXkASPEIVImx10MWfXuo5EUw3GthRkx34EW+06Bf/IMhNOqTyfaSVal+yZWd6qGNIJhh13IpFRNOrRA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/agent-technical-designer/0.1.30/f49d6643c18a49aa825593ca19dd55b8ed7a9613}
 
-  '@meimberg-io/collection-base@0.19.8':
-    resolution: {integrity: sha512-mH3Q4y2zGBZhqFe/nxi5Tao7k1OrVSa4KGz5/TGFu08a2YvjVXu5djvzmhqiMSMe25bpNNaen+oWRnC5xeqdfw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-base/0.19.8/5ce8942ce95df4d8f6ff6e923ebec1241e5f90a4}
+  '@meimberg-io/collection-base@0.19.17':
+    resolution: {integrity: sha512-H18rq6+420JvUoy0XBkziSs1Wrw7nRrJ5Tv6lR2t9Jm1V2odD/afdO6dlw7Gv/fbV/r9YeVhyKRM39vHH+6QMw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-base/0.19.17/1b27fee916276ee4216291f706c61c3399746956}
 
-  '@meimberg-io/collection-development@0.4.24':
-    resolution: {integrity: sha512-WXCO5lLOLCCcLLxVKXjNVWqDIEQppQsx9QaWnk/UwlbYLP/cbdHG/aVJxQBMtzrEpl1ABO582uWd/X1wp4GtKg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-development/0.4.24/0c37538214bc008e0a3d761fac6c72ae9262e2c0}
+  '@meimberg-io/collection-development@0.4.33':
+    resolution: {integrity: sha512-cQPwUANo//UxwMT1a4z57DxIKXj6uT6bzwQLovpR2HSk3pQltYjMob1cOrv+QF2FSZxymhiq9Z8hF7ReIZtoOw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-development/0.4.33/df709800712450591c8e8eebf8c48ee532594d07}
 
-  '@meimberg-io/collection-meimberg-all@0.3.5':
-    resolution: {integrity: sha512-BCrIWVD0c49vXEopODBrE6+G8PJfxUOhmZq9bNzv07XQ30wDijFarDVyAdWm/5H/j91aqTldQoRv0gPlT5Ahjw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-meimberg-all/0.3.5/08427e3a0f9841c0e65ab3fcbe44d889875ca3f0}
+  '@meimberg-io/collection-meimberg-all@0.3.6':
+    resolution: {integrity: sha512-N1xXQrcLATy+Y+T6oNg/LeayVzluXA4UCL2XOwQ/f9F0JPxqWZAuCSpbFiCdz8l1TTD+yLlqszgqS3ccEr9QQg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-meimberg-all/0.3.6/e8f3127cd518dd80c6f6c1d8ccad574b12670e42}
     peerDependencies:
-      '@meimberg-io/collection-base': ^0.19.8
+      '@meimberg-io/collection-base': ^0.19.17
 
-  '@meimberg-io/collection-meimberg-digital@0.6.26':
-    resolution: {integrity: sha512-+oObVwbJie4GR076GNIwnIxo5alKO4/1ehLOyeL1EbkfrmJObEoiaxJtVaI7QFOANlyDN0Ls5lE2N1BmrWtlRQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-meimberg-digital/0.6.26/2c59546e04e8a7f30ca30da6508235572e8dc2e6}
+  '@meimberg-io/collection-meimberg-digital@0.6.27':
+    resolution: {integrity: sha512-/A5SH/hlp76drP7MSlr2ipEOTjjNgaJ+1LZjeuoeLghVvDtI2mx7v84H1VRF8OEtNdY/5CRa0CirzAtpY3xkMA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/collection-meimberg-digital/0.6.27/0c6e718f045ea0bc8ae26b8e92a02cd716befc12}
     peerDependencies:
-      '@meimberg-io/collection-base': ^0.19.8
+      '@meimberg-io/collection-base': ^0.19.17
 
-  '@meimberg-io/colony@0.4.6':
-    resolution: {integrity: sha512-3Qf15iF8gEPhVWKk4zLYw2A1KjKsmt175a48Qn8O0/BId47kvAYna51sZS/XI46oZ/SyCMEipqRKNhrCWc4Ehg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/colony/0.4.6/95e295a2d4c878a44d0561eda70dc3475d007f14}
+  '@meimberg-io/colony@0.4.9':
+    resolution: {integrity: sha512-f252PrymBZWMUywrs0soD/xl/HQIGDMQeARA/uddTwLfU1eIBxQxG4569KkUS4A9b4D9LYQCnfaixbtavq7G2w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/colony/0.4.9/60bea69bdaa645c0cd0c03547b3a17cb6ea9dfe1}
     hasBin: true
 
   '@meimberg-io/datapool-bookkeeping@0.3.4':
@@ -491,13 +491,16 @@ packages:
     peerDependencies:
       '@leafcutter-library/adapter-local-files': ^0.2.2
 
+  '@meimberg-io/datapool-personal-facts@0.1.1':
+    resolution: {integrity: sha512-gf7f306CgHJOxagN1WkXk6yZ6nYzbb9oAJhQW0VDmpDR2tEjONGgn6nWxLcb/k2wP4/IcYjJXE1T1Qr+KckgUw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-personal-facts/0.1.1/7e91330b227272cbcb536c1afbd8090b710e9c68}
+
   '@meimberg-io/datapool-risau-meimberg-gbr-documents@0.1.7':
     resolution: {integrity: sha512-99k8m1KJALbk3AWgjqe8Wm18HvDYsiA+HehYmNGLpqIYgNOzCIvs71Q1wzNd2blwYWLt6jittxdW2UBBrP8KTA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-risau-meimberg-gbr-documents/0.1.7/45e90eadd08d5576b43d38ec7383d31fd92b1165}
     peerDependencies:
       '@leafcutter-library/adapter-local-files': ^0.2.2
 
-  '@meimberg-io/datapool-todos@0.5.3':
-    resolution: {integrity: sha512-Obt93574Hr+FvIYU2/GUfUDq58AL8tgAGVgSivq33bwEOpBzcxTOUJuqjlOqQtA/cfwcsh8lvcgolxsgBK1XwQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-todos/0.5.3/cb6d5e2dd9adfdc9e0ff0aaec13178acf20519c4}
+  '@meimberg-io/datapool-todos@0.5.4':
+    resolution: {integrity: sha512-g3Yj5T0L09HYdBR91agllzfjqPWKbsInlZM/xvXNxBOMLT6S4zaQvZ+qD5T/IdQIxPZfamJXvhXczWozHQHEMQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/datapool-todos/0.5.4/248b3db7fa954005e03529b0c0e286caf5aaf8ef}
 
   '@meimberg-io/foundation-code-conventions@0.1.2':
     resolution: {integrity: sha512-AJjROAJx9bqoXXvWaCCThTgAmrxoWXVXexKvIXHZsECnggDEn9pLHRmxilx/li5k/t/szW1t08rISTj/xwSKSQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-code-conventions/0.1.2/ec268f5eb8acef187ee160e804569860246c3020}
@@ -508,11 +511,11 @@ packages:
   '@meimberg-io/foundation-delivery-conduct@0.3.0':
     resolution: {integrity: sha512-mOkuO6gVGtXfb+27jz6PO0GKPf9s2BVO/lOxOt7UsuNj4RfAW7fJlxSSywOK1S32xUtge7CKBZHLNnr4zcNVwg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-delivery-conduct/0.3.0/41f47cb7c2a9b89abfe6f48e658e5a65554c06e6}
 
-  '@meimberg-io/foundation-forbidden-commands-and-secrets@0.1.6':
-    resolution: {integrity: sha512-rAvTGBqENvPg714hlxS9N8I+Jp/g8Vp1wq8+a7uvFswnuJDU1y0TlWXaMiFZm6IaHa6jl+1M89I9WmKC8Udrpg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-forbidden-commands-and-secrets/0.1.6/1f396f8710eda1cff77613bbb406e85cfaee4bd1}
+  '@meimberg-io/foundation-forbidden-commands-and-secrets@0.1.8':
+    resolution: {integrity: sha512-6V24tyjwVa6zWYVvrCNLpEBYoNmOUitumPYXWdpwWWezdiAzxK+RLy2qNNJbt3SyuVGQsnhlI5gaAVfAhGXB1A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-forbidden-commands-and-secrets/0.1.8/a046e3e0af9cef7aefe3ebb042cd9b16d0649dc4}
 
-  '@meimberg-io/foundation-git-conduct@0.3.0':
-    resolution: {integrity: sha512-QR4/E01/4XT+hYjPHMgy+01TyIdsvIO+uJf8z8Y59kfyUu8dWkhfWqmx7p/DcZjyBkaRDhUkRAciNE6B/Rn/bQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-git-conduct/0.3.0/839950b98a5aa8d584de564776e01654136021e5}
+  '@meimberg-io/foundation-git-conduct@0.4.0':
+    resolution: {integrity: sha512-7fPkHu2fzM8nEX5RlRCgWo0vfAdTWLegTs7dSpQPl9S8CPncAhfo9Yvt8miTlBtfGz3UVTeko0FO2ZBs9TNi+w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-git-conduct/0.4.0/52bdff029d0bc8b82f60f37758710b4f711f979e}
 
   '@meimberg-io/foundation-knowledge-in-repo@0.2.5':
     resolution: {integrity: sha512-O/znsjqMwE3BJFkmFR+Zd3xr61KtTfc8wGMg2bMLDm1TPGIeZL4JzH5zjHNQlsS6vnmiNu0FarPysfB5gUS3JA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/foundation-knowledge-in-repo/0.2.5/4dfb2b0c55f6555868c186ac42d1ceb400f65783}
@@ -526,29 +529,29 @@ packages:
   '@meimberg-io/method-single-lens-review@0.1.2':
     resolution: {integrity: sha512-rUO826dNqryn9mhjFrO6+8ZPwMGa3TSdEZlsBwyN0cReTWORToke8E748Vl12tgDk1lS8VDGMituFbQq0ax1Hw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/method-single-lens-review/0.1.2/d5ae0afc752b9a7660e099e4b8bf11692b7b90af}
 
-  '@meimberg-io/playbook-extract-requirements@0.1.21':
-    resolution: {integrity: sha512-EbVrScp88rALQ5wsihgym+Qn9i9wBDfxq4CfNmn305Cd4GSIbcAKL2jZirOR02QBQrI/WKwKk5KFwlXT61BRIg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-extract-requirements/0.1.21/369207229fbadbed26d19bcf8c8513e1dc894e5a}
+  '@meimberg-io/playbook-extract-requirements@0.1.24':
+    resolution: {integrity: sha512-kQMVSasBULmChmO2iyGNd7NK9dGIw6jxRQrMweZH2Kwhftq18n684w3fSi7o01/l6NGBkOwboDiEzeNbeuorRg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-extract-requirements/0.1.24/4c1a862519b83f019e9ddc85e4d310c52ce38c62}
 
-  '@meimberg-io/playbook-fix-bug@0.2.20':
-    resolution: {integrity: sha512-TcTrzA+EByEtGNyM5FRmkvZFtxzVYb0/sGZZxR4zl5Xosel7Gz9TAmzgRAoh8Ib2JW1Fi6GAOr8NT2UAtkn0cA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-fix-bug/0.2.20/54d20102d52a681038d4d7d2a3d549b93a32ab8a}
+  '@meimberg-io/playbook-fix-bug@0.2.23':
+    resolution: {integrity: sha512-CJp0PuY3CWiHMRHuNjqzEkkU1PLN2P+rZM8oyNudz+MXhliz1VPW+QY+ryCp2ETSfkRPMffELUkqA2Et/GmLeg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-fix-bug/0.2.23/de5c36b55bccdeaf184ccf59552de91f5090c457}
 
-  '@meimberg-io/playbook-implement-feature@0.1.25':
-    resolution: {integrity: sha512-JpLVqV9kryKgGrRI72KzEDrCKVyu5NoF2gloN+aEyFbeePBHZg1/ggiEvG7ZMJI7RQdc0CMECrG2I1bnZ6SqSQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-implement-feature/0.1.25/b176e7c5371c8f7026f6fc6782cbf77969988d6e}
+  '@meimberg-io/playbook-implement-feature@0.1.28':
+    resolution: {integrity: sha512-4f0NY9nBPvkOoATytBkT/3HMUNUAyP8SSV1Ga6vMGI3hIk1qmWaj7L3uvxWlX37AhDW/SZHFM3pUgbLObt4E5Q==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-implement-feature/0.1.28/b98e6fcfc768fb88edff3038b16eeb35f14c6c60}
 
-  '@meimberg-io/playbook-implement-in-worktree@0.1.25':
-    resolution: {integrity: sha512-i20YzBJ09iiYaQWMwpHLNCx31OespigKwCHaItPi9e8HHYPwkEQGF1/QiRTvryVyZJXLYNqiMmW31hRCnfpc4g==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-implement-in-worktree/0.1.25/488d469959bf2da6623b8b5dbed17254c8f61ad3}
+  '@meimberg-io/playbook-implement-in-worktree@0.1.28':
+    resolution: {integrity: sha512-8T3DoZdwI/x32zZXVLNdy/aq6UEbFppSQ3Iv4qdZVKmDkG0cKaVjg2bqv8UiNjZI9DFn7gDWBRiRNpNlbQBCFw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-implement-in-worktree/0.1.28/bc3c7a59e8dff0e71bc6ba1a1c10db29c3524b63}
 
-  '@meimberg-io/playbook-rebuild-legacy-app@0.1.22':
-    resolution: {integrity: sha512-Lr7UV6aefvHSTR//A0qaOYOPr/71++QCjyt6fHWZH1oMweL5PlSpvETiTle+t3iR6BqwS8KjlwmAgM760Rys7Q==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-rebuild-legacy-app/0.1.22/34e862afadf2dd0ef0af485321bc052a3415c608}
+  '@meimberg-io/playbook-rebuild-legacy-app@0.1.25':
+    resolution: {integrity: sha512-RPdSHr/ochOGge8SLS6Xj3NerPUDVXDjef6jdgtJHHwZA7xPKnIiKgGblfH4nAFGqQqhZmbbZcei1Gq4HHZjbg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-rebuild-legacy-app/0.1.25/b56ad9b80fedea5c50c0fcfd26ee592be10581b4}
 
-  '@meimberg-io/playbook-requirements-to-dev@0.1.30':
-    resolution: {integrity: sha512-2/HydVO9s76uMUfbLDQ1uusyxqsU923EsEL8h3cN9QKTFMnHw71tKC9/6qcK11ughWgKqBxf5P9tblNeaOLnrA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-requirements-to-dev/0.1.30/6912e94e706b2684d4487c0577c5513ab2e8652b}
+  '@meimberg-io/playbook-requirements-to-dev@0.1.31':
+    resolution: {integrity: sha512-i5utNMh2pALWSRAnAalCfmjyIv2ijMTc5Kmt4NccSy3M8U8Ero5/Q1ldkoIZX4exKj4CCXndUavM4/ztbYbilg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-requirements-to-dev/0.1.31/46637530ad50a976902621c76aea568649317434}
 
   '@meimberg-io/playbook-specify-and-review@0.1.21':
     resolution: {integrity: sha512-aBKty3eVqG0dzAJ0ShIBo3AADJFjw18U621D9eeY4bXpkBtRp1V74cks/74pl6QjpgDXIBqZg9kHJKZou4mU3g==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-specify-and-review/0.1.21/ee0b2b994a903828ce35124f46f7cd906c9de850}
 
-  '@meimberg-io/playbook-technical-concept@0.1.29':
-    resolution: {integrity: sha512-Ct7uvmo0c+aJGEX/SjPqCWTO9S+NNoM/LEGyCeFyPD0+FiqqgcgvkHXEmRkgONmo/+3P0gW/O7pFhANsk7OICA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-technical-concept/0.1.29/90baf6583383f56a3cf49d213a8990463ff15bd0}
+  '@meimberg-io/playbook-technical-concept@0.1.30':
+    resolution: {integrity: sha512-UoAT2ZJRbFGHV5X2EW66znenqDtpWBl+8YmF+XoQQR9rx9zIV69axRc9QOzSXt3OgwXu5eY62A7Nx59zpU2CkA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/playbook-technical-concept/0.1.30/f6eb16eb56d8e3eb7c3a744cdac5715fbc7f1173}
 
   '@meimberg-io/role-author@0.1.2':
     resolution: {integrity: sha512-kRoqXFKEVrO+QY//+PbB3hBTK3FKqxPlNaNvnW1ktasaMBFQcCEr0eMOLykMi4dU5c4TKsNGNLzUJosgiQzYGg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/role-author/0.1.2/371af6227c7739f54a04e2d47e3fad91315bf127}
@@ -574,11 +577,11 @@ packages:
   '@meimberg-io/skill-build-and-ci@0.1.3':
     resolution: {integrity: sha512-oTv5zwGawtwMwNhOks5jkW1NY5us7xkWr9daCpdTUb2lhreZBVhupbIRVahMrKkBkdk8V79F3ehESQzHevQVcg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-build-and-ci/0.1.3/4ed7f4cf7f9c88cc9b78928b4b9a07287e58c256}
 
-  '@meimberg-io/skill-capture-project-memory@0.1.9':
-    resolution: {integrity: sha512-XtD95EtHCfa/kvriBbYu1WlYCJEqQ1QiwE5zmC7Llbl9R1f6C8wENDNAUWDCjjjSLxpz1Oo5dwvtzavO9Bmgzw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-capture-project-memory/0.1.9/5de9810f621f80557a2892fe8618de2fc5ffebf0}
+  '@meimberg-io/skill-capture-project-memory@0.1.10':
+    resolution: {integrity: sha512-+mrV8JRXGfQfTwCi9DzeZ3WInNNNju39itbGJFGPS4sAAFrP0/XBaibdl+4djbjSjiOF3JZWet8ASFyHZAmXTg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-capture-project-memory/0.1.10/d528fd6ee5c0b4aa6bc1eb3ee00c7fc82da176c2}
 
-  '@meimberg-io/skill-chapter-colony@0.3.0':
-    resolution: {integrity: sha512-x+k51BoI0DAvvS0uUIxDQeFmYzHAUfsNPSBKWqJBXxCjhXaUQXAbtRyjgf2tAttFYyxjGRJ2sV6OW8UW0dVZ5Q==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-chapter-colony/0.3.0/40b25ae688a901bda5685165592f66248ca4983e}
+  '@meimberg-io/skill-chapter-colony@0.3.3':
+    resolution: {integrity: sha512-ohEGefKCFktYXI3EeenmFa0gvXCFytKGTg/+0zAFN3U5Ub7srfa8TaMOCpJYFbkVSHfBZ44wZoDiUsw0jt3iDg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-chapter-colony/0.3.3/5b5eaac36b7f576ec71a94f7c34b70c662817d34}
 
   '@meimberg-io/skill-coding-rules@0.1.3':
     resolution: {integrity: sha512-D9d5wK45uxS2DtQdito+Wn5eucfNZ8Rm79I/TcgVmsDbIOy5nqgQJq1O1bKd7yIRPkyjmXNTlcW4BV7LdMmc0w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-coding-rules/0.1.3/f8d8a5f203c06164d958e353eb84a0dcf06ae771}
@@ -598,8 +601,8 @@ packages:
   '@meimberg-io/skill-frontend-development@0.1.3':
     resolution: {integrity: sha512-Idzrrya8rtIKYaHGoi6vPybx6aEUX7ReIX3Bg/j1BLDyGanvQXGBTJACVFeMccHtQp2b0AV+qn2Di1xsYFUu+w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-frontend-development/0.1.3/31347f5e1773cc8cc6ab2eec098c44fcf4f221a2}
 
-  '@meimberg-io/skill-git-workflow@0.2.1':
-    resolution: {integrity: sha512-bKhMgS+OZe7OlYaebsHZOOByj5yqZQDjaeZOi6z79DnIs0AGNfksuEAmZPivOXhlyEluu3De2tpQ/84uE9WAmg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-git-workflow/0.2.1/e1b1e2f9353dd717277c8645d820a2efeb731675}
+  '@meimberg-io/skill-git-workflow@0.2.4':
+    resolution: {integrity: sha512-xNryVotCj06lGZC8u4k29zRkrAZT2+a834m94TLQaizUDGIuPPvSlAaWycUnr1IQnnbV2Ll98Zp8KQJarwUrvA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-git-workflow/0.2.4/48f67cbdb9e897339e0a7aba0c3f95629ca97235}
 
   '@meimberg-io/skill-humanize@0.1.2':
     resolution: {integrity: sha512-YfHvAwBRCl6vuL2DwV9s1/8LzSom9DH/Li1kS32XBQa86M3hGMbkFH3pTXNawPFOTPaP+5BjiQ41x/CC8gDQ6w==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-humanize/0.1.2/72a35c306340a3aec27f7ba98afe1840cc3d3e9d}
@@ -607,8 +610,8 @@ packages:
   '@meimberg-io/skill-i-have-adhd@0.1.2':
     resolution: {integrity: sha512-F2hQiPQ7tKalHtNDrAzQRENPXg9mZpLxSeAmJRgG06OgBPIpLshe2mIe8tKsTDMo/lywHACxnlhchvR+//xnXw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-i-have-adhd/0.1.2/489b8c1e82ab6f2c31aab036641fbfc800dfc178}
 
-  '@meimberg-io/skill-implement@0.3.1':
-    resolution: {integrity: sha512-/GqbXVMCcMLhQ7Lmd2qO8HkRz7VHTs6/KRYg3an2JM7Dvfqwou+ZQnUlSHEPE6fHTY9+Au/4IJtwGyYkHOKpmw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-implement/0.3.1/a4bdce1bdc6412bf559f1437ae93ecba53769e8f}
+  '@meimberg-io/skill-implement@0.3.2':
+    resolution: {integrity: sha512-8IMG0ol5OgUhZAZi8djx/Wz9A/7t94CdRk6DqZBUnNxTQ+dO1MLnONZ2oGUaOGKaUm74PfK/dmLKM+qBBcgRBQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-implement/0.3.2/260a14e0ff3b27681d570db47686b093083c3c46}
 
   '@meimberg-io/skill-it-administration@0.1.1':
     resolution: {integrity: sha512-m+OR1Bj9QEAcqTl53NXTl7CV36evnqFJiRSNtmXCHE3n7toTrxKtr3ZPA8xA9Uj3VwAKiL9W6BwjMxB+9ShRHQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-it-administration/0.1.1/468a2dd8a9fec42f678fb9d004229e3ad8d7803d}
@@ -619,8 +622,8 @@ packages:
       '@leafcutter-library/adapter-todoist': ^0.2.2
       '@meimberg-io/datapool-todos': ^0.5.0
 
-  '@meimberg-io/skill-meimberg-deployment-stack@0.1.2':
-    resolution: {integrity: sha512-YIcPClLl2gZsX7Vrhd7yzuvrfpfNt6dcl9u6dUIiuCs9Incik4fD7nCvst8kMpYleXQOiJHix1VJAXMjHadIMw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-meimberg-deployment-stack/0.1.2/5a0f88d268fe00634437e2a89ea6b688752ca929}
+  '@meimberg-io/skill-meimberg-deployment-stack@0.1.3':
+    resolution: {integrity: sha512-NV2RsaNtxBawwd1LTrQY/IhSEsK3ByploVVHw8NafAgkwbsdgMSVNWbU39rrvQ3qmFuGLs7Hz+yY8xkScoGaaA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-meimberg-deployment-stack/0.1.3/2a40e8e16c14358e90d57c91a229bbecfabdef4f}
 
   '@meimberg-io/skill-migrate-project@0.1.6':
     resolution: {integrity: sha512-P/kVmN0rI1uBsJOkfoKgQNn4Ch6O/bXjzNsAhWoBL2R/Mo7lCPHZAcrlkO9hvEQG39QFyEdG/MhsBi7dRFwy1g==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-migrate-project/0.1.6/e63ae74aff88d94a542ac58dc2ce3315d53b3077}
@@ -631,8 +634,8 @@ packages:
   '@meimberg-io/skill-plan-to-tickets@0.2.1':
     resolution: {integrity: sha512-Dv8jwFMlT+EIcjRVZvCRaLRcSKqgtaJLqPbrL5mQgvg9A7Q6JtLdc2Hei0N4ZzAS3d7+VhGA/80cZk/HIaZRXA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-plan-to-tickets/0.2.1/08b940e9edde80eb3bb1a7a38f6ff8e0bf8e6f2f}
 
-  '@meimberg-io/skill-requirements-repo@0.1.21':
-    resolution: {integrity: sha512-pS267IhHxlBYEVkT7gCC+UE3AUGkVxVbevR1TsV0FEVi8gPR25I02aFbFQihxfYyCDrCaQ1AR++bILyHGaGTRw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-requirements-repo/0.1.21/2f36e1da61aa6378eb6fb51be248da9fdf512043}
+  '@meimberg-io/skill-requirements-repo@0.1.24':
+    resolution: {integrity: sha512-8vjt9FfRbhSTtXCXQFwsKzBZ9zMJNGQUPF/aUYxSjuE0SH47A38jSBgIsPM9ktRnbOu+iQoJHrv2wcZwyi3TUg==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-requirements-repo/0.1.24/a4673eefc4105f6531d38068d10b3fc468708a27}
 
   '@meimberg-io/skill-specify@0.2.1':
     resolution: {integrity: sha512-/LGRzbq9nWyyvuKMSgnWizUREmO0mt6iA+E6+k+jYCniUyOI31TCIO5mPeJf750G2/dh5AP+irAdWPB/cyzQjA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-specify/0.2.1/e3799c3d9b68f72dd181e99b7a14f439f40b96a8}
@@ -655,11 +658,11 @@ packages:
   '@meimberg-io/skill-ticket-systems@0.2.1':
     resolution: {integrity: sha512-d7XaIef6GmiqquFtDpNIghgL+jzeo3DuFx4v69mc6E+uIFhAIEZkGM8xGQaEfk+b0UhisZz1WmUZilrzAZwqTw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-ticket-systems/0.2.1/8367226234c2a939044bcb8c3be5d7416f744bb6}
 
-  '@meimberg-io/skill-transcripts-and-minutes@0.3.3':
-    resolution: {integrity: sha512-Mmx6jKKeXfHwnkBN/iAhJjj4rvrNsAbl2xfRKa/HhDufPXj8fOnQFdQxgQCEZn1HKyXb0LQap/QT0fMSnlEUEw==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-transcripts-and-minutes/0.3.3/82cf32bce9667529f513fff090240dbedb9e444a}
+  '@meimberg-io/skill-transcripts-and-minutes@0.3.4':
+    resolution: {integrity: sha512-rWA+tLQzQ9fcCjWtxr8/FMGkZSsmvkFfvO5TVsaP5M9AuLHzjXCyUrinYqUTUi301ci87noGwUIjLauMszKxOA==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-transcripts-and-minutes/0.3.4/7366ecd9f1c615f69bb79b133a955850309727a5}
 
-  '@meimberg-io/skill-worktree-management@0.1.21':
-    resolution: {integrity: sha512-kvTyh2ERMUY7LUXPiKeaDUlwA+ezWWRKtTfphUncRb+mS6mcFKmMCaQjHCcsMvm8AvMfsEJGaWq+bB+2aP9ptQ==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-worktree-management/0.1.21/8965b38e960b7c4fad77fe43dda5a48f568a60c0}
+  '@meimberg-io/skill-worktree-management@0.1.24':
+    resolution: {integrity: sha512-jvO0UglLOnYWsl3L5m0Ay6ghVZajFt+PErhWvHthl0nPV/w1rx4wpUZs6XdHFWVr1lMzc0Dqaf8g7/epq+/W4A==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-worktree-management/0.1.24/24932c405f4edc1495dba2e464ae90626a441e42}
 
   '@meimberg-io/skill-writing-style-rules@0.1.4':
     resolution: {integrity: sha512-drAsVEGCvInHN6+YfOMYPlXnqhm3JD5fHd/HJIYNlS135gL4orgoWXQ5qkex2FHsn7UZV88yNhpOQVB8x7r4Ow==, tarball: https://npm.pkg.github.com/download/@meimberg-io/skill-writing-style-rules/0.1.4/39a550991423614332119762019e71ef79720a1b}
@@ -1323,7 +1326,7 @@ snapshots:
       - markdownlint
       - supports-color
 
-  '@leafcutter-guide/skill-guide@1.0.18': {}
+  '@leafcutter-guide/skill-guide@1.0.25': {}
 
   '@leafcutter-library/adapter-attio-mcp@0.2.1': {}
 
@@ -1380,22 +1383,22 @@ snapshots:
 
   '@leafcutter-os/adapter-vault@0.7.0': {}
 
-  '@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))':
+  '@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))':
     dependencies:
-      '@leafcutter-os/types': 8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))
+      '@leafcutter-os/types': 8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))
       js-yaml: 5.5.0
       yaml: 2.9.1
     optionalDependencies:
       '@leafcutter-governance/run': 2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
-      '@leafcutter-os/rules': 8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)
+      '@leafcutter-os/rules': 8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)
     transitivePeerDependencies:
       - '@leafcutter-governance/check'
       - '@leafcutter-governance/compose'
       - '@leafcutter-governance/declare'
 
-  '@leafcutter-os/collection-authoring@0.2.1(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))':
+  '@leafcutter-os/collection-authoring@0.2.1(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))':
     dependencies:
-      '@leafcutter-os/cli': 8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))
+      '@leafcutter-os/cli': 8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))
       '@leafcutter-os/skill-adapter-writing': 1.0.11
       '@leafcutter-os/skill-agent-writing': 1.0.6
       '@leafcutter-os/skill-artifact-classification': 1.1.7
@@ -1407,12 +1410,12 @@ snapshots:
       '@leafcutter-os/skill-skill-writing': 1.1.4
       '@leafcutter-os/skill-text-to-structure': 1.1.4
 
-  '@leafcutter-os/collection-core@3.0.11(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))':
+  '@leafcutter-os/collection-core@3.0.11(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))':
     dependencies:
       '@leafcutter-os/adapter-markdown-cli': 1.0.4
       '@leafcutter-os/adapter-vault': 0.7.0
-      '@leafcutter-os/cli': 8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))
-      '@leafcutter-os/collection-authoring': 0.2.1(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
+      '@leafcutter-os/cli': 8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))
+      '@leafcutter-os/collection-authoring': 0.2.1(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
       '@leafcutter-os/foundation-factual-integrity': 1.0.3
       '@leafcutter-os/foundation-untrusted-input': 1.0.4
       '@leafcutter-os/role-curator': 1.0.4
@@ -1424,43 +1427,43 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@leafcutter-os/collection-setup-local@0.2.3(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))':
+  '@leafcutter-os/collection-setup-local@0.2.7(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))':
     dependencies:
-      '@leafcutter-os/cli': 8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))
-      '@leafcutter-os/playbook-set-up-local-colony': 0.4.3
-      '@leafcutter-os/playbook-upgrade-local-colony': 0.2.1
+      '@leafcutter-os/cli': 8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))
+      '@leafcutter-os/playbook-set-up-local-colony': 0.5.2
+      '@leafcutter-os/playbook-upgrade-local-colony': 0.3.0
 
   '@leafcutter-os/foundation-factual-integrity@1.0.3': {}
 
   '@leafcutter-os/foundation-untrusted-input@1.0.4': {}
 
-  '@leafcutter-os/navigator@0.10.2': {}
+  '@leafcutter-os/navigator@0.11.0': {}
 
-  '@leafcutter-os/playbook-set-up-chapter-colony@0.5.2': {}
+  '@leafcutter-os/playbook-set-up-chapter-colony@0.7.0': {}
 
-  '@leafcutter-os/playbook-set-up-local-colony@0.4.3': {}
+  '@leafcutter-os/playbook-set-up-local-colony@0.5.2': {}
 
-  '@leafcutter-os/playbook-upgrade-chapter-colony@0.2.0': {}
+  '@leafcutter-os/playbook-upgrade-chapter-colony@0.3.1': {}
 
-  '@leafcutter-os/playbook-upgrade-colonies@0.3.1':
+  '@leafcutter-os/playbook-upgrade-colonies@0.3.3':
     dependencies:
-      '@leafcutter-os/playbook-upgrade-chapter-colony': 0.2.0
-      '@leafcutter-os/playbook-upgrade-local-colony': 0.2.1
-      '@leafcutter-os/playbook-upgrade-root-colony': 0.2.0
+      '@leafcutter-os/playbook-upgrade-chapter-colony': 0.3.1
+      '@leafcutter-os/playbook-upgrade-local-colony': 0.3.0
+      '@leafcutter-os/playbook-upgrade-root-colony': 0.3.1
 
-  '@leafcutter-os/playbook-upgrade-local-colony@0.2.1': {}
+  '@leafcutter-os/playbook-upgrade-local-colony@0.3.0': {}
 
-  '@leafcutter-os/playbook-upgrade-root-colony@0.2.0': {}
+  '@leafcutter-os/playbook-upgrade-root-colony@0.3.1': {}
 
   '@leafcutter-os/role-curator@1.0.4': {}
 
-  '@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)':
+  '@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)':
     dependencies:
       '@leafcutter-governance/check': 1.3.1(zod@4.6.7)
       '@leafcutter-governance/compose': 1.3.1(zod@4.6.7)
       '@leafcutter-governance/lint': 1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
       '@leafcutter-governance/read': 1.1.0
-      '@leafcutter-os/types': 8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))
+      '@leafcutter-os/types': 8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))
       eslint: 10.14.0
       jsonc-parser: 3.3.1
       markdownlint: 0.42.0
@@ -1508,7 +1511,7 @@ snapshots:
 
   '@leafcutter-os/skill-text-to-structure@1.1.4': {}
 
-  '@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))':
+  '@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))':
     dependencies:
       '@leafcutter-governance/check': 1.3.1(zod@4.6.7)
       '@leafcutter-governance/compose': 1.3.1(zod@4.6.7)
@@ -1580,48 +1583,48 @@ snapshots:
       '@meimberg-io/skill-coding-rules': 0.1.3
       '@meimberg-io/skill-specify': 0.2.1
 
-  '@meimberg-io/agent-developer@0.1.28':
+  '@meimberg-io/agent-developer@0.1.31':
     dependencies:
       '@leafcutter-library/adapter-github': 1.4.0
-      '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/playbook-fix-bug': 0.2.20
-      '@meimberg-io/playbook-implement-feature': 0.1.25
+      '@meimberg-io/foundation-git-conduct': 0.4.0
+      '@meimberg-io/playbook-fix-bug': 0.2.23
+      '@meimberg-io/playbook-implement-feature': 0.1.28
       '@meimberg-io/role-developer': 0.2.1
       '@meimberg-io/skill-coding-rules': 0.1.3
       '@meimberg-io/skill-frontend-development': 0.1.3
-      '@meimberg-io/skill-git-workflow': 0.2.1
-      '@meimberg-io/skill-implement': 0.3.1
+      '@meimberg-io/skill-git-workflow': 0.2.4
+      '@meimberg-io/skill-implement': 0.3.2
       '@meimberg-io/skill-nextjs-development': 0.1.4
       '@meimberg-io/skill-specify': 0.2.1
       '@meimberg-io/skill-ticket-systems': 0.2.1
 
-  '@meimberg-io/agent-legacy-requirements-engineer@0.1.21':
+  '@meimberg-io/agent-legacy-requirements-engineer@0.1.24':
     dependencies:
       '@leafcutter-library/role-requirements-engineer': 0.5.0
-      '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/playbook-extract-requirements': 0.1.21
-      '@meimberg-io/skill-git-workflow': 0.2.1
-      '@meimberg-io/skill-requirements-repo': 0.1.21
+      '@meimberg-io/foundation-git-conduct': 0.4.0
+      '@meimberg-io/playbook-extract-requirements': 0.1.24
+      '@meimberg-io/skill-git-workflow': 0.2.4
+      '@meimberg-io/skill-requirements-repo': 0.1.24
 
-  '@meimberg-io/agent-requirements-analyst@0.1.30':
+  '@meimberg-io/agent-requirements-analyst@0.1.31':
     dependencies:
       '@leafcutter-library/role-requirements-engineer': 0.5.0
-      '@meimberg-io/playbook-requirements-to-dev': 0.1.30
+      '@meimberg-io/playbook-requirements-to-dev': 0.1.31
       '@meimberg-io/skill-draft-requirements': 0.1.7
       '@meimberg-io/skill-plan-to-tickets': 0.2.1
       '@meimberg-io/skill-specify': 0.2.1
       '@meimberg-io/skill-ticket-systems': 0.2.1
 
-  '@meimberg-io/agent-technical-designer@0.1.29':
+  '@meimberg-io/agent-technical-designer@0.1.30':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-planner': 0.4.0
-      '@meimberg-io/playbook-technical-concept': 0.1.29
+      '@meimberg-io/playbook-technical-concept': 0.1.30
       '@meimberg-io/skill-convert-to-markdown': 0.1.5
       '@meimberg-io/skill-technical-concept-writing': 0.1.7
       '@meimberg-io/skill-writing-style-rules': 0.1.4
 
-  '@meimberg-io/collection-base@0.19.8(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))':
+  '@meimberg-io/collection-base@0.19.17(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))':
     dependencies:
       '@leafcutter-library/adapter-github': 1.4.0
       '@leafcutter-library/adapter-jira-mcp': 0.2.1
@@ -1630,23 +1633,24 @@ snapshots:
       '@leafcutter-library/adapter-markitdown': 0.2.1
       '@leafcutter-library/adapter-notion': 0.3.2
       '@leafcutter-library/role-orchestrator': 0.5.0
-      '@leafcutter-os/collection-core': 3.0.11(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
-      '@leafcutter-os/playbook-set-up-chapter-colony': 0.5.2
-      '@leafcutter-os/playbook-set-up-local-colony': 0.4.3
-      '@leafcutter-os/playbook-upgrade-colonies': 0.3.1
+      '@leafcutter-os/collection-core': 3.0.11(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
+      '@leafcutter-os/playbook-set-up-chapter-colony': 0.7.0
+      '@leafcutter-os/playbook-set-up-local-colony': 0.5.2
+      '@leafcutter-os/playbook-upgrade-colonies': 0.3.3
       '@meimberg-io/adapter-plaud-base': 0.1.2
       '@meimberg-io/adapter-vault-meimberg': 0.6.0
+      '@meimberg-io/datapool-personal-facts': 0.1.1
       '@meimberg-io/foundation-communication': 0.3.0
       '@meimberg-io/foundation-delivery-conduct': 0.3.0
-      '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
-      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.8
+      '@meimberg-io/foundation-git-conduct': 0.4.0
       '@meimberg-io/foundation-knowledge-in-repo': 0.2.5
       '@meimberg-io/method-single-lens-review': 0.1.2
       '@meimberg-io/role-author': 0.1.2
       '@meimberg-io/role-owner': 0.1.2
       '@meimberg-io/skill-brainstorming': 0.2.5
-      '@meimberg-io/skill-capture-project-memory': 0.1.9
-      '@meimberg-io/skill-chapter-colony': 0.3.0
+      '@meimberg-io/skill-capture-project-memory': 0.1.10
+      '@meimberg-io/skill-chapter-colony': 0.3.3
       '@meimberg-io/skill-colony-handoff': 0.2.7
       '@meimberg-io/skill-convert-to-markdown': 0.1.5
       '@meimberg-io/skill-humanize': 0.1.2
@@ -1654,30 +1658,30 @@ snapshots:
       '@meimberg-io/skill-migrate-project': 0.1.6
       '@meimberg-io/skill-technical-writing': 0.1.4
       '@meimberg-io/skill-ticket-systems': 0.2.1
-      '@meimberg-io/skill-transcripts-and-minutes': 0.3.3
+      '@meimberg-io/skill-transcripts-and-minutes': 0.3.4
       '@meimberg-io/skill-writing-style-rules': 0.1.4
     transitivePeerDependencies:
       - '@leafcutter-os/cli'
       - supports-color
 
-  '@meimberg-io/collection-development@0.4.24(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))':
+  '@meimberg-io/collection-development@0.4.33(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))':
     dependencies:
       '@leafcutter-library/adapter-github': 1.4.0
       '@meimberg-io/agent-architect': 0.1.19
-      '@meimberg-io/agent-developer': 0.1.28
-      '@meimberg-io/agent-legacy-requirements-engineer': 0.1.21
-      '@meimberg-io/agent-requirements-analyst': 0.1.30
-      '@meimberg-io/agent-technical-designer': 0.1.29
-      '@meimberg-io/collection-base': 0.19.8(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
+      '@meimberg-io/agent-developer': 0.1.31
+      '@meimberg-io/agent-legacy-requirements-engineer': 0.1.24
+      '@meimberg-io/agent-requirements-analyst': 0.1.31
+      '@meimberg-io/agent-technical-designer': 0.1.30
+      '@meimberg-io/collection-base': 0.19.17(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
       '@meimberg-io/foundation-code-conventions': 0.1.2
-      '@meimberg-io/playbook-extract-requirements': 0.1.21
-      '@meimberg-io/playbook-fix-bug': 0.2.20
-      '@meimberg-io/playbook-implement-feature': 0.1.25
-      '@meimberg-io/playbook-implement-in-worktree': 0.1.25
-      '@meimberg-io/playbook-rebuild-legacy-app': 0.1.22
-      '@meimberg-io/playbook-requirements-to-dev': 0.1.30
+      '@meimberg-io/playbook-extract-requirements': 0.1.24
+      '@meimberg-io/playbook-fix-bug': 0.2.23
+      '@meimberg-io/playbook-implement-feature': 0.1.28
+      '@meimberg-io/playbook-implement-in-worktree': 0.1.28
+      '@meimberg-io/playbook-rebuild-legacy-app': 0.1.25
+      '@meimberg-io/playbook-requirements-to-dev': 0.1.31
       '@meimberg-io/playbook-specify-and-review': 0.1.21
-      '@meimberg-io/playbook-technical-concept': 0.1.29
+      '@meimberg-io/playbook-technical-concept': 0.1.30
       '@meimberg-io/role-customer': 0.1.2
       '@meimberg-io/role-developer': 0.2.1
       '@meimberg-io/role-project-manager': 0.1.2
@@ -1686,23 +1690,23 @@ snapshots:
       '@meimberg-io/skill-customer-hidden-context': 0.1.4
       '@meimberg-io/skill-draft-requirements': 0.1.7
       '@meimberg-io/skill-frontend-development': 0.1.3
-      '@meimberg-io/skill-git-workflow': 0.2.1
-      '@meimberg-io/skill-implement': 0.3.1
-      '@meimberg-io/skill-meimberg-deployment-stack': 0.1.2
+      '@meimberg-io/skill-git-workflow': 0.2.4
+      '@meimberg-io/skill-implement': 0.3.2
+      '@meimberg-io/skill-meimberg-deployment-stack': 0.1.3
       '@meimberg-io/skill-nextjs-development': 0.1.4
       '@meimberg-io/skill-plan-to-tickets': 0.2.1
-      '@meimberg-io/skill-requirements-repo': 0.1.21
+      '@meimberg-io/skill-requirements-repo': 0.1.24
       '@meimberg-io/skill-specify': 0.2.1
       '@meimberg-io/skill-spring-boot-development': 0.1.4
       '@meimberg-io/skill-supabase-development': 0.1.2
       '@meimberg-io/skill-systematic-debugging': 0.2.3
       '@meimberg-io/skill-technical-concept-writing': 0.1.7
-      '@meimberg-io/skill-worktree-management': 0.1.21
+      '@meimberg-io/skill-worktree-management': 0.1.24
     transitivePeerDependencies:
       - '@leafcutter-os/cli'
       - supports-color
 
-  '@meimberg-io/collection-meimberg-all@0.3.5(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.2)(@leafcutter-os/skill-secrets@0.4.7)(@meimberg-io/collection-base@0.19.8(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))))(@meimberg-io/datapool-todos@0.5.3)':
+  '@meimberg-io/collection-meimberg-all@0.3.6(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.2)(@leafcutter-os/skill-secrets@0.4.7)(@meimberg-io/collection-base@0.19.17(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))))(@meimberg-io/datapool-todos@0.5.4)':
     dependencies:
       '@meimberg-io/adapter-github-meimberg': 0.2.3
       '@meimberg-io/adapter-google-meimberg': 0.2.3
@@ -1711,8 +1715,8 @@ snapshots:
       '@meimberg-io/adapter-sanity-meimberg-digital': 0.2.1
       '@meimberg-io/adapter-smarteditor-meimberg': 0.2.0(@leafcutter-os/skill-secrets@0.4.7)
       '@meimberg-io/adapter-storyblok-meimberg': 0.2.2
-      '@meimberg-io/collection-base': 0.19.8(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
-      '@meimberg-io/collection-meimberg-digital': 0.6.26(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.2)(@meimberg-io/collection-base@0.19.8(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))))(@meimberg-io/datapool-todos@0.5.3)
+      '@meimberg-io/collection-base': 0.19.17(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
+      '@meimberg-io/collection-meimberg-digital': 0.6.27(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.2)(@meimberg-io/collection-base@0.19.17(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))))(@meimberg-io/datapool-todos@0.5.4)
       '@meimberg-io/datapool-bookkeeping': 0.3.4
       '@meimberg-io/datapool-digital-circus-media': 0.1.9(@leafcutter-library/adapter-local-files@0.2.2)
       '@meimberg-io/datapool-luxarise-documents': 0.1.9(@leafcutter-library/adapter-local-files@0.2.2)
@@ -1725,13 +1729,13 @@ snapshots:
       - '@leafcutter-os/skill-secrets'
       - '@meimberg-io/datapool-todos'
 
-  '@meimberg-io/collection-meimberg-digital@0.6.26(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.2)(@meimberg-io/collection-base@0.19.8(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))))(@meimberg-io/datapool-todos@0.5.3)':
+  '@meimberg-io/collection-meimberg-digital@0.6.27(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.2)(@meimberg-io/collection-base@0.19.17(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))))(@meimberg-io/datapool-todos@0.5.4)':
     dependencies:
       '@leafcutter-library/adapter-attio-mcp': 0.2.1
       '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.9.0
       '@meimberg-io/adapter-onedrive-meimberg': 0.3.2
       '@meimberg-io/adapter-sevdesk-meimberg': 0.2.2
-      '@meimberg-io/collection-base': 0.19.8(@leafcutter-os/cli@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
+      '@meimberg-io/collection-base': 0.19.17(@leafcutter-os/cli@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)))
       '@meimberg-io/datapool-calendar': 0.2.11
       '@meimberg-io/datapool-meimberg-digital-crm': 0.2.3
       '@meimberg-io/datapool-meimberg-digital-documents': 0.5.5(@leafcutter-library/adapter-local-files@0.2.2)
@@ -1741,18 +1745,18 @@ snapshots:
       '@meimberg-io/foundation-meimberg-holding-company': 0.2.0
       '@meimberg-io/skill-bookkeeping': 0.3.22(@leafcutter-library/adapter-local-files@0.2.2)
       '@meimberg-io/skill-it-administration': 0.1.1
-      '@meimberg-io/skill-mail-intake': 0.4.5(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.2)(@meimberg-io/datapool-todos@0.5.3)
+      '@meimberg-io/skill-mail-intake': 0.4.5(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.2)(@meimberg-io/datapool-todos@0.5.4)
     transitivePeerDependencies:
       - '@leafcutter-library/adapter-local-files'
       - '@leafcutter-library/adapter-todoist'
       - '@meimberg-io/datapool-todos'
 
-  '@meimberg-io/colony@0.4.6(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)':
+  '@meimberg-io/colony@0.4.9(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)':
     dependencies:
       '@leafcutter-governance/run': 2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7)
-      '@leafcutter-os/cli': 8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))
-      '@leafcutter-os/rules': 8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)
-      '@leafcutter-os/types': 8.14.3(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))
+      '@leafcutter-os/cli': 8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/rules@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0))
+      '@leafcutter-os/rules': 8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/lint@1.0.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-governance/read@1.1.0)(@leafcutter-governance/run@2.1.0(eslint@10.14.0)(markdownlint@0.42.0)(zod@4.6.7))(@leafcutter-os/types@8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7)))(eslint@10.14.0)
+      '@leafcutter-os/types': 8.22.1(@leafcutter-governance/check@1.3.1(zod@4.6.7))(@leafcutter-governance/compose@1.3.1(zod@4.6.7))(@leafcutter-governance/declare@1.3.1(zod@4.6.7))
     transitivePeerDependencies:
       - '@leafcutter-governance/check'
       - '@leafcutter-governance/compose'
@@ -1804,11 +1808,15 @@ snapshots:
     dependencies:
       '@leafcutter-library/adapter-local-files': 0.2.2
 
+  '@meimberg-io/datapool-personal-facts@0.1.1':
+    dependencies:
+      '@leafcutter-library/adapter-local-files': 0.2.2
+
   '@meimberg-io/datapool-risau-meimberg-gbr-documents@0.1.7(@leafcutter-library/adapter-local-files@0.2.2)':
     dependencies:
       '@leafcutter-library/adapter-local-files': 0.2.2
 
-  '@meimberg-io/datapool-todos@0.5.3':
+  '@meimberg-io/datapool-todos@0.5.4':
     dependencies:
       '@meimberg-io/adapter-todoist-base': 0.1.2
 
@@ -1818,9 +1826,9 @@ snapshots:
 
   '@meimberg-io/foundation-delivery-conduct@0.3.0': {}
 
-  '@meimberg-io/foundation-forbidden-commands-and-secrets@0.1.6': {}
+  '@meimberg-io/foundation-forbidden-commands-and-secrets@0.1.8': {}
 
-  '@meimberg-io/foundation-git-conduct@0.3.0': {}
+  '@meimberg-io/foundation-git-conduct@0.4.0': {}
 
   '@meimberg-io/foundation-knowledge-in-repo@0.2.5': {}
 
@@ -1830,64 +1838,64 @@ snapshots:
 
   '@meimberg-io/method-single-lens-review@0.1.2': {}
 
-  '@meimberg-io/playbook-extract-requirements@0.1.21':
+  '@meimberg-io/playbook-extract-requirements@0.1.24':
     dependencies:
       '@leafcutter-library/role-requirements-engineer': 0.5.0
-      '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/skill-git-workflow': 0.2.1
-      '@meimberg-io/skill-requirements-repo': 0.1.21
+      '@meimberg-io/foundation-git-conduct': 0.4.0
+      '@meimberg-io/skill-git-workflow': 0.2.4
+      '@meimberg-io/skill-requirements-repo': 0.1.24
 
-  '@meimberg-io/playbook-fix-bug@0.2.20':
+  '@meimberg-io/playbook-fix-bug@0.2.23':
     dependencies:
       '@leafcutter-library/role-code-reviewer': 0.5.0
       '@leafcutter-library/role-orchestrator': 0.5.0
-      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/foundation-git-conduct': 0.4.0
       '@meimberg-io/role-developer': 0.2.1
       '@meimberg-io/skill-coding-rules': 0.1.3
-      '@meimberg-io/skill-git-workflow': 0.2.1
+      '@meimberg-io/skill-git-workflow': 0.2.4
       '@meimberg-io/skill-systematic-debugging': 0.2.3
 
-  '@meimberg-io/playbook-implement-feature@0.1.25':
+  '@meimberg-io/playbook-implement-feature@0.1.28':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-code-reviewer': 0.5.0
       '@leafcutter-library/role-orchestrator': 0.5.0
-      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/foundation-git-conduct': 0.4.0
       '@meimberg-io/role-developer': 0.2.1
       '@meimberg-io/skill-coding-rules': 0.1.3
       '@meimberg-io/skill-frontend-development': 0.1.3
-      '@meimberg-io/skill-git-workflow': 0.2.1
-      '@meimberg-io/skill-implement': 0.3.1
+      '@meimberg-io/skill-git-workflow': 0.2.4
+      '@meimberg-io/skill-implement': 0.3.2
       '@meimberg-io/skill-specify': 0.2.1
       '@meimberg-io/skill-ticket-systems': 0.2.1
 
-  '@meimberg-io/playbook-implement-in-worktree@0.1.25':
+  '@meimberg-io/playbook-implement-in-worktree@0.1.28':
     dependencies:
       '@leafcutter-library/role-code-reviewer': 0.5.0
-      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/foundation-git-conduct': 0.4.0
       '@meimberg-io/skill-coding-rules': 0.1.3
-      '@meimberg-io/skill-implement': 0.3.1
-      '@meimberg-io/skill-worktree-management': 0.1.21
+      '@meimberg-io/skill-implement': 0.3.2
+      '@meimberg-io/skill-worktree-management': 0.1.24
 
-  '@meimberg-io/playbook-rebuild-legacy-app@0.1.22':
+  '@meimberg-io/playbook-rebuild-legacy-app@0.1.25':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-code-reviewer': 0.5.0
       '@leafcutter-library/role-requirements-auditor': 0.5.0
       '@leafcutter-library/role-requirements-engineer': 0.5.0
-      '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/playbook-extract-requirements': 0.1.21
+      '@meimberg-io/foundation-git-conduct': 0.4.0
+      '@meimberg-io/playbook-extract-requirements': 0.1.24
       '@meimberg-io/role-developer': 0.2.1
-      '@meimberg-io/skill-requirements-repo': 0.1.21
+      '@meimberg-io/skill-requirements-repo': 0.1.24
 
-  '@meimberg-io/playbook-requirements-to-dev@0.1.30':
+  '@meimberg-io/playbook-requirements-to-dev@0.1.31':
     dependencies:
       '@leafcutter-library/role-requirements-engineer': 0.5.0
       '@meimberg-io/skill-draft-requirements': 0.1.7
       '@meimberg-io/skill-plan-to-tickets': 0.2.1
       '@meimberg-io/skill-specify': 0.2.1
       '@meimberg-io/skill-ticket-systems': 0.2.1
-      '@meimberg-io/skill-transcripts-and-minutes': 0.3.3
+      '@meimberg-io/skill-transcripts-and-minutes': 0.3.4
 
   '@meimberg-io/playbook-specify-and-review@0.1.21':
     dependencies:
@@ -1898,7 +1906,7 @@ snapshots:
       '@meimberg-io/skill-specify': 0.2.1
       '@meimberg-io/skill-ticket-systems': 0.2.1
 
-  '@meimberg-io/playbook-technical-concept@0.1.29':
+  '@meimberg-io/playbook-technical-concept@0.1.30':
     dependencies:
       '@leafcutter-library/role-architect': 0.5.0
       '@leafcutter-library/role-planner': 0.4.0
@@ -1909,7 +1917,7 @@ snapshots:
       '@meimberg-io/skill-plan-to-tickets': 0.2.1
       '@meimberg-io/skill-specify': 0.2.1
       '@meimberg-io/skill-technical-concept-writing': 0.1.7
-      '@meimberg-io/skill-transcripts-and-minutes': 0.3.3
+      '@meimberg-io/skill-transcripts-and-minutes': 0.3.4
 
   '@meimberg-io/role-author@0.1.2': {}
 
@@ -1938,16 +1946,16 @@ snapshots:
 
   '@meimberg-io/skill-build-and-ci@0.1.3': {}
 
-  '@meimberg-io/skill-capture-project-memory@0.1.9':
+  '@meimberg-io/skill-capture-project-memory@0.1.10':
     dependencies:
-      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/foundation-git-conduct': 0.4.0
       '@meimberg-io/foundation-knowledge-in-repo': 0.2.5
       '@meimberg-io/skill-customer-hidden-context': 0.1.4
 
-  '@meimberg-io/skill-chapter-colony@0.3.0':
+  '@meimberg-io/skill-chapter-colony@0.3.3':
     dependencies:
-      '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
-      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.8
+      '@meimberg-io/foundation-git-conduct': 0.4.0
 
   '@meimberg-io/skill-coding-rules@0.1.3': {}
 
@@ -1972,42 +1980,42 @@ snapshots:
     dependencies:
       '@meimberg-io/skill-coding-rules': 0.1.3
 
-  '@meimberg-io/skill-git-workflow@0.2.1':
+  '@meimberg-io/skill-git-workflow@0.2.4':
     dependencies:
       '@leafcutter-library/adapter-jira-mcp': 0.2.1
       '@leafcutter-library/adapter-linear': 0.2.0
-      '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.6
-      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/foundation-forbidden-commands-and-secrets': 0.1.8
+      '@meimberg-io/foundation-git-conduct': 0.4.0
       '@meimberg-io/skill-ticket-systems': 0.2.1
 
   '@meimberg-io/skill-humanize@0.1.2': {}
 
   '@meimberg-io/skill-i-have-adhd@0.1.2': {}
 
-  '@meimberg-io/skill-implement@0.3.1':
+  '@meimberg-io/skill-implement@0.3.2':
     dependencies:
       '@leafcutter-library/adapter-github': 1.4.0
       '@leafcutter-library/adapter-jira-mcp': 0.2.1
       '@leafcutter-library/adapter-linear': 0.2.0
       '@meimberg-io/foundation-communication': 0.3.0
-      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/foundation-git-conduct': 0.4.0
       '@meimberg-io/skill-frontend-development': 0.1.3
       '@meimberg-io/skill-ticket-systems': 0.2.1
 
   '@meimberg-io/skill-it-administration@0.1.1': {}
 
-  '@meimberg-io/skill-mail-intake@0.4.5(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.2)(@meimberg-io/datapool-todos@0.5.3)':
+  '@meimberg-io/skill-mail-intake@0.4.5(@leafcutter-library/adapter-local-files@0.2.2)(@leafcutter-library/adapter-todoist@0.2.2)(@meimberg-io/datapool-todos@0.5.4)':
     dependencies:
       '@leafcutter-library/adapter-todoist': 0.2.2
       '@meimberg-io/adapter-microsoft-365-graph-meimberg': 0.9.0
       '@meimberg-io/datapool-mailbox': 0.5.14
       '@meimberg-io/datapool-meimberg-digital-documents': 0.5.5(@leafcutter-library/adapter-local-files@0.2.2)
       '@meimberg-io/datapool-meimberg-holding-documents': 0.2.5(@leafcutter-library/adapter-local-files@0.2.2)
-      '@meimberg-io/datapool-todos': 0.5.3
+      '@meimberg-io/datapool-todos': 0.5.4
     transitivePeerDependencies:
       - '@leafcutter-library/adapter-local-files'
 
-  '@meimberg-io/skill-meimberg-deployment-stack@0.1.2': {}
+  '@meimberg-io/skill-meimberg-deployment-stack@0.1.3': {}
 
   '@meimberg-io/skill-migrate-project@0.1.6': {}
 
@@ -2025,11 +2033,11 @@ snapshots:
       '@meimberg-io/skill-technical-concept-writing': 0.1.7
       '@meimberg-io/skill-ticket-systems': 0.2.1
 
-  '@meimberg-io/skill-requirements-repo@0.1.21':
+  '@meimberg-io/skill-requirements-repo@0.1.24':
     dependencies:
-      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/foundation-git-conduct': 0.4.0
       '@meimberg-io/skill-customer-hidden-context': 0.1.4
-      '@meimberg-io/skill-git-workflow': 0.2.1
+      '@meimberg-io/skill-git-workflow': 0.2.4
       '@meimberg-io/skill-technical-writing': 0.1.4
 
   '@meimberg-io/skill-specify@0.2.1':
@@ -2069,16 +2077,16 @@ snapshots:
       '@leafcutter-library/adapter-linear': 0.2.0
       '@meimberg-io/skill-writing-style-rules': 0.1.4
 
-  '@meimberg-io/skill-transcripts-and-minutes@0.3.3':
+  '@meimberg-io/skill-transcripts-and-minutes@0.3.4':
     dependencies:
       '@meimberg-io/adapter-plaud-base': 0.1.2
-      '@meimberg-io/foundation-git-conduct': 0.3.0
+      '@meimberg-io/foundation-git-conduct': 0.4.0
       '@meimberg-io/skill-writing-style-rules': 0.1.4
 
-  '@meimberg-io/skill-worktree-management@0.1.21':
+  '@meimberg-io/skill-worktree-management@0.1.24':
     dependencies:
-      '@meimberg-io/foundation-git-conduct': 0.3.0
-      '@meimberg-io/skill-git-workflow': 0.2.1
+      '@meimberg-io/foundation-git-conduct': 0.4.0
+      '@meimberg-io/skill-git-workflow': 0.2.4
 
   '@meimberg-io/skill-writing-style-rules@0.1.4': {}
 

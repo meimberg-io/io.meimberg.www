@@ -29,7 +29,7 @@ The first line reads the token without showing it, so it stays out of your shell
 in your own terminal, not through an agent's command input, which gives it nothing to read.
 
 Add an artifact or a collection with `pnpm add -w -D @leafcutter-library/<package>`, then run `pnpm compile`
-again. `pnpm doctor` reports what an installed adapter still needs; it installs nothing.
+again. `pnpm run doctor` reports what an installed adapter still needs; it installs nothing.
 
 ## Artifacts of its own
 
